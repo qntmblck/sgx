@@ -1,6 +1,6 @@
 <template>
     <Head title="SGX">
-    <link rel="icon" type="image/x-icon" href="/favicon.ico?v=2" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico?v=4" />
   </Head>
 
     <div class="bg-white">
