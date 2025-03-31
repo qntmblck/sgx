@@ -1,5 +1,5 @@
 <template>
-    <Head title="">
+    <Head title="SGX">
     <link rel="icon" type="image/x-icon" href="/favicon.ico?v=2" />
   </Head>
 
