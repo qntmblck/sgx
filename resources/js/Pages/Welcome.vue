@@ -1,6 +1,6 @@
 <template>
     <Head title="">
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico?v=2" />
   </Head>
 
     <div class="bg-white">
