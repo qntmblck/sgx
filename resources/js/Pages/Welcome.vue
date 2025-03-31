@@ -249,13 +249,13 @@
         </div>
       </footer>
     </div>
-  </template>
+</template>
   
-  <script setup>
-  import { ref } from 'vue'
-  import { Dialog, DialogPanel, Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
-  import { Bars3Icon, MinusSmallIcon, PlusSmallIcon, XMarkIcon } from '@heroicons/vue/24/outline'
-  import {
+<script setup>
+    import { ref } from 'vue'
+    import { Dialog, DialogPanel, Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
+    import { Bars3Icon, MinusSmallIcon, PlusSmallIcon, XMarkIcon } from '@heroicons/vue/24/outline'
+    import {
     ArrowPathIcon,
     CheckIcon,
     CloudArrowUpIcon,
@@ -365,4 +365,4 @@
   }
   
   const mobileMenuOpen = ref(false)
-  </script>
+</script>
