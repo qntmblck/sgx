@@ -1,4 +1,8 @@
 <template>
+    <Head title="">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  </Head>
+
     <div class="bg-white">
       <!-- Header -->
       <header class="absolute inset-x-0 top-0 z-50">
@@ -252,117 +256,144 @@
 </template>
   
 <script setup>
-    import { ref } from 'vue'
-    import { Dialog, DialogPanel, Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue'
-    import { Bars3Icon, MinusSmallIcon, PlusSmallIcon, XMarkIcon } from '@heroicons/vue/24/outline'
-    import {
-    ArrowPathIcon,
-    CheckIcon,
-    CloudArrowUpIcon,
-    Cog6ToothIcon,
-    FingerPrintIcon,
-    LockClosedIcon,
-    ServerIcon,
-  } from '@heroicons/vue/20/solid'
-  
-  const navigation = [
-    { name: 'Product', href: '#' },
-    { name: 'Features', href: '#' },
-    { name: 'Marketplace', href: '#' },
-    { name: 'Company', href: '#' },
-  ]
-  const features = [
-    {
-      name: 'Push to deploy.',
-      description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit aute id magna.',
-      icon: CloudArrowUpIcon,
-    },
-    {
-      name: 'SSL certificates.',
-      description: 'Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo.',
-      icon: LockClosedIcon,
-    },
-    {
-      name: 'Simple queues.',
-      description: 'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus.',
-      icon: ArrowPathIcon,
-    },
-    {
-      name: 'Advanced security.',
-      description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit aute id magna.',
-      icon: FingerPrintIcon,
-    },
-    {
-      name: 'Powerful API.',
-      description: 'Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo.',
-      icon: Cog6ToothIcon,
-    },
-    {
-      name: 'Database backups.',
-      description: 'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. ',
-      icon: ServerIcon,
-    },
-  ]
-  const tiers = [
-    {
-      name: 'Hobby',
-      id: 'tier-hobby',
-      href: '#',
-      priceMonthly: '$19',
-      description: "The perfect plan if you're just getting started with our product.",
-      features: ['25 products', 'Up to 10,000 subscribers', 'Advanced analytics', '24-hour support response time'],
-      featured: false,
-    },
-    {
-      name: 'Enterprise',
-      id: 'tier-enterprise',
-      href: '#',
-      priceMonthly: '$49',
-      description: 'Dedicated support and infrastructure for your company.',
-      features: [
-        'Unlimited products',
-        'Unlimited subscribers',
-        'Advanced analytics',
-        'Dedicated support representative',
-        'Marketing automations',
-        'Custom integrations',
-      ],
-      featured: true,
-    },
-  ]
-  const faqs = [
-    {
-      question: "What's the best thing about Switzerland?",
-      answer:
-        "I don't know, but the flag is a big plus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.",
-    },
-    // More questions...
-  ]
-  const footerNavigation = {
-    solutions: [
-      { name: 'Marketing', href: '#' },
-      { name: 'Analytics', href: '#' },
-      { name: 'Automation', href: '#' },
-      { name: 'Commerce', href: '#' },
-      { name: 'Insights', href: '#' },
-    ],
-    support: [
-      { name: 'Submit ticket', href: '#' },
-      { name: 'Documentation', href: '#' },
-      { name: 'Guides', href: '#' },
-    ],
-    company: [
-      { name: 'About', href: '#' },
-      { name: 'Blog', href: '#' },
-      { name: 'Jobs', href: '#' },
-      { name: 'Press', href: '#' },
-    ],
-    legal: [
-      { name: 'Terms of service', href: '#' },
-      { name: 'Privacy policy', href: '#' },
-      { name: 'License', href: '#' },
-    ],
+import { ref } from 'vue'
+import { Head } from '@inertiajs/vue3'
+import {
+  Dialog,
+  DialogPanel,
+  Disclosure,
+  DisclosureButton,
+  DisclosurePanel
+} from '@headlessui/vue'
+import {
+  Bars3Icon,
+  MinusSmallIcon,
+  PlusSmallIcon,
+  XMarkIcon
+} from '@heroicons/vue/24/outline'
+import {
+  ArrowPathIcon,
+  CheckIcon,
+  CloudArrowUpIcon,
+  Cog6ToothIcon,
+  FingerPrintIcon,
+  LockClosedIcon,
+  ServerIcon
+} from '@heroicons/vue/20/solid'
+
+const navigation = [
+  { name: 'Product', href: '#' },
+  { name: 'Features', href: '#' },
+  { name: 'Marketplace', href: '#' },
+  { name: 'Company', href: '#' }
+]
+
+const features = [
+  {
+    name: 'Push to deploy.',
+    description:
+      'Lorem ipsum, dolor sit amet consectetur adipisicing elit aute id magna.',
+    icon: CloudArrowUpIcon
+  },
+  {
+    name: 'SSL certificates.',
+    description:
+      'Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo.',
+    icon: LockClosedIcon
+  },
+  {
+    name: 'Simple queues.',
+    description:
+      'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus.',
+    icon: ArrowPathIcon
+  },
+  {
+    name: 'Advanced security.',
+    description:
+      'Lorem ipsum, dolor sit amet consectetur adipisicing elit aute id magna.',
+    icon: FingerPrintIcon
+  },
+  {
+    name: 'Powerful API.',
+    description:
+      'Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo.',
+    icon: Cog6ToothIcon
+  },
+  {
+    name: 'Database backups.',
+    description:
+      'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. ',
+    icon: ServerIcon
   }
-  
-  const mobileMenuOpen = ref(false)
+]
+
+const tiers = [
+  {
+    name: 'Hobby',
+    id: 'tier-hobby',
+    href: '#',
+    priceMonthly: '$19',
+    description:
+      "The perfect plan if you're just getting started with our product.",
+    features: [
+      '25 products',
+      'Up to 10,000 subscribers',
+      'Advanced analytics',
+      '24-hour support response time'
+    ],
+    featured: false
+  },
+  {
+    name: 'Enterprise',
+    id: 'tier-enterprise',
+    href: '#',
+    priceMonthly: '$49',
+    description: 'Dedicated support and infrastructure for your company.',
+    features: [
+      'Unlimited products',
+      'Unlimited subscribers',
+      'Advanced analytics',
+      'Dedicated support representative',
+      'Marketing automations',
+      'Custom integrations'
+    ],
+    featured: true
+  }
+]
+
+const faqs = [
+  {
+    question: "What's the best thing about Switzerland?",
+    answer:
+      "I don't know, but the flag is a big plus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat."
+  }
+]
+
+const footerNavigation = {
+  solutions: [
+    { name: 'Marketing', href: '#' },
+    { name: 'Analytics', href: '#' },
+    { name: 'Automation', href: '#' },
+    { name: 'Commerce', href: '#' },
+    { name: 'Insights', href: '#' }
+  ],
+  support: [
+    { name: 'Submit ticket', href: '#' },
+    { name: 'Documentation', href: '#' },
+    { name: 'Guides', href: '#' }
+  ],
+  company: [
+    { name: 'About', href: '#' },
+    { name: 'Blog', href: '#' },
+    { name: 'Jobs', href: '#' },
+    { name: 'Press', href: '#' }
+  ],
+  legal: [
+    { name: 'Terms of service', href: '#' },
+    { name: 'Privacy policy', href: '#' },
+    { name: 'License', href: '#' }
+  ]
+}
+
+const mobileMenuOpen = ref(false)
 </script>
