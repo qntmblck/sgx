@@ -63,33 +63,34 @@
 
     <main>
       <!-- Hero -->
-      <section id="inicio" class="relative isolate overflow-hidden bg-gray-900 pb-28 pt-28 sm:pb-40">
-        <!-- Imagen de fondo -->
-        <img src="/img/hero.png" alt="Bus con ANKAI en carretera" class="absolute inset-0 -z-10 size-full object-cover opacity-50 rounded-b-3xl" />
-        <div class="mx-auto max-w-7xl px-6 lg:px-8 text-center">
-          <h1 class="text-5xl font-bold tracking-tight text-white sm:text-6xl leading-tight">
-            Representantes oficiales <br />
-            de 
-            <img 
-              src="/img/ankai.png" 
-              alt="ANKAI" 
-              class="inline-block align-middle w-72 h-auto mx-0" 
-            />
-            en Chile.
-          </h1>
-          <p class="mt-6 text-lg font-bold leading-8 text-white">
-            Impulsamos una nueva era en el transporte público inteligente con un sistema de telemetría de clase mundial.
-          </p>
-          <div class="mt-10 flex justify-center gap-x-6">
-            <a href="#contacto" class="rounded-md bg-indigo-500 px-6 py-3 text-sm font-semibold text-white shadow hover:bg-indigo-400 focus:outline-none">
-              Contáctanos
-            </a>
-            <a href="#Electromovilidad" class="text-sm font-semibold text-white hover:underline">
-              Conoce la Electromovilidad <span aria-hidden="true">→</span>
-            </a>
-          </div>
-        </div>
-      </section>
+<section id="inicio" class="relative isolate overflow-hidden bg-gray-900 pb-28 pt-36 sm:pb-40">
+  <!-- Imagen de fondo -->
+  <img src="/img/hero.png" alt="Bus con ANKAI en carretera" class="absolute inset-0 -z-10 w-full h-full object-cover opacity-50 rounded-b-3xl" />
+  <div class="mx-auto max-w-7xl px-6 lg:px-8 text-center">
+    <h1 class="text-5xl font-bold tracking-tight text-white sm:text-6xl leading-tight mb-8">
+      Representantes oficiales <br />
+      de 
+      <img 
+        src="/img/ankai.png" 
+        alt="ANKAI" 
+        class="inline-block align-middle w-80 h-auto mx-0" 
+      />
+      en Chile.
+    </h1>
+    <p class="mt-10 text-lg font-bold leading-8 text-white mb-12">
+      Impulsamos una nueva era en el transporte público inteligente con un sistema de telemetría de clase mundial.
+    </p>
+    <div class="mt-32 flex justify-center gap-x-6">
+      <a href="#contacto" class="rounded-md bg-indigo-500 px-6 py-3 text-sm font-semibold text-white shadow hover:bg-indigo-400 focus:outline-none">
+        Contáctanos
+      </a>
+      <a href="#Electromovilidad" class="text-sm font-semibold text-white hover:underline">
+        Conoce la Electromovilidad <span aria-hidden="true">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
 
       <!-- Sección: Sobre SGX -->
       <section id="sobre" class="bg-white py-24 sm:py-32">
