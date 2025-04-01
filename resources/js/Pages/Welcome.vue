@@ -160,101 +160,171 @@
       </section>
 
       <!-- Footer -->
-      <footer class="bg-gray-900">
-        <div class="mx-auto max-w-7xl px-6 pb-8 pt-16 sm:pt-24 lg:px-8 lg:pt-32">
-          <div class="xl:grid xl:grid-cols-3 xl:gap-8">
-            <img class="h-16" src="/img/logo.png" alt="SGX Chile" />
-            <div class="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
-              <div class="md:grid md:grid-cols-2 md:gap-8">
-                <div>
-                  <h3 class="text-sm font-semibold text-white">Soluciones</h3>
-                  <ul role="list" class="mt-6 space-y-4">
-                    <li>
-                      <a href="#telemetria" class="text-sm text-gray-400 hover:text-white">Sistema de Telemetría</a>
-                    </li>
-                    <li>
-                      <a href="#productos" class="text-sm text-gray-400 hover:text-white">
-                        Buses <span class="text-red-500">ANKAI</span>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-                <div class="mt-10 md:mt-0">
-                  <h3 class="text-sm font-semibold text-white">Soporte</h3>
-                  <ul role="list" class="mt-6 space-y-4">
-                    <li>
-                      <a href="#contacto" class="text-sm text-gray-400 hover:text-white">Contacto</a>
-                    </li>
-                    <li>
-                      <a href="mailto:contacto@sgx.cl" class="text-sm text-gray-400 hover:text-white">Escríbenos</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div class="md:grid md:grid-cols-2 md:gap-8">
-                <div>
-                  <h3 class="text-sm font-semibold text-white">Empresa</h3>
-                  <ul role="list" class="mt-6 space-y-4">
-                    <li>
-                      <a href="#sobre" class="text-sm text-gray-400 hover:text-white">Sobre SGX</a>
-                    </li>
-                    <li>
-                      <a href="#clientes" class="text-sm text-gray-400 hover:text-white">Clientes</a>
-                    </li>
-                  </ul>
-                </div>
-                <div class="mt-10 md:mt-0">
-                  <h3 class="text-sm font-semibold text-white">Legal</h3>
-                  <ul role="list" class="mt-6 space-y-4">
-                    <li>
-                      <a href="#" class="text-sm text-gray-400 hover:text-white">Términos y Condiciones</a>
-                    </li>
-                    <li>
-                      <a href="#" class="text-sm text-gray-400 hover:text-white">Política de Privacidad</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
+      <!-- Footer -->
+<footer class="bg-gray-900">
+  <div class="mx-auto max-w-7xl px-6 pb-8 pt-16 sm:pt-24 lg:px-8 lg:pt-32">
+    <div class="xl:grid xl:grid-cols-3 xl:gap-8">
+      <img class="h-16" src="/img/logo.png" alt="SGX Chile" />
+      <div class="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
+        <div class="md:grid md:grid-cols-2 md:gap-8">
+          <div>
+            <h3 class="text-sm font-semibold text-white">Soluciones</h3>
+            <ul role="list" class="mt-6 space-y-4">
+              <li>
+                <a
+                  href="https://es.ankaiglobal.com/new-energy-technology_d23"
+                  class="text-sm text-gray-400 hover:text-white"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Tecnología &amp; Nueva Energía
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://es.ankaiglobal.com/products"
+                  class="text-sm text-gray-400 hover:text-white"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Buses <span class="text-red-500">ANKAI</span>
+                </a>
+              </li>
+            </ul>
           </div>
-
-          <!-- Newsletter -->
-          <div class="mt-16 border-t border-white/10 pt-8 sm:mt-20 lg:mt-24 lg:flex lg:items-center lg:justify-between">
-            <div>
-              <h3 class="text-sm font-semibold text-white">Suscríbete al boletín</h3>
-              <p class="mt-2 text-sm text-gray-300">Recibe noticias, actualizaciones y contenido exclusivo en tu correo.</p>
-            </div>
-            <form class="mt-6 sm:flex sm:max-w-md lg:mt-0">
-              <label for="email-address" class="sr-only">Correo electrónico</label>
-              <input type="email" name="email-address" id="email-address" autocomplete="email" required
-                class="w-full rounded-md bg-white/5 px-3 py-1.5 text-white placeholder:text-gray-500 outline outline-1 outline-white/10 focus:outline-2 focus:outline-indigo-500 sm:w-56 sm:text-sm"
-                placeholder="Tu correo electrónico" />
-              <div class="mt-4 sm:ml-4 sm:mt-0">
-                <button type="submit"
-                  class="flex w-full items-center justify-center rounded-md bg-indigo-500 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">
-                  Suscribirse
-                </button>
-              </div>
-            </form>
-          </div>
-
-          <!-- Social + Copyright -->
-          <div class="mt-8 border-t border-white/10 pt-8 md:flex md:items-center md:justify-between">
-            <div class="flex gap-x-6 md:order-2">
-              <a
-                v-for="item in footerNavigation.social"
-                :key="item.name"
-                :href="item.href"
-                class="text-gray-400 hover:text-gray-300"
-              >
-                <span class="sr-only">{{ item.name }}</span>
-                <component :is="item.icon" class="size-6" aria-hidden="true" />
-              </a>
-            </div>
-            <p class="mt-8 text-sm text-gray-400 md:order-1 md:mt-0">&copy; 2024 SGX Chile. Todos los derechos reservados.</p>
+          <div class="mt-10 md:mt-0">
+            <h3 class="text-sm font-semibold text-white">Soporte</h3>
+            <ul role="list" class="mt-6 space-y-4">
+              <li>
+                <a
+                  href="https://es.ankaiglobal.com/contact_d2"
+                  class="text-sm text-gray-400 hover:text-white"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Contacto Oficial
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://es.ankaiglobal.com/service_d4"
+                  class="text-sm text-gray-400 hover:text-white"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Servicio posventa
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
-      </footer>
+        <div class="md:grid md:grid-cols-2 md:gap-8">
+          <div>
+            <h3 class="text-sm font-semibold text-white">Empresa</h3>
+            <ul role="list" class="mt-6 space-y-4">
+              <li>
+                <a
+                  href="https://es.ankaiglobal.com/"
+                  class="text-sm text-gray-400 hover:text-white"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Acerca de ANKAI
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://es.ankaiglobal.com/news_nc1"
+                  class="text-sm text-gray-400 hover:text-white"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Noticias
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="mt-10 md:mt-0">
+            <h3 class="text-sm font-semibold text-white">Legal</h3>
+            <ul role="list" class="mt-6 space-y-4">
+              <li>
+                <a
+                  href="https://es.ankaiglobal.com/terms-conditions_d12"
+                  class="text-sm text-gray-400 hover:text-white"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Términos y Condiciones
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://es.ankaiglobal.com/privacy-policy_d12"
+                  class="text-sm text-gray-400 hover:text-white"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Política de Privacidad
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Newsletter -->
+    <div class="mt-16 border-t border-white/10 pt-8 sm:mt-20 lg:mt-24 lg:flex lg:items-center lg:justify-between">
+      <div>
+        <h3 class="text-sm font-semibold text-white">Suscríbete al boletín</h3>
+        <p class="mt-2 text-sm text-gray-300">
+          Recibe noticias, actualizaciones y contenido exclusivo en tu correo.
+        </p>
+      </div>
+      <form class="mt-6 sm:flex sm:max-w-md lg:mt-0">
+        <label for="email-address" class="sr-only">Correo electrónico</label>
+        <input
+          type="email"
+          name="email-address"
+          id="email-address"
+          autocomplete="email"
+          required
+          class="w-full rounded-md bg-white/5 px-3 py-1.5 text-white placeholder:text-gray-500 outline outline-1 outline-white/10 focus:outline-2 focus:outline-indigo-500 sm:w-56 sm:text-sm"
+          placeholder="Tu correo electrónico"
+        />
+        <div class="mt-4 sm:ml-4 sm:mt-0">
+          <button
+            type="submit"
+            class="flex w-full items-center justify-center rounded-md bg-indigo-500 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
+          >
+            Suscribirse
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Social + Copyright -->
+    <div class="mt-8 border-t border-white/10 pt-8 md:flex md:items-center md:justify-between">
+      <div class="flex gap-x-6 md:order-2">
+        <a
+          v-for="item in footerNavigation.social"
+          :key="item.name"
+          :href="item.href"
+          class="text-gray-400 hover:text-gray-300"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span class="sr-only">{{ item.name }}</span>
+          <component :is="item.icon" class="size-6" aria-hidden="true" />
+        </a>
+      </div>
+      <p class="mt-8 text-sm text-gray-400 md:order-1 md:mt-0">
+        &copy; 2024 SGX Chile. Todos los derechos reservados.
+      </p>
+    </div>
+  </div>
+</footer>
+
 
     </main>
   </div>
