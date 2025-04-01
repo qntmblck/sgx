@@ -80,7 +80,7 @@
     <p class="mt-10 text-lg font-bold leading-8 text-white mb-12">
       Impulsamos una nueva era en el transporte público inteligente con un sistema de telemetría de clase mundial.
     </p>
-    <div class="mt-32 flex justify-center gap-x-6">
+    <div class="mt-28 flex justify-center gap-x-6">
       <a href="#contacto" class="rounded-md bg-indigo-500 px-6 py-3 text-sm font-semibold text-white shadow hover:bg-indigo-400 focus:outline-none">
         Contáctanos
       </a>
