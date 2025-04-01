@@ -14,7 +14,11 @@
           </a>
         </div>
         <div class="flex lg:hidden">
-          <button type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-400" @click="mobileMenuOpen = true">
+          <button
+            type="button"
+            class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-400"
+            @click="mobileMenuOpen = true"
+          >
             <span class="sr-only">Open main menu</span>
             <Bars3Icon class="size-6" aria-hidden="true" />
           </button>
@@ -39,7 +43,11 @@
             <a href="#inicio" class="-m-1.5 p-1.5">
               <img class="h-12 w-auto" src="/img/sgx.png" alt="SGX Logo" />
             </a>
-            <button type="button" class="-m-2.5 rounded-md p-2.5 text-gray-400" @click="mobileMenuOpen = false">
+            <button
+              type="button"
+              class="-m-2.5 rounded-md p-2.5 text-gray-400"
+              @click="mobileMenuOpen = false"
+            >
               <XMarkIcon class="size-6" aria-hidden="true" />
             </button>
           </div>
@@ -62,52 +70,57 @@
     </header>
 
     <main>
-      <!-- Hero -->
-<section id="inicio" class="relative isolate overflow-hidden bg-gray-900 pb-28 pt-36 sm:pb-40">
-  <!-- Imagen de fondo -->
-  <img src="/img/hero.png" alt="Bus con ANKAI en carretera" class="absolute inset-0 -z-10 w-full h-full object-cover opacity-50 rounded-b-3xl" />
-  <div class="mx-auto max-w-7xl px-6 lg:px-8 text-center">
-    <h1 class="text-5xl font-bold tracking-tight text-white sm:text-6xl leading-tight mb-8">
-      Representantes oficiales <br />
-      de 
-      <img 
-        src="/img/ankai.png" 
-        alt="ANKAI" 
-        class="inline-block align-middle w-80 h-auto mx-0" 
-      />
-      en Chile.
-    </h1>
-    <p class="mt-10 text-lg font-bold leading-8 text-white mb-12">
-      Impulsamos una nueva era en el transporte público inteligente con un sistema de telemetría de clase mundial.
-    </p>
-    <div class="mt-28 flex justify-center gap-x-6">
-      <a href="#contacto" class="rounded-md bg-indigo-500 px-6 py-3 text-sm font-semibold text-white shadow hover:bg-indigo-400 focus:outline-none">
-        Contáctanos
-      </a>
-      <a href="#Electromovilidad" class="text-sm font-semibold text-white hover:underline">
-        Conoce la Electromovilidad <span aria-hidden="true">→</span>
-      </a>
-    </div>
-  </div>
-</section>
-
+      <!-- Hero Section -->
+      <section id="inicio" class="relative isolate overflow-hidden bg-gray-900 pb-28 pt-36 sm:pb-40">
+        <!-- Imagen de fondo -->
+        <img
+          src="/img/hero.png"
+          alt="Bus con ANKAI en carretera"
+          class="absolute inset-0 -z-10 w-full h-full object-cover opacity-50 rounded-b-3xl"
+        />
+        <div class="mx-auto max-w-7xl px-6 lg:px-8 text-center">
+          <h1 class="text-5xl font-bold tracking-tight text-white sm:text-6xl leading-tight mb-8">
+            Representantes oficiales <br />
+            de
+            <img
+              src="/img/ankai.png"
+              alt="ANKAI"
+              class="inline-block align-middle w-80 h-auto mx-0"
+            />
+            en Chile.
+          </h1>
+          <p class="mt-10 text-lg font-bold leading-8 text-white mb-12">
+            Impulsamos una nueva era en el transporte público inteligente con un sistema de telemetría de clase mundial.
+          </p>
+          <div class="mt-28 flex justify-center gap-x-6">
+            <a
+              href="#contacto"
+              class="rounded-md bg-indigo-500 px-6 py-3 text-sm font-semibold text-white shadow hover:bg-indigo-400 focus:outline-none"
+            >
+              Contáctanos
+            </a>
+            <a href="#Electromovilidad" class="text-sm font-semibold text-white hover:underline">
+              Conoce la Electromovilidad <span aria-hidden="true">→</span>
+            </a>
+          </div>
+        </div>
+      </section>
 
       <!-- Sección: Sobre SGX -->
       <section id="sobre" class="bg-white py-24 sm:py-32">
         <div class="mx-auto max-w-5xl px-6 text-center">
           <h2 class="text-3xl font-bold text-gray-900">
-            Sobre 
-            <img 
-              src="/img/sgx.png" 
-              alt="SGX" 
+            Sobre
+            <img
+              src="/img/sgx.png"
+              alt="SGX"
               class="inline-block align-middle w-32 h-auto mx-0"
             />
           </h2>
           <p class="mt-4 text-lg text-gray-700">
-            SGX es una empresa chilena que representa oficialmente a 
+            SGX es una empresa chilena que representa oficialmente a
             <span class="text-red-500 font-bold">ANKAI</span>, líder mundial en soluciones de transporte.
-            Nos especializamos en integrar tecnología de telemetría, conectividad vehicular
-            y plataformas de análisis para una movilidad más eficiente y segura.
+            Nos especializamos en integrar tecnología de telemetría, conectividad vehicular y plataformas de análisis para una movilidad más eficiente y segura.
           </p>
         </div>
       </section>
@@ -117,7 +130,11 @@
         <div class="mx-auto max-w-5xl px-6 text-center">
           <h2 class="text-3xl font-bold text-gray-900">Electromovilidad</h2>
           <p class="mt-4 text-lg text-gray-700">
-            Aquí se detalla la estrategia de electromovilidad de SGX para modernizar el transporte.
+            Chile lidera la adopción de buses eléctricos en Latinoamérica, impulsando un transporte público más limpio y eficiente. Con más de
+            <strong>2.480 buses eléctricos</strong> en operación y una meta nacional de descarbonizar el 100% del transporte público para 2035, la electromovilidad está transformando ciudades como Santiago, Antofagasta y La Serena.
+          </p>
+          <p class="mt-4 text-lg text-gray-700">
+            SGX se enfoca en la adopción de productos y tecnologías de transporte sustentable, ofreciendo soluciones de monitoreo y gestión de flota que optimizan rutas, reducen costos operativos y garantizan el cumplimiento de las normativas chilenas.
           </p>
         </div>
       </section>
@@ -129,18 +146,121 @@
             Productos <span class="text-red-500 font-bold">ANKAI</span>
           </h2>
           <p class="mt-4 text-lg text-gray-700">
-            Descubre la gama de productos de <span class="text-red-500 font-bold">ANKAI</span> disponibles en el mercado chileno.
+            SGX es representante oficial de ANKAI, una de las marcas líderes en autobuses eléctricos a nivel mundial. Descubra nuestra gama de vehículos diseñados para el transporte público y privado:
+          </p>
+          <ul class="mt-6 text-lg text-gray-700 list-disc list-inside">
+            <li>
+              <strong>Buses Urbanos 12m:</strong> Ideales para rutas de alto volumen, con capacidad para 90 pasajeros, piso bajo y tecnología de seguridad avanzada.
+            </li>
+            <li>
+              <strong>Midibuses 8–9m:</strong> Perfectos para el transporte de personal en industrias de minería y construcción, con autonomía de hasta 320 km.
+            </li>
+            <li>
+              <strong>Minibuses 6m:</strong> Compactos y maniobrables, ideales para recorridos locales y zonas de difícil acceso.
+            </li>
+          </ul>
+          <p class="mt-4 text-lg text-gray-700">
+            Cada modelo incorpora tecnología de vanguardia, eficiencia energética y altos estándares de seguridad, garantizando calidad y confiabilidad en cada proyecto.
           </p>
         </div>
       </section>
 
-      <!-- Sección: Sistema de Telemetría -->
+      <!-- Sección: Sistema de Telemetría (Dinámica) -->
       <section id="telemetria" class="bg-gray-50 py-24 sm:py-32">
-        <div class="mx-auto max-w-5xl px-6 text-center">
-          <h2 class="text-3xl font-bold text-gray-900">Sistema de Telemetría</h2>
-          <p class="mt-4 text-lg text-gray-700">
-            Nuestro sistema de telemetría permite una gestión avanzada y en tiempo real de la flota.
-          </p>
+        <div class="relative isolate overflow-hidden bg-white px-6 py-24 sm:py-32 lg:overflow-visible lg:px-0">
+          <!-- Fondo dinámico con SVG -->
+          <div class="absolute inset-0 -z-10 overflow-hidden">
+            <svg
+              class="absolute left-[max(50%,25rem)] top-0 h-[64rem] w-[128rem] -translate-x-1/2 stroke-gray-200 [mask-image:radial-gradient(64rem_64rem_at_top,white,transparent)]"
+              aria-hidden="true"
+            >
+              <defs>
+                <pattern id="telemetry-pattern" width="200" height="200" x="50%" y="-1" patternUnits="userSpaceOnUse">
+                  <path d="M100 200V.5M.5 .5H200" fill="none" />
+                </pattern>
+              </defs>
+              <svg x="50%" y="-1" class="overflow-visible fill-gray-50">
+                <path
+                  d="M-100.5 0h201v201h-201Z M699.5 0h201v201h-201Z M499.5 400h201v201h-201Z M-300.5 600h201v201h-201Z"
+                  stroke-width="0"
+                />
+              </svg>
+              <rect width="100%" height="100%" stroke-width="0" fill="url(#telemetry-pattern)" />
+            </svg>
+          </div>
+
+          <!-- Grid principal en dos columnas -->
+          <div
+            class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:mx-0 lg:max-w-none lg:grid-cols-2 lg:items-start lg:gap-y-10"
+          >
+            <!-- Columna izquierda: Encabezado y descripción -->
+            <div
+              class="lg:col-span-2 lg:col-start-1 lg:row-start-1 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8"
+            >
+              <div class="lg:pr-4">
+                <div class="lg:max-w-lg">
+                  <p class="text-base/7 font-semibold text-indigo-600">Tecnología líder</p>
+                  <h1 class="mt-2 text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
+                    Sistema de Telemetría Avanzado
+                  </h1>
+                  <p class="mt-6 text-xl/8 text-gray-700">
+                    Controle su flota en tiempo real con nuestra plataforma en la nube. Gracias a la tecnología de ANKAI, pionera mundialmente por su mayor autonomía en buses eléctricos, optimice rutas, reduzca costos y mejore la seguridad de sus operaciones.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Columna derecha: Imagen sticky -->
+            <div
+              class="-ml-12 -mt-12 p-12 lg:sticky lg:top-4 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:overflow-hidden"
+            >
+              <img
+                class="w-[48rem] max-w-none rounded-xl bg-gray-900 shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem]"
+                src="https://tailwindcss.com/plus-assets/img/component-images/dark-project-app-screenshot.png"
+                alt="Panel de Telemetría"
+              />
+            </div>
+
+            <!-- Detalle de funcionalidades y ventajas -->
+            <div
+              class="lg:col-span-2 lg:col-start-1 lg:row-start-2 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8"
+            >
+              <div class="lg:pr-4">
+                <div class="max-w-xl text-base/7 text-gray-700 lg:max-w-lg">
+                  <p>
+                    Nuestra solución de telemetría le permite monitorear cada aspecto de su flota: desde el estado de las baterías y el consumo de energía, hasta el análisis del comportamiento de conducción.
+                  </p>
+                  <ul role="list" class="mt-8 space-y-8 text-gray-600">
+                    <li class="flex gap-x-3">
+                      <CloudArrowUpIcon class="mt-1 h-5 w-5 flex-none text-indigo-600" aria-hidden="true" />
+                      <span>
+                        <strong class="font-semibold text-gray-900">Monitoreo de baterías:</strong> Visualice en tiempo real el nivel de carga y la salud de las baterías.
+                      </span>
+                    </li>
+                    <li class="flex gap-x-3">
+                      <LockClosedIcon class="mt-1 h-5 w-5 flex-none text-indigo-600" aria-hidden="true" />
+                      <span>
+                        <strong class="font-semibold text-gray-900">Alertas en tiempo real:</strong> Reciba notificaciones inmediatas ante cualquier anomalía operativa.
+                      </span>
+                    </li>
+                    <li class="flex gap-x-3">
+                      <ServerIcon class="mt-1 h-5 w-5 flex-none text-indigo-600" aria-hidden="true" />
+                      <span>
+                        <strong class="font-semibold text-gray-900">Reportes analíticos:</strong> Acceda a informes detallados para optimizar el rendimiento de su flota.
+                      </span>
+                    </li>
+                  </ul>
+                  <p class="mt-8">
+                    Nuestra plataforma se integra con otros sistemas y se ejecuta en la nube, lo que significa que no necesita infraestructura adicional y se adapta fácilmente al crecimiento de su operación.
+                  </p>
+                  <h2 class="mt-16 text-2xl font-bold tracking-tight text-gray-900">Solución en la Nube</h2>
+                  <p class="mt-6">
+                    Sin servidores físicos ni complicaciones. Disfrute de actualizaciones automáticas, seguridad robusta y soporte 24/7, todo respaldado por la innovación de ANKAI.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -149,7 +269,21 @@
         <div class="mx-auto max-w-5xl px-6 text-center">
           <h2 class="text-3xl font-bold text-gray-900">Clientes y Colaboradores</h2>
           <p class="mt-4 text-lg text-gray-700">
-            Conoce a nuestros clientes y socios estratégicos que confían en SGX y en <span class="text-red-500 font-bold">ANKAI</span>.
+            La experiencia de SGX y ANKAI se respalda en casos de éxito tanto en el sector público como privado:
+          </p>
+          <ul class="mt-6 text-lg text-gray-700 list-disc list-inside">
+            <li>
+              <strong>Transporte Público:</strong> Operadores en Santiago y regiones han integrado flotas de buses eléctricos, mejorando la calidad del servicio y reduciendo costos operativos.
+            </li>
+            <li>
+              <strong>Transporte Privado:</strong> Empresas de minería y construcción utilizan nuestros midibuses eléctricos para el traslado seguro de personal en condiciones exigentes.
+            </li>
+            <li>
+              <strong>Gobiernos Locales:</strong> Municipios innovadores están incorporando buses eléctricos en sus sistemas de transporte, reduciendo emisiones y contaminación.
+            </li>
+          </ul>
+          <p class="mt-4 text-lg text-gray-700">
+            Trabajamos de la mano con entidades financieras y socios técnicos para ofrecer soluciones integrales. ¿Quiere conocer más casos de éxito? ¡Contáctenos!
           </p>
         </div>
       </section>
@@ -159,7 +293,10 @@
         <div class="mx-auto max-w-5xl px-6 text-center">
           <h2 class="text-3xl font-bold text-gray-900">Otros Servicios</h2>
           <p class="mt-4 text-lg text-gray-700">
-            Descubre otros servicios que ofrece SGX para potenciar la movilidad inteligente.
+            En SGX nos especializamos exclusivamente en <strong>buses eléctricos ANKAI</strong> y sistemas de telemetría para la gestión de flotas. Esta concentración nos permite dedicar todos nuestros recursos a brindar productos de excelencia y asesoría especializada.
+          </p>
+          <p class="mt-4 text-lg text-gray-700">
+            Actualmente, no ofrecemos otros servicios adicionales, lo que garantiza un enfoque total en soluciones de movilidad sustentable.
           </p>
         </div>
       </section>
@@ -169,177 +306,176 @@
         <div class="mx-auto max-w-5xl px-6 text-center">
           <h2 class="text-3xl font-bold text-gray-900">Contacto</h2>
           <p class="mt-4 text-lg text-gray-700">
-            Ponte en contacto con nosotros para más información.
+            ¿Listo para impulsar la movilidad eléctrica? Llámenos al <strong>(+56) 2 1234 5678</strong> o escríbanos a <strong>contacto@sgx.cl</strong>. Estamos aquí para asesorarle y ayudarle a transformar su flota.
           </p>
-          <!-- Aquí podrías agregar un formulario o información de contacto -->
         </div>
       </section>
+    </main>
 
-      <!-- Footer -->
-      <footer class="bg-gray-900">
-        <div class="mx-auto max-w-7xl px-6 pb-8 pt-16 sm:pt-24 lg:px-8 lg:pt-32">
-          <div class="xl:grid xl:grid-cols-3 xl:gap-8">
-            <img class="h-16" src="/img/logo.png" alt="SGX Chile" />
-            <div class="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
-              <div class="md:grid md:grid-cols-2 md:gap-8">
-                <div>
-                  <h3 class="text-sm font-semibold text-white">Soluciones</h3>
-                  <ul role="list" class="mt-6 space-y-4">
-                    <li>
-                      <a
-                        href="https://es.ankaiglobal.com/new-energy-technology_d23"
-                        class="text-sm text-gray-400 hover:text-white"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        Tecnología &amp; Nueva Energía
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="https://es.ankaiglobal.com/products"
-                        class="text-sm text-gray-400 hover:text-white"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        Buses <span class="text-red-500 font-bold">ANKAI</span>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-                <div class="mt-10 md:mt-0">
-                  <h3 class="text-sm font-semibold text-white">Soporte</h3>
-                  <ul role="list" class="mt-6 space-y-4">
-                    <li>
-                      <a
-                        href="https://es.ankaiglobal.com/contact_d2"
-                        class="text-sm text-gray-400 hover:text-white"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        Contacto Oficial
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="https://es.ankaiglobal.com/service_d4"
-                        class="text-sm text-gray-400 hover:text-white"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        Servicio posventa
-                      </a>
-                    </li>
-                  </ul>
-                </div>
+    <!-- Footer -->
+    <footer class="bg-gray-900">
+      <div class="mx-auto max-w-7xl px-6 pb-8 pt-16 sm:pt-24 lg:px-8 lg:pt-32">
+        <div class="xl:grid xl:grid-cols-3 xl:gap-8">
+          <img class="h-16" src="/img/logo.png" alt="SGX Chile" />
+          <div class="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
+            <div class="md:grid md:grid-cols-2 md:gap-8">
+              <div>
+                <h3 class="text-sm font-semibold text-white">Soluciones</h3>
+                <ul role="list" class="mt-6 space-y-4">
+                  <li>
+                    <a
+                      href="https://es.ankaiglobal.com/new-energy-technology_d23"
+                      class="text-sm text-gray-400 hover:text-white"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Tecnología &amp; Nueva Energía
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://es.ankaiglobal.com/products"
+                      class="text-sm text-gray-400 hover:text-white"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Buses <span class="text-red-500 font-bold">ANKAI</span>
+                    </a>
+                  </li>
+                </ul>
               </div>
-              <div class="md:grid md:grid-cols-2 md:gap-8">
-                <div>
-                  <h3 class="text-sm font-semibold text-white">Empresa</h3>
-                  <ul role="list" class="mt-6 space-y-4">
-                    <li>
-                      <a
-                        href="https://es.ankaiglobal.com/"
-                        class="text-sm text-gray-400 hover:text-white"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        Acerca de ANKAI
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="https://es.ankaiglobal.com/news_nc1"
-                        class="text-sm text-gray-400 hover:text-white"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        Noticias
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-                <div class="mt-10 md:mt-0">
-                  <h3 class="text-sm font-semibold text-white">Legal</h3>
-                  <ul role="list" class="mt-6 space-y-4">
-                    <li>
-                      <a
-                        href="https://es.ankaiglobal.com/terms-conditions_d12"
-                        class="text-sm text-gray-400 hover:text-white"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        Términos y Condiciones
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="https://es.ankaiglobal.com/privacy-policy_d12"
-                        class="text-sm text-gray-400 hover:text-white"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        Política de Privacidad
-                      </a>
-                    </li>
-                  </ul>
-                </div>
+              <div class="mt-10 md:mt-0">
+                <h3 class="text-sm font-semibold text-white">Soporte</h3>
+                <ul role="list" class="mt-6 space-y-4">
+                  <li>
+                    <a
+                      href="https://es.ankaiglobal.com/contact_d2"
+                      class="text-sm text-gray-400 hover:text-white"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Contacto Oficial
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://es.ankaiglobal.com/service_d4"
+                      class="text-sm text-gray-400 hover:text-white"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Servicio posventa
+                    </a>
+                  </li>
+                </ul>
               </div>
             </div>
-          </div>
-
-          <!-- Newsletter -->
-          <div class="mt-16 border-t border-white/10 pt-8 sm:mt-20 lg:mt-24 lg:flex lg:items-center lg:justify-between">
-            <div>
-              <h3 class="text-sm font-semibold text-white">Suscríbete al boletín</h3>
-              <p class="mt-2 text-sm text-gray-300">
-                Recibe noticias, actualizaciones y contenido exclusivo en tu correo.
-              </p>
-            </div>
-            <form class="mt-6 sm:flex sm:max-w-md lg:mt-0">
-              <label for="email-address" class="sr-only">Correo electrónico</label>
-              <input
-                type="email"
-                name="email-address"
-                id="email-address"
-                autocomplete="email"
-                required
-                class="w-full rounded-md bg-white/5 px-3 py-1.5 text-white placeholder:text-gray-500 outline outline-1 outline-white/10 focus:outline-2 focus:outline-indigo-500 sm:w-56 sm:text-sm"
-                placeholder="Tu correo electrónico"
-              />
-              <div class="mt-4 sm:ml-4 sm:mt-0">
-                <button
-                  type="submit"
-                  class="flex w-full items-center justify-center rounded-md bg-indigo-500 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
-                >
-                  Suscribirse
-                </button>
+            <div class="md:grid md:grid-cols-2 md:gap-8">
+              <div>
+                <h3 class="text-sm font-semibold text-white">Empresa</h3>
+                <ul role="list" class="mt-6 space-y-4">
+                  <li>
+                    <a
+                      href="https://es.ankaiglobal.com/"
+                      class="text-sm text-gray-400 hover:text-white"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Acerca de ANKAI
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://es.ankaiglobal.com/news_nc1"
+                      class="text-sm text-gray-400 hover:text-white"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Noticias
+                    </a>
+                  </li>
+                </ul>
               </div>
-            </form>
-          </div>
-
-          <!-- Social + Copyright -->
-          <div class="mt-8 border-t border-white/10 pt-8 md:flex md:items-center md:justify-between">
-            <div class="flex gap-x-6 md:order-2">
-              <a
-                v-for="item in footerNavigation.social"
-                :key="item.name"
-                :href="item.href"
-                class="text-gray-400 hover:text-gray-300"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <span class="sr-only">{{ item.name }}</span>
-                <component :is="item.icon" class="size-6" aria-hidden="true" />
-              </a>
+              <div class="mt-10 md:mt-0">
+                <h3 class="text-sm font-semibold text-white">Legal</h3>
+                <ul role="list" class="mt-6 space-y-4">
+                  <li>
+                    <a
+                      href="https://es.ankaiglobal.com/terms-conditions_d12"
+                      class="text-sm text-gray-400 hover:text-white"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Términos y Condiciones
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://es.ankaiglobal.com/privacy-policy_d12"
+                      class="text-sm text-gray-400 hover:text-white"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Política de Privacidad
+                    </a>
+                  </li>
+                </ul>
+              </div>
             </div>
-            <p class="mt-8 text-sm text-gray-400 md:order-1 md:mt-0">
-              &copy; 2024 SGX Chile. Todos los derechos reservados.
-            </p>
           </div>
         </div>
-      </footer>
-    </main>
+
+        <!-- Newsletter -->
+        <div class="mt-16 border-t border-white/10 pt-8 sm:mt-20 lg:mt-24 lg:flex lg:items-center lg:justify-between">
+          <div>
+            <h3 class="text-sm font-semibold text-white">Suscríbete al boletín</h3>
+            <p class="mt-2 text-sm text-gray-300">
+              Recibe noticias, actualizaciones y contenido exclusivo en tu correo.
+            </p>
+          </div>
+          <form class="mt-6 sm:flex sm:max-w-md lg:mt-0">
+            <label for="email-address" class="sr-only">Correo electrónico</label>
+            <input
+              type="email"
+              name="email-address"
+              id="email-address"
+              autocomplete="email"
+              required
+              class="w-full rounded-md bg-white/5 px-3 py-1.5 text-white placeholder:text-gray-500 outline outline-1 outline-white/10 focus:outline-2 focus:outline-indigo-500 sm:w-56 sm:text-sm"
+              placeholder="Tu correo electrónico"
+            />
+            <div class="mt-4 sm:ml-4 sm:mt-0">
+              <button
+                type="submit"
+                class="flex w-full items-center justify-center rounded-md bg-indigo-500 px-3 py-2 text-sm font-semibold text-white shadow hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
+              >
+                Suscribirse
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Social + Copyright -->
+        <div class="mt-8 border-t border-white/10 pt-8 md:flex md:items-center md:justify-between">
+          <div class="flex gap-x-6 md:order-2">
+            <a
+              v-for="item in footerNavigation.social"
+              :key="item.name"
+              :href="item.href"
+              class="text-gray-400 hover:text-gray-300"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span class="sr-only">{{ item.name }}</span>
+              <component :is="item.icon" class="size-6" aria-hidden="true" />
+            </a>
+          </div>
+          <p class="mt-8 text-sm text-gray-400 md:order-1 md:mt-0">
+            &copy; 2024 SGX Chile. Todos los derechos reservados.
+          </p>
+        </div>
+      </div>
+    </footer>
   </div>
 </template>
 
@@ -348,10 +484,11 @@ import { ref, defineComponent, h } from 'vue'
 import { Head } from '@inertiajs/vue3'
 import { Dialog, DialogPanel } from '@headlessui/vue'
 import { Bars3Icon, XMarkIcon } from '@heroicons/vue/24/outline'
+import { CloudArrowUpIcon, LockClosedIcon, ServerIcon } from '@heroicons/vue/20/solid'
 
 const mobileMenuOpen = ref(false)
 
-// Se elimina el item "Inicio" y se actualiza la navegación.
+// Navegación principal
 const navigation = [
   { name: 'Sobre SGX', href: '#sobre' },
   { name: 'Electromovilidad', href: '#Electromovilidad' },
@@ -362,6 +499,7 @@ const navigation = [
   { name: 'Contacto', href: '#contacto' }
 ]
 
+// Footer Social Links
 const footerNavigation = {
   social: [
     {
