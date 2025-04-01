@@ -63,38 +63,58 @@
 
     <main>
       <!-- Hero -->
-      <section id="inicio" class="relative isolate overflow-hidden bg-gray-900 pb-28 pt-28 sm:pb-40">
-        <!-- Imagen de fondo: se utiliza /img/hero.png (puedes actualizarla si es necesario) -->
-        <img src="/img/hero.png" alt="Bus <span class='text-red-500'>ANKAI</span> en carretera" class="absolute inset-0 -z-10 size-full object-cover opacity-50 rounded-b-3xl" />
-        <div class="mx-auto max-w-7xl px-6 lg:px-8 text-center">
-          <h1 class="text-5xl font-bold tracking-tight text-white sm:text-6xl leading-tight">
-            Representantes Oficiales de <span class="text-red-500">ANKAI</span> en Chile
-          </h1>
-          <p class="mt-6 text-lg font-bold leading-8 text-white">
-            Impulsamos una nueva era en el transporte público inteligente con un sistema de telemetría de clase mundial.
-          </p>
-          <div class="mt-10 flex justify-center gap-x-6">
-            <a href="#contacto" class="rounded-md bg-indigo-500 px-6 py-3 text-sm font-semibold text-white shadow hover:bg-indigo-400 focus:outline-none">
-              Contáctanos
-            </a>
-            <a href="#Electromovilidad" class="text-sm font-semibold text-white hover:underline">
-              Conoce la Electromovilidad <span aria-hidden="true">→</span>
-            </a>
-          </div>
-        </div>
-      </section>
+<section id="inicio" class="relative isolate overflow-hidden bg-gray-900 pb-28 pt-28 sm:pb-40">
+  <!-- Imagen de fondo: se utiliza /img/hero.png (puedes actualizarla si es necesario) -->
+  <img src="/img/hero.png" alt="Bus con ANKAI en carretera" class="absolute inset-0 -z-10 size-full object-cover opacity-50 rounded-b-3xl" />
+  <div class="mx-auto max-w-7xl px-6 lg:px-8 text-center">
+    <h1 class="text-5xl font-bold tracking-tight text-white sm:text-6xl leading-tight">
+  Representantes Oficiales de 
+  <img 
+    src="/img/ankai.png" 
+    alt="ANKAI" 
+    class="inline-block align-middle w-64 h-auto mx-0" 
+  />
+  en Chile
+</h1>
+    <p class="mt-6 text-lg font-bold leading-8 text-white">
+      Impulsamos una nueva era en el transporte público inteligente con un sistema de telemetría de clase mundial.
+    </p>
+    <div class="mt-10 flex justify-center gap-x-6">
+      <a href="#contacto" class="rounded-md bg-indigo-500 px-6 py-3 text-sm font-semibold text-white shadow hover:bg-indigo-400 focus:outline-none">
+        Contáctanos
+      </a>
+      <a href="#Electromovilidad" class="text-sm font-semibold text-white hover:underline">
+        Conoce la Electromovilidad <span aria-hidden="true">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
 
       <!-- Sección: Sobre SGX -->
-      <section id="sobre" class="bg-white py-24 sm:py-32">
-        <div class="mx-auto max-w-5xl px-6 text-center">
-          <h2 class="text-3xl font-bold text-gray-900">
-            Sobre S<span class="text-blue-500">G</span><span class="text-green-500">X</span>
-          </h2>
-          <p class="mt-4 text-lg text-gray-700">
-            SGX es una empresa chilena que representa oficialmente a <span class="text-red-500">ANKAI</span>, líder mundial en soluciones de transporte. Nos especializamos en integrar tecnología de telemetría, conectividad vehicular y plataformas de análisis para una movilidad más eficiente y segura.
-          </p>
-        </div>
-      </section>
+<section id="sobre" class="bg-white py-24 sm:py-32">
+  <div class="mx-auto max-w-5xl px-6 text-center">
+    <!-- Título con la palabra “Sobre” + imagen “sgx.png” -->
+    <h2 class="text-3xl font-bold text-gray-900">
+      Sobre 
+      <img 
+        src="/img/sgx.png" 
+        alt="SGX" 
+        class="inline-block align-middle w-32 h-auto mx-0"
+      />
+    </h2>
+    
+    <!-- Texto descriptivo -->
+    <p class="mt-4 text-lg text-gray-700">
+      SGX es una empresa chilena que representa oficialmente a 
+      <span class="text-red-500">ANKAI</span>, líder mundial en soluciones de transporte.
+      Nos especializamos en integrar tecnología de telemetría, conectividad vehicular
+      y plataformas de análisis para una movilidad más eficiente y segura.
+    </p>
+  </div>
+</section>
+
+
 
       <!-- Sección: Electromovilidad (antes "Estrategia") -->
       <section id="Electromovilidad" class="bg-gray-50 py-24 sm:py-32">
