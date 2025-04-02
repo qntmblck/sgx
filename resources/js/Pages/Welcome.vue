@@ -10,7 +10,7 @@
         <div class="flex lg:flex-1">
           <a href="#inicio" class="-m-1.5 p-1.5">
             <span class="sr-only">SGX</span>
-            <img class="h-12 w-auto" src="/img/logo.png" alt="SGX Logo" />
+            <img class="h-12 w-auto" src="/img/sgx.png" alt="SGX Logo" />
           </a>
         </div>
         <div class="flex lg:hidden">
@@ -279,7 +279,7 @@
         <p class="flex-none text-3xl font-bold tracking-tight text-gray-900">300+</p>
         <div class="sm:w-80 sm:shrink lg:w-auto lg:flex-none">
           <p class="text-lg font-semibold tracking-tight text-gray-900">Buses eléctricos operando</p>
-          <p class="mt-2 text-base/7 text-gray-600">Presencia activa en el transporte público y privado.</p>
+          <p class="mt-2 text-base/7 text-gray-600">Presencia activa en el transporte público y privado en el mundo.</p>
         </div>
       </div>
 
