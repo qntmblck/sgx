@@ -10,7 +10,7 @@
         <div class="flex lg:flex-1">
           <a href="#inicio" class="-m-1.5 p-1.5">
             <span class="sr-only">SGX</span>
-            <img class="h-12 w-auto" src="/img/logo.png" alt="SGX Logo" />
+            <img class="h-12 w-auto" src="/img/sgx.png" alt="SGX Logo" />
           </a>
         </div>
         <div class="flex lg:hidden">
