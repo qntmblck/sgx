@@ -10,7 +10,7 @@
         <div class="flex lg:flex-1">
           <a href="#inicio" class="-m-1.5 p-1.5">
             <span class="sr-only">SGX</span>
-            <img class="h-12 w-auto" src="/img/sgx.png" alt="SGX Logo" />
+            <img class="h-12 w-auto" src="/img/logo.png" alt="SGX Logo" />
           </a>
         </div>
         <div class="flex lg:hidden">
@@ -107,37 +107,35 @@
       </section>
 
       <!-- Sección: Sobre SGX -->
-      <section id="sobre" class="bg-white py-24 sm:py-32">
-        <div class="mx-auto max-w-5xl px-6 text-center">
-          <h2 class="text-3xl font-bold text-gray-900">
-            Sobre
-            <img
-              src="/img/sgx.png"
-              alt="SGX"
-              class="inline-block align-middle w-32 h-auto mx-0"
-            />
-          </h2>
-          <p class="mt-4 text-lg text-gray-700">
-            SGX es una empresa chilena que representa oficialmente a
-            <span class="text-red-500 font-bold">ANKAI</span>, líder mundial en soluciones de transporte.
-            Nos especializamos en integrar tecnología de telemetría, conectividad vehicular y plataformas de análisis para una movilidad más eficiente y segura.
-          </p>
-        </div>
-      </section>
+<section id="sobre" class="bg-white py-24 sm:py-32">
+  <div class="mx-auto max-w-5xl px-6 text-center">
+    <h2 class="text-3xl font-bold text-gray-900">
+      Sobre
+      <img src="/img/sgx.png" alt="SGX" class="inline-block align-middle w-32 h-auto mx-0" />
+    </h2>
+    <p class="mt-4 text-lg text-gray-700">
+      SGX es una empresa chilena líder en movilidad sustentable y representante oficial de
+      <span class="text-red-500 font-bold">ANKAI</span>, un fabricante global que produce más de <strong>15,000 autobuses</strong> al año y tiene presencia en casi <strong>100 países</strong>. Con amplia experiencia en el mercado local, SGX integra tecnología de telemetría, conectividad vehicular y análisis avanzado para optimizar la operación y seguridad de flotas.
+    </p>
+  </div>
+</section>
 
       <!-- Sección: Electromovilidad -->
-      <section id="Electromovilidad" class="bg-gray-50 py-24 sm:py-32">
-        <div class="mx-auto max-w-5xl px-6 text-center">
-          <h2 class="text-3xl font-bold text-gray-900">Electromovilidad</h2>
-          <p class="mt-4 text-lg text-gray-700">
-            Chile lidera la adopción de buses eléctricos en Latinoamérica, impulsando un transporte público más limpio y eficiente. Con más de
-            <strong>2.480 buses eléctricos</strong> en operación y una meta nacional de descarbonizar el 100% del transporte público para 2035, la electromovilidad está transformando ciudades como Santiago, Antofagasta y La Serena.
-          </p>
-          <p class="mt-4 text-lg text-gray-700">
-            SGX se enfoca en la adopción de productos y tecnologías de transporte sustentable, ofreciendo soluciones de monitoreo y gestión de flota que optimizan rutas, reducen costos operativos y garantizan el cumplimiento de las normativas chilenas.
-          </p>
-        </div>
-      </section>
+<section id="Electromovilidad" class="bg-gray-50 py-24 sm:py-32">
+  <div class="mx-auto max-w-5xl px-6 text-center">
+    <h2 class="text-3xl font-bold text-gray-900">Electromovilidad</h2>
+    <p class="mt-4 text-lg text-gray-700">
+      Chile es pionero en la adopción de autobuses eléctricos en Latinoamérica, con más de 
+      <strong>2.480 unidades</strong> en operación y un ambicioso objetivo de descarbonizar el 100% del transporte público para 2035. Este cambio está transformando ciudades como Santiago, Antofagasta y La Serena.
+    </p>
+    <p class="mt-4 text-lg text-gray-700">
+      Gracias a la tecnología de ANKAI, reconocida mundialmente por su alta autonomía y eficiencia energética, SGX impulsa soluciones de movilidad sustentable que reducen costos operativos, mejoran la calidad del servicio y cumplen con las normativas ambientales más exigentes.
+    </p>
+  </div>
+</section>
+
+
+
 
       <!-- Sección: Productos ANKAI -->
       <section id="productos" class="bg-white py-24 sm:py-32">
@@ -264,29 +262,48 @@
         </div>
       </section>
 
-      <!-- Sección: Clientes y Colaboradores -->
-      <section id="clientes" class="bg-white py-24 sm:py-32">
-        <div class="mx-auto max-w-5xl px-6 text-center">
-          <h2 class="text-3xl font-bold text-gray-900">Clientes y Colaboradores</h2>
-          <p class="mt-4 text-lg text-gray-700">
-            La experiencia de SGX y ANKAI se respalda en casos de éxito tanto en el sector público como privado:
-          </p>
-          <ul class="mt-6 text-lg text-gray-700 list-disc list-inside">
-            <li>
-              <strong>Transporte Público:</strong> Operadores en Santiago y regiones han integrado flotas de buses eléctricos, mejorando la calidad del servicio y reduciendo costos operativos.
-            </li>
-            <li>
-              <strong>Transporte Privado:</strong> Empresas de minería y construcción utilizan nuestros midibuses eléctricos para el traslado seguro de personal en condiciones exigentes.
-            </li>
-            <li>
-              <strong>Gobiernos Locales:</strong> Municipios innovadores están incorporando buses eléctricos en sus sistemas de transporte, reduciendo emisiones y contaminación.
-            </li>
-          </ul>
-          <p class="mt-4 text-lg text-gray-700">
-            Trabajamos de la mano con entidades financieras y socios técnicos para ofrecer soluciones integrales. ¿Quiere conocer más casos de éxito? ¡Contáctenos!
-          </p>
+      <!-- Sección: Impacto SGX y ANKAI -->
+<section id="clientes" class="bg-white py-24 sm:py-32">
+  <div class="mx-auto max-w-7xl px-6 lg:px-8">
+    <div class="mx-auto max-w-2xl lg:mx-0">
+      <h2 class="text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
+        El impacto de SGX y ANKAI
+      </h2>
+      <p class="mt-6 text-base/7 text-gray-600">
+        Más de 300 buses eléctricos en operación, cientos de miles de pasajeros transportados y decenas de empresas que confían en nuestra tecnología de vanguardia. Estos son los resultados concretos que respaldan nuestro compromiso con la movilidad sustentable.
+      </p>
+    </div>
+    <div class="mx-auto mt-16 flex max-w-2xl flex-col gap-8 lg:mx-0 lg:mt-20 lg:max-w-none lg:flex-row lg:items-end">
+      <!-- Tarjeta 1 -->
+      <div class="flex flex-col-reverse justify-between gap-x-16 gap-y-8 rounded-2xl bg-gray-50 p-8 sm:w-3/4 sm:max-w-md sm:flex-row-reverse sm:items-end lg:w-72 lg:max-w-none lg:flex-none lg:flex-col lg:items-start">
+        <p class="flex-none text-3xl font-bold tracking-tight text-gray-900">300+</p>
+        <div class="sm:w-80 sm:shrink lg:w-auto lg:flex-none">
+          <p class="text-lg font-semibold tracking-tight text-gray-900">Buses eléctricos operando</p>
+          <p class="mt-2 text-base/7 text-gray-600">Presencia activa en el transporte público y privado.</p>
         </div>
-      </section>
+      </div>
+
+      <!-- Tarjeta 2 -->
+      <div class="flex flex-col-reverse justify-between gap-x-16 gap-y-8 rounded-2xl bg-gray-900 p-8 sm:flex-row-reverse sm:items-end lg:w-full lg:max-w-sm lg:flex-auto lg:flex-col lg:items-start lg:gap-y-44">
+        <p class="flex-none text-3xl font-bold tracking-tight text-white">20+</p>
+        <div class="sm:w-80 sm:shrink lg:w-auto lg:flex-none">
+          <p class="text-lg font-semibold tracking-tight text-white">Empresas aliadas</p>
+          <p class="mt-2 text-base/7 text-gray-400">Organizaciones de transporte que confían en nuestras soluciones.</p>
+        </div>
+      </div>
+
+      <!-- Tarjeta 3 -->
+      <div class="flex flex-col-reverse justify-between gap-x-16 gap-y-8 rounded-2xl bg-indigo-600 p-8 sm:w-11/12 sm:max-w-xl sm:flex-row-reverse sm:items-end lg:w-full lg:max-w-none lg:flex-auto lg:flex-col lg:items-start lg:gap-y-28">
+        <p class="flex-none text-3xl font-bold tracking-tight text-white">3.2M+</p>
+        <div class="sm:w-80 sm:shrink lg:w-auto lg:flex-none">
+          <p class="text-lg font-semibold tracking-tight text-white">Pasajeros por año</p>
+          <p class="mt-2 text-base/7 text-indigo-200">Movilizados con tecnología limpia, segura y eficiente.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 
       <!-- Sección: Otros Servicios -->
       <section id="otros-servicios" class="bg-gray-50 py-24 sm:py-32">
