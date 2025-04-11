@@ -144,7 +144,7 @@
             Productos <span class="text-red-500 font-bold">ANKAI</span>
           </h2>
           <p class="mt-4 text-lg text-gray-700">
-            SGX es representante oficial de ANKAI, una de las marcass líderes en autobuses eléctricos a nivel mundial. Descubra nuestra gama de vehículos diseñados para el transporte público y privado:
+            SGX es representante oficial de ANKAI, una de las marcas líderes en autobuses eléctricos a nivel mundial. Descubra nuestra gama de vehículos diseñados para el transporte público y privado:
           </p>
           <ul class="mt-6 text-lg text-gray-700 list-disc list-inside">
             <li>
