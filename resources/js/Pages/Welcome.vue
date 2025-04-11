@@ -125,7 +125,7 @@
   <div class="mx-auto max-w-5xl px-6 text-center">
     <h2 class="text-3xl font-bold text-gray-900">Electromovilidad</h2>
     <p class="mt-4 text-lg text-gray-700">
-      Chile es pionero en la adopción de autobuses eléctricos en Latinoamérica, con más de 
+      Chile es pionero en la adopción de autobuses eléctricos en Latinoamérica, con más de
       <strong>2.480 unidades</strong> en operación y un ambicioso objetivo de descarbonizar el 100% del transporte público para 2035. Este cambio está transformando ciudades como Santiago, Antofagasta y La Serena.
     </p>
     <p class="mt-4 text-lg text-gray-700">
@@ -144,7 +144,7 @@
             Productos <span class="text-red-500 font-bold">ANKAI</span>
           </h2>
           <p class="mt-4 text-lg text-gray-700">
-            SGX es representante oficial de ANKAI, una de las marcas líderes en autobuses eléctricos a nivel mundial. Descubra nuestra gama de vehículos diseñados para el transporte público y privado:
+            SGX es representante oficial de ANKAI, una de las marcass líderes en autobuses eléctricos a nivel mundial. Descubra nuestra gama de vehículos diseñados para el transporte público y privado:
           </p>
           <ul class="mt-6 text-lg text-gray-700 list-disc list-inside">
             <li>
