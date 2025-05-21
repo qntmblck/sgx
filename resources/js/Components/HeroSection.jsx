@@ -2,15 +2,16 @@ export default function HeroSection() {
   return (
     <section
       id="inicio"
-      className="relative text-white px-6 py-24 sm:py-32 bg-cover bg-no-repeat bg-center sm:bg-[center_35%] min-h-screen"
+      className="relative text-white px-6 py-24 sm:py-32 bg-cover bg-no-repeat bg-center sm:bg-[center_35%] sm:bg-fixed"
       style={{
         backgroundImage: 'url(/img/hero.png?v=1)',
-        backgroundAttachment: 'scroll',
+        backgroundPosition: 'center 50%',
+        backgroundSize: '150%',
       }}
     >
       <div className="absolute inset-0 bg-gradient-to-r from-[#00684a]/80 to-[#00684a]/60 sm:from-[#00684a]/60 sm:to-[#00684a]/40" />
-      <div className="relative max-w-7xl mx-auto text-left flex flex-col justify-center h-full">
-        <div className="max-w-4xl pt-10 sm:pt-0">
+      <div className="relative max-w-7xl mx-auto text-left">
+        <div className="max-w-4xl">
           <h1 className="text-3xl sm:text-5xl font-extrabold leading-tight drop-shadow mb-4">
             Representantes Autorizados
           </h1>
@@ -35,4 +36,3 @@ export default function HeroSection() {
     </section>
   )
 }
-
