@@ -14,7 +14,7 @@ import Footer from '@/Components/Footer'
 export default function Welcome() {
   return (
     <>
-      <Head title="SGX · Representantes Oficiales de ANKAI en Chile" />
+      <Head title="SGX · Representantes Autorizados de ANKAI en Chile" />
       <div className="bg-white text-gray-900 scroll-smooth">
         <Header />
         <main>
