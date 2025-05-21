@@ -1,29 +1,45 @@
+import { useState } from 'react'
 import Header from '@/Components/Header'
 import Footer from '@/Components/Footer'
-import Categorias from './Categorias.jsx';
-import ProductoCard from './ProductoCard.jsx';
-import BeneficiosTecnologicos from './BeneficiosTecnologicos.jsx';
-import Galeria from './Galeria.jsx';
+import Categorias from './Categorias'
+import ProductoCard from './ProductoCard'
+import BeneficiosTecnologicos from './BeneficiosTecnologicos'
+import Galeria from './Galeria'
 
 export default function Productos() {
+  const [categoriaSeleccionada, setCategoriaSeleccionada] = useState('Todos')
+
   return (
     <>
       <Header />
 
-      {/* Imagen de portada */}
-      <div className="relative h-[300px] bg-cover bg-center" style={{ backgroundImage: "url('/img/productos.jpg')" }}>
+      {/* Portada con título */}
+      <div
+        className="relative h-[300px] bg-cover bg-center"
+        style={{ backgroundImage: "url('/img/productos.jpg')" }}
+      >
         <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
-          <h1 className="text-4xl sm:text-5xl text-white font-bold">Productos</h1>
+          <div className="text-center px-4">
+            <h1 className="text-4xl sm:text-5xl text-white font-extrabold mb-4 drop-shadow">
+              Portafolio de Buses ANKAI
+            </h1>
+            <p className="text-white text-base sm:text-lg max-w-2xl mx-auto drop-shadow-sm">
+              Modelos eléctricos, urbanos, interurbanos y de alta capacidad adaptados a las necesidades del transporte moderno en Chile y Latinoamérica.
+            </p>
+          </div>
         </div>
       </div>
 
-      <main className="pt-12">
-        <div className="max-w-7xl mx-auto px-4">
-          <Categorias />
-          <ProductoCard />
-          <BeneficiosTecnologicos />
-          <Galeria />
-        </div>
+      <main className="pt-12 max-w-7xl mx-auto px-4">
+        <Categorias
+          categoriaSeleccionada={categoriaSeleccionada}
+          setCategoriaSeleccionada={setCategoriaSeleccionada}
+        />
+        <ProductoCard categoriaSeleccionada={categoriaSeleccionada} />
+
+        {/* Secciones adicionales */}
+        <BeneficiosTecnologicos />
+        <Galeria />
       </main>
 
       <Footer />
