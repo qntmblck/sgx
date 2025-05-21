@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react'
-import { Link } from '@inertiajs/react'
+import { Link, usePage } from '@inertiajs/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 
 const navItems = [
-  { name: 'Inicio', href: '/' }, // ← Cambiado a ruta raíz
-  { name: 'Nosotros', href: '#sobre' },
-  { name: 'Electromovilidad', href: '#electromovilidad' },
+  { name: 'Inicio', href: '/' },
+  { name: 'Nosotros', href: '/#sobre' },
+  { name: 'Electromovilidad', href: '/#electromovilidad' },
   { name: 'Productos', href: '/productos' },
   { name: 'Servicios', href: '/servicios' },
   { name: 'Contacto', href: '/contacto' },
@@ -15,38 +15,39 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const [activeSection, setActiveSection] = useState('')
+  const currentPath = typeof window !== 'undefined' ? window.location.pathname : ''
+  const page = usePage()
 
   useEffect(() => {
-  const handleScroll = () => setScrolled(window.scrollY > 50)
-  window.addEventListener('scroll', handleScroll)
+    const handleScroll = () => setScrolled(window.scrollY > 50)
+    window.addEventListener('scroll', handleScroll)
 
-  const sectionIds = ['inicio', 'sobre', 'electromovilidad']
-  const observers = []
+    const sectionIds = ['inicio', 'sobre', 'electromovilidad']
+    const observers = []
 
-  sectionIds.forEach((id) => {
-    const el = document.getElementById(id)
-    if (el) {
-      const observer = new IntersectionObserver(
-        ([entry]) => {
-          if (entry.isIntersecting) {
-            setActiveSection(`#${id}`)
-          }
-        },
-        { threshold: 0.7 } // ← más exigente
-      )
-      observer.observe(el)
-      observers.push(observer)
+    if (currentPath === '/') {
+      sectionIds.forEach((id) => {
+        const el = document.getElementById(id)
+        if (el) {
+          const observer = new IntersectionObserver(
+            ([entry]) => {
+              if (entry.isIntersecting) {
+                setActiveSection(`#${id}`)
+              }
+            },
+            { threshold: 0.7 }
+          )
+          observer.observe(el)
+          observers.push(observer)
+        }
+      })
     }
-  })
 
-  return () => {
-    window.removeEventListener('scroll', handleScroll)
-    observers.forEach((observer) => observer.disconnect())
-  }
-}, [])
-
-
-  const currentPath = typeof window !== 'undefined' ? window.location.pathname : ''
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+      observers.forEach((observer) => observer.disconnect())
+    }
+  }, [currentPath])
 
   const bgColor = scrolled ? 'bg-white shadow-md' : 'bg-transparent'
   const navTextColor = scrolled ? 'text-neutral-800' : 'text-white'
@@ -54,24 +55,17 @@ export default function Header() {
   const mobileTextColor = scrolled ? 'text-neutral-800' : 'text-white'
 
   const isActive = (href) => {
-  if (href.startsWith('#')) {
-    return href === activeSection
+    if (currentPath === '/') {
+      // Para anchors internos
+      if (href.startsWith('/#')) return href === `/${activeSection}`
+      if (href === '/') return activeSection === '#inicio' || activeSection === ''
+    }
+    return currentPath === href
   }
-
-  // Solo marcamos "/" (Inicio) si NO estamos en otra sección de ancla
-  if (href === '/') {
-    return activeSection === '#inicio' || activeSection === ''
-  }
-
-  return currentPath === href
-}
-
-
 
   return (
     <header className={`fixed top-0 w-full z-50 transition duration-300 ${bgColor}`}>
       <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-        {/* ✅ Logo redirige al Welcome.jsx */}
         <Link href="/" className="flex items-center space-x-2">
           <img src="/img/sgx.png" alt="SGX Logo" className="h-6 sm:h-8 w-auto transition-all" />
         </Link>
@@ -79,20 +73,7 @@ export default function Header() {
         <nav className={`hidden md:flex space-x-2 text-sm font-medium ${navTextColor}`}>
           {navItems.map((item) => {
             const active = isActive(item.href)
-            const isAnchor = item.href.startsWith('#')
-            return isAnchor ? (
-              <a
-                key={item.name}
-                href={item.href}
-                className={`px-4 py-2 rounded-md transition font-semibold ${
-                  active
-                    ? 'bg-[#149e60] text-white shadow-sm'
-                    : 'hover:text-[#149e60] text-inherit'
-                }`}
-              >
-                {item.name}
-              </a>
-            ) : (
+            return (
               <Link
                 key={item.name}
                 href={item.href}
@@ -112,11 +93,7 @@ export default function Header() {
           className={`md:hidden ${navTextColor}`}
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         >
-          {mobileMenuOpen ? (
-            <XMarkIcon className="h-6 w-6" />
-          ) : (
-            <Bars3Icon className="h-6 w-6" />
-          )}
+          {mobileMenuOpen ? <XMarkIcon className="h-6 w-6" /> : <Bars3Icon className="h-6 w-6" />}
         </button>
       </div>
 
@@ -125,21 +102,7 @@ export default function Header() {
           <nav className={`flex flex-col items-center px-4 py-6 gap-4 text-base font-semibold ${mobileTextColor}`}>
             {navItems.map((item) => {
               const active = isActive(item.href)
-              const isAnchor = item.href.startsWith('#')
-              return isAnchor ? (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className={`px-4 py-2 rounded-md w-full text-center transition ${
-                    active
-                      ? 'bg-[#149e60] text-white shadow-sm'
-                      : 'hover:text-[#149e60] text-inherit'
-                  }`}
-                >
-                  {item.name}
-                </a>
-              ) : (
+              return (
                 <Link
                   key={item.name}
                   href={item.href}
