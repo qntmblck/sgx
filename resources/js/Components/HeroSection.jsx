@@ -5,8 +5,7 @@ export default function HeroSection() {
       className="relative text-white px-6 py-24 sm:py-32 bg-cover bg-no-repeat bg-center sm:bg-[center_35%] sm:bg-fixed"
       style={{
         backgroundImage: 'url(/img/hero.png?v=1)',
-        backgroundPosition: 'center 50%',
-        backgroundSize: '150%',
+        backgroundAttachment: 'scroll', // móvil seguro
       }}
     >
       <div className="absolute inset-0 bg-gradient-to-r from-[#00684a]/80 to-[#00684a]/60 sm:from-[#00684a]/60 sm:to-[#00684a]/40" />
