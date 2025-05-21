@@ -1,8 +1,11 @@
-export default function ProductoCard() {
+export default function ProductoCard({ nombre, detalle, imagen }) {
   return (
-    <section className="py-12">
-      <h2 className="text-xl font-bold mb-4">ProductoCard</h2>
-      <p className="text-gray-600">Contenido provisorio de ProductoCard...</p>
-    </section>
+    <div className="bg-white rounded-lg shadow hover:shadow-xl transition duration-300 transform hover:scale-105">
+      <img src={imagen} alt={nombre} className="w-full h-48 object-cover rounded-t-lg" />
+      <div className="p-4 text-left">
+        <h3 className="text-lg font-semibold text-gray-800">{nombre}</h3>
+        <p className="text-sm text-gray-600">{detalle}</p>
+      </div>
+    </div>
   )
 }

@@ -1,32 +1,29 @@
 export default function Sobre() {
   return (
-    <section id="sobre" className="py-20 px-4 bg-white">
-      <div className="max-w-6xl mx-auto text-center">
-        <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">Sobre SGX</h2>
-        <p className="text-lg text-gray-700 mb-12">
-          Representamos en Chile a ANKAI, fabricante de clase mundial en transporte sustentable. Promovemos soluciones integrales de electromovilidad alineadas con los objetivos estratégicos de eficiencia y adaptación territorial.
-        </p>
-        <div className="grid md:grid-cols-3 gap-6 text-left text-gray-900">
-          <div className="bg-gradient-to-br from-lime-100 via-white to-lime-50 p-6 rounded-lg shadow hover:shadow-lg transition">
-            <h3 className="font-semibold text-lime-800 mb-2">Misión</h3>
-            <p>
-              Impulsar modelos de transporte sustentable que integren tecnología, agilidad, y responsabilidad pública.
-            </p>
+    <section id="sobre" className="relative bg-white py-24 px-6 overflow-hidden">
+      <div className="absolute inset-y-0 right-0 w-1/2 bg-gradient-to-br from-lime-50 to-white opacity-30 rounded-l-full blur-2xl" />
+      <div className="max-w-7xl mx-auto relative z-10 grid md:grid-cols-2 items-center gap-12">
+        <div className="space-y-6">
+          <h2 className="text-4xl font-bold text-gray-900 animate-fade-up">Sobre SGX</h2>
+          <p className="text-lg text-gray-700 leading-relaxed animate-fade-up delay-100">
+            Representamos oficialmente a ANKAI en Chile, promoviendo soluciones de electromovilidad con visión pública y enfoque técnico adaptado al territorio.
+          </p>
+        </div>
+        <div className="grid gap-6 animate-fade-up delay-200">
+          <div className="bg-white p-6 rounded-lg border-l-4 border-lime-500 shadow hover:shadow-xl transition">
+            <h3 className="font-semibold text-lime-700 mb-1">Misión</h3>
+            <p className="text-sm text-gray-600">Impulsar transporte limpio, eficiente y confiable con compromiso público.</p>
           </div>
-          <div className="bg-gradient-to-br from-lime-100 via-white to-lime-50 p-6 rounded-lg shadow hover:shadow-lg transition">
-            <h3 className="font-semibold text-lime-800 mb-2">Visión</h3>
-            <p>
-              Ser líderes en electromovilidad en Chile, respaldando decisiones estratégicas con soluciones confiables.
-            </p>
+          <div className="bg-white p-6 rounded-lg border-l-4 border-lime-500 shadow hover:shadow-xl transition">
+            <h3 className="font-semibold text-lime-700 mb-1">Visión</h3>
+            <p className="text-sm text-gray-600">Ser referentes estratégicos en movilidad eléctrica nacional.</p>
           </div>
-          <div className="bg-gradient-to-br from-lime-100 via-white to-lime-50 p-6 rounded-lg shadow hover:shadow-lg transition">
-            <h3 className="font-semibold text-lime-800 mb-2">Valores</h3>
-            <ul className="list-disc pl-5 space-y-1 text-sm">
-              <li>Responsabilidad pública</li>
-              <li>Transparencia institucional</li>
+          <div className="bg-white p-6 rounded-lg border-l-4 border-lime-500 shadow hover:shadow-xl transition">
+            <h3 className="font-semibold text-lime-700 mb-1">Valores</h3>
+            <ul className="text-sm text-gray-600 list-disc pl-4">
+              <li>Transparencia y responsabilidad</li>
+              <li>Agilidad institucional</li>
               <li>Colaboración estratégica</li>
-              <li>Agilidad operativa</li>
-              <li>Adaptabilidad organizacional</li>
             </ul>
           </div>
         </div>
