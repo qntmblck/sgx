@@ -1,28 +1,25 @@
 export default function ReconocimientoGlobal() {
   return (
-    <section id="reconocimiento" className="py-20 bg-gray-50 px-4">
-      <div className="max-w-6xl mx-auto text-center">
-        <h2 className="text-3xl sm:text-4xl font-bold text-blue-900 mb-10">Presencia Global y Confianza Institucional</h2>
+    <section id="reconocimiento" className="py-20 px-4 bg-white text-center">
+      <div className="max-w-6xl mx-auto">
+        <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-8">Presencia Global y Confianza</h2>
         <p className="text-lg text-gray-700 max-w-3xl mx-auto mb-12">
-          ANKAI ha exportado más de 17.000 unidades a más de 100 países, consolidándose como una marca de clase mundial. Su reconocimiento por organismos internacionales y gobiernos refuerza su posición como socio confiable en transporte sustentable.
+          ANKAI ha consolidado su posición como proveedor de confianza para operaciones urbanas, turísticas y de largo recorrido en Asia, Europa, África y América Latina.
         </p>
-        <div className="grid md:grid-cols-3 gap-8 text-left text-gray-800">
-          <div className="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
-            <h3 className="text-xl font-semibold text-blue-800 mb-2">Confianza Internacional</h3>
-            <p>ANKAI ha sido proveedor oficial de vehículos para la ONU, el Ejército Chino y eventos internacionales como los Juegos Olímpicos de Beijing y Londres.</p>
+        <div className="grid md:grid-cols-3 gap-8 text-left">
+          <div className="bg-gradient-to-br from-white via-lime-50 to-white p-6 rounded-lg shadow hover:shadow-lg transition">
+            <h3 className="text-lg font-bold text-lime-700 mb-2">México</h3>
+            <p>800 buses a GNC para Monterrey en 2025, con infraestructura inteligente integrada.</p>
           </div>
-          <div className="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
-            <h3 className="text-xl font-semibold text-blue-800 mb-2">Presencia en América Latina</h3>
-            <p>Con operaciones en México, Chile, Perú y Colombia, ANKAI ha iniciado una expansión sostenida en la región, adaptando sus modelos a las necesidades locales.</p>
+          <div className="bg-gradient-to-br from-white via-lime-50 to-white p-6 rounded-lg shadow hover:shadow-lg transition">
+            <h3 className="text-lg font-bold text-lime-700 mb-2">Chile</h3>
+            <p>Entrega de unidades F7 para flotas ejecutivas, diseñadas para el entorno geográfico nacional.</p>
           </div>
-          <div className="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
-            <h3 className="text-xl font-semibold text-blue-800 mb-2">Certificaciones Internacionales</h3>
-            <p>Cumple con los estándares de calidad y seguridad más exigentes: ISO 9001, CCC, E-Mark, GOST, DOT (EE.UU.), GSO (Golfo) y más.</p>
+          <div className="bg-gradient-to-br from-white via-lime-50 to-white p-6 rounded-lg shadow hover:shadow-lg transition">
+            <h3 className="text-lg font-bold text-lime-700 mb-2">Uruguay</h3>
+            <p>Buses eléctricos de piso bajo operando desde 2019 en Montevideo con excelentes resultados.</p>
           </div>
         </div>
-        <p className="mt-12 text-md text-gray-600 max-w-4xl mx-auto">
-          Con una trayectoria de más de 50 años en ingeniería automotriz, alianzas con SETRA y Daimler, y soluciones para electromovilidad, ANKAI se proyecta como el nuevo actor confiable para la transformación del transporte público chileno.
-        </p>
       </div>
     </section>
   )
