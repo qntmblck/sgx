@@ -3,7 +3,7 @@ export default function HeroSection() {
     <section
       id="inicio"
       className="relative text-white py-32 px-6 bg-[center_35%] bg-cover bg-fixed"
-      style={{ backgroundImage: 'url(/img/hero.png)' }}
+      style={{ backgroundImage: 'url(/img/hero.png?=v1)' }}
     >
       <div className="absolute inset-0 bg-gradient-to-r from-[#00684a]/60 to-[#00684a]/40 backdrop-brightness-90" />
       <div className="relative max-w-7xl mx-auto text-left">
