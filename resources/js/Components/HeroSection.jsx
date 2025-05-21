@@ -2,21 +2,21 @@ export default function HeroSection() {
   return (
     <section
       id="inicio"
-      className="relative text-white py-32 px-6 bg-[center_35%] bg-cover bg-fixed"
-      style={{ backgroundImage: 'url(/img/hero.png?=v1)' }}
+      className="relative text-white px-6 py-24 sm:py-32 bg-fixed bg-cover bg-no-repeat bg-center sm:bg-[center_35%]"
+      style={{ backgroundImage: 'url(/img/hero.png?v=1)' }}
     >
-      <div className="absolute inset-0 bg-gradient-to-r from-[#00684a]/60 to-[#00684a]/40 backdrop-brightness-90" />
+      <div className="absolute inset-0 bg-gradient-to-r from-[#00684a]/70 to-[#00684a]/50 sm:from-[#00684a]/60 sm:to-[#00684a]/40 backdrop-brightness-90" />
       <div className="relative max-w-7xl mx-auto text-left">
         <div className="max-w-4xl">
-          <h1 className="text-4xl sm:text-5xl font-extrabold leading-tight drop-shadow mb-4">
+          <h1 className="text-3xl sm:text-5xl font-extrabold leading-tight drop-shadow mb-4">
             Representantes Autorizados
           </h1>
-          <div className="flex items-center flex-wrap gap-2 text-4xl sm:text-5xl font-extrabold mb-6">
+          <div className="flex items-center flex-wrap gap-2 text-3xl sm:text-5xl font-extrabold mb-6">
             <span>de</span>
-            <img src="/img/ankai.png" alt="ANKAI" className="h-12 sm:h-14 object-contain" />
+            <img src="/img/ankai.png" alt="ANKAI" className="h-10 sm:h-14 object-contain" />
             <span>en Chile</span>
           </div>
-          <p className="text-lg sm:text-xl font-semibold max-w-xl">
+          <p className="text-base sm:text-xl font-semibold max-w-xl">
             Impulsamos una nueva era en el transporte público inteligente con tecnología de clase mundial.
           </p>
         </div>
