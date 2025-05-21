@@ -3,7 +3,6 @@ import Header from '@/Components/Header'
 import HeroSection from '@/Components/HeroSection'
 import PresenciaGlobal from '@/Components/PresenciaGlobal'
 import Sobre from '@/Components/Sobre'
-import FortalezasAnkai from '@/Components/FortalezasAnkai'
 import ProductosDestacados from '@/Components/ProductosDestacados'
 import Impacto from '@/Components/Impacto'
 import CTAContacto from '@/Components/CTAContacto'
@@ -19,7 +18,6 @@ export default function Welcome() {
           <HeroSection />
           <PresenciaGlobal />
           <Sobre />
-          <FortalezasAnkai />
           <ProductosDestacados />
           <Impacto />
           <CTAContacto />
@@ -29,3 +27,4 @@ export default function Welcome() {
     </>
   )
 }
+
