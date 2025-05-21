@@ -1,14 +1,15 @@
 import { useState, useEffect } from 'react'
-import { Link, usePage } from '@inertiajs/react'
+import { Link } from '@inertiajs/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 
 const navItems = [
   { name: 'Inicio', href: '/' },
-  { name: 'Nosotros', href: '/#sobre' },
-  { name: 'Electromovilidad', href: '/#electromovilidad' },
+  { name: 'Sobre SGX', href: '#sobre' },
+  { name: 'Tecnología', href: '#fortalezas' },
+  { name: 'Impacto', href: '#impacto' },
+  { name: 'Contacto', href: '#contacto' },
   { name: 'Productos', href: '/productos' },
   { name: 'Servicios', href: '/servicios' },
-  { name: 'Contacto', href: '/contacto' },
 ]
 
 export default function Header() {
@@ -16,13 +17,12 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false)
   const [activeSection, setActiveSection] = useState('')
   const currentPath = typeof window !== 'undefined' ? window.location.pathname : ''
-  const page = usePage()
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50)
     window.addEventListener('scroll', handleScroll)
 
-    const sectionIds = ['inicio', 'sobre', 'electromovilidad']
+    const sectionIds = ['inicio', 'sobre', 'fortalezas', 'impacto', 'contacto']
     const observers = []
 
     if (currentPath === '/') {
@@ -31,11 +31,9 @@ export default function Header() {
         if (el) {
           const observer = new IntersectionObserver(
             ([entry]) => {
-              if (entry.isIntersecting) {
-                setActiveSection(`#${id}`)
-              }
+              if (entry.isIntersecting) setActiveSection(`#${id}`)
             },
-            { threshold: 0.7 }
+            { threshold: 0.6 }
           )
           observer.observe(el)
           observers.push(observer)
@@ -49,19 +47,17 @@ export default function Header() {
     }
   }, [currentPath])
 
+  const isActive = (href) => {
+    if (href.startsWith('#') && currentPath === '/') {
+      return href === activeSection
+    }
+    return currentPath === href
+  }
+
   const bgColor = scrolled ? 'bg-white shadow-md' : 'bg-transparent'
   const navTextColor = scrolled ? 'text-neutral-800' : 'text-white'
   const mobileBgColor = scrolled ? 'bg-white' : 'bg-[#0f121d]'
   const mobileTextColor = scrolled ? 'text-neutral-800' : 'text-white'
-
-  const isActive = (href) => {
-    if (currentPath === '/') {
-      // Para anchors internos
-      if (href.startsWith('/#')) return href === `/${activeSection}`
-      if (href === '/') return activeSection === '#inicio' || activeSection === ''
-    }
-    return currentPath === href
-  }
 
   return (
     <header className={`fixed top-0 w-full z-50 transition duration-300 ${bgColor}`}>
@@ -73,14 +69,23 @@ export default function Header() {
         <nav className={`hidden md:flex space-x-2 text-sm font-medium ${navTextColor}`}>
           {navItems.map((item) => {
             const active = isActive(item.href)
-            return (
+            const isAnchor = item.href.startsWith('#')
+            return isAnchor ? (
+              <a
+                key={item.name}
+                href={item.href}
+                className={`px-4 py-2 rounded-md transition font-semibold ${
+                  active ? 'bg-[#149e60] text-white shadow-sm' : 'hover:text-[#149e60] text-inherit'
+                }`}
+              >
+                {item.name}
+              </a>
+            ) : (
               <Link
                 key={item.name}
                 href={item.href}
                 className={`px-4 py-2 rounded-md transition font-semibold ${
-                  active
-                    ? 'bg-[#149e60] text-white shadow-sm'
-                    : 'hover:text-[#149e60] text-inherit'
+                  active ? 'bg-[#149e60] text-white shadow-sm' : 'hover:text-[#149e60] text-inherit'
                 }`}
               >
                 {item.name}
@@ -89,10 +94,7 @@ export default function Header() {
           })}
         </nav>
 
-        <button
-          className={`md:hidden ${navTextColor}`}
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-        >
+        <button className={`md:hidden ${navTextColor}`} onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
           {mobileMenuOpen ? <XMarkIcon className="h-6 w-6" /> : <Bars3Icon className="h-6 w-6" />}
         </button>
       </div>
@@ -102,15 +104,25 @@ export default function Header() {
           <nav className={`flex flex-col items-center px-4 py-6 gap-4 text-base font-semibold ${mobileTextColor}`}>
             {navItems.map((item) => {
               const active = isActive(item.href)
-              return (
+              const isAnchor = item.href.startsWith('#')
+              return isAnchor ? (
+                <a
+                  key={item.name}
+                  href={item.href}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className={`px-4 py-2 rounded-md w-full text-center transition ${
+                    active ? 'bg-[#149e60] text-white shadow-sm' : 'hover:text-[#149e60] text-inherit'
+                  }`}
+                >
+                  {item.name}
+                </a>
+              ) : (
                 <Link
                   key={item.name}
                   href={item.href}
                   onClick={() => setMobileMenuOpen(false)}
                   className={`px-4 py-2 rounded-md w-full text-center transition ${
-                    active
-                      ? 'bg-[#149e60] text-white shadow-sm'
-                      : 'hover:text-[#149e60] text-inherit'
+                    active ? 'bg-[#149e60] text-white shadow-sm' : 'hover:text-[#149e60] text-inherit'
                   }`}
                 >
                   {item.name}

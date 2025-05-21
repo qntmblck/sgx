@@ -66,30 +66,10 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="flex flex-col md:flex-row justify-between items-center mt-12 pb-10 border-b border-gray-200">
-          <div className="text-center md:text-left mb-6 md:mb-0">
-            <h3 className="text-sm font-semibold text-[#111827]">Suscríbete al boletín</h3>
-            <p className="text-gray-600 text-sm mt-1">Recibe noticias, actualizaciones y contenido exclusivo en tu correo.</p>
-          </div>
-          <form className="flex flex-col sm:flex-row w-full max-w-2xl">
-  <input
-    type="email"
-    placeholder="Tu correo electrónico"
-    required
-    className="w-full sm:flex-1 rounded-t-md sm:rounded-l-md sm:rounded-tr-none bg-white px-4 py-2 text-[#111827] placeholder:text-gray-400 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#00d084]"
-  />
-  <button
-    type="submit"
-    className="w-full sm:w-auto rounded-b-md sm:rounded-r-md sm:rounded-bl-none bg-[#00d084] px-5 py-2 text-white font-semibold hover:bg-[#00b373] transition"
-  >
-    Suscribirse
-  </button>
-</form>
-
-        </div>
-
         <div className="mt-8 flex flex-col md:flex-row items-center justify-between pt-6">
-          <p className="text-xs text-gray-500 text-center md:text-left">© 2024 SGX Chile. Todos los derechos reservados.</p>
+          <p className="text-xs text-gray-500 text-center md:text-left">
+            © 2024 SGX Chile. Todos los derechos reservados.
+          </p>
           <div className="flex space-x-6 mt-4 md:mt-0 text-[#111827] text-lg">
             {navigation.social.map(item => (
               <a key={item.name} href={item.href} aria-label={item.name} className="hover:text-[#00d084]">
