@@ -7,7 +7,7 @@ const navItems = [
   { name: 'Sobre SGX', href: '#sobre' },
   { name: 'Tecnología', href: '#fortalezas' },
   { name: 'Impacto', href: '#impacto' },
-  { name: 'Contacto', href: '#contacto' },
+  { name: 'Contacto', href: '/contacto' },
   { name: 'Productos', href: '/productos' },
   { name: 'Servicios', href: '/servicios' },
 ]

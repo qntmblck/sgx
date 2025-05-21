@@ -1,28 +1,25 @@
 export default function Impacto() {
   return (
-    <section id="impacto" className="py-20 px-4 bg-white text-center">
+    <section id="impacto" className="py-20 px-4 bg-gray-50 text-center">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl sm:text-4xl font-bold text-blue-900 mb-8">Nuestro Compromiso con Chile</h2>
+        <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-8">Nuestro Impacto</h2>
         <p className="text-lg text-gray-700 max-w-3xl mx-auto mb-12">
-          ANKAI da sus primeros pasos en el mercado chileno de la mano de SGX. Con experiencia global y soluciones adaptadas, aportamos a la transformación del transporte público sustentable hacia la meta de electromovilidad 2035.
+          ANKAI y SGX avanzan estratégicamente en Chile hacia la meta nacional de electromovilidad al 2035, colaborando con instituciones públicas y privadas para consolidar un ecosistema más limpio y moderno.
         </p>
-        <div className="grid md:grid-cols-3 gap-8 text-blue-900 text-3xl font-extrabold">
-          <div className="bg-gray-100 p-6 rounded-lg shadow hover:shadow-lg transition">
+        <div className="grid md:grid-cols-3 gap-8 text-lime-800 text-3xl font-extrabold">
+          <div className="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
             <p>+100</p>
-            <span className="text-base font-normal text-gray-600 block mt-1">buses proyectados para 2025</span>
+            <span className="text-base font-normal text-gray-600 block mt-1">buses proyectados a 2026</span>
           </div>
-          <div className="bg-gray-100 p-6 rounded-lg shadow hover:shadow-lg transition">
-            <p>+10</p>
-            <span className="text-base font-normal text-gray-600 block mt-1">alianzas estratégicas en evaluación</span>
+          <div className="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
+            <p>+6</p>
+            <span className="text-base font-normal text-gray-600 block mt-1">regiones en etapa de análisis</span>
           </div>
-          <div className="bg-gray-100 p-6 rounded-lg shadow hover:shadow-lg transition">
-            <p>+1M</p>
-            <span className="text-base font-normal text-gray-600 block mt-1">pasajeros beneficiados en etapa piloto</span>
+          <div className="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
+            <p>2035</p>
+            <span className="text-base font-normal text-gray-600 block mt-1">alineados con el compromiso nacional</span>
           </div>
         </div>
-        <p className="mt-12 text-md text-gray-600 max-w-4xl mx-auto">
-          Desde SGX lideramos la incorporación de buses eléctricos ANKAI como parte del cumplimiento de la estrategia nacional de descarbonización.
-        </p>
       </div>
     </section>
   )
