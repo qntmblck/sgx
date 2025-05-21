@@ -3,8 +3,8 @@ import Header from '@/Components/Header'
 import HeroSection from '@/Components/HeroSection'
 import PresenciaGlobal from '@/Components/PresenciaGlobal'
 import Sobre from '@/Components/Sobre'
-import ProductosDestacados from '@/Components/ProductosDestacados'
 import Impacto from '@/Components/Impacto'
+import ProductosDestacados from '@/Components/ProductosDestacados'
 import CTAContacto from '@/Components/CTAContacto'
 import Footer from '@/Components/Footer'
 
@@ -18,8 +18,8 @@ export default function Welcome() {
           <HeroSection />
           <PresenciaGlobal />
           <Sobre />
-          <ProductosDestacados />
           <Impacto />
+          <ProductosDestacados />
           <CTAContacto />
         </main>
         <Footer />
