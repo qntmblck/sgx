@@ -48,11 +48,17 @@ export default function Header() {
   }, [currentPath])
 
   const isActive = (href) => {
-    if (href.startsWith('#') && currentPath === '/') {
+  if (currentPath === '/') {
+    if (href === '/') {
+      return activeSection === '#inicio' || activeSection === ''
+    }
+    if (href.startsWith('#')) {
       return href === activeSection
     }
-    return currentPath === href
   }
+  return currentPath === href
+}
+
 
   const bgColor = scrolled ? 'bg-white shadow-md' : 'bg-transparent'
   const navTextColor = scrolled ? 'text-neutral-800' : 'text-white'
