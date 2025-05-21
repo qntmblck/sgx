@@ -34,7 +34,7 @@ export default function HeroSection() {
         <div className={`mt-10 flex justify-end transition-all duration-700 delay-300 ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
           <a
             href="#fortalezas"
-            className="inline-block font-bold rounded-md px-6 py-3 text-white shadow border border-white hover:bg-cyan-500 hover:border-cyan-500 transition"
+            className="inline-block font-bold rounded-md px-6 py-3 text-white shadow bg-lime-500 hover:bg-lime-600 transition"
           >
             Conoce la Tecnología →
           </a>

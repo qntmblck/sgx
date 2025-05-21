@@ -27,17 +27,27 @@ export default function ProductosDestacados() {
         <p className="text-gray-700 text-base sm:text-lg max-w-3xl mx-auto mb-14">
           ANKAI ofrece soluciones inteligentes y confiables en electromovilidad: desde minibuses urbanos hasta plataformas de 12 metros con tecnología de clase mundial, chasis monocasco y eficiencia certificada.
         </p>
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8">
+
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-10">
           {productos.map((prod, idx) => (
             <div
               key={idx}
-              className={`bg-white border border-gray-200 p-6 rounded-xl shadow-md hover:shadow-xl transform hover:-translate-y-1 transition duration-300 animate-fade-up delay-[${idx * 200}ms]`}
+              className={`relative p-8 overflow-hidden rounded-2xl shadow-lg border border-gray-200 backdrop-blur-md bg-white/80 transition-transform hover:-translate-y-1 duration-300 animate-fade-up delay-[${idx * 150}ms]`}
             >
-              <div className="flex justify-between items-start mb-3">
-                <h3 className="text-lg font-semibold text-lime-700">{prod.titulo}</h3>
-                <span className="text-2xl">{prod.icono}</span>
+              {/* FONDO DIFUMINADO DETRÁS */}
+              <div className="absolute inset-0 z-0">
+                <div className="w-48 h-48 bg-gradient-to-br from-lime-300 to-teal-300 opacity-30 rounded-full blur-2xl animate-pulse absolute -top-12 -left-10" />
+                <div className="w-32 h-32 bg-gradient-to-br from-lime-200 to-green-300 opacity-20 rounded-full blur-2xl absolute bottom-0 right-0" />
               </div>
-              <p className="text-sm text-gray-700 leading-relaxed">{prod.descripcion}</p>
+
+              <div className="relative z-10">
+                <div className="flex items-center justify-between mb-3">
+                  <h3 className="text-xl font-bold text-gray-900">{prod.titulo}</h3>
+                  <span className="text-3xl">{prod.icono}</span>
+                </div>
+                <hr className="my-4 border-lime-100" />
+                <p className="text-sm text-gray-700 leading-relaxed">{prod.descripcion}</p>
+              </div>
             </div>
           ))}
         </div>

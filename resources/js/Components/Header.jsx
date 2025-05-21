@@ -48,17 +48,16 @@ export default function Header() {
   }, [currentPath])
 
   const isActive = (href) => {
-  if (currentPath === '/') {
-    if (href === '/') {
-      return activeSection === '#inicio' || activeSection === ''
+    if (currentPath === '/') {
+      if (href === '/') {
+        return activeSection === '#inicio' || activeSection === ''
+      }
+      if (href.startsWith('#')) {
+        return href === activeSection
+      }
     }
-    if (href.startsWith('#')) {
-      return href === activeSection
-    }
+    return currentPath === href
   }
-  return currentPath === href
-}
-
 
   const bgColor = scrolled ? 'bg-white shadow-md' : 'bg-transparent'
   const navTextColor = scrolled ? 'text-neutral-800' : 'text-white'
@@ -81,7 +80,7 @@ export default function Header() {
                 key={item.name}
                 href={item.href}
                 className={`px-4 py-2 rounded-md transition font-semibold ${
-                  active ? 'bg-[#149e60] text-white shadow-sm' : 'hover:text-[#149e60] text-inherit'
+                  active ? 'bg-lime-500 text-white shadow-sm' : 'hover:text-lime-500 text-inherit'
                 }`}
               >
                 {item.name}
@@ -91,7 +90,7 @@ export default function Header() {
                 key={item.name}
                 href={item.href}
                 className={`px-4 py-2 rounded-md transition font-semibold ${
-                  active ? 'bg-[#149e60] text-white shadow-sm' : 'hover:text-[#149e60] text-inherit'
+                  active ? 'bg-lime-500 text-white shadow-sm' : 'hover:text-lime-500 text-inherit'
                 }`}
               >
                 {item.name}
@@ -117,7 +116,7 @@ export default function Header() {
                   href={item.href}
                   onClick={() => setMobileMenuOpen(false)}
                   className={`px-4 py-2 rounded-md w-full text-center transition ${
-                    active ? 'bg-[#149e60] text-white shadow-sm' : 'hover:text-[#149e60] text-inherit'
+                    active ? 'bg-lime-500 text-white shadow-sm' : 'hover:text-lime-500 text-inherit'
                   }`}
                 >
                   {item.name}
@@ -128,7 +127,7 @@ export default function Header() {
                   href={item.href}
                   onClick={() => setMobileMenuOpen(false)}
                   className={`px-4 py-2 rounded-md w-full text-center transition ${
-                    active ? 'bg-[#149e60] text-white shadow-sm' : 'hover:text-[#149e60] text-inherit'
+                    active ? 'bg-lime-500 text-white shadow-sm' : 'hover:text-lime-500 text-inherit'
                   }`}
                 >
                   {item.name}
