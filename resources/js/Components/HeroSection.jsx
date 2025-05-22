@@ -29,7 +29,7 @@ export default function HeroSection() {
               Representantes Autorizados
             </h1>
             <a
-              href="#fortalezas"
+              href="/productos#beneficios"
               className="inline-block font-bold rounded-md px-6 py-3 text-white shadow bg-lime-500 hover:bg-lime-600 transition self-start sm:self-auto"
             >
               Conoce la Tecnología →
