@@ -1,8 +1,8 @@
 import { useEffect } from 'react'
 import { Head } from '@inertiajs/react'
+
 import Header from '@/Components/Header'
 import HeroSection from '@/Components/HeroSection'
-import PresenciaGlobal from '@/Components/PresenciaGlobal'
 import Sobre from '@/Components/Sobre'
 import Impacto from '@/Components/Impacto'
 import ProductosDestacados from '@/Components/ProductosDestacados'
@@ -26,19 +26,33 @@ export default function Welcome() {
   return (
     <>
       <Head title="SGX · Representantes Oficiales de ANKAI en Chile" />
+
       <div className="bg-white text-gray-900 scroll-smooth">
         <Header />
+
         <main>
-          <section id="inicio"><HeroSection /></section>
-          <PresenciaGlobal />
-          <section id="sobre"><Sobre /></section>
-          <section id="impacto"><Impacto /></section>
+          {/* Hero + Carrusel SGX */}
+          <section id="inicio">
+            <HeroSection />
+          </section>
+
+          {/* Secciones scrollables por hash */}
+          <section id="sobre">
+            <Sobre />
+          </section>
+
+          <section id="impacto">
+            <Impacto />
+          </section>
+
           <ProductosDestacados />
           <CTAContacto />
         </main>
-        <section id="footer">
+
+
           <Footer />
-        </section>
+
+
         <ContactActions />
       </div>
     </>

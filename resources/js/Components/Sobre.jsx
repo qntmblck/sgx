@@ -45,7 +45,7 @@ export default function Sobre() {
             }`}
           >
             <h2 className="text-sm font-semibold uppercase text-lime-500 tracking-wide">
-              Representantes oficiales ANKAI
+              Representantes Autorizados ANKAI
             </h2>
             <p className="mt-2 text-4xl font-extrabold tracking-tight text-blue-800 sm:text-5xl leading-tight text-center sm:text-left">
               ¿Quiénes Somos?

@@ -43,7 +43,9 @@ export default function Productos() {
         </section>
       </main>
 
-      <Footer />
+      <section id="footer">
+                <Footer />
+              </section>
       <ContactActions />
     </>
   )
