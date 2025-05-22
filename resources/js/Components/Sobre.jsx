@@ -1,5 +1,6 @@
 import { CheckIcon } from '@heroicons/react/20/solid'
 import { useInView } from 'react-intersection-observer'
+import ParticlesFondo from '@/Components/ParticlesFondo'
 
 const pilares = [
   {
@@ -19,7 +20,7 @@ export default function Sobre() {
 
   return (
     <section id="sobre" className="relative overflow-hidden bg-lime-50">
-      {/* Curva verde más alta y elegante */}
+      {/* Curva verde tipo horizonte */}
       <div className="absolute top-0 left-0 w-full overflow-hidden leading-none z-0">
         <svg
           viewBox="0 0 500 80"
@@ -30,7 +31,12 @@ export default function Sobre() {
         </svg>
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-6 py-28 sm:py-32 z-10" ref={ref}>
+      {/* Partículas animadas sobre el fragmento verde */}
+      <div className="absolute top-0 left-0 w-full h-20 z-10 pointer-events-none">
+        <ParticlesFondo />
+      </div>
+
+      <div className="relative max-w-7xl mx-auto px-6 py-28 sm:py-32 z-20" ref={ref}>
         <div className="grid lg:grid-cols-5 gap-x-16 gap-y-16 max-w-6xl mx-auto items-center">
           {/* ¿Quiénes Somos? */}
           <div
