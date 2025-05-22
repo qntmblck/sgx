@@ -25,7 +25,7 @@ export default function HeroSection() {
           }`}
         >
           {/* Título y botón */}
-          <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between sm:gap-6 mb-6">
+          <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between sm:gap-8 mb-8">
             <h1 className="text-3xl sm:text-5xl font-extrabold leading-tight drop-shadow">
               Representantes Autorizados
             </h1>
@@ -43,7 +43,7 @@ export default function HeroSection() {
           </div>
 
           {/* Línea ANKAI */}
-          <div className="flex items-center flex-wrap gap-2 text-3xl sm:text-5xl font-extrabold mb-6">
+          <div className="flex items-center flex-wrap gap-3 text-3xl sm:text-5xl font-extrabold mb-8">
             <span>de</span>
             <img src="/img/ankai.png" alt="ANKAI" className="h-10 sm:h-14 object-contain" />
             <span>en Chile</span>
