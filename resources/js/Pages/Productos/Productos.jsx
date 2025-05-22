@@ -38,7 +38,10 @@ export default function Productos() {
         <ProductoCard categoriaSeleccionada={categoriaSeleccionada} />
 
         {/* Secciones adicionales */}
-        <BeneficiosTecnologicos />
+        <section id="beneficios">
+  <BeneficiosTecnologicos />
+</section>
+
         <Galeria />
       </main>
 

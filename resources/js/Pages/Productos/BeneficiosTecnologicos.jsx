@@ -2,42 +2,57 @@ export default function BeneficiosTecnologicos() {
   const beneficios = [
     {
       titulo: 'Chasis Monocasco',
-      descripcion: 'Inspirado en la industria aeronáutica, el diseño monocasco de ANKAI proporciona una estructura 3 a 6 veces más resistente que la de buses convencionales, aumentando seguridad y reduciendo el peso en un 8%.',
+      descripcion: 'Inspirado en la industria aeronáutica, estructura 3 a 6 veces más resistente que buses convencionales. Reducción de peso del 8%.',
       icono: '🛡️'
     },
     {
-      titulo: 'Pioneros en Pruebas de Vuelco Lateral',
-      descripcion: 'ANKAI fue el primer fabricante de buses en China en ejecutar exitosamente pruebas de vuelco lateral, reafirmando su compromiso con la seguridad estructural bajo estándares internacionales.',
-      icono: '🧪'
+      titulo: 'Controlador Integrado 5 en 1',
+      descripcion: 'Agrupa control de motor, dirección, aire, distribución y CC. Mejora eficiencia, seguridad y reduce fallas.',
+      icono: '🧠'
     },
     {
-      titulo: 'Pintura por Electroforesis',
-      descripcion: 'Aplicación anticorrosiva completa mediante proceso de electroforesis, asegurando durabilidad y resistencia en climas costeros o de alta salinidad.',
-      icono: '🎨'
+      titulo: 'Protección Total IP67 + EMC',
+      descripcion: 'Sistema sellado contra agua, fuego y descargas. Incluye detección de humo, extinción y monitoreo térmico en carga.',
+      icono: '🧯'
     },
     {
-      titulo: 'Tecnología 100% Eléctrica',
-      descripcion: 'Configuraciones adaptadas con baterías CATL o BYD, autonomía entre 220–350 km, y tren motriz optimizado para máxima eficiencia energética.',
-      icono: '⚡'
+      titulo: 'Batería Fosfato Hierro-Litio',
+      descripcion: '153 Wh/kg. Mayor densidad energética, menor peso (-800 kg) y duración extendida.',
+      icono: '🔋'
     },
     {
-      titulo: 'Gestión Inteligente',
-      descripcion: 'Monitoreo en tiempo real del estado del vehículo, consumo energético, parámetros críticos, ubicación y alertas operativas.',
+      titulo: 'Sistemas de Asistencia ADAS',
+      descripcion: 'Incluye alerta de peatones, colisión, cambio de carril, distancia y frenado regenerativo inteligente.',
+      icono: '🚨'
+    },
+    {
+      titulo: 'Dirección & Inflado con Imán Permanente',
+      descripcion: 'Alta eficiencia y bajo ruido. Mejoran la experiencia de conducción y reducen consumo.',
+      icono: '🧲'
+    },
+    {
+      titulo: 'Telemetría y Diagnóstico Remoto',
+      descripcion: 'Conectividad total con análisis en tiempo real. Escaneo de parámetros y alertas por red móvil.',
       icono: '📡'
     },
     {
-      titulo: 'Plataforma Modular de Servicio',
-      descripcion: 'Todas las líneas (G, A, K) comparten arquitectura modular: facilita la capacitación técnica, repuestos y mantenimiento estandarizado.',
-      icono: '🧩'
+      titulo: 'Diseño Liviano de Estructura',
+      descripcion: 'Acero Baosteel 16mn + carrocería optimizada. Reducción de 200kg con mayor rigidez.',
+      icono: '🏗️'
+    },
+    {
+      titulo: 'Zona de Conductor Inteligente',
+      descripcion: 'Pantalla táctil, ergonomía avanzada y reducción de fatiga. Interfaz optimizada para operación continua.',
+      icono: '🧑‍✈️'
     }
   ]
 
   return (
-    <section className="py-16 bg-gradient-to-r from-lime-50 via-white to-lime-100 px-4 text-center">
+    <section id="beneficios" className="py-20 bg-gradient-to-r from-lime-50 via-white to-lime-100 px-4 text-center">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-6">Beneficios Tecnológicos</h2>
         <p className="text-gray-600 max-w-3xl mx-auto mb-12">
-          Con más de 50 años de experiencia, ANKAI lidera la industria con buses estructuralmente avanzados, seguros, eficientes y adaptados al futuro eléctrico del transporte urbano y regional.
+          ANKAI impulsa la movilidad sustentable con buses seguros, inteligentes y 100% eléctricos. Su ingeniería avanzada redefine los estándares del transporte urbano y regional.
         </p>
         <div className="grid md:grid-cols-3 gap-8">
           {beneficios.map((item, idx) => (

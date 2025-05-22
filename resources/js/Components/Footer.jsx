@@ -24,53 +24,50 @@ const navigation = {
 
 export default function Footer() {
   return (
-    <footer className="bg-white text-[#111827] text-sm">
-      <div className="max-w-7xl mx-auto px-6 pt-16 pb-8 lg:px-8">
-        <div className="flex flex-col md:flex-row justify-between items-start gap-16 border-b border-gray-200 pb-12">
-          <div className="flex-shrink-0 w-full md:w-1/4 flex justify-center md:justify-center">
-            <img src="/img/logo.png" alt="ANKAI Logo" className="h-12 sm:h-16 w-auto" />
+    <footer className="relative bg-white text-[#111827] text-sm overflow-hidden">
+      {/* Fondo decorativo detrás */}
+      <div
+        className="absolute inset-0 pointer-events-none opacity-20 -z-10"
+        style={{
+          background: 'repeating-radial-gradient(circle, rgba(0,208,132,0.1) 1px, transparent 3px)',
+          backgroundSize: '120px 120px'
+        }}
+      />
+
+      <div className="relative max-w-7xl mx-auto px-6 pt-16 pb-6 lg:px-8">
+        {/* Contenido principal: logo + enlaces */}
+        <div className="flex flex-col sm:flex-row items-start justify-between gap-8">
+          {/* Logo izquierda */}
+          <div className="flex-shrink-0 w-full sm:w-1/4 flex justify-center sm:justify-start">
+            <img src="/img/logo.png" alt="ANKAI Logo" className="h-14 sm:h-16 w-auto" />
           </div>
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-12 w-full md:w-3/4">
-            <div>
-              <h3 className="font-semibold text-[#111827] mb-3">Soluciones</h3>
-              <ul className="space-y-2 text-gray-600">
-                {navigation.soluciones.map(item => (
-                  <li key={item.name}><a href={item.href} className="hover:text-black">{item.name}</a></li>
-                ))}
-              </ul>
-            </div>
-            <div>
-              <h3 className="font-semibold text-[#111827] mb-3">Soporte</h3>
-              <ul className="space-y-2 text-gray-600">
-                {navigation.soporte.map(item => (
-                  <li key={item.name}><a href={item.href} className="hover:text-black">{item.name}</a></li>
-                ))}
-              </ul>
-            </div>
-            <div>
-              <h3 className="font-semibold text-[#111827] mb-3">Empresa</h3>
-              <ul className="space-y-2 text-gray-600">
-                {navigation.empresa.map(item => (
-                  <li key={item.name}><a href={item.href} className="hover:text-black">{item.name}</a></li>
-                ))}
-              </ul>
-            </div>
-            <div>
-              <h3 className="font-semibold text-[#111827] mb-3">Legal</h3>
-              <ul className="space-y-2 text-gray-600">
-                {navigation.legal.map(item => (
-                  <li key={item.name}><a href={item.href} className="hover:text-black">{item.name}</a></li>
-                ))}
-              </ul>
-            </div>
+
+          {/* Enlaces agrupados 2x2 (responsive) */}
+          <div className="grid grid-cols-2 gap-x-8 gap-y-6 w-full sm:grid-cols-4 sm:w-3/4 text-left">
+            {['soluciones', 'soporte', 'empresa', 'legal'].map((key) => (
+              <div key={key}>
+                <h3 className="font-semibold text-[#111827] mb-3 capitalize">{key}</h3>
+                <ul className="space-y-2 text-gray-600">
+                  {navigation[key].map(item => (
+                    <li key={item.name}>
+                      <a href={item.href} className="hover:text-black">{item.name}</a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
         </div>
 
-        <div className="mt-8 flex flex-col md:flex-row items-center justify-between pt-6">
-          <p className="text-xs text-gray-500 text-center md:text-left">
+        {/* Línea verde única */}
+        <div className="border-t mt-8 border-[#00d084]" />
+
+        {/* Créditos + redes sociales */}
+        <div className="mt-6 flex flex-col sm:flex-row items-center justify-between">
+          <p className="text-xs text-gray-500 text-center sm:text-left">
             © 2024 SGX Chile. Todos los derechos reservados.
           </p>
-          <div className="flex space-x-6 mt-4 md:mt-0 text-[#111827] text-lg">
+          <div className="flex space-x-6 mt-4 sm:mt-0 text-[#111827] text-lg">
             {navigation.social.map(item => (
               <a key={item.name} href={item.href} aria-label={item.name} className="hover:text-[#00d084]">
                 <item.icon />

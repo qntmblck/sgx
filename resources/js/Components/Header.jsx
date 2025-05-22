@@ -4,41 +4,58 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 
 const navItems = [
   { name: 'Inicio', href: '/' },
-  { name: 'Sobre SGX', href: '#sobre' },
-  { name: 'Tecnología', href: '#fortalezas' },
-  { name: 'Impacto', href: '#impacto' },
-  { name: 'Contacto', href: '/contacto' },
+  { name: 'Nosotros', scrollTo: 'sobre' },
+  { name: 'Impacto', scrollTo: 'impacto' },
   { name: 'Productos', href: '/productos' },
-  { name: 'Servicios', href: '/servicios' },
+  { name: 'Tecnología', href: '/productos#beneficios' },
+  { name: 'Contacto', scrollTo: 'footer' },
 ]
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const [activeSection, setActiveSection] = useState('')
-  const currentPath = typeof window !== 'undefined' ? window.location.pathname : ''
+  const currentPath = typeof window !== 'undefined' ? window.location.pathname : '/'
+  const [currentHash, setCurrentHash] = useState('')
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50)
     window.addEventListener('scroll', handleScroll)
 
-    const sectionIds = ['inicio', 'sobre', 'fortalezas', 'impacto', 'contacto']
     const observers = []
 
     if (currentPath === '/') {
+      const sectionIds = ['inicio', 'sobre', 'impacto', 'footer']
       sectionIds.forEach((id) => {
         const el = document.getElementById(id)
-        if (el) {
-          const observer = new IntersectionObserver(
-            ([entry]) => {
-              if (entry.isIntersecting) setActiveSection(`#${id}`)
-            },
-            { threshold: 0.6 }
-          )
-          observer.observe(el)
-          observers.push(observer)
-        }
+        if (!el) return
+        const observer = new IntersectionObserver(
+          ([entry]) => {
+            if (entry.isIntersecting) setActiveSection(`#${id}`)
+          },
+          { threshold: 0.6 }
+        )
+        observer.observe(el)
+        observers.push(observer)
       })
+    }
+
+    if (currentPath === '/productos') {
+      const el = document.getElementById('beneficios')
+      if (el) {
+        const observer = new IntersectionObserver(
+          ([entry]) => {
+            if (entry.isIntersecting) {
+              setActiveSection('#beneficios')
+            } else {
+              setActiveSection('#productos')
+            }
+          },
+          { threshold: 0.6 }
+        )
+        observer.observe(el)
+        observers.push(observer)
+      }
     }
 
     return () => {
@@ -47,22 +64,75 @@ export default function Header() {
     }
   }, [currentPath])
 
-  const isActive = (href) => {
-    if (currentPath === '/') {
-      if (href === '/') {
-        return activeSection === '#inicio' || activeSection === ''
-      }
-      if (href.startsWith('#')) {
-        return href === activeSection
-      }
+  useEffect(() => {
+    const onHashChange = () => setCurrentHash(window.location.hash)
+    window.addEventListener('hashchange', onHashChange)
+    onHashChange()
+    return () => window.removeEventListener('hashchange', onHashChange)
+  }, [])
+
+  const isActive = (item) => {
+    if (item.href === '/productos#beneficios') {
+      return activeSection === '#beneficios'
     }
-    return currentPath === href
+
+    if (item.href === '/productos') {
+      return currentPath === '/productos' && activeSection === '#productos'
+    }
+
+    if (item.href === '/' && currentPath === '/') {
+      return !['#sobre', '#impacto', '#footer'].includes(activeSection)
+    }
+
+    if (item.scrollTo && currentPath === '/') {
+      return activeSection === `#${item.scrollTo}`
+    }
+
+    return false
   }
 
-  const bgColor = scrolled ? 'bg-white shadow-md' : 'bg-transparent'
+  const scrollOrRedirect = (id) => {
+    const el = document.getElementById(id)
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    } else {
+      window.location.href = `/#${id}`
+    }
+  }
+
+  const baseClasses = 'px-4 py-2 rounded-md transition font-semibold'
+  const bgColor = scrolled ? 'bg-white shadow-md' : 'bg-white/10 backdrop-blur'
   const navTextColor = scrolled ? 'text-neutral-800' : 'text-white'
-  const mobileBgColor = scrolled ? 'bg-white' : 'bg-[#0f121d]'
   const mobileTextColor = scrolled ? 'text-neutral-800' : 'text-white'
+
+  const renderNavItem = (item, isMobile = false) => {
+    const active = isActive(item)
+    const classes = `${isMobile ? 'flex-shrink-0' : ''} ${baseClasses} ${
+      active ? 'bg-lime-500 text-white shadow-sm' : 'hover:text-lime-500 text-inherit'
+    }`
+
+    return item.scrollTo ? (
+      <button
+        key={item.name}
+        onClick={() => {
+          setMobileMenuOpen(false)
+          scrollOrRedirect(item.scrollTo)
+        }}
+        className={classes}
+      >
+        {item.name}
+      </button>
+    ) : (
+      <Link
+        key={item.name}
+        href={item.href}
+        onClick={() => setMobileMenuOpen(false)}
+        className={classes}
+      >
+        {item.name}
+      </Link>
+    )
+  }
 
   return (
     <header className={`fixed top-0 w-full z-50 transition duration-300 ${bgColor}`}>
@@ -72,31 +142,7 @@ export default function Header() {
         </Link>
 
         <nav className={`hidden md:flex space-x-2 text-sm font-medium ${navTextColor}`}>
-          {navItems.map((item) => {
-            const active = isActive(item.href)
-            const isAnchor = item.href.startsWith('#')
-            return isAnchor ? (
-              <a
-                key={item.name}
-                href={item.href}
-                className={`px-4 py-2 rounded-md transition font-semibold ${
-                  active ? 'bg-lime-500 text-white shadow-sm' : 'hover:text-lime-500 text-inherit'
-                }`}
-              >
-                {item.name}
-              </a>
-            ) : (
-              <Link
-                key={item.name}
-                href={item.href}
-                className={`px-4 py-2 rounded-md transition font-semibold ${
-                  active ? 'bg-lime-500 text-white shadow-sm' : 'hover:text-lime-500 text-inherit'
-                }`}
-              >
-                {item.name}
-              </Link>
-            )
-          })}
+          {navItems.map((item) => renderNavItem(item))}
         </nav>
 
         <button className={`md:hidden ${navTextColor}`} onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
@@ -105,35 +151,9 @@ export default function Header() {
       </div>
 
       {mobileMenuOpen && (
-        <div className={`md:hidden ${mobileBgColor} border-t shadow-sm`}>
-          <nav className={`flex flex-col items-center px-4 py-6 gap-4 text-base font-semibold ${mobileTextColor}`}>
-            {navItems.map((item) => {
-              const active = isActive(item.href)
-              const isAnchor = item.href.startsWith('#')
-              return isAnchor ? (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className={`px-4 py-2 rounded-md w-full text-center transition ${
-                    active ? 'bg-lime-500 text-white shadow-sm' : 'hover:text-lime-500 text-inherit'
-                  }`}
-                >
-                  {item.name}
-                </a>
-              ) : (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className={`px-4 py-2 rounded-md w-full text-center transition ${
-                    active ? 'bg-lime-500 text-white shadow-sm' : 'hover:text-lime-500 text-inherit'
-                  }`}
-                >
-                  {item.name}
-                </Link>
-              )
-            })}
+        <div className={`${bgColor} md:hidden border-t border-white/10`}>
+          <nav className={`flex overflow-x-auto whitespace-nowrap px-4 py-4 gap-3 text-sm font-semibold ${mobileTextColor}`}>
+            {navItems.map((item) => renderNavItem(item, true))}
           </nav>
         </div>
       )}
