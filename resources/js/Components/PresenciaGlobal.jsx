@@ -33,26 +33,25 @@ const regiones = [
 
 export default function PresenciaGlobal() {
   return (
-    <section id="presencia" className="bg-white py-16 px-6 sm:px-8">
-      {/* Carrusel scrollable y animado */}
-      <div className="overflow-x-auto scrollbar-hide">
-        <div className="flex animate-carousel space-x-6 px-2 w-max" style={{ animationDuration: '40s' }}>
+    <section className="py-12 px-4 bg-transparent">
+      <div className="max-w-6xl mx-auto overflow-x-auto scrollbar-hide">
+        <div className="flex gap-4 w-max animate-carousel" style={{ animationDuration: '40s' }}>
           {[...regiones, ...regiones].map((region, index) => (
             <div
               key={`${region.nombre}-${index}`}
-              className="flex-shrink-0 w-[320px] sm:w-[300px] bg-gradient-to-br from-lime-50 to-white border border-gray-200 rounded-xl p-6 shadow-md hover:scale-[1.01] transition duration-300"
+              className="flex-shrink-0 w-[280px] sm:w-[300px] h-[140px] bg-gradient-to-br from-[#003b5c]/80 to-[#00d084]/80 backdrop-blur-sm border border-white/20 rounded-xl p-4 shadow-md hover:scale-[1.01] transition-transform duration-300"
             >
-              <div className="flex items-center gap-4 mb-4">
-                <div className="w-12 h-12 rounded-full overflow-hidden bg-gray-100 border border-gray-300">
+              <div className="flex items-center gap-3 mb-2">
+                <div className="w-9 h-9 rounded-full overflow-hidden border border-white bg-white">
                   <img
                     src={region.img}
                     alt={region.nombre}
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <h3 className="text-lg font-bold text-gray-900">{region.nombre}</h3>
+                <h3 className="text-sm font-bold text-white">{region.nombre}</h3>
               </div>
-              <p className="text-sm text-gray-700 leading-relaxed">{region.resumen}</p>
+              <p className="text-xs text-white font-medium leading-snug">{region.resumen}</p>
             </div>
           ))}
         </div>
