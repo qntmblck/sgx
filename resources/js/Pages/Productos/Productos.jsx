@@ -4,7 +4,7 @@ import Footer from '@/Components/Footer'
 import Categorias from './Categorias'
 import ProductoCard from './ProductoCard'
 import BeneficiosTecnologicos from './BeneficiosTecnologicos'
-import Galeria from './Galeria'
+
 
 export default function Productos() {
   const [categoriaSeleccionada, setCategoriaSeleccionada] = useState('Todos')
@@ -42,7 +42,7 @@ export default function Productos() {
   <BeneficiosTecnologicos />
 </section>
 
-        <Galeria />
+
       </main>
 
       <Footer />

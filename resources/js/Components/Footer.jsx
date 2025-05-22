@@ -4,7 +4,7 @@ const navigation = {
     { name: 'Buses ANKAI', href: 'https://es.ankaiglobal.com/products' },
   ],
   soporte: [
-    { name: 'Contacto Oficial', href: 'https://es.ankaiglobal.com/contact_d2' },
+    // { name: 'Contacto Oficial', href: 'https://es.ankaiglobal.com/contact_d2' },
     { name: 'Servicio posventa', href: 'https://es.ankaiglobal.com/service_d4' },
   ],
   empresa: [
@@ -25,7 +25,6 @@ const navigation = {
 export default function Footer() {
   return (
     <footer className="relative bg-white text-[#111827] text-sm overflow-hidden">
-      {/* Fondo decorativo detrás */}
       <div
         className="absolute inset-0 pointer-events-none opacity-20 -z-10"
         style={{
@@ -35,14 +34,11 @@ export default function Footer() {
       />
 
       <div className="relative max-w-7xl mx-auto px-6 pt-16 pb-6 lg:px-8">
-        {/* Contenido principal: logo + enlaces */}
         <div className="flex flex-col sm:flex-row items-start justify-between gap-8">
-          {/* Logo izquierda */}
           <div className="flex-shrink-0 w-full sm:w-1/4 flex justify-center sm:justify-start">
             <img src="/img/logo.png" alt="ANKAI Logo" className="h-14 sm:h-16 w-auto" />
           </div>
 
-          {/* Enlaces agrupados 2x2 (responsive) */}
           <div className="grid grid-cols-2 gap-x-8 gap-y-6 w-full sm:grid-cols-4 sm:w-3/4 text-left">
             {['soluciones', 'soporte', 'empresa', 'legal'].map((key) => (
               <div key={key}>
@@ -53,16 +49,22 @@ export default function Footer() {
                       <a href={item.href} className="hover:text-black">{item.name}</a>
                     </li>
                   ))}
+                  {/*
+                  Links deshabilitados por estrategia de representación:
+                  {key === 'soporte' && (
+                    <li>
+                      <a href="https://es.ankaiglobal.com/contact_d2" className="hover:text-black">Contacto Oficial</a>
+                    </li>
+                  )}
+                  */}
                 </ul>
               </div>
             ))}
           </div>
         </div>
 
-        {/* Línea verde única */}
         <div className="border-t mt-8 border-[#00d084]" />
 
-        {/* Créditos + redes sociales */}
         <div className="mt-6 flex flex-col sm:flex-row items-center justify-between">
           <p className="text-xs text-gray-500 text-center sm:text-left">
             © 2024 SGX Chile. Todos los derechos reservados.
