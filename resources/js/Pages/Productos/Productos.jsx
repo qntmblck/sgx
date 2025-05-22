@@ -16,7 +16,7 @@ export default function Productos() {
       {/* Portada con título */}
       <div
         className="relative h-[300px] bg-cover bg-center"
-        style={{ backgroundImage: "url('/img/productos.jpg')" }}
+        style={{ backgroundImage: "url('/img/productos.png')" }}
       >
         <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
           <div className="text-center px-4">
