@@ -38,16 +38,18 @@ export default function Sobre() {
       {/* Contenido */}
       <div className="relative max-w-7xl mx-auto px-6 py-28 sm:py-32 z-30" ref={ref}>
         <div className="text-center max-w-4xl mx-auto">
-          <h2 className="text-sm font-semibold uppercase text-lime-600 tracking-wide">Representantes Autorizados ANKAI</h2>
+          <h2 className="text-sm font-semibold uppercase text-lime-600 tracking-wide">Representantes Autorizados <span className="text-red-600 font-bold">ANKAI</span>
+</h2>
           <p className="mt-2 text-4xl font-extrabold tracking-tight sm:text-5xl leading-tight">¿Quiénes Somos?</p>
           <div className="mt-2 mb-6 border-t-4 w-24 border-[#00d084] rounded-full mx-auto" />
           <p className="text-lg sm:text-xl text-gray-800 leading-relaxed text-justify">
-            SGX es la empresa representante oficial de <span className="text-lime-600 font-semibold">ANKAI</span> en Chile, uno de los mayores fabricantes de buses eléctricos del mundo, con presencia en más de 100 países.
-            <br /><br />
-            Nuestra misión es facilitar el acceso a tecnologías de transporte inteligente adaptadas al territorio nacional, fortaleciendo la transición energética con soluciones confiables, seguras y sostenibles.
-            <br /><br />
-            Desde SGX, promovemos una movilidad alineada con las metas de descarbonización del país, colaborando activamente con operadores públicos y privados.
-          </p>
+  SGX es la empresa representante Autorizado de <span className="text-red-600 font-bold">ANKAI</span> en Chile, uno de los mayores fabricantes de buses eléctricos del mundo, con presencia en más de 100 países.
+  <br /><br />
+  Nuestra misión es facilitar el acceso a tecnologías de transporte inteligente adaptadas al territorio nacional, fortaleciendo la transición energética con soluciones confiables, seguras y sostenibles.
+  <br /><br />
+  Desde SGX, promovemos una movilidad alineada con las metas de descarbonización del país, colaborando activamente con operadores públicos y privados.
+</p>
+
         </div>
 
         {/* Misión y Visión */}

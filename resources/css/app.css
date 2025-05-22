@@ -1,9 +1,8 @@
-/* app.css */
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* Ocultar scrollbar (scroll horizontal elegante) */
 .scrollbar-hide {
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -12,20 +11,27 @@
   display: none;
 }
 
-/* Flashcard efecto 3D */
+/* Scroll suave en iOS */
+.scroll-touch {
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Flashcard efecto 3D solo con hover (no en móviles) */
 .perspective {
   perspective: 1000px;
 }
 
+.flashcard {
+  perspective: 1000px;
+}
 .flashcard-inner {
-  transition: transform 0.8s ease-in-out;
+  transition: transform 0.6s ease-in-out;
   transform-style: preserve-3d;
   position: relative;
   width: 100%;
   height: 100%;
 }
-
-.flashcard.flipped .flashcard-inner {
+.flashcard:hover .flashcard-inner {
   transform: rotateY(180deg);
 }
 
@@ -34,10 +40,33 @@
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
   border-radius: 1rem; /* rounded-2xl */
   overflow: hidden;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+  text-align: center;
 }
-
 .flashcard-back {
   transform: rotateY(180deg);
+  z-index: 2;
+}
+
+/* Fade-in animation (opcional para entrada elegante) */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-fade-in {
+  animation: fade-in 0.3s ease-out forwards;
 }

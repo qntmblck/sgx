@@ -24,15 +24,28 @@ export default function HeroSection() {
             loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
           }`}
         >
-          {/* Título y botón */}
-          <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between sm:gap-8 mb-8">
-            <h1 className="text-3xl sm:text-5xl font-extrabold leading-tight drop-shadow">
-              Representantes Autorizados
-            </h1>
+          {/* Título */}
+          <h1 className="text-3xl sm:text-5xl font-extrabold leading-tight drop-shadow mb-6">
+            Representantes Autorizados
+          </h1>
+
+          {/* Línea ANKAI */}
+          <div className="flex items-center flex-wrap gap-3 text-3xl sm:text-5xl font-extrabold mb-6">
+            <span>de</span>
+            <img src="/img/ankai.png" alt="ANKAI" className="h-10 sm:h-14 object-contain" />
+            <span>en Chile</span>
+          </div>
+
+          {/* Subtítulo */}
+          <p className="text-base sm:text-xl font-semibold max-w-xl text-gray-100 mb-6">
+            Impulsamos una nueva era en el transporte público inteligente con tecnología de clase mundial.
+          </p>
+
+          {/* Botón alineado a la derecha */}
+          <div className="flex justify-end mb-12">
             <a
               href="/productos#beneficios"
               className="
-                w-full sm:w-auto self-start sm:self-auto
                 inline-block font-bold rounded-md shadow transition-all duration-300
                 bg-gradient-to-br from-[#003b5c] to-[#00d084] hover:brightness-110
                 text-sm px-4 py-2 sm:text-base sm:px-5 sm:py-3 md:text-lg md:px-6
@@ -41,23 +54,11 @@ export default function HeroSection() {
               Conoce la Tecnología →
             </a>
           </div>
-
-          {/* Línea ANKAI */}
-          <div className="flex items-center flex-wrap gap-3 text-3xl sm:text-5xl font-extrabold mb-8">
-            <span>de</span>
-            <img src="/img/ankai.png" alt="ANKAI" className="h-10 sm:h-14 object-contain" />
-            <span>en Chile</span>
-          </div>
-
-          {/* Subtítulo */}
-          <p className="text-base sm:text-xl font-semibold max-w-xl text-gray-100 mb-12">
-            Impulsamos una nueva era en el transporte público inteligente con tecnología de clase mundial.
-          </p>
         </div>
       </div>
 
       {/* Carrusel PresenciaGlobal */}
-      <div className="relative z-10">
+      <div className="relative z-10 mt-12">
         <PresenciaGlobal />
       </div>
     </section>
