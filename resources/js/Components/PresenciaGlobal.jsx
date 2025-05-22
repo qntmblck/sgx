@@ -33,17 +33,17 @@ const regiones = [
 
 export default function PresenciaGlobal() {
   return (
-    <section className="py-8 px-0 bg-transparent w-full overflow-hidden">
-      {/* Carrusel full ancho */}
+    <section className="pt-4 sm:pt-6 pb-10 bg-transparent w-full overflow-hidden">
+      {/* Carrusel responsive y fluido */}
       <div className="w-full overflow-x-auto scrollbar-hide">
         <div
-          className="flex w-max animate-carousel gap-4 px-4 sm:px-6"
+          className="flex animate-carousel gap-4 px-4 sm:px-6 snap-x snap-mandatory"
           style={{ animationDuration: '40s' }}
         >
           {[...regiones, ...regiones].map((region, index) => (
             <div
               key={`${region.nombre}-${index}`}
-              className="flex-shrink-0 w-[280px] sm:w-[300px] h-[140px] bg-gradient-to-br from-[#003b5c]/80 to-[#00d084]/80 backdrop-blur-sm border border-white/20 rounded-xl p-4 shadow-md hover:scale-[1.01] transition-transform duration-300"
+              className="snap-start flex-shrink-0 w-[90vw] sm:w-[48vw] md:w-[32vw] lg:w-[28vw] h-[140px] sm:h-[160px] bg-gradient-to-br from-[#003b5c]/80 to-[#00d084]/80 backdrop-blur-sm border border-white/20 rounded-xl p-4 shadow-md hover:scale-[1.01] transition-transform duration-300"
             >
               <div className="flex items-center gap-3 mb-2">
                 <div className="w-9 h-9 rounded-full overflow-hidden border border-white bg-white">

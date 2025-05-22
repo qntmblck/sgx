@@ -12,18 +12,18 @@ export default function HeroSection() {
   return (
     <section
       id="inicio"
-      className="relative min-h-[90vh] text-white px-6 py-24 sm:py-32 bg-cover bg-no-repeat bg-center bg-scroll sm:bg-fixed sm:bg-[center_35%]"
+      className="relative w-full text-white px-6 pt-20 sm:pt-28 bg-cover bg-no-repeat bg-center bg-scroll sm:bg-fixed sm:bg-[center_35%]"
       style={{
         backgroundImage: 'url(/img/hero.png?v=2)',
       }}
     >
-      {/* Capa oscura sobre imagen */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black/80 to-gray-800/40 sm:from-black/60 sm:to-gray-700/30" />
+      {/* Sombra sobre fondo */}
+      <div className="absolute inset-0 bg-gradient-to-r from-black/80 to-gray-800/40 sm:from-black/60 sm:to-gray-700/30 z-0" />
 
       {/* Contenido */}
       <div className="relative z-10 max-w-7xl mx-auto transition-opacity duration-1000 ease-out">
         <div className={`max-w-5xl transition-all duration-700 ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
-          {/* Título + botón en fila */}
+          {/* Título y Botón */}
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6 mb-6">
             <h1 className="text-3xl sm:text-5xl font-extrabold leading-tight drop-shadow">
               Representantes Autorizados
@@ -36,22 +36,22 @@ export default function HeroSection() {
             </a>
           </div>
 
-          {/* Línea "de ANKAI en Chile" */}
+          {/* Línea ANKAI */}
           <div className="flex items-center flex-wrap gap-2 text-3xl sm:text-5xl font-extrabold mb-6">
             <span>de</span>
             <img src="/img/ankai.png" alt="ANKAI" className="h-10 sm:h-14 object-contain" />
             <span>en Chile</span>
           </div>
 
-          {/* Descripción */}
-          <p className="text-base sm:text-xl font-semibold max-w-xl text-gray-100">
+          {/* Subtítulo */}
+          <p className="text-base sm:text-xl font-semibold max-w-xl text-gray-100 mb-12">
             Impulsamos una nueva era en el transporte público inteligente con tecnología de clase mundial.
           </p>
         </div>
       </div>
 
-      {/* Carrusel en la base */}
-      <div className="absolute bottom-0 w-full z-10">
+      {/* Carrusel dentro del flujo (no absolute) */}
+      <div className="relative z-10">
         <PresenciaGlobal />
       </div>
     </section>
