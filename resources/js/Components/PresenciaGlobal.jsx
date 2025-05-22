@@ -43,7 +43,10 @@ export default function PresenciaGlobal() {
           {[...regiones, ...regiones].map((region, index) => (
             <div
               key={`${region.nombre}-${index}`}
-              className="snap-start flex-shrink-0 w-[90vw] sm:w-[48vw] md:w-[32vw] lg:w-[28vw] h-[140px] sm:h-[160px] bg-gradient-to-br from-[#003b5c]/80 to-[#00d084]/80 backdrop-blur-sm border border-white/20 rounded-xl p-4 shadow-md hover:scale-[1.01] transition-transform duration-300"
+              className="snap-start flex-shrink-0 w-[90vw] sm:w-[48vw] md:w-[32vw] lg:w-[28vw] h-[140px] sm:h-[160px]
+                         bg-gradient-to-br from-[#007a52] to-[#00d084] backdrop-blur-sm
+                         border border-white/10 rounded-xl p-4 shadow-xl hover:scale-[1.01]
+                         transition-transform duration-300"
             >
               <div className="flex items-center gap-3 mb-2">
                 <div className="w-9 h-9 rounded-full overflow-hidden border border-white bg-white">

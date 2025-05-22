@@ -105,34 +105,37 @@ export default function Header() {
   const navTextColor = scrolled ? 'text-neutral-800' : 'text-white'
   const mobileTextColor = scrolled ? 'text-neutral-800' : 'text-white'
 
-  const renderNavItem = (item, isMobile = false) => {
-    const active = isActive(item)
-    const classes = `${isMobile ? 'flex-shrink-0' : ''} ${baseClasses} ${
-      active ? 'bg-lime-500 text-white shadow-sm' : 'hover:text-lime-500 text-inherit'
-    }`
+const renderNavItem = (item, isMobile = false) => {
+  const active = isActive(item)
+  const classes = `${isMobile ? 'flex-shrink-0' : ''} ${baseClasses} ${
+    active
+      ? 'bg-gradient-to-br from-[#003b5c] to-[#00d084] text-white shadow'
+      : 'hover:text-lime-500 text-inherit'
+  }`
 
-    return item.scrollTo ? (
-      <button
-        key={item.name}
-        onClick={() => {
-          setMobileMenuOpen(false)
-          scrollOrRedirect(item.scrollTo)
-        }}
-        className={classes}
-      >
-        {item.name}
-      </button>
-    ) : (
-      <Link
-        key={item.name}
-        href={item.href}
-        onClick={() => setMobileMenuOpen(false)}
-        className={classes}
-      >
-        {item.name}
-      </Link>
-    )
-  }
+  return item.scrollTo ? (
+    <button
+      key={item.name}
+      onClick={() => {
+        setMobileMenuOpen(false)
+        scrollOrRedirect(item.scrollTo)
+      }}
+      className={classes}
+    >
+      {item.name}
+    </button>
+  ) : (
+    <Link
+      key={item.name}
+      href={item.href}
+      onClick={() => setMobileMenuOpen(false)}
+      className={classes}
+    >
+      {item.name}
+    </Link>
+  )
+}
+
 
   return (
     <header className={`fixed top-0 w-full z-50 transition duration-300 ${bgColor}`}>

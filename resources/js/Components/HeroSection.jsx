@@ -25,16 +25,17 @@ export default function HeroSection() {
         <div className={`max-w-5xl transition-all duration-700 ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
           {/* Título y Botón */}
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6 mb-6">
-            <h1 className="text-3xl sm:text-5xl font-extrabold leading-tight drop-shadow">
-              Representantes Autorizados
-            </h1>
-            <a
-              href="/productos#beneficios"
-              className="inline-block font-bold rounded-md px-6 py-3 text-white shadow bg-lime-500 hover:bg-lime-600 transition self-start sm:self-auto"
-            >
-              Conoce la Tecnología →
-            </a>
-          </div>
+  <h1 className="text-3xl sm:text-5xl font-extrabold leading-tight drop-shadow">
+    Representantes Autorizados
+  </h1>
+  <a
+    href="/productos#beneficios"
+    className="mt-8 sm:mt-0 inline-block font-bold rounded-md px-3 py-3 text-white shadow transition self-start sm:self-auto
+               bg-gradient-to-br from-[#003b5c] to-[#00d084] hover:brightness-110"
+  >
+    Conoce la Tecnología →
+  </a>
+</div>
 
           {/* Línea ANKAI */}
           <div className="flex items-center flex-wrap gap-2 text-3xl sm:text-5xl font-extrabold mb-6">
