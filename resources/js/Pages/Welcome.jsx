@@ -8,6 +8,7 @@ import Impacto from '@/Components/Impacto'
 import ProductosDestacados from '@/Components/ProductosDestacados'
 import CTAContacto from '@/Components/CTAContacto'
 import Footer from '@/Components/Footer'
+import ContactActions from '@/Components/ContactActions'
 
 export default function Welcome() {
   useEffect(() => {
@@ -36,8 +37,9 @@ export default function Welcome() {
           <CTAContacto />
         </main>
         <section id="footer">
-  <Footer />
-</section>
+          <Footer />
+        </section>
+        <ContactActions />
       </div>
     </>
   )

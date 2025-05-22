@@ -4,7 +4,7 @@ import Footer from '@/Components/Footer'
 import Categorias from './Categorias'
 import ProductoCard from './ProductoCard'
 import BeneficiosTecnologicos from './BeneficiosTecnologicos'
-
+import ContactActions from '@/Components/ContactActions'
 
 export default function Productos() {
   const [categoriaSeleccionada, setCategoriaSeleccionada] = useState('Todos')
@@ -39,13 +39,12 @@ export default function Productos() {
 
         {/* Secciones adicionales */}
         <section id="beneficios">
-  <BeneficiosTecnologicos />
-</section>
-
-
+          <BeneficiosTecnologicos />
+        </section>
       </main>
 
       <Footer />
+      <ContactActions />
     </>
   )
 }
