@@ -44,14 +44,16 @@ export default function Productos() {
             </p>
           </div>
 
-          {/* Carrusel beneficios tecnológicos */}
           <BeneficiosTecnologicos />
         </div>
       </div>
 
-      {/* Productos */}
-      <section className="bg-[#001d2e]">
-        <main className="py-12 px-2 sm:px-4 lg:px-8 max-w-full">
+      {/* Transición visual */}
+      <div className="h-12 bg-gradient-to-b from-transparent to-[#001d2e]" />
+
+      {/* Sección de productos */}
+      <section className="bg-[#001d2e] relative">
+        <main className="relative z-20 py-12 px-2 sm:px-4 lg:px-8 max-w-full">
           <ProductoCard categoriasSeleccionadas={categoriasSeleccionadas} />
         </main>
       </section>
