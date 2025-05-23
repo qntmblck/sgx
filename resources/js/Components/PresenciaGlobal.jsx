@@ -42,10 +42,13 @@ export default function PresenciaGlobal() {
         >
           {[...regiones, ...regiones].map((region, index) => (
             <div
-              key={`${region.nombre}-${index}`}
-              className="flex-shrink-0 w-[280px] sm:w-[300px] h-[140px] bg-gradient-to-br from-[#003b5c] via-[#3ca9c9] to-[#bfeaf1]
- border border-white/20 rounded-xl p-4 shadow-md hover:scale-[1.01] transition-transform duration-300"
-            >
+  key={`${region.nombre}-${index}`}
+  className="flex-shrink-0 w-[280px] sm:w-[300px] h-[140px]
+             border border-white/20 rounded-xl p-4 shadow-md
+             hover:scale-[1.01] transition-transform duration-300 backdrop-blur-md
+             bg-[linear-gradient(to_bottom_right,rgba(0,59,92,0.15),rgba(0,153,204,0.15))]"
+>
+
               <div className="flex items-center gap-3 mb-2">
                 <div className="w-9 h-9 rounded-full overflow-hidden border border-white bg-white">
                   <img
@@ -64,4 +67,3 @@ export default function PresenciaGlobal() {
     </section>
   )
 }
-

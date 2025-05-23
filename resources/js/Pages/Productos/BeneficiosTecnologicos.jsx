@@ -62,7 +62,8 @@ export default function BeneficiosTecnologicos() {
           {[...beneficios, ...beneficios].map((item, idx) => (
             <div
               key={idx}
-              className="flex-shrink-0 w-[280px] sm:w-[320px] h-auto bg-gradient-to-br from-[#003b5c] via-[#3ca9c9] to-[#bfeaf1] text-white p-6 rounded-xl shadow-md hover:scale-[1.01] transition-transform duration-300"
+              className="flex-shrink-0 w-[280px] sm:w-[320px] h-auto bg-gradient-to-br from-[#002f4b] via-[#005c8a] to-[#0099cc] text-white p-6 rounded-xl shadow-md hover:scale-[1.01] transition-transform duration-300"
+
             >
               <div className="flex items-start justify-between mb-4">
                 <h3 className="text-lg font-semibold">{item.titulo}</h3>
