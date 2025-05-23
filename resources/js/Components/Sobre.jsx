@@ -20,36 +20,34 @@ export default function Sobre() {
 
   return (
     <section id="sobre" className="relative overflow-hidden bg-gradient-to-r from-green-200 via-teal-100 to-white text-gray-900">
-      {/* Curva superior */}
-      <div className="absolute top-0 left-0 w-full overflow-hidden z-0">
-        <svg viewBox="0 0 500 80" preserveAspectRatio="none" className="w-full h-20 fill-green-200">
-          <path d="M0,80 C150,20 350,20 500,80 L500,0 L0,0 Z" />
-        </svg>
-      </div>
+      {/* Separador superior */}
+
+          <div className="relative z-10 h-8 sm:h-10 bg-gradient-to-b from-white via-lime-100 to-transparent" />
+
 
       {/* Partículas animadas */}
       <div className="absolute top-0 left-0 w-full h-20 z-10 pointer-events-none">
         <ParticlesFondo />
       </div>
 
-      {/* Gradiente de transición */}
+      {/* Gradiente superior de transición */}
       <div className="absolute top-0 left-0 w-full h-10 bg-gradient-to-b from-white/80 to-transparent z-20" />
 
       {/* Contenido */}
       <div className="relative max-w-7xl mx-auto px-6 py-28 sm:py-32 z-30" ref={ref}>
         <div className="text-center max-w-4xl mx-auto">
-          <h2 className="text-sm font-semibold uppercase text-lime-600 tracking-wide">Representantes Autorizados <span className="text-red-600 font-bold">ANKAI</span>
-</h2>
+          <h2 className="text-sm font-semibold uppercase text-lime-600 tracking-wide">
+            Representantes Autorizados <span className="text-red-600 font-bold">ANKAI</span>
+          </h2>
           <p className="mt-2 text-4xl font-extrabold tracking-tight sm:text-5xl leading-tight">¿Quiénes Somos?</p>
           <div className="mt-2 mb-6 border-t-4 w-24 border-[#00d084] rounded-full mx-auto" />
           <p className="text-lg sm:text-xl text-gray-800 leading-relaxed text-justify">
-  SGX es la empresa representante Autorizado de <span className="text-red-600 font-bold">ANKAI</span> en Chile, uno de los mayores fabricantes de buses eléctricos del mundo, con presencia en más de 100 países.
-  <br /><br />
-  Nuestra misión es facilitar el acceso a tecnologías de transporte inteligente adaptadas al territorio nacional, fortaleciendo la transición energética con soluciones confiables, seguras y sostenibles.
-  <br /><br />
-  Desde SGX, promovemos una movilidad alineada con las metas de descarbonización del país, colaborando activamente con operadores públicos y privados.
-</p>
-
+            SGX es la empresa representante Autorizado de <span className="text-red-600 font-bold">ANKAI</span> en Chile, uno de los mayores fabricantes de buses eléctricos del mundo, con presencia en más de 100 países.
+            <br /><br />
+            Nuestra misión es facilitar el acceso a tecnologías de transporte inteligente adaptadas al territorio nacional, fortaleciendo la transición energética con soluciones confiables, seguras y sostenibles.
+            <br /><br />
+            Desde SGX, promovemos una movilidad alineada con las metas de descarbonización del país, colaborando activamente con operadores públicos y privados.
+          </p>
         </div>
 
         {/* Misión y Visión */}
@@ -72,6 +70,17 @@ export default function Sobre() {
         </div>
       </div>
 
+            {/* Curva inferior idéntica a la superior */}
+      <div className="absolute bottom-0 left-0 w-full overflow-hidden z-0 rotate-180">
+        <svg viewBox="0 0 500 80" preserveAspectRatio="none" className="w-full h-20 fill-green-200">
+          <path d="M0,80 C150,20 350,20 500,80 L500,0 L0,0 Z" />
+        </svg>
+      </div>
+
+      {/* Gradiente inferior de transición (idéntico al superior pero abajo) */}
+      <div className="absolute bottom-0 left-0 w-full h-10 bg-gradient-to-t from-white/80 to-transparent z-20" />
+
     </section>
   )
 }
+

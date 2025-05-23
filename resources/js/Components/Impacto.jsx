@@ -30,7 +30,7 @@ export default function Impacto() {
   return (
     <section
       id="impacto"
-      className="relative isolate overflow-hidden py-24 sm:py-32 bg-gray-900"
+      className="relative isolate overflow-hidden pt-24 sm:pt-32 pb-0 bg-gray-900"
     >
       {/* Fondo fijo con imagen */}
       <div
@@ -70,11 +70,11 @@ export default function Impacto() {
           </div>
 
           {/* Métricas a la derecha */}
-          <dl className="space-y-10 text-white">
+          <dl className="space-y-10 text-white flex flex-col items-end text-right">
             {stats.map((stat) => {
               const animatedValue = useCounter(stat.value, 1500, stat.start || 0)
               return (
-                <div key={stat.label} className="flex flex-col gap-y-2 border-l border-white/10 pl-6">
+                <div key={stat.label} className="flex flex-col gap-y-2 border-r border-white/10 pr-6">
                   <dt className="text-sm text-gray-300">{stat.label}</dt>
                   <dd className="order-first text-5xl font-semibold tracking-tight text-lime-400">
                     {animatedValue}
@@ -86,6 +86,18 @@ export default function Impacto() {
           </dl>
         </div>
       </div>
+
+      {/* Imagen final destacada */}
+<div className="relative z-10 -mb-2">
+  <img
+    src="/img/buses.png"
+    alt="Gama de buses ANKAI"
+    className="mx-auto w-[90%] max-w-6xl object-contain translate-y-2 sm:translate-y-4 lg:translate-y-6"
+    loading="lazy"
+  />
+</div>
+
+
     </section>
   )
 }
