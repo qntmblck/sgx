@@ -10,17 +10,11 @@ export default function CTAContacto() {
         </h2>
         <div className="mt-10 flex items-center gap-x-6 lg:mt-0 lg:shrink-0">
           <Link
-            href="/"
+            href="/productos#beneficios"
             className="rounded-md bg-gradient-to-br from-[#00d084] to-[#007f65] px-4 py-2.5 text-sm font-semibold text-white shadow hover:brightness-110 transition"
           >
-            Contáctanos
+            Conocer Tecnología
           </Link>
-          <a
-            href="/productos"
-            className="text-sm font-semibold text-white hover:text-lime-300 transition"
-          >
-            Ver Productos <span aria-hidden="true">→</span>
-          </a>
         </div>
       </div>
     </div>

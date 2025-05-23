@@ -49,17 +49,20 @@ export default function BeneficiosTecnologicos() {
 
   return (
     <section id="beneficios" className="bg-transparent py-16 px-6 sm:px-8">
-      <h2 className="text-center text-3xl sm:text-4xl font-bold text-blue-800 mb-12">
+      <h2 className="text-center text-3xl sm:text-4xl font-bold text-[#003b5c] mb-12">
         Beneficios Tecnológicos
       </h2>
 
-      {/* Carrusel horizontal con scroll automático */}
-      <div className="overflow-x-auto scrollbar-hide">
-        <div className="flex animate-carousel gap-6 w-max px-1" style={{ animationDuration: '45s' }}>
+      {/* Carrusel horizontal deslizable y animado */}
+      <div className="overflow-x-auto scrollbar-hide scroll-smooth -mx-4 px-4">
+        <div
+          className="flex w-max animate-carousel gap-4"
+          style={{ animationDuration: '50s' }}
+        >
           {[...beneficios, ...beneficios].map((item, idx) => (
             <div
               key={idx}
-              className="flex-shrink-0 w-[280px] sm:w-[320px] bg-gradient-to-br from-[#003b5c] to-[#00d084] text-white p-6 rounded-xl shadow-md hover:scale-[1.01] transition duration-300"
+              className="flex-shrink-0 w-[280px] sm:w-[320px] h-auto bg-gradient-to-br from-[#003b5c] via-[#3ca9c9] to-[#bfeaf1] text-white p-6 rounded-xl shadow-md hover:scale-[1.01] transition-transform duration-300"
             >
               <div className="flex items-start justify-between mb-4">
                 <h3 className="text-lg font-semibold">{item.titulo}</h3>

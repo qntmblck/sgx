@@ -44,14 +44,14 @@ export default function HeroSection() {
           {/* Botón alineado a la derecha */}
           <div className="flex justify-end mb-12">
             <a
-              href="/productos#beneficios"
+              href="/productos"
               className="
                 inline-block font-bold rounded-md shadow transition-all duration-300
                 bg-gradient-to-br from-[#003b5c] to-[#00d084] hover:brightness-110
                 text-sm px-4 py-2 sm:text-base sm:px-5 sm:py-3 md:text-lg md:px-6
               "
             >
-              Conoce la Tecnología →
+              Ver Productos
             </a>
           </div>
         </div>
