@@ -1,13 +1,30 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Header from '@/Components/Header'
 import Footer from '@/Components/Footer'
-import Categorias from './Categorias'
 import ProductoCard from './ProductoCard'
 import BeneficiosTecnologicos from './BeneficiosTecnologicos'
 import ContactActions from '@/Components/ContactActions'
 
 export default function Productos() {
-  const [categoriaSeleccionada, setCategoriaSeleccionada] = useState('Todos')
+  const [categoriasSeleccionadas, setCategoriasSeleccionadas] = useState([])
+
+  useEffect(() => {
+    const hash = window.location.hash
+    if (hash) {
+      const id = hash.replace('#', '')
+      const scrollToElement = () => {
+        const el = document.getElementById(id)
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+        }
+      }
+
+      // Reintentos para asegurar scroll si el DOM aún no está listo
+      setTimeout(scrollToElement, 100)
+      setTimeout(scrollToElement, 300)
+      setTimeout(scrollToElement, 600)
+    }
+  }, [])
 
   return (
     <>
@@ -29,23 +46,20 @@ export default function Productos() {
           </div>
         </div>
       </div>
+      {/* Sección de productos y beneficios con fondo SGX */}
+      <section className="bg-[#001d2e]">
+        <main className="py-12 px-2 sm:px-4 lg:px-8 max-w-full">
+          <ProductoCard categoriasSeleccionadas={categoriasSeleccionadas} />
+          <section id="beneficios">
+            <BeneficiosTecnologicos />
+          </section>
+        </main>
+      </section>
 
-      <main className="pt-12 max-w-7xl mx-auto px-4">
-        <Categorias
-          categoriaSeleccionada={categoriaSeleccionada}
-          setCategoriaSeleccionada={setCategoriaSeleccionada}
-        />
-        <ProductoCard categoriaSeleccionada={categoriaSeleccionada} />
-
-        {/* Secciones adicionales */}
-        <section id="beneficios">
-          <BeneficiosTecnologicos />
-        </section>
-      </main>
 
       <section id="footer">
-                <Footer />
-              </section>
+        <Footer />
+      </section>
       <ContactActions />
     </>
   )

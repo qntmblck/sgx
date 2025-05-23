@@ -7,8 +7,8 @@ const navItems = [
   { name: 'Nosotros', scrollTo: 'sobre' },
   { name: 'Impacto', scrollTo: 'impacto' },
   { name: 'Productos', href: '/productos' },
-  { name: 'Tecnología', href: '/productos#beneficios' },
-  { name: 'Contacto', scrollTo: 'footer' },
+  { name: 'Tecnología', scrollTo: 'beneficios' },
+  { name: 'Contacto', scrollTo: null, isContacto: true },
 ]
 
 export default function Header() {
@@ -16,7 +16,6 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false)
   const [activeSection, setActiveSection] = useState('')
   const currentPath = typeof window !== 'undefined' ? window.location.pathname : '/'
-  const [currentHash, setCurrentHash] = useState('')
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50)
@@ -25,7 +24,7 @@ export default function Header() {
     const observers = []
 
     if (currentPath === '/') {
-      const sectionIds = ['inicio', 'sobre', 'impacto', 'footer']
+      const sectionIds = ['inicio', 'sobre', 'impacto'] // ❌ sin "footer"
       sectionIds.forEach((id) => {
         const el = document.getElementById(id)
         if (!el) return
@@ -45,11 +44,7 @@ export default function Header() {
       if (el) {
         const observer = new IntersectionObserver(
           ([entry]) => {
-            if (entry.isIntersecting) {
-              setActiveSection('#beneficios')
-            } else {
-              setActiveSection('#productos')
-            }
+            setActiveSection(entry.isIntersecting ? '#beneficios' : '#productos')
           },
           { threshold: 0.6 }
         )
@@ -65,39 +60,54 @@ export default function Header() {
   }, [currentPath])
 
   useEffect(() => {
-    const onHashChange = () => setCurrentHash(window.location.hash)
-    window.addEventListener('hashchange', onHashChange)
-    onHashChange()
-    return () => window.removeEventListener('hashchange', onHashChange)
+    const activarContacto = () => setActiveSection('#contacto')
+    window.addEventListener('activate-contacto', activarContacto)
+    return () => window.removeEventListener('activate-contacto', activarContacto)
   }, [])
 
   const isActive = (item) => {
-    if (item.href === '/productos#beneficios') {
-      return activeSection === '#beneficios'
-    }
+  if (item.isContacto) return activeSection === '#contacto'
 
-    if (item.href === '/productos') {
-      return currentPath === '/productos' && activeSection === '#productos'
-    }
-
-    if (item.href === '/' && currentPath === '/') {
-      return !['#sobre', '#impacto', '#footer'].includes(activeSection)
-    }
-
-    if (item.scrollTo && currentPath === '/') {
-      return activeSection === `#${item.scrollTo}`
-    }
-
-    return false
+  // ⚠️ No marcar Inicio si Contacto está activo
+  if (item.href === '/' && currentPath === '/') {
+    const secciones = ['#sobre', '#impacto', '#beneficios', '#contacto']
+    return !secciones.includes(activeSection)
   }
 
+  if (item.href === '/productos#beneficios') return activeSection === '#beneficios'
+  if (item.href === '/productos') return currentPath === '/productos' && activeSection === '#productos'
+  if (item.scrollTo && currentPath === '/') return activeSection === `#${item.scrollTo}`
+
+  return false
+}
+
+
   const scrollOrRedirect = (id) => {
-    const el = document.getElementById(id)
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth', block: 'start' })
-    } else {
-      window.location.href = `/#${id}`
+    if (id === 'beneficios') {
+      window.location.href = `/productos#beneficios`
+      return
     }
+
+    if (currentPath !== '/') {
+      window.location.href = `/#${id}`
+    } else {
+      setTimeout(() => {
+        const el = document.getElementById(id)
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+        }
+      }, 50)
+    }
+  }
+
+  const isMobile = () => window.innerWidth < 768
+
+  const handleContactoClick = () => {
+    setMobileMenuOpen(false)
+    const evento = new CustomEvent('toggle-contact-form', {
+      detail: { tipo: isMobile() ? 'whatsapp' : 'correo' }
+    })
+    window.dispatchEvent(evento)
   }
 
   const baseClasses = 'px-4 py-2 rounded-md transition font-semibold'
@@ -105,37 +115,44 @@ export default function Header() {
   const navTextColor = scrolled ? 'text-neutral-800' : 'text-white'
   const mobileTextColor = scrolled ? 'text-neutral-800' : 'text-white'
 
-const renderNavItem = (item, isMobile = false) => {
-  const active = isActive(item)
-  const classes = `${isMobile ? 'flex-shrink-0' : ''} ${baseClasses} ${
-    active
-      ? 'bg-gradient-to-br from-[#003b5c] to-[#00d084] text-white shadow'
-      : 'hover:text-lime-500 text-inherit'
-  }`
+  const renderNavItem = (item, isMobile = false) => {
+    const active = isActive(item)
+    const classes = `${isMobile ? 'flex-shrink-0' : ''} ${baseClasses} ${
+      active
+        ? 'bg-gradient-to-br from-[#003b5c] to-[#00d084] text-white shadow'
+        : 'hover:text-lime-500 text-inherit'
+    }`
 
-  return item.scrollTo ? (
-    <button
-      key={item.name}
-      onClick={() => {
-        setMobileMenuOpen(false)
-        scrollOrRedirect(item.scrollTo)
-      }}
-      className={classes}
-    >
-      {item.name}
-    </button>
-  ) : (
-    <Link
-      key={item.name}
-      href={item.href}
-      onClick={() => setMobileMenuOpen(false)}
-      className={classes}
-    >
-      {item.name}
-    </Link>
-  )
-}
+    if (item.isContacto) {
+      return (
+        <button key={item.name} onClick={handleContactoClick} className={classes}>
+          {item.name}
+        </button>
+      )
+    }
 
+    return item.scrollTo ? (
+      <button
+        key={item.name}
+        onClick={() => {
+          setMobileMenuOpen(false)
+          scrollOrRedirect(item.scrollTo)
+        }}
+        className={classes}
+      >
+        {item.name}
+      </button>
+    ) : (
+      <Link
+        key={item.name}
+        href={item.href}
+        onClick={() => setMobileMenuOpen(false)}
+        className={classes}
+      >
+        {item.name}
+      </Link>
+    )
+  }
 
   return (
     <header className={`fixed top-0 w-full z-50 transition duration-300 ${bgColor}`}>

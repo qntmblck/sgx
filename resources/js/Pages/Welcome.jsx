@@ -14,12 +14,18 @@ export default function Welcome() {
   useEffect(() => {
     const hash = window.location.hash
     if (hash) {
-      const el = document.getElementById(hash.replace('#', ''))
-      if (el) {
-        setTimeout(() => {
-          el.scrollIntoView({ behavior: 'smooth' })
-        }, 100)
+      const id = hash.replace('#', '')
+      const scrollToElement = () => {
+        const el = document.getElementById(id)
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+        }
       }
+
+      // Reintenta si el elemento no está listo inmediatamente
+      setTimeout(scrollToElement, 100)
+      setTimeout(scrollToElement, 300)
+      setTimeout(scrollToElement, 600)
     }
   }, [])
 
@@ -45,14 +51,15 @@ export default function Welcome() {
             <Impacto />
           </section>
 
-          <ProductosDestacados />
+          {/* beneficios debe tener su ID también */}
+          <section id="beneficios">
+            <ProductosDestacados />
+          </section>
+
           <CTAContacto />
         </main>
 
-
-          <Footer />
-
-
+        <Footer />
         <ContactActions />
       </div>
     </>

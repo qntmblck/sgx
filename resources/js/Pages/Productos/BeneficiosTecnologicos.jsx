@@ -48,34 +48,42 @@ export default function BeneficiosTecnologicos() {
   ]
 
   return (
-    <section id="beneficios" className="bg-transparent py-16 px-6 sm:px-8">
-      <h2 className="text-center text-3xl sm:text-4xl font-bold text-[#003b5c] mb-12">
+    <section id="beneficios" className="relative py-16 px-4 sm:px-6 lg:px-12 max-w-full overflow-hidden">
+      <h2 className="text-center text-3xl sm:text-4xl font-bold text-white mb-12">
         Beneficios Tecnológicos
       </h2>
 
-      {/* Carrusel horizontal deslizable y animado */}
-      <div className="overflow-x-auto scrollbar-hide scroll-smooth -mx-4 px-4">
+      {/* Fondo translúcido armonioso con SGX */}
+      <div className="absolute inset-0 px-2 sm:px-4">
+        <div className="w-full h-full rounded-[48px] backdrop-blur-md shadow-2xl ring-1 ring-inset ring-white/20
+        bg-gradient-to-br from-[#003b5c]/40 via-[#149e60]/20 to-white/10" />
+      </div>
+
+      {/* Carrusel horizontal animado */}
+      <div className="relative z-10 w-full overflow-x-auto scrollbar-hide">
         <div
-          className="flex w-max animate-carousel gap-4"
+          className="flex w-max animate-carousel gap-4 px-4 sm:px-6"
           style={{ animationDuration: '50s' }}
         >
           {[...beneficios, ...beneficios].map((item, idx) => (
             <div
               key={idx}
-              className="flex-shrink-0 w-[280px] sm:w-[320px] h-auto bg-gradient-to-br from-[#002f4b] via-[#005c8a] to-[#0099cc] text-white p-6 rounded-xl shadow-md hover:scale-[1.01] transition-transform duration-300"
-
+              className="flex flex-shrink-0 w-[300px] sm:w-[340px] h-auto p-5 rounded-xl shadow-md hover:scale-[1.01] transition-transform duration-300
+              bg-[linear-gradient(to_bottom_right,rgba(199,55,47,0.85),rgba(199,55,47,0.75))] backdrop-blur-md border border-white/10"
             >
-              <div className="flex items-start justify-between mb-4">
-                <h3 className="text-lg font-semibold">{item.titulo}</h3>
-                <div className="w-10 h-10 ml-2">
-                  <img
-                    src={item.imagen}
-                    alt={item.titulo}
-                    className="w-full h-full object-contain"
-                  />
+              <div className="flex flex-col justify-between w-full">
+                <div className="flex items-start justify-between mb-4">
+                  <h3 className="text-lg font-semibold text-white pr-2">{item.titulo}</h3>
+                  <div className="w-10 h-10 ml-2 flex-shrink-0">
+                    <img
+                      src={item.imagen}
+                      alt={item.titulo}
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
                 </div>
+                <p className="text-sm text-white/90 leading-snug">{item.descripcion}</p>
               </div>
-              <p className="text-sm text-white/90">{item.descripcion}</p>
             </div>
           ))}
         </div>

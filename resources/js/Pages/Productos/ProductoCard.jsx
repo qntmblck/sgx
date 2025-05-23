@@ -1,4 +1,6 @@
 import { useState } from 'react'
+import ParticlesFondo from '@/Components/ParticlesFondo'
+
 
 export default function ProductoCard({ categoriaSeleccionada }) {
   const productos = [
@@ -149,21 +151,96 @@ export default function ProductoCard({ categoriaSeleccionada }) {
     },
   ];
 
-  const productosFiltrados =
-    categoriaSeleccionada === 'Todos'
-      ? productos
-      : productos.filter((p) => p.categoria === categoriaSeleccionada);
+  const [filtroEnergia, setFiltroEnergia] = useState(['Eléctrico', 'Diésel Euro VI'])
+  const [categoriasSeleccionadas, setCategoriasSeleccionadas] = useState([])
+
+  const toggleFiltro = (tipo) => {
+    const nuevos = filtroEnergia.includes(tipo)
+      ? filtroEnergia.filter((t) => t !== tipo)
+      : [...filtroEnergia, tipo]
+    setFiltroEnergia(nuevos)
+    setCategoriasSeleccionadas([])
+  }
+
+  const toggleCategoria = (cat) => {
+    setCategoriasSeleccionadas((prev) =>
+      prev.includes(cat) ? prev.filter((c) => c !== cat) : [...prev, cat]
+    )
+  }
+
+  const categoriasDisponibles = [
+    ...new Set(productos.filter(p => filtroEnergia.includes(p.energia)).map(p => p.categoria))
+  ]
+
+  const productosFiltrados = productos
+    .filter(p =>
+      filtroEnergia.includes(p.energia) &&
+      (categoriasSeleccionadas.length === 0 || categoriasSeleccionadas.includes(p.categoria))
+    )
+    .sort((a, b) => parseFloat(a.largo) - parseFloat(b.largo))
 
   return (
-    <section className="mb-16">
-      <h2 className="text-2xl font-bold text-gray-900 mb-8 text-center">Modelos Disponibles</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {productosFiltrados.map((prod, idx) => (
-          <ProductoCardItem key={idx} producto={prod} />
-        ))}
+    <section className="relative py-16 sm:py-24">
+      {/* Fondo glassmorphism expandido */}
+      <div className="absolute inset-0 z-0 px-2 sm:px-6 md:px-12">
+        <div className="w-full h-full rounded-[48px] shadow-2xl ring-1 ring-inset ring-white/20 backdrop-blur-md bg-gradient-to-br from-white/60 via-lime-100/40 to-white/20" />
+      </div>
+
+      {/* Partículas */}
+      <div className="absolute top-0 left-0 w-full h-24 z-10 pointer-events-none">
+        <ParticlesFondo />
+      </div>
+
+      {/* Contenido */}
+      <div className="relative max-w-7xl mx-auto px-6 sm:px-10 py-10 z-20">
+        {/* Título + filtros */}
+        <div className="flex flex-col sm:flex-row justify-between items-center gap-4 mb-6">
+          <h2 className="text-3xl font-bold text-gray-900">Modelos Disponibles</h2>
+          <div className="flex gap-2">
+            {['Eléctrico', 'Diésel Euro VI'].map((tipo) => (
+              <button
+                key={tipo}
+                onClick={() => toggleFiltro(tipo)}
+                className={`px-4 py-2 rounded-full border text-sm font-medium transition ${
+                  filtroEnergia.includes(tipo)
+                    ? tipo === 'Eléctrico'
+                      ? 'bg-yellow-300 text-[#003b5c] font-bold'
+                      : 'bg-[#003b5c] text-white'
+                    : 'bg-gray-100 text-gray-800 hover:bg-gray-200'
+                }`}
+              >
+                {tipo}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        {/* Categorías */}
+        <div className="flex justify-center flex-wrap gap-2 mb-10">
+          {categoriasDisponibles.map((cat) => (
+            <button
+              key={cat}
+              onClick={() => toggleCategoria(cat)}
+              className={`px-4 py-1 rounded-full border text-sm font-medium transition ${
+                categoriasSeleccionadas.includes(cat)
+                  ? 'bg-[#c7372f] text-white border-[#c7372f]'
+                  : 'bg-white text-gray-700 border-gray-300 hover:border-[#c7372f]'
+              }`}
+            >
+              {cat}
+            </button>
+          ))}
+        </div>
+
+        {/* Tarjetas */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {productosFiltrados.map((prod, idx) => (
+            <ProductoCardItem key={idx} producto={prod} />
+          ))}
+        </div>
       </div>
     </section>
-  );
+  )
 }
 
 function ProductoCardItem({ producto }) {
@@ -174,19 +251,15 @@ function ProductoCardItem({ producto }) {
 
   let touchStartX = 0
 
-  const handleTouchStart = (e) => {
-    touchStartX = e.touches[0].clientX
-  }
-
+  const handleTouchStart = (e) => { touchStartX = e.touches[0].clientX }
   const handleTouchEnd = (e) => {
-    const touchEndX = e.changedTouches[0].clientX
-    const diff = touchEndX - touchStartX
+    const diff = e.changedTouches[0].clientX - touchStartX
     if (diff > 50) handlePrev()
     if (diff < -50) handleNext()
   }
 
   return (
-    <div className="bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition duration-300 overflow-hidden">
+    <div className="bg-[#c7372f] border border-red-700 rounded-lg shadow-md hover:shadow-lg transition duration-300 overflow-hidden text-white">
       <div
         className="relative w-full h-72 overflow-hidden"
         onClick={handleNext}
@@ -198,15 +271,15 @@ function ProductoCardItem({ producto }) {
           alt={`${producto.modelo} ${index + 1}`}
           className="w-full h-full object-cover transition duration-500"
         />
-        <div className="absolute bottom-2 right-2 text-xs bg-white/70 px-2 py-0.5 rounded">
+        <div className="absolute bottom-2 right-2 text-xs bg-white/80 text-gray-800 px-2 py-0.5 rounded">
           {index + 1} / {producto.imagenes.length}
         </div>
       </div>
       <div className="p-4">
-        <h3 className="text-lg font-semibold text-gray-800 mb-2">{producto.modelo}</h3>
-        <ul className="text-sm text-gray-600 space-y-1">
+        <h3 className="text-lg font-bold mb-2">{producto.modelo}</h3>
+        <ul className="text-sm space-y-1">
           <li><strong>Tipo:</strong> {producto.energia}</li>
-          <li><strong>Largo:</strong> {producto.largo}</li>
+          <li><strong>Largo:</strong> {producto.largo} m</li>
           <li><strong>Capacidad:</strong> {producto.pasajeros}</li>
         </ul>
       </div>
