@@ -7,7 +7,6 @@ const navItems = [
   { name: 'Nosotros', scrollTo: 'sobre' },
   { name: 'Impacto', scrollTo: 'impacto' },
   { name: 'Productos', href: '/productos' },
-  { name: 'Tecnología', scrollTo: 'beneficios' },
   { name: 'Contacto', scrollTo: null, isContacto: true },
 ]
 
@@ -24,7 +23,7 @@ export default function Header() {
     const observers = []
 
     if (currentPath === '/') {
-      const sectionIds = ['inicio', 'sobre', 'impacto'] // ❌ sin "footer"
+      const sectionIds = ['inicio', 'sobre', 'impacto']
       sectionIds.forEach((id) => {
         const el = document.getElementById(id)
         if (!el) return
@@ -39,20 +38,6 @@ export default function Header() {
       })
     }
 
-    if (currentPath === '/productos') {
-      const el = document.getElementById('beneficios')
-      if (el) {
-        const observer = new IntersectionObserver(
-          ([entry]) => {
-            setActiveSection(entry.isIntersecting ? '#beneficios' : '#productos')
-          },
-          { threshold: 0.6 }
-        )
-        observer.observe(el)
-        observers.push(observer)
-      }
-    }
-
     return () => {
       window.removeEventListener('scroll', handleScroll)
       observers.forEach((observer) => observer.disconnect())
@@ -61,33 +46,39 @@ export default function Header() {
 
   useEffect(() => {
     const activarContacto = () => setActiveSection('#contacto')
+    const desactivarContacto = () => setActiveSection('')
+
     window.addEventListener('activate-contacto', activarContacto)
-    return () => window.removeEventListener('activate-contacto', activarContacto)
+    window.addEventListener('deactivate-contacto', desactivarContacto)
+
+    return () => {
+      window.removeEventListener('activate-contacto', activarContacto)
+      window.removeEventListener('deactivate-contacto', desactivarContacto)
+    }
   }, [])
 
   const isActive = (item) => {
-  if (item.isContacto) return activeSection === '#contacto'
+    if (item.isContacto) return activeSection === '#contacto'
 
-  // ⚠️ No marcar Inicio si Contacto está activo
-  if (item.href === '/' && currentPath === '/') {
-    const secciones = ['#sobre', '#impacto', '#beneficios', '#contacto']
-    return !secciones.includes(activeSection)
-  }
+    if (activeSection === '#contacto') return false // desactiva todo lo demás
 
-  if (item.href === '/productos#beneficios') return activeSection === '#beneficios'
-  if (item.href === '/productos') return currentPath === '/productos' && activeSection === '#productos'
-  if (item.scrollTo && currentPath === '/') return activeSection === `#${item.scrollTo}`
-
-  return false
-}
-
-
-  const scrollOrRedirect = (id) => {
-    if (id === 'beneficios') {
-      window.location.href = `/productos#beneficios`
-      return
+    if (item.href === '/' && currentPath === '/') {
+      const secciones = ['#sobre', '#impacto', '#contacto']
+      return !secciones.includes(activeSection)
     }
 
+    if (item.href === '/productos') {
+      return currentPath === '/productos' && activeSection !== '#contacto'
+    }
+
+    if (item.scrollTo && currentPath === '/') {
+      return activeSection === `#${item.scrollTo}`
+    }
+
+    return false
+  }
+
+  const scrollOrRedirect = (id) => {
     if (currentPath !== '/') {
       window.location.href = `/#${id}`
     } else {

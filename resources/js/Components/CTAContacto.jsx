@@ -1,6 +1,8 @@
-import { Link } from '@inertiajs/react'
-
 export default function CTAContacto() {
+  const abrirFormulario = () => {
+    window.dispatchEvent(new CustomEvent('activate-contacto'))
+  }
+
   return (
     <div className="bg-gradient-to-r from-[#003b5c] via-[#3ca9c9] to-[#bfeaf1]">
       <div className="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:flex lg:items-center lg:justify-between lg:px-8">
@@ -9,12 +11,12 @@ export default function CTAContacto() {
           Conversemos sobre soluciones inteligentes.
         </h2>
         <div className="mt-10 flex items-center gap-x-6 lg:mt-0 lg:shrink-0">
-          <Link
-            href="/productos#beneficios"
+          <button
+            onClick={abrirFormulario}
             className="rounded-md bg-gradient-to-br from-[#00d084] to-[#007f65] px-4 py-2.5 text-sm font-semibold text-white shadow hover:brightness-110 transition"
           >
-            Conocer Tecnología
-          </Link>
+            Contactar
+          </button>
         </div>
       </div>
     </div>

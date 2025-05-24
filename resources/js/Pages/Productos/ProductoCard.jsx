@@ -2,7 +2,149 @@ import { useState } from 'react'
 import ParticlesFondo from '@/Components/ParticlesFondo'
 
 export default function ProductoCard({ categoriaSeleccionada }) {
-  const productos = [/* ... productos ... */] // igual que antes
+  const productos = [
+  {
+    modelo: "G6 Eléctrico",
+    categoria: "G6 Eléctrico",
+    energia: "Eléctrico",
+    largo: "6.5",
+    pasajeros: "13+1",
+    imagenes: [
+      "/img/buses/g6-electric-1.jpg",
+      "/img/buses/g6-electric-2.jpg",
+      "/img/buses/g6-electric-3.jpg",
+      "/img/buses/g6-electric-4.jpg",
+      "/img/buses/g6-electric-5.jpg"
+    ]
+  },
+  {
+    modelo: "G6 Diésel Euro VI",
+    categoria: "G6 Diésel Euro VI",
+    energia: "Diésel Euro VI",
+    largo: "6.6",
+    pasajeros: "23",
+    imagenes: [
+      "/img/buses/g6-diesel-1.jpg",
+      "/img/buses/g6-diesel-2.jpg",
+      "/img/buses/g6-diesel-3.jpg",
+      "/img/buses/g6-diesel-4.jpg",
+      "/img/buses/g6-diesel-5.jpg"
+    ]
+  },
+  {
+    modelo: "G9 Eléctrico 8.5m",
+    categoria: "G9 Eléctrico",
+    energia: "Eléctrico",
+    largo: "8.5",
+    pasajeros: "15–30",
+    imagenes: [
+      "/img/buses/g9-electric-85-1.jpg",
+      "/img/buses/g9-electric-85-2.jpg",
+      "/img/buses/g9-electric-85-3.jpg",
+      "/img/buses/g9-electric-85-4.jpg",
+      "/img/buses/g9-electric-85-5.jpg"
+    ]
+  },
+  {
+    modelo: "G9 Eléctrico 10.5m",
+    categoria: "G9 Eléctrico",
+    energia: "Eléctrico",
+    largo: "10.5",
+    pasajeros: "19–39",
+    imagenes: [
+      "/img/buses/g9-electric-85-1.jpg",
+      "/img/buses/g9-electric-85-2.jpg",
+      "/img/buses/g9-electric-85-3.jpg",
+      "/img/buses/g9-electric-85-4.jpg",
+      "/img/buses/g9-electric-85-5.jpg"
+    ]
+  },
+  {
+    modelo: "G9 Eléctrico 12.0m",
+    categoria: "G9 Eléctrico",
+    energia: "Eléctrico",
+    largo: "12.0",
+    pasajeros: "34–38",
+    imagenes: [
+     "/img/buses/g9-electric-85-1.jpg",
+      "/img/buses/g9-electric-85-2.jpg",
+      "/img/buses/g9-electric-85-3.jpg",
+      "/img/buses/g9-electric-85-4.jpg",
+      "/img/buses/g9-electric-85-5.jpg"
+    ]
+  },
+  {
+    modelo: "G9 Diésel Euro VI 10.5m",
+    categoria: "G9 Diésel Euro VI",
+    energia: "Diésel Euro VI",
+    largo: "10.5",
+    pasajeros: "N/D",
+    imagenes: [
+      "/img/buses/g9-electric-85-1.jpg",
+      "/img/buses/g9-electric-85-2.jpg",
+      "/img/buses/g9-electric-85-3.jpg",
+      "/img/buses/g9-electric-85-4.jpg",
+      "/img/buses/g9-electric-85-5.jpg"
+    ]
+  },
+  {
+    modelo: "G9 Diésel Euro VI 12.0m",
+    categoria: "G9 Diésel Euro VI",
+    energia: "Diésel Euro VI",
+    largo: "12.0",
+    pasajeros: "N/D",
+    imagenes: [
+      "/img/buses/g9-electric-85-1.jpg",
+      "/img/buses/g9-electric-85-2.jpg",
+      "/img/buses/g9-electric-85-3.jpg",
+      "/img/buses/g9-electric-85-4.jpg",
+      "/img/buses/g9-electric-85-5.jpg"
+    ]
+  },
+  {
+    modelo: "A9 Eléctrico 8.2m",
+    categoria: "A9 Eléctrico",
+    energia: "Eléctrico",
+    largo: "8.2",
+    pasajeros: "29",
+    imagenes: [
+      "/img/buses/a9-electric-82-1.jpg",
+      "/img/buses/a9-electric-82-2.jpg",
+      "/img/buses/a9-electric-82-3.jpg",
+      "/img/buses/a9-electric-82-4.jpg",
+      "/img/buses/a9-electric-82-5.jpg"
+    ]
+  },
+  {
+    modelo: "A9 Eléctrico 11.3m",
+    categoria: "A9 Eléctrico",
+    energia: "Eléctrico",
+    largo: "11.3",
+    pasajeros: "N/D",
+    imagenes: [
+      "/img/buses/a9-electric-82-1.jpg",
+      "/img/buses/a9-electric-82-2.jpg",
+      "/img/buses/a9-electric-82-3.jpg",
+      "/img/buses/a9-electric-82-4.jpg",
+      "/img/buses/a9-electric-82-5.jpg"
+    ]
+  },
+  {
+    modelo: "K7 Eléctrico 7.1m",
+    categoria: "K7 Eléctrico",
+    energia: "Eléctrico",
+    largo: "7.1",
+    pasajeros: "N/D",
+    imagenes: [
+      "/img/buses/a9-electric-82-1.jpg",
+      "/img/buses/a9-electric-82-2.jpg",
+      "/img/buses/a9-electric-82-3.jpg",
+      "/img/buses/a9-electric-82-4.jpg",
+      "/img/buses/a9-electric-82-5.jpg"
+    ]
+  }
+]
+
 
   const [filtroEnergia, setFiltroEnergia] = useState(['Eléctrico', 'Diésel Euro VI'])
   const [categoriasSeleccionadas, setCategoriasSeleccionadas] = useState([])
@@ -45,39 +187,44 @@ export default function ProductoCard({ categoriaSeleccionada }) {
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-10 py-10 z-20">
         <div className="bg-[#001d2e]/70 backdrop-blur-md rounded-xl p-6 mb-10 shadow-md">
-          <div className="flex justify-end gap-2 mb-4 flex-wrap">
-            {['Eléctrico', 'Diésel Euro VI'].map((tipo) => (
-              <button
-                key={tipo}
-                onClick={() => toggleFiltro(tipo)}
-                className={`px-4 py-2 rounded-full border text-sm font-semibold transition ${
-                  filtroEnergia.includes(tipo)
-                    ? tipo === 'Eléctrico'
-                      ? 'bg-yellow-300 text-[#003b5c]'
-                      : 'bg-[#003b5c] text-white'
-                    : 'bg-white text-gray-800 hover:bg-gray-100'
-                }`}
-              >
-                {tipo}
-              </button>
-            ))}
-          </div>
+          <div className="grid sm:grid-cols-3 gap-4 mb-6">
+  {/* Filtros de energía alineados a la izquierda */}
+  <div className="flex flex-col gap-2">
+    {['Eléctrico', 'Diésel Euro VI'].map((tipo) => (
+      <button
+        key={tipo}
+        onClick={() => toggleFiltro(tipo)}
+        className={`px-4 py-2 rounded-full border text-sm font-semibold transition ${
+          filtroEnergia.includes(tipo)
+            ? tipo === 'Eléctrico'
+              ? 'bg-yellow-300 text-[#003b5c]'
+              : 'bg-[#003b5c] text-white'
+            : 'bg-white text-gray-800 hover:bg-gray-100'
+        }`}
+      >
+        {tipo}
+      </button>
+    ))}
+  </div>
 
-          <div className="flex justify-center flex-wrap gap-2">
-            {categoriasDisponibles.map((cat) => (
-              <button
-                key={cat}
-                onClick={() => toggleCategoria(cat)}
-                className={`px-4 py-1 rounded-full border text-sm font-medium transition ${
-                  categoriasSeleccionadas.includes(cat)
-                    ? 'bg-[#c7372f] text-white border-[#c7372f]'
-                    : 'bg-white text-gray-700 border-gray-300 hover:border-[#c7372f]'
-                }`}
-              >
-                {cat}
-              </button>
-            ))}
-          </div>
+  {/* Filtros de categoría distribuidos a la derecha en dos filas */}
+  <div className="sm:col-span-2 flex flex-wrap gap-2 items-start">
+    {categoriasDisponibles.map((cat) => (
+      <button
+        key={cat}
+        onClick={() => toggleCategoria(cat)}
+        className={`px-4 py-1 rounded-full border text-sm font-medium transition ${
+          categoriasSeleccionadas.includes(cat)
+            ? 'bg-[#c7372f] text-white border-[#c7372f]'
+            : 'bg-white text-gray-700 border-gray-300 hover:border-[#c7372f]'
+        }`}
+      >
+        {cat}
+      </button>
+    ))}
+  </div>
+</div>
+
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
