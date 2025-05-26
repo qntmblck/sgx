@@ -12,10 +12,10 @@ export default function BeneficiosTecnologicos() {
   ]
 
   return (
-    <section className="py-8 px-0 bg-transparent w-full overflow-hidden">
+    <section className="w-full py-8 bg-transparent">
       <div className="w-full overflow-x-auto scrollbar-hide snap-x snap-mandatory">
         <div
-          className="flex w-max animate-carousel gap-4 px-4 sm:px-6"
+          className="flex w-max gap-4 animate-carousel px-4 sm:px-6 lg:px-8"
           style={{ animationDuration: '50s' }}
         >
           {[...beneficios, ...beneficios].map((item, index) => (

@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import Header from '@/Components/Header'
 import Footer from '@/Components/Footer'
 import ProductoCard from './ProductoCard'
@@ -6,56 +6,151 @@ import BeneficiosTecnologicos from './BeneficiosTecnologicos'
 import ContactActions from '@/Components/ContactActions'
 
 export default function Productos() {
-  const [categoriasSeleccionadas, setCategoriasSeleccionadas] = useState([])
+  const productos = [
+    { modelo: "G6 Eléctrico", categoria: "G6 Eléctrico", energia: "Eléctrico", largo: 6.5, pasajeros: "13+1", imagenes: [...Array(5)].map((_, i) => `/img/buses/g6-electric-${i + 1}.jpg`) },
+    { modelo: "G6 Diésel Euro VI", categoria: "G6 Diésel Euro VI", energia: "Diésel Euro VI", largo: 6.6, pasajeros: "23", imagenes: [...Array(5)].map((_, i) => `/img/buses/g6-diesel-${i + 1}.jpg`) },
+    { modelo: "G9 Eléctrico 8.5m", categoria: "G9 Eléctrico", energia: "Eléctrico", largo: 8.5, pasajeros: "15–30", imagenes: [...Array(5)].map((_, i) => `/img/buses/g9-electric-85-${i + 1}.jpg`) },
+    { modelo: "G9 Eléctrico 10.5m", categoria: "G9 Eléctrico", energia: "Eléctrico", largo: 10.5, pasajeros: "19–39", imagenes: [...Array(5)].map((_, i) => `/img/buses/g9-electric-85-${i + 1}.jpg`) },
+    { modelo: "G9 Eléctrico 12.0m", categoria: "G9 Eléctrico", energia: "Eléctrico", largo: 12.0, pasajeros: "34–38", imagenes: [...Array(5)].map((_, i) => `/img/buses/g9-electric-85-${i + 1}.jpg`) },
+    { modelo: "G9 Diésel Euro VI 10.5m", categoria: "G9 Diésel Euro VI", energia: "Diésel Euro VI", largo: 10.5, pasajeros: "N/D", imagenes: [...Array(5)].map((_, i) => `/img/buses/g9-electric-85-${i + 1}.jpg`) },
+    { modelo: "G9 Diésel Euro VI 12.0m", categoria: "G9 Diésel Euro VI", energia: "Diésel Euro VI", largo: 12.0, pasajeros: "N/D", imagenes: [...Array(5)].map((_, i) => `/img/buses/g9-electric-85-${i + 1}.jpg`) },
+    { modelo: "A9 Eléctrico 8.2m", categoria: "A9 Eléctrico", energia: "Eléctrico", largo: 8.2, pasajeros: "29", imagenes: [...Array(5)].map((_, i) => `/img/buses/a9-electric-82-${i + 1}.jpg`) },
+    { modelo: "A9 Eléctrico 11.3m", categoria: "A9 Eléctrico", energia: "Eléctrico", largo: 11.3, pasajeros: "N/D", imagenes: [...Array(5)].map((_, i) => `/img/buses/a9-electric-82-${i + 1}.jpg`) },
+    { modelo: "K7 Eléctrico 7.1m", categoria: "K7 Eléctrico", energia: "Eléctrico", largo: 7.1, pasajeros: "N/D", imagenes: [...Array(5)].map((_, i) => `/img/buses/a9-electric-82-${i + 1}.jpg`) }
+  ]
+
+  const [energia, setEnergia] = useState(['Eléctrico', 'Diésel Euro VI'])
+  const [modelos, setModelos] = useState([])
+  const [segmento, setSegmento] = useState([])
+  const [openMenu, setOpenMenu] = useState(null)
+  const menuRef = useRef(null)
+
+  const modelosDisponibles = [...new Set(productos.map(p => p.categoria))]
+  const segmentoRangos = {
+    '6–7m': { min: 6, max: 7.9 },
+    '8–10m': { min: 8, max: 10 },
+    '12m': { min: 10.1, max: 12.5 }
+  }
+  const segmentos = Object.keys(segmentoRangos)
+
+  const toggle = (item, setFn, list) => {
+    setFn(list.includes(item) ? list.filter(i => i !== item) : [...list, item])
+  }
+
+  const productosFiltrados = productos.filter(p =>
+    energia.includes(p.energia) &&
+    (modelos.length === 0 || modelos.includes(p.categoria)) &&
+    (segmento.length === 0 || segmento.some(nombre => {
+      const r = segmentoRangos[nombre]
+      return p.largo >= r.min && p.largo <= r.max
+    }))
+  )
 
   useEffect(() => {
-    const hash = window.location.hash
-    if (hash) {
-      const id = hash.replace('#', '')
-      const scrollToElement = () => {
-        const el = document.getElementById(id)
-        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    const handleClickOutside = (event) => {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        setOpenMenu(null)
       }
-
-      setTimeout(scrollToElement, 100)
-      setTimeout(scrollToElement, 300)
-      setTimeout(scrollToElement, 600)
     }
+    document.addEventListener('mousedown', handleClickOutside)
+    return () => document.removeEventListener('mousedown', handleClickOutside)
   }, [])
 
   return (
     <>
       <Header />
 
-      {/* Hero dinámico */}
-      <div
-        className="relative bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: "url('/img/productos.png')" }}
-      >
-        <div className="absolute inset-0 bg-black bg-opacity-40" />
-
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 pt-20 sm:pt-28 pb-16">
-          <div className="text-center mb-10">
-            <h1 className="text-4xl sm:text-5xl font-extrabold text-white drop-shadow mb-4">
-              Portafolio de Buses ANKAI
-            </h1>
-            <p className="text-white text-lg sm:text-xl max-w-3xl mx-auto drop-shadow-sm">
-              Modelos eléctricos, urbanos, interurbanos y de alta capacidad adaptados a las necesidades del transporte moderno en Chile y Latinoamérica.
-            </p>
-          </div>
-
+      <div className="relative bg-cover bg-center bg-no-repeat" style={{ backgroundImage: "url('/img/productos.png')" }}>
+        <div className="absolute inset-0 bg-black/40" />
+        <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8 pt-20 sm:pt-28 pb-24 text-center">
+          <h1 className="text-4xl sm:text-5xl font-extrabold text-white mb-4">
+            Portafolio de Buses ANKAI
+          </h1>
+          <p className="text-white text-lg sm:text-xl max-w-3xl mx-auto mb-6">
+            Modelos eléctricos, urbanos, interurbanos y de alta capacidad adaptados a las necesidades del transporte moderno.
+          </p>
           <BeneficiosTecnologicos />
         </div>
       </div>
 
-      {/* Transición visual */}
-      <div className="h-12 bg-gradient-to-b from-transparent to-[#001d2e]" />
+      {/* Filtros */}
+<div
+  ref={menuRef}
+  className="relative w-full max-w-7xl mx-auto px-4 -mt-24 z-50 bg-[#001d2e]/90 backdrop-blur-md rounded-xl shadow-lg px-6 py-4"
+>
+  <div className="flex flex-wrap justify-around gap-4 text-white text-sm font-medium">
+    {/* Tipo de Energía */}
+    <div className="relative">
+      <button className="cursor-pointer hover:text-lime-300" onClick={() => setOpenMenu(openMenu === 'energia' ? null : 'energia')}>
+        Tipo de Energía
+      </button>
+      {openMenu === 'energia' && (
+        <div className="absolute top-full left-0 mt-2 bg-white text-gray-800 rounded shadow-lg z-[9999] p-3 min-w-[160px]">
+          {['Eléctrico', 'Diésel Euro VI'].map(tipo => (
+            <button
+              key={tipo}
+              onClick={() => toggle(tipo, setEnergia, energia)}
+              className={`block px-4 py-1 rounded-full text-sm mb-1 ${
+                energia.includes(tipo) ? 'bg-yellow-300 text-[#003b5c]' : 'hover:bg-gray-200'
+              }`}
+            >
+              {tipo}
+            </button>
+          ))}
+        </div>
+      )}
+    </div>
 
-      {/* Sección de productos */}
-      <section className="bg-[#001d2e] relative">
-        <main className="relative z-20 py-12 px-2 sm:px-4 lg:px-8 max-w-full">
-          <ProductoCard categoriasSeleccionadas={categoriasSeleccionadas} />
-        </main>
+    {/* Modelos */}
+    <div className="relative">
+      <button className="cursor-pointer hover:text-lime-300" onClick={() => setOpenMenu(openMenu === 'modelos' ? null : 'modelos')}>
+        Modelos
+      </button>
+      {openMenu === 'modelos' && (
+        <div className="absolute top-full left-0 mt-2 bg-white text-gray-800 rounded shadow-lg z-[9999] p-3 max-w-xs">
+          {modelosDisponibles.map(cat => (
+            <button
+              key={cat}
+              onClick={() => toggle(cat, setModelos, modelos)}
+              className={`block px-4 py-1 rounded-full text-sm mb-1 ${
+                modelos.includes(cat) ? 'bg-[#c7372f] text-white' : 'hover:bg-gray-200'
+              }`}
+            >
+              {cat}
+            </button>
+          ))}
+        </div>
+      )}
+    </div>
+
+    {/* Segmento */}
+    <div className="relative">
+      <button className="cursor-pointer hover:text-lime-300" onClick={() => setOpenMenu(openMenu === 'segmento' ? null : 'segmento')}>
+        Segmento
+      </button>
+      {openMenu === 'segmento' && (
+        <div className="absolute top-full left-0 mt-2 bg-white text-gray-800 rounded shadow-lg z-[9999] p-3 min-w-[160px]">
+          {segmentos.map(nombre => (
+            <button
+              key={nombre}
+              onClick={() => toggle(nombre, setSegmento, segmento)}
+              className={`block px-4 py-1 rounded-full text-sm mb-1 ${
+                segmento.includes(nombre) ? 'bg-[#00d084] text-white' : 'hover:bg-gray-200'
+              }`}
+            >
+              {nombre}
+            </button>
+          ))}
+        </div>
+      )}
+    </div>
+  </div>
+</div>
+
+
+      <section className="relative z-0 bg-no-repeat bg-center bg-cover" style={{ backgroundImage: "url('/img/catalogo.png')" }}>
+        <div className="absolute inset-0 bg-black/40 z-0" />
+        <ProductoCard productos={productosFiltrados} />
       </section>
 
       <Footer />

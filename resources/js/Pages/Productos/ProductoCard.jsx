@@ -1,258 +1,38 @@
 import { useState } from 'react'
-import ParticlesFondo from '@/Components/ParticlesFondo'
 
-export default function ProductoCard({ categoriaSeleccionada }) {
-  const productos = [
-  {
-    modelo: "G6 Eléctrico",
-    categoria: "G6 Eléctrico",
-    energia: "Eléctrico",
-    largo: "6.5",
-    pasajeros: "13+1",
-    imagenes: [
-      "/img/buses/g6-electric-1.jpg",
-      "/img/buses/g6-electric-2.jpg",
-      "/img/buses/g6-electric-3.jpg",
-      "/img/buses/g6-electric-4.jpg",
-      "/img/buses/g6-electric-5.jpg"
-    ]
-  },
-  {
-    modelo: "G6 Diésel Euro VI",
-    categoria: "G6 Diésel Euro VI",
-    energia: "Diésel Euro VI",
-    largo: "6.6",
-    pasajeros: "23",
-    imagenes: [
-      "/img/buses/g6-diesel-1.jpg",
-      "/img/buses/g6-diesel-2.jpg",
-      "/img/buses/g6-diesel-3.jpg",
-      "/img/buses/g6-diesel-4.jpg",
-      "/img/buses/g6-diesel-5.jpg"
-    ]
-  },
-  {
-    modelo: "G9 Eléctrico 8.5m",
-    categoria: "G9 Eléctrico",
-    energia: "Eléctrico",
-    largo: "8.5",
-    pasajeros: "15–30",
-    imagenes: [
-      "/img/buses/g9-electric-85-1.jpg",
-      "/img/buses/g9-electric-85-2.jpg",
-      "/img/buses/g9-electric-85-3.jpg",
-      "/img/buses/g9-electric-85-4.jpg",
-      "/img/buses/g9-electric-85-5.jpg"
-    ]
-  },
-  {
-    modelo: "G9 Eléctrico 10.5m",
-    categoria: "G9 Eléctrico",
-    energia: "Eléctrico",
-    largo: "10.5",
-    pasajeros: "19–39",
-    imagenes: [
-      "/img/buses/g9-electric-85-1.jpg",
-      "/img/buses/g9-electric-85-2.jpg",
-      "/img/buses/g9-electric-85-3.jpg",
-      "/img/buses/g9-electric-85-4.jpg",
-      "/img/buses/g9-electric-85-5.jpg"
-    ]
-  },
-  {
-    modelo: "G9 Eléctrico 12.0m",
-    categoria: "G9 Eléctrico",
-    energia: "Eléctrico",
-    largo: "12.0",
-    pasajeros: "34–38",
-    imagenes: [
-     "/img/buses/g9-electric-85-1.jpg",
-      "/img/buses/g9-electric-85-2.jpg",
-      "/img/buses/g9-electric-85-3.jpg",
-      "/img/buses/g9-electric-85-4.jpg",
-      "/img/buses/g9-electric-85-5.jpg"
-    ]
-  },
-  {
-    modelo: "G9 Diésel Euro VI 10.5m",
-    categoria: "G9 Diésel Euro VI",
-    energia: "Diésel Euro VI",
-    largo: "10.5",
-    pasajeros: "N/D",
-    imagenes: [
-      "/img/buses/g9-electric-85-1.jpg",
-      "/img/buses/g9-electric-85-2.jpg",
-      "/img/buses/g9-electric-85-3.jpg",
-      "/img/buses/g9-electric-85-4.jpg",
-      "/img/buses/g9-electric-85-5.jpg"
-    ]
-  },
-  {
-    modelo: "G9 Diésel Euro VI 12.0m",
-    categoria: "G9 Diésel Euro VI",
-    energia: "Diésel Euro VI",
-    largo: "12.0",
-    pasajeros: "N/D",
-    imagenes: [
-      "/img/buses/g9-electric-85-1.jpg",
-      "/img/buses/g9-electric-85-2.jpg",
-      "/img/buses/g9-electric-85-3.jpg",
-      "/img/buses/g9-electric-85-4.jpg",
-      "/img/buses/g9-electric-85-5.jpg"
-    ]
-  },
-  {
-    modelo: "A9 Eléctrico 8.2m",
-    categoria: "A9 Eléctrico",
-    energia: "Eléctrico",
-    largo: "8.2",
-    pasajeros: "29",
-    imagenes: [
-      "/img/buses/a9-electric-82-1.jpg",
-      "/img/buses/a9-electric-82-2.jpg",
-      "/img/buses/a9-electric-82-3.jpg",
-      "/img/buses/a9-electric-82-4.jpg",
-      "/img/buses/a9-electric-82-5.jpg"
-    ]
-  },
-  {
-    modelo: "A9 Eléctrico 11.3m",
-    categoria: "A9 Eléctrico",
-    energia: "Eléctrico",
-    largo: "11.3",
-    pasajeros: "N/D",
-    imagenes: [
-      "/img/buses/a9-electric-82-1.jpg",
-      "/img/buses/a9-electric-82-2.jpg",
-      "/img/buses/a9-electric-82-3.jpg",
-      "/img/buses/a9-electric-82-4.jpg",
-      "/img/buses/a9-electric-82-5.jpg"
-    ]
-  },
-  {
-    modelo: "K7 Eléctrico 7.1m",
-    categoria: "K7 Eléctrico",
-    energia: "Eléctrico",
-    largo: "7.1",
-    pasajeros: "N/D",
-    imagenes: [
-      "/img/buses/a9-electric-82-1.jpg",
-      "/img/buses/a9-electric-82-2.jpg",
-      "/img/buses/a9-electric-82-3.jpg",
-      "/img/buses/a9-electric-82-4.jpg",
-      "/img/buses/a9-electric-82-5.jpg"
-    ]
-  }
-]
-
-
-  const [filtroEnergia, setFiltroEnergia] = useState(['Eléctrico', 'Diésel Euro VI'])
-  const [categoriasSeleccionadas, setCategoriasSeleccionadas] = useState([])
-
-  const toggleFiltro = (tipo) => {
-    const nuevos = filtroEnergia.includes(tipo)
-      ? filtroEnergia.filter((t) => t !== tipo)
-      : [...filtroEnergia, tipo]
-    setFiltroEnergia(nuevos)
-    setCategoriasSeleccionadas([])
-  }
-
-  const toggleCategoria = (cat) => {
-    setCategoriasSeleccionadas((prev) =>
-      prev.includes(cat) ? prev.filter((c) => c !== cat) : [...prev, cat]
-    )
-  }
-
-  const categoriasDisponibles = [
-    ...new Set(productos.filter(p => filtroEnergia.includes(p.energia)).map(p => p.categoria))
-  ]
-
-  const productosFiltrados = productos
-    .filter(p =>
-      filtroEnergia.includes(p.energia) &&
-      (categoriasSeleccionadas.length === 0 || categoriasSeleccionadas.includes(p.categoria))
-    )
-    .sort((a, b) => parseFloat(a.largo) - parseFloat(b.largo))
-
+export default function ProductoCard({ productos = [] }) {
   return (
-    <section className="relative py-16 sm:py-24">
-      {/* Fondo expandido sin bordes redondeados */}
-      <div className="absolute inset-0 z-0 px-0 sm:px-8 md:px-16">
-        <div className="w-full h-full shadow-2xl ring-1 ring-inset ring-white/20 backdrop-blur-md bg-gradient-to-br from-white/60 via-lime-100/40 to-white/20" />
-      </div>
-
-      <div className="absolute top-0 left-0 w-full h-24 z-10 pointer-events-none">
-        <ParticlesFondo />
-      </div>
-
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-10 py-10 z-20">
-        <div className="bg-[#001d2e]/70 backdrop-blur-md rounded-xl p-6 mb-10 shadow-md">
-          <div className="grid sm:grid-cols-3 gap-4 mb-6">
-  {/* Filtros de energía alineados a la izquierda */}
-  <div className="flex flex-col gap-2">
-    {['Eléctrico', 'Diésel Euro VI'].map((tipo) => (
-      <button
-        key={tipo}
-        onClick={() => toggleFiltro(tipo)}
-        className={`px-4 py-2 rounded-full border text-sm font-semibold transition ${
-          filtroEnergia.includes(tipo)
-            ? tipo === 'Eléctrico'
-              ? 'bg-yellow-300 text-[#003b5c]'
-              : 'bg-[#003b5c] text-white'
-            : 'bg-white text-gray-800 hover:bg-gray-100'
-        }`}
-      >
-        {tipo}
-      </button>
-    ))}
-  </div>
-
-  {/* Filtros de categoría distribuidos a la derecha en dos filas */}
-  <div className="sm:col-span-2 flex flex-wrap gap-2 items-start">
-    {categoriasDisponibles.map((cat) => (
-      <button
-        key={cat}
-        onClick={() => toggleCategoria(cat)}
-        className={`px-4 py-1 rounded-full border text-sm font-medium transition ${
-          categoriasSeleccionadas.includes(cat)
-            ? 'bg-[#c7372f] text-white border-[#c7372f]'
-            : 'bg-white text-gray-700 border-gray-300 hover:border-[#c7372f]'
-        }`}
-      >
-        {cat}
-      </button>
-    ))}
-  </div>
-</div>
-
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {productosFiltrados.map((prod, idx) => (
-            <ProductoCardItem key={idx} producto={prod} />
-          ))}
-        </div>
-      </div>
+    <section className="relative z-0 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-4 sm:px-6 lg:px-8 py-16">
+      {productos.map((prod, idx) => (
+        <ProductoCardItem key={idx} producto={prod} />
+      ))}
     </section>
   )
 }
 
 function ProductoCardItem({ producto }) {
   const [index, setIndex] = useState(0)
-  const handleNext = () => setIndex((prev) => (prev + 1) % producto.imagenes.length)
-  const handlePrev = () => setIndex((prev) => (prev - 1 + producto.imagenes.length) % producto.imagenes.length)
+
+  const handleNext = () => {
+    setIndex(prev => (prev + 1) % producto.imagenes.length)
+  }
+
+  const handlePrev = () => {
+    setIndex(prev => (prev - 1 + producto.imagenes.length) % producto.imagenes.length)
+  }
+
   let touchStartX = 0
-  const handleTouchStart = (e) => { touchStartX = e.touches[0].clientX }
-  const handleTouchEnd = (e) => {
+  const handleTouchStart = e => { touchStartX = e.touches[0].clientX }
+  const handleTouchEnd = e => {
     const diff = e.changedTouches[0].clientX - touchStartX
     if (diff > 50) handlePrev()
     if (diff < -50) handleNext()
   }
 
   return (
-    <div className="bg-[#c7372f] border border-red-700 rounded-lg shadow-md hover:shadow-lg transition duration-300 overflow-hidden text-white">
+    <div className="bg-[#c7372f] border border-red-700 rounded-lg shadow-md hover:shadow-lg transition duration-300 overflow-hidden text-white text-sm">
       <div
-        className="relative w-full h-72 overflow-hidden"
+        className="relative w-full h-52 sm:h-64 cursor-pointer"
         onClick={handleNext}
         onTouchStart={handleTouchStart}
         onTouchEnd={handleTouchEnd}
@@ -260,15 +40,16 @@ function ProductoCardItem({ producto }) {
         <img
           src={producto.imagenes[index]}
           alt={`${producto.modelo} ${index + 1}`}
-          className="w-full h-full object-cover transition duration-500"
+          className="w-full h-full object-cover object-center transition duration-500"
+          loading="lazy"
         />
         <div className="absolute bottom-2 right-2 text-xs bg-white/80 text-gray-800 px-2 py-0.5 rounded">
           {index + 1} / {producto.imagenes.length}
         </div>
       </div>
-      <div className="p-4">
-        <h3 className="text-lg font-bold mb-2">{producto.modelo}</h3>
-        <ul className="text-sm space-y-1">
+      <div className="p-3">
+        <h3 className="text-base font-bold mb-1">{producto.modelo}</h3>
+        <ul className="space-y-0.5">
           <li><strong>Tipo:</strong> {producto.energia}</li>
           <li><strong>Largo:</strong> {producto.largo} m</li>
           <li><strong>Capacidad:</strong> {producto.pasajeros}</li>
