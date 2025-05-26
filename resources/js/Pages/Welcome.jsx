@@ -51,7 +51,7 @@ export default function Welcome() {
             <Impacto />
           </section>
 
-          {/* beneficios debe tener su ID también */}
+          {/* beneficios  */}
           <section id="beneficios">
             <ProductosDestacados />
           </section>

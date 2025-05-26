@@ -30,7 +30,7 @@ export default function Impacto() {
   return (
     <section
       id="impacto"
-      className="relative isolate overflow-hidden pt-24 sm:pt-32 pb-0 bg-gray-900"
+      className="relative isolate overflow-hidden pt-6 sm:pt-8 pb-0 bg-gray-900"
     >
       {/* Fondo fijo con imagen */}
       <div
@@ -38,7 +38,7 @@ export default function Impacto() {
         style={{ backgroundImage: "url('/img/calle.jpg')" }}
       />
 
-      {/* SVG decorativo difuminado */}
+      {/* SVG decorativo */}
       <div
         aria-hidden="true"
         className="absolute -bottom-8 -left-96 -z-10 transform-gpu blur-3xl sm:-bottom-64 sm:-left-40 lg:-bottom-32 lg:left-8 xl:-left-10"
@@ -54,11 +54,12 @@ export default function Impacto() {
 
       {/* Contenido principal */}
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          {/* Texto a la izquierda */}
-          <div>
+        {/* Texto + métricas en desktop */}
+        <div className="hidden lg:grid grid-cols-2 gap-16">
+          {/* Columna izquierda centrada vertical y horizontalmente */}
+          <div className="flex flex-col justify-center items-center text-center h-full">
             <h2 className="text-sm font-semibold text-lime-500 uppercase">Nuestro impacto</h2>
-            <p className="mt-2 text-pretty text-4xl font-bold tracking-tight text-white sm:text-5xl">
+            <p className="mt-2 text-4xl font-bold tracking-tight text-white sm:text-5xl">
               Movilidad sustentable para todo el país
             </p>
             <p className="mt-6 text-lg text-gray-300">
@@ -69,17 +70,49 @@ export default function Impacto() {
             </p>
           </div>
 
-          {/* Métricas a la derecha */}
-          <dl className="space-y-10 text-white flex flex-col items-end text-right">
+          {/* Columna derecha centrada */}
+          <div className="flex justify-center items-center h-full w-full">
+            <dl className="text-white flex flex-col items-center text-center space-y-10">
+              {stats.map((stat) => {
+                const animatedValue = useCounter(stat.value, 1500, stat.start || 0)
+                return (
+                  <div key={stat.label} className="flex flex-col gap-y-2 border-r border-white/10 pr-6 last:border-r-0">
+                    <dt className="text-sm text-gray-300">{stat.label}</dt>
+                    <dd className="order-first text-5xl font-semibold tracking-tight text-lime-400">
+                      {animatedValue}
+                      {stat.suffix || ''}
+                    </dd>
+                  </div>
+                )
+              })}
+            </dl>
+          </div>
+        </div>
+
+        {/* Texto en móvil */}
+        <div className="lg:hidden">
+          <h2 className="text-sm font-semibold text-lime-500 uppercase">Nuestro impacto</h2>
+          <p className="mt-2 text-4xl font-bold tracking-tight text-white">
+            Movilidad sustentable para todo el país
+          </p>
+          <p className="mt-6 text-base text-gray-300">
+            Chile lidera en Latinoamérica con más de{' '}
+            <span className="text-lime-400">2.480 buses eléctricos</span> y se ha propuesto descarbonizar el 100% del
+            transporte público al año{' '}
+            <span className="text-lime-400">2035</span>. En SGX, acompañamos este proceso como socios técnicos estratégicos.
+          </p>
+
+          {/* Métricas en móvil */}
+          <dl className="mt-10 grid grid-cols-3 gap-6 text-center text-white">
             {stats.map((stat) => {
               const animatedValue = useCounter(stat.value, 1500, stat.start || 0)
               return (
-                <div key={stat.label} className="flex flex-col gap-y-2 border-r border-white/10 pr-6">
-                  <dt className="text-sm text-gray-300">{stat.label}</dt>
-                  <dd className="order-first text-5xl font-semibold tracking-tight text-lime-400">
+                <div key={stat.label} className="flex flex-col items-center">
+                  <dd className="text-3xl font-bold text-lime-400">
                     {animatedValue}
                     {stat.suffix || ''}
                   </dd>
+                  <dt className="text-xs text-gray-300 mt-1">{stat.label}</dt>
                 </div>
               )
             })}
@@ -87,17 +120,15 @@ export default function Impacto() {
         </div>
       </div>
 
-      {/* Imagen final destacada */}
-<div className="relative z-10 -mb-2">
-  <img
-    src="/img/buses.png"
-    alt="Gama de buses ANKAI"
-    className="mx-auto w-[90%] max-w-6xl object-contain translate-y-2 sm:translate-y-4 lg:translate-y-6"
-    loading="lazy"
-  />
-</div>
-
-
+      {/* Imagen final */}
+      <div className="relative z-10 -mb-2 mt-10">
+        <img
+          src="/img/buses.png"
+          alt="Gama de buses ANKAI"
+          className="mx-auto w-[90%] max-w-6xl object-contain translate-y-2 sm:translate-y-4 lg:translate-y-6"
+          loading="lazy"
+        />
+      </div>
     </section>
   )
 }

@@ -34,7 +34,7 @@ export default function Sobre() {
       <div className="absolute top-0 left-0 w-full h-10 bg-gradient-to-b from-white/80 to-transparent z-20" />
 
       {/* Contenido */}
-      <div className="relative max-w-7xl mx-auto px-6 py-28 sm:py-32 z-30" ref={ref}>
+      <div className="relative max-w-7xl mx-auto px-6 pt-10 sm:pt-12 pb-16 sm:pb-20 z-30" ref={ref}>
         <div className="text-center max-w-4xl mx-auto">
           <h2 className="text-sm font-semibold uppercase text-lime-600 tracking-wide">
             Representantes Autorizados <span className="text-red-600 font-bold">ANKAI</span>
