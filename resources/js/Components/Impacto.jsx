@@ -34,9 +34,15 @@ export default function Impacto() {
     >
       {/* Fondo fijo con imagen */}
       <div
-        className="absolute inset-0 -z-20 bg-fixed bg-cover bg-center opacity-30"
-        style={{ backgroundImage: "url('/img/calle.jpg')" }}
-      />
+  className="absolute inset-0 -z-20 bg-cover bg-center opacity-30 md:bg-fixed"
+  style={{
+    backgroundImage: "url('/img/calle.jpg')",
+    minHeight: '100%',           // garantiza visibilidad
+    backgroundSize: 'cover',     // fuerza comportamiento deseado
+    backgroundPosition: 'center',
+  }}
+/>
+
 
       {/* SVG decorativo */}
       <div
