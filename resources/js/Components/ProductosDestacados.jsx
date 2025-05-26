@@ -43,40 +43,43 @@ export default function ProductosDestacados() {
       <div className="absolute top-0 left-0 w-full h-10 bg-gradient-to-b from-white/80 to-transparent z-20" />
 
       {/* Contenido */}
-      <div className="relative z-30 max-w-6xl mx-auto px-6 py-28 sm:py-32">
+      <div className="relative z-30 max-w-6xl mx-auto px-4 py-16 sm:px-6 sm:py-28">
         <div className="text-center mb-14">
           <h2 className="text-sm font-semibold uppercase text-lime-600 tracking-wide">Líneas de Productos</h2>
-          <div className="mt-2 text-4xl sm:text-5xl font-extrabold tracking-tight text-[#003b5c] flex items-center justify-center gap-2">
+          <div className="mt-2 text-3xl sm:text-5xl font-extrabold tracking-tight text-[#003b5c] flex items-center justify-center gap-2">
             <span>Gama de Productos</span>
             <img src="/img/ankai.png" alt="ANKAI" className="h-8 sm:h-10 object-contain" />
           </div>
           <div className="mt-2 mb-6 border-t-4 w-24 border-[#00d084] rounded-full mx-auto" />
-          <p className="text-base sm:text-lg text-gray-700 max-w-3xl mx-auto">
+          <p className="text-sm sm:text-lg text-gray-700 max-w-3xl mx-auto">
             ANKAI ofrece soluciones inteligentes y confiables: desde minibuses urbanos hasta plataformas de 12 metros con tecnología de clase mundial.
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-10">
-  {lineas.map((prod, idx) => (
-    <div key={idx} className="flashcard w-full h-64">
-      <div className="flashcard-inner">
-        {/* Frente */}
-        <div className="flashcard-face bg-white/90 backdrop-blur-lg border border-lime-300 shadow-lg">
-          <div className="space-y-2 max-w-[90%] mx-auto">
-            <h3 className="text-lg font-bold text-gray-900">{prod.titulo}</h3>
-            <p className="text-sm text-gray-700 leading-snug text-balance">{prod.descripcion}</p>
-          </div>
-        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 md:gap-10">
+          {lineas.map((prod, idx) => (
+            <div
+              key={idx}
+              className="flashcard w-full min-h-[260px] overflow-hidden rounded-xl"
+              onClick={() => toggleFlip(idx)}
+            >
+              <div className={`flashcard-inner ${flippedIndex === idx ? 'flipped' : ''}`}>
+                {/* Frente */}
+                <div className="flashcard-face bg-white/90 backdrop-blur-lg border border-lime-300 shadow-lg px-4 py-6 flex flex-col justify-center">
+                  <div className="space-y-2 max-w-[90%] mx-auto">
+                    <h3 className="text-lg font-bold text-gray-900">{prod.titulo}</h3>
+                    <p className="text-sm text-gray-700 leading-snug text-balance">{prod.descripcion}</p>
+                  </div>
+                </div>
 
-        {/* Reverso */}
-        <div className="flashcard-face flashcard-back">
-          <img src={prod.imagen} alt={prod.titulo} className="w-full h-full object-cover" />
+                {/* Reverso */}
+                <div className="flashcard-face flashcard-back">
+                  <img src={prod.imagen} alt={prod.titulo} className="w-full h-full object-cover" />
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
-      </div>
-    </div>
-  ))}
-</div>
-
       </div>
     </section>
   )
