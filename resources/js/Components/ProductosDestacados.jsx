@@ -44,7 +44,7 @@ export default function ProductosDestacados() {
 
       {/* Contenido */}
       <div className="relative z-30 max-w-6xl mx-auto px-4 py-16 sm:px-6 sm:py-28">
-        <div className="text-center mb-14">
+        <div className="text-center mb-14 px-4 sm:px-8">
           <h2 className="text-sm font-semibold uppercase text-lime-600 tracking-wide">Líneas de Productos</h2>
           <div className="mt-2 text-3xl sm:text-5xl font-extrabold tracking-tight text-[#003b5c] flex items-center justify-center gap-2">
             <span>Gama de Productos</span>
