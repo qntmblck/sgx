@@ -34,14 +34,26 @@ export default function Impacto() {
     >
       {/* Fondo fijo con imagen */}
       <div
-  className="absolute inset-0 -z-20 bg-cover bg-center opacity-30 md:bg-fixed"
+  className="absolute inset-0 -z-20 opacity-30 bg-center bg-no-repeat md:bg-fixed md:bg-cover"
   style={{
     backgroundImage: "url('/img/calle.jpg')",
-    minHeight: '100%',           // garantiza visibilidad
-    backgroundSize: 'cover',     // fuerza comportamiento deseado
+    backgroundSize: 'cover',
     backgroundPosition: 'center',
+    display: 'none',
+    // se activa en desktop vía media query inline
   }}
 />
+<style>
+  {`
+    @media (min-width: 768px) {
+      div[style*="/img/calle.jpg"] {
+        display: block !important;
+      }
+    }
+  `}
+</style>
+
+
 
 
       {/* SVG decorativo */}
