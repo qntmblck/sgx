@@ -142,9 +142,17 @@ export default function Productos() {
       >
         <div className="absolute inset-0 bg-black/40" />
         <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8 pt-20 sm:pt-28 pb-24 text-center">
-          <h1 className="text-4xl sm:text-5xl font-extrabold text-white mb-4">
-            Portafolio de Buses ANKAI
-          </h1>
+         {/* Título compuesto estilo ANKAI */}
+<h1 className="text-3xl sm:text-5xl font-extrabold leading-tight drop-shadow text-white mb-4 text-center">
+  Portafolio de Buses
+</h1>
+
+<div className="flex items-center justify-center flex-wrap gap-3 text-3xl sm:text-5xl font-extrabold text-white drop-shadow mb-6">
+  <span className="whitespace-nowrap">de</span>
+  <img src="/img/ankai.png" alt="ANKAI" className="h-10 sm:h-10 object-contain" />
+  <span className="whitespace-nowrap">en Chile</span>
+</div>
+
           <p className="text-white text-lg sm:text-xl max-w-3xl mx-auto mb-6">
             Modelos eléctricos, urbanos, interurbanos y de alta capacidad adaptados a las necesidades del transporte moderno.
           </p>
