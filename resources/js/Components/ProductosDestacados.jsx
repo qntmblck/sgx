@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import ParticlesFondo from '@/Components/ParticlesFondo'
 
 const lineas = [
@@ -21,30 +21,80 @@ const lineas = [
 
 export default function ProductosDestacados() {
   const [flippedIndex, setFlippedIndex] = useState(null)
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 1024)
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+    return () => window.removeEventListener('resize', checkMobile)
+  }, [])
 
   const toggleFlip = (index) => {
-    setFlippedIndex(flippedIndex === index ? null : index)
+    if (isMobile) {
+      setFlippedIndex(flippedIndex === index ? null : index)
+    }
   }
 
   return (
     <section id="productos" className="relative overflow-hidden bg-gradient-to-l from-green-200 via-teal-100 to-white text-gray-900">
-      {/* Curva superior */}
+      <style>{`
+        .flashcard {
+          perspective: 1000px;
+        }
+        .flashcard-inner {
+          position: relative;
+          width: 100%;
+          height: 100%;
+          transform-style: preserve-3d;
+          transition: transform 0.6s;
+        }
+        .flashcard:hover .flashcard-inner {
+          transform: rotateY(180deg);
+        }
+        .flipped .flashcard-inner {
+          transform: rotateY(180deg);
+        }
+        .flashcard-face {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          backface-visibility: hidden;
+          border-radius: 0.75rem;
+        }
+        .flashcard-back {
+          transform: rotateY(180deg);
+        }
+        .scrollbar-hide {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+        }
+        .scrollbar-hide::-webkit-scrollbar {
+          display: none;
+        }
+        .scroll-snap-x {
+          scroll-snap-type: x mandatory;
+        }
+        .scroll-snap-align-center {
+          scroll-snap-align: center;
+        }
+      `}</style>
+
+      {/* Curva decorativa */}
       <div className="absolute top-0 left-0 w-full overflow-hidden z-0">
         <svg viewBox="0 0 500 80" preserveAspectRatio="none" className="w-full h-20 fill-green-200">
           <path d="M0,80 C150,20 350,20 500,80 L500,0 L0,0 Z" />
         </svg>
       </div>
 
-      {/* Partículas animadas */}
+      {/* Partículas y degradado */}
       <div className="absolute top-0 left-0 w-full h-20 z-10 pointer-events-none">
         <ParticlesFondo />
       </div>
-
       <div className="absolute top-0 left-0 w-full h-10 bg-gradient-to-b from-white/80 to-transparent z-20" />
 
       {/* Contenido */}
       <div className="relative z-30 max-w-6xl mx-auto px-4 py-16 sm:px-6 sm:py-28">
-        {/* Versión móvil */}
         <div className="text-center mb-10 px-4 sm:px-8 block lg:hidden">
           <h2 className="text-sm font-semibold uppercase text-lime-600 tracking-wide">Líneas de Productos</h2>
           <h3 className="mt-2 text-2xl font-bold tracking-tight text-[#003b5c]">Gama de productos</h3>
@@ -55,7 +105,6 @@ export default function ProductosDestacados() {
           </p>
         </div>
 
-        {/* Versión escritorio */}
         <div className="hidden lg:block text-center mb-14 px-4 sm:px-8">
           <h2 className="text-sm font-semibold uppercase text-lime-600 tracking-wide">Líneas de Productos</h2>
           <div className="mt-2 text-5xl font-extrabold tracking-tight text-[#003b5c] flex items-center justify-center gap-2">
@@ -68,17 +117,17 @@ export default function ProductosDestacados() {
           </p>
         </div>
 
-        {/* Tarjetas */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 md:gap-10">
+        {/* Tarjetas centradas con scroll horizontal */}
+        <div className="flex gap-6 sm:gap-8 md:gap-10 overflow-x-auto scrollbar-hide scroll-snap-x px-4">
           {lineas.map((prod, idx) => (
             <div
               key={idx}
-              className="flashcard w-full min-h-[260px] overflow-hidden rounded-xl"
+              className={`flashcard min-w-[260px] max-w-[280px] w-[80%] sm:w-[240px] md:w-[280px] h-[320px] flex-shrink-0 overflow-hidden rounded-xl scroll-snap-align-center mx-auto ${isMobile && flippedIndex === idx ? 'flipped' : ''}`}
               onClick={() => toggleFlip(idx)}
             >
-              <div className={`flashcard-inner ${flippedIndex === idx ? 'flipped' : ''}`}>
+              <div className="flashcard-inner h-full">
                 {/* Frente */}
-                <div className="flashcard-face bg-white/90 backdrop-blur-lg border border-lime-300 shadow-lg px-4 py-6 flex flex-col justify-center">
+                <div className="flashcard-face bg-white/90 backdrop-blur-lg border border-lime-300 shadow-lg px-4 py-6 flex flex-col justify-center h-full">
                   <div className="space-y-2 max-w-[90%] mx-auto">
                     <h3 className="text-lg font-bold text-gray-900">{prod.titulo}</h3>
                     <p className="text-sm text-gray-700 leading-snug text-balance">{prod.descripcion}</p>
@@ -86,8 +135,8 @@ export default function ProductosDestacados() {
                 </div>
 
                 {/* Reverso */}
-                <div className="flashcard-face flashcard-back">
-                  <img src={prod.imagen} alt={prod.titulo} className="w-full h-full object-cover" />
+                <div className="flashcard-face flashcard-back h-full">
+                  <img src={prod.imagen} alt={prod.titulo} className="w-full h-full object-cover rounded-xl" />
                 </div>
               </div>
             </div>
