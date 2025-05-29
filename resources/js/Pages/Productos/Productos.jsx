@@ -76,8 +76,9 @@ export default function Productos() {
       {/* Filtros */}
 <div
   ref={menuRef}
-  className="relative w-full max-w-7xl mx-auto px-4 -mt-24 z-50 bg-[#001d2e]/90 backdrop-blur-md rounded-xl shadow-lg px-6 py-4"
+  className="absolute left-1/2 -translate-x-1/2 top-[calc(100vh-25rem)] w-full max-w-7xl px-4 z-50 bg-[#001d2e]/90 backdrop-blur-md rounded-xl shadow-lg px-6 py-4"
 >
+
   <div className="flex flex-wrap justify-around gap-4 text-white text-sm font-medium">
     {/* Tipo de Energía */}
     <div className="relative">

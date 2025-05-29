@@ -23,9 +23,9 @@ Route::get('/productos', function () {
     return Inertia::render('Productos/Productos');
 })->name('productos');
 
-Route::get('/servicios', function () {
-    return Inertia::render('Servicios/Servicios');
-})->name('servicios');
+Route::get('/newtec', function () {
+    return Inertia::render('NewTec');
+})->name('newtec');
 
 Route::get('/contacto', function () {
     return Inertia::render('Contacto/Contacto');
