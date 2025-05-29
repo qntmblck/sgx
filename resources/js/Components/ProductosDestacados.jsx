@@ -101,7 +101,7 @@ export default function ProductosDestacados() {
         <div className="text-center mb-10 px-4 sm:px-8 block lg:hidden">
           <h2 className="text-sm font-semibold uppercase text-lime-600 tracking-wide">Líneas de Productos</h2>
           <h3 className="mt-2 text-2xl font-bold tracking-tight text-[#003b5c]">Gama de productos</h3>
-          <img src="/img/ankai.png" alt="ANKAI" className="mx-auto h-10 sm:h-12 mt-2" />
+          <img src="/img/ankai.png" alt="ANKAI" className="mx-auto h-8 sm:h-8 mt-2" />
           <div className="mt-2 mb-6 border-t-4 w-24 border-[#00d084] rounded-full mx-auto" />
           <p className="text-sm sm:text-lg text-gray-700 max-w-3xl mx-auto">
             ANKAI ofrece soluciones inteligentes y confiables: desde minibuses urbanos hasta plataformas de 12 metros con tecnología de clase mundial.

@@ -25,14 +25,14 @@ export default function HeroSection() {
           }`}
         >
           {/* Título */}
-          <h1 className="text-3xl sm:text-5xl font-extrabold leading-tight drop-shadow mb-6">
+          <h1 className="text-4xl sm:text-4xl font-extrabold leading-tight drop-shadow mb-6">
             Representantes Autorizados de
           </h1>
 
           {/* Línea ANKAI */}
-          <div className="flex items-center flex-wrap gap-3 text-3xl sm:text-5xl font-extrabold mb-6">
+          <div className="flex items-center flex-wrap gap-3 text-4xl sm:text-4xl font-extrabold mb-6">
             <span>de</span>
-            <img src="/img/ankai.png" alt="ANKAI" className="h-10 sm:h-10 object-contain" />
+            <img src="/img/ankai.png" alt="ANKAI" className="h-8 sm:h-8 object-contain" />
             <span>en Chile</span>
           </div>
 

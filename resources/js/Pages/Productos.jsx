@@ -143,13 +143,13 @@ export default function Productos() {
         <div className="absolute inset-0 bg-black/40" />
         <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8 pt-20 sm:pt-28 pb-24 text-center">
          {/* Título compuesto estilo ANKAI */}
-<h1 className="text-3xl sm:text-5xl font-extrabold leading-tight drop-shadow text-white mb-4 text-center">
+<h1 className="text-3xl sm:text-4xl font-extrabold leading-tight drop-shadow text-white mb-4 text-center">
   Portafolio de Buses
 </h1>
 
-<div className="flex items-center justify-center flex-wrap gap-3 text-3xl sm:text-5xl font-extrabold text-white drop-shadow mb-6">
+<div className="flex items-center justify-center flex-wrap gap-3 text-4xl sm:text-4xl font-extrabold text-white drop-shadow mb-6">
   <span className="whitespace-nowrap">de</span>
-  <img src="/img/ankai.png" alt="ANKAI" className="h-10 sm:h-10 object-contain" />
+  <img src="/img/ankai.png" alt="ANKAI" className="h-6 sm:h-6 object-contain" />
   <span className="whitespace-nowrap">en Chile</span>
 </div>
 
