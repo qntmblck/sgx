@@ -2,7 +2,10 @@ import { useState } from 'react'
 
 export default function ProductoCard({ productos = [] }) {
   return (
-    <section className="relative z-0 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-4 sm:px-6 lg:px-8 py-16">
+    <section className="relative z-0 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-4 sm:px-6 lg:px-8 pt-10 pb-16">
+      {/* Difuminado superior */}
+      <div className="absolute top-0 left-0 w-full h-16 bg-gradient-to-b from-white to-transparent z-10 pointer-events-none" />
+
       {productos.map((prod, idx) => (
         <ProductoCardItem key={idx} producto={prod} />
       ))}

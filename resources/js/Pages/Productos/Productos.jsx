@@ -56,11 +56,89 @@ export default function Productos() {
     return () => document.removeEventListener('mousedown', handleClickOutside)
   }, [])
 
-  return (
-    <>
-      <Header />
+  const Filtros = (
+    <div
+      ref={menuRef}
+      className="bg-[#001d2e]/90 backdrop-blur-md rounded-full px-6 py-4 shadow-xl flex flex-wrap justify-center gap-4 text-white text-sm font-medium"
+    >
+      {/* Tipo de Energía */}
+      <div className="relative">
+        <button className="cursor-pointer hover:text-lime-300" onClick={() => setOpenMenu(openMenu === 'energia' ? null : 'energia')}>
+          Tipo de Energía
+        </button>
+        {openMenu === 'energia' && (
+          <div className="absolute top-full left-0 mt-2 bg-white text-gray-800 rounded shadow-lg z-[9999] p-3 min-w-[160px]">
+            {['Eléctrico', 'Diésel Euro VI'].map(tipo => (
+              <button
+                key={tipo}
+                onClick={() => toggle(tipo, setEnergia, energia)}
+                className={`block px-4 py-1 rounded-full text-sm mb-1 ${
+                  energia.includes(tipo) ? 'bg-yellow-300 text-[#003b5c]' : 'hover:bg-gray-200'
+                }`}
+              >
+                {tipo}
+              </button>
+            ))}
+          </div>
+        )}
+      </div>
 
-      <div className="relative bg-cover bg-center bg-no-repeat" style={{ backgroundImage: "url('/img/productos.png')" }}>
+      {/* Modelos */}
+      <div className="relative">
+        <button className="cursor-pointer hover:text-lime-300" onClick={() => setOpenMenu(openMenu === 'modelos' ? null : 'modelos')}>
+          Modelos
+        </button>
+        {openMenu === 'modelos' && (
+          <div className="absolute top-full left-0 mt-2 bg-white text-gray-800 rounded shadow-lg z-[9999] p-3 max-w-xs">
+            {modelosDisponibles.map(cat => (
+              <button
+                key={cat}
+                onClick={() => toggle(cat, setModelos, modelos)}
+                className={`block px-4 py-1 rounded-full text-sm mb-1 ${
+                  modelos.includes(cat) ? 'bg-[#c7372f] text-white' : 'hover:bg-gray-200'
+                }`}
+              >
+                {cat}
+              </button>
+            ))}
+          </div>
+        )}
+      </div>
+
+      {/* Segmento */}
+      <div className="relative">
+        <button className="cursor-pointer hover:text-lime-300" onClick={() => setOpenMenu(openMenu === 'segmento' ? null : 'segmento')}>
+          Segmento
+        </button>
+        {openMenu === 'segmento' && (
+          <div className="absolute top-full left-0 mt-2 bg-white text-gray-800 rounded shadow-lg z-[9999] p-3 min-w-[160px]">
+            {segmentos.map(nombre => (
+              <button
+                key={nombre}
+                onClick={() => toggle(nombre, setSegmento, segmento)}
+                className={`block px-4 py-1 rounded-full text-sm mb-1 ${
+                  segmento.includes(nombre) ? 'bg-[#00d084] text-white' : 'hover:bg-gray-200'
+                }`}
+              >
+                {nombre}
+              </button>
+            ))}
+          </div>
+        )}
+      </div>
+    </div>
+  )
+
+  return (
+  <>
+    <Header />
+
+    {/* Hero con beneficios */}
+    <div className="relative">
+      <div
+        className="relative bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: "url('/img/productos.png')" }}
+      >
         <div className="absolute inset-0 bg-black/40" />
         <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8 pt-20 sm:pt-28 pb-24 text-center">
           <h1 className="text-4xl sm:text-5xl font-extrabold text-white mb-4">
@@ -71,91 +149,29 @@ export default function Productos() {
           </p>
           <BeneficiosTecnologicos />
         </div>
+
+        {/* Difuminado inferior invertido */}
+        <div className="absolute bottom-0 left-0 w-full h-16 bg-gradient-to-t from-white to-transparent z-20 pointer-events-none" />
       </div>
 
-      {/* Filtros */}
-<div
-  ref={menuRef}
-  className="absolute left-1/2 -translate-x-1/2 top-[calc(100vh-25rem)] w-full max-w-7xl px-4 z-50 bg-[#001d2e]/90 backdrop-blur-md rounded-xl shadow-lg px-6 py-4"
->
-
-  <div className="flex flex-wrap justify-around gap-4 text-white text-sm font-medium">
-    {/* Tipo de Energía */}
-    <div className="relative">
-      <button className="cursor-pointer hover:text-lime-300" onClick={() => setOpenMenu(openMenu === 'energia' ? null : 'energia')}>
-        Tipo de Energía
-      </button>
-      {openMenu === 'energia' && (
-        <div className="absolute top-full left-0 mt-2 bg-white text-gray-800 rounded shadow-lg z-[9999] p-3 min-w-[160px]">
-          {['Eléctrico', 'Diésel Euro VI'].map(tipo => (
-            <button
-              key={tipo}
-              onClick={() => toggle(tipo, setEnergia, energia)}
-              className={`block px-4 py-1 rounded-full text-sm mb-1 ${
-                energia.includes(tipo) ? 'bg-yellow-300 text-[#003b5c]' : 'hover:bg-gray-200'
-              }`}
-            >
-              {tipo}
-            </button>
-          ))}
-        </div>
-      )}
+      {/* Filtro flotante centrado */}
+      <div className="absolute top-full left-1/2 -translate-x-1/2 -translate-y-1/2 z-30">
+        {Filtros}
+      </div>
     </div>
 
-    {/* Modelos */}
-    <div className="relative">
-      <button className="cursor-pointer hover:text-lime-300" onClick={() => setOpenMenu(openMenu === 'modelos' ? null : 'modelos')}>
-        Modelos
-      </button>
-      {openMenu === 'modelos' && (
-        <div className="absolute top-full left-0 mt-2 bg-white text-gray-800 rounded shadow-lg z-[9999] p-3 max-w-xs">
-          {modelosDisponibles.map(cat => (
-            <button
-              key={cat}
-              onClick={() => toggle(cat, setModelos, modelos)}
-              className={`block px-4 py-1 rounded-full text-sm mb-1 ${
-                modelos.includes(cat) ? 'bg-[#c7372f] text-white' : 'hover:bg-gray-200'
-              }`}
-            >
-              {cat}
-            </button>
-          ))}
-        </div>
-      )}
-    </div>
+    {/* Sección productos */}
+    <section
+      className="relative z-0 bg-no-repeat bg-center bg-cover"
+      style={{ backgroundImage: "url('/img/catalogo.png')" }}
+    >
+      <div className="absolute inset-0 bg-black/40 z-0" />
+      <ProductoCard productos={productosFiltrados} />
+    </section>
 
-    {/* Segmento */}
-    <div className="relative">
-      <button className="cursor-pointer hover:text-lime-300" onClick={() => setOpenMenu(openMenu === 'segmento' ? null : 'segmento')}>
-        Segmento
-      </button>
-      {openMenu === 'segmento' && (
-        <div className="absolute top-full left-0 mt-2 bg-white text-gray-800 rounded shadow-lg z-[9999] p-3 min-w-[160px]">
-          {segmentos.map(nombre => (
-            <button
-              key={nombre}
-              onClick={() => toggle(nombre, setSegmento, segmento)}
-              className={`block px-4 py-1 rounded-full text-sm mb-1 ${
-                segmento.includes(nombre) ? 'bg-[#00d084] text-white' : 'hover:bg-gray-200'
-              }`}
-            >
-              {nombre}
-            </button>
-          ))}
-        </div>
-      )}
-    </div>
-  </div>
-</div>
+    <Footer />
+    <ContactActions />
+  </>
+)
 
-
-      <section className="relative z-0 bg-no-repeat bg-center bg-cover" style={{ backgroundImage: "url('/img/catalogo.png')" }}>
-        <div className="absolute inset-0 bg-black/40 z-0" />
-        <ProductoCard productos={productosFiltrados} />
-      </section>
-
-      <Footer />
-      <ContactActions />
-    </>
-  )
 }
