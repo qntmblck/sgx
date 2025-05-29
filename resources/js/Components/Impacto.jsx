@@ -139,14 +139,15 @@ export default function Impacto() {
       </div>
 
       {/* Imagen final */}
-      <div className="relative z-10 -mb-2 mt-10">
-        <img
-          src="/img/buses.png"
-          alt="Gama de buses ANKAI"
-          className="mx-auto w-[90%] max-w-6xl object-contain translate-y-2 sm:translate-y-4 lg:translate-y-6"
-          loading="lazy"
-        />
-      </div>
+<div className="relative z-10 -mb-2 mt-10">
+  <img
+    src="/img/buses.png"
+    alt="Gama de buses ANKAI"
+    className="mx-auto w-[90%] max-w-6xl object-contain translate-y-2 sm:translate-y-4 lg:translate-y-6 lg:hidden"
+    loading="lazy"
+  />
+</div>
+
     </section>
   )
 }

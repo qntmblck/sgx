@@ -1,9 +1,10 @@
 import { useState, useEffect, useRef } from 'react'
 import Header from '@/Components/Header'
 import Footer from '@/Components/Footer'
-import ProductoCard from './ProductoCard'
-import BeneficiosTecnologicos from './BeneficiosTecnologicos'
+import ProductoCard from './Productos/ProductoCard'
+import BeneficiosTecnologicos from './Productos/BeneficiosTecnologicos'
 import ContactActions from '@/Components/ContactActions'
+
 
 export default function Productos() {
   const productos = [

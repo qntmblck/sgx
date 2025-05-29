@@ -20,16 +20,12 @@ Route::get('/dashboard', function () {
 
 // ✅ Rutas públicas a secciones del sitio
 Route::get('/productos', function () {
-    return Inertia::render('Productos/Productos');
+    return Inertia::render('Productos');
 })->name('productos');
 
 Route::get('/newtec', function () {
     return Inertia::render('NewTec');
 })->name('newtec');
-
-Route::get('/contacto', function () {
-    return Inertia::render('Contacto/Contacto');
-})->name('contacto');
 
 // ✅ Rutas protegidas para perfil
 Route::middleware('auth')->group(function () {
