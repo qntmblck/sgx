@@ -155,10 +155,16 @@ export default function Productos() {
         <div className="absolute bottom-0 left-0 w-full h-16 bg-gradient-to-t from-white to-transparent z-20 pointer-events-none" />
       </div>
 
-      {/* Filtro flotante centrado */}
-      <div className="absolute top-full left-1/2 -translate-x-1/2 -translate-y-1/2 z-30">
-        {Filtros}
-      </div>
+      {/* Filtro flotante centrado y en una sola fila */}
+<div className="absolute top-full left-1/2 -translate-x-1/2 -translate-y-1/2 z-30 w-screen px-4">
+  <div className="flex justify-center">
+    <div className="flex flex-nowrap gap-3 overflow-x-auto no-scrollbar">
+      {Filtros}
+    </div>
+  </div>
+</div>
+
+
     </div>
 
     {/* Sección productos */}

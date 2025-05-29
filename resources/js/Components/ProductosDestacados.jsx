@@ -19,6 +19,12 @@ const lineas = [
   }
 ]
 
+const fondoPorTipo = {
+  'Buses Urbanos 12m': 'bg-white',
+  'Midibuses 8–10m': 'bg-gray-100',
+  'Minibuses 6–7m': 'bg-gray-50'
+}
+
 export default function ProductosDestacados() {
   const [flippedIndex, setFlippedIndex] = useState(null)
   const [isMobile, setIsMobile] = useState(false)
@@ -80,20 +86,17 @@ export default function ProductosDestacados() {
         }
       `}</style>
 
-      {/* Curva decorativa */}
       <div className="absolute top-0 left-0 w-full overflow-hidden z-0">
         <svg viewBox="0 0 500 80" preserveAspectRatio="none" className="w-full h-20 fill-green-200">
           <path d="M0,80 C150,20 350,20 500,80 L500,0 L0,0 Z" />
         </svg>
       </div>
 
-      {/* Partículas y degradado */}
       <div className="absolute top-0 left-0 w-full h-20 z-10 pointer-events-none">
         <ParticlesFondo />
       </div>
       <div className="absolute top-0 left-0 w-full h-10 bg-gradient-to-b from-white/80 to-transparent z-20" />
 
-      {/* Contenido */}
       <div className="relative z-30 max-w-6xl mx-auto px-4 py-16 sm:px-6 sm:py-28">
         <div className="text-center mb-10 px-4 sm:px-8 block lg:hidden">
           <h2 className="text-sm font-semibold uppercase text-lime-600 tracking-wide">Líneas de Productos</h2>
@@ -117,26 +120,26 @@ export default function ProductosDestacados() {
           </p>
         </div>
 
-        {/* Tarjetas centradas con scroll horizontal */}
-        <div className="flex gap-6 sm:gap-8 md:gap-10 overflow-x-auto scrollbar-hide scroll-snap-x px-4">
+        <div className="flex gap-4 sm:gap-5 md:gap-6 overflow-x-auto scrollbar-hide scroll-snap-x px-4">
           {lineas.map((prod, idx) => (
             <div
               key={idx}
-              className={`flashcard min-w-[260px] max-w-[280px] w-[80%] sm:w-[240px] md:w-[280px] h-[320px] flex-shrink-0 overflow-hidden rounded-xl scroll-snap-align-center mx-auto ${isMobile && flippedIndex === idx ? 'flipped' : ''}`}
+              className={`flashcard min-w-[400px] max-w-[460px] w-[145%] sm:w-[300px] md:w-[360px] min-h-[320px] h-auto flex-shrink-0 overflow-hidden rounded-xl scroll-snap-align-center mx-auto ${isMobile && flippedIndex === idx ? 'flipped' : ''}`}
               onClick={() => toggleFlip(idx)}
             >
               <div className="flashcard-inner h-full">
-                {/* Frente */}
                 <div className="flashcard-face bg-white/90 backdrop-blur-lg border border-lime-300 shadow-lg px-4 py-6 flex flex-col justify-center h-full">
                   <div className="space-y-2 max-w-[90%] mx-auto">
                     <h3 className="text-lg font-bold text-gray-900">{prod.titulo}</h3>
                     <p className="text-sm text-gray-700 leading-snug text-balance">{prod.descripcion}</p>
                   </div>
                 </div>
-
-                {/* Reverso */}
-                <div className="flashcard-face flashcard-back h-full">
-                  <img src={prod.imagen} alt={prod.titulo} className="w-full h-full object-cover rounded-xl" />
+                <div className="flashcard-face flashcard-back">
+                  <img
+                    src={prod.imagen}
+                    alt={prod.titulo}
+                    className="w-full h-full object-cover rounded-xl"
+                  />
                 </div>
               </div>
             </div>
