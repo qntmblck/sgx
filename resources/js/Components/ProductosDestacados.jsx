@@ -108,29 +108,30 @@ export default function ProductosDestacados() {
         </div>
 
         <div ref={scrollRef} className="flex overflow-x-auto scrollbar-hide scroll-snap-x px-2 sm:px-4 gap-6 sm:gap-4">
-          {lineas.map((prod, idx) => (
-            <div
-              key={idx}
-              className={`flashcard w-full max-w-xs sm:max-w-[300px] md:max-w-[360px] h-[320px] flex-shrink-0 rounded-xl scroll-snap-align-center mx-auto ${
-                isMobile && flippedIndex === idx ? 'flipped' : ''
-              }`}
-              onClick={() => toggleFlip(idx)}
-              onTouchStart={() => toggleFlip(idx)}
-            >
-              <div className="flashcard-inner h-full">
-                <div className="flashcard-face bg-white/90 backdrop-blur-lg border border-lime-300 shadow-lg px-4 py-6 flex flex-col justify-center h-full">
-                  <div className="space-y-2 max-w-[90%] mx-auto">
-                    <h3 className="text-lg font-bold text-gray-900">{prod.titulo}</h3>
-                    <p className="text-sm text-gray-700 leading-snug">{prod.descripcion}</p>
-                  </div>
-                </div>
-                <div className="flashcard-face flashcard-back">
-                  <img src={prod.imagen} alt={prod.titulo} className="w-full h-full object-cover rounded-xl" />
-                </div>
-              </div>
-            </div>
-          ))}
+  {lineas.map((prod, idx) => (
+    <div
+      key={idx}
+      className={`flashcard min-w-[400px] max-w-[460px] w-[133%] sm:w-[300px] md:w-[360px] h-[320px] flex-shrink-0 rounded-xl scroll-snap-align-center mx-auto ${
+        isMobile && flippedIndex === idx ? 'flipped' : ''
+      }`}
+      onClick={() => toggleFlip(idx)}
+      onTouchStart={() => toggleFlip(idx)}
+    >
+      <div className="flashcard-inner h-full">
+        <div className="flashcard-face bg-white/90 backdrop-blur-lg border border-lime-300 shadow-lg px-4 py-6 flex flex-col justify-center h-full">
+          <div className="space-y-2 max-w-[90%] mx-auto">
+            <h3 className="text-lg font-bold text-gray-900">{prod.titulo}</h3>
+            <p className="text-sm text-gray-700 leading-snug">{prod.descripcion}</p>
+          </div>
         </div>
+        <div className="flashcard-face flashcard-back">
+          <img src={prod.imagen} alt={prod.titulo} className="w-full h-full object-cover rounded-xl" />
+        </div>
+      </div>
+    </div>
+  ))}
+</div>
+
       </div>
     </section>
   )
