@@ -3,31 +3,31 @@ const regiones = [
     nombre: 'Asia',
     resumen:
       'Base de desarrollo con más de 50 años de innovación. Principal proveedor de flotas urbanas en China, Corea y Medio Oriente.',
-    img: '/img/regiones/asia.png',
+    img: '/img/regiones/asia.webp',
   },
   {
     nombre: 'Europa',
     resumen:
       'Buses turísticos y eléctricos operando en Alemania, Rusia y países del Báltico. Cumplimiento normativo Euro VI, E-Mark y GOST.',
-    img: '/img/regiones/europa.png',
+    img: '/img/regiones/europa.webp',
   },
   {
     nombre: 'Latinoamérica',
     resumen:
       'Proyectos activos en México (800 buses GNC), Chile (F7 ejecutivos) y Uruguay (eléctricos urbanos). Región en expansión.',
-    img: '/img/regiones/latam.png',
+    img: '/img/regiones/latam.webp',
   },
   {
     nombre: 'África',
     resumen:
       'Flotas interurbanas y turismo en Sudáfrica, Egipto y Ghana. Adaptación a clima extremo y caminos rurales.',
-    img: '/img/regiones/africa.png',
+    img: '/img/regiones/africa.webp',
   },
   {
     nombre: 'Estados Unidos',
     resumen:
       'Proveedores homologados bajo certificación DOT. Iniciativas de electrificación en rutas privadas y escolares.',
-    img: '/img/regiones/usa.png',
+    img: '/img/regiones/usa.webp',
   },
 ]
 

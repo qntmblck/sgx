@@ -36,7 +36,7 @@ export default function Footer() {
       <div className="relative max-w-7xl mx-auto px-6 pt-16 pb-6 lg:px-8">
         <div className="flex flex-col sm:flex-row items-start justify-between gap-8">
           <div className="flex-shrink-0 w-full sm:w-1/4 flex justify-center sm:justify-start">
-            <img src="/img/logo.png" alt="ANKAI Logo" className="h-14 sm:h-16 w-auto" />
+            <img src="/img/logo.webp" alt="ANKAI Logo" className="h-14 sm:h-16 w-auto" />
           </div>
 
           <div className="grid grid-cols-2 gap-x-8 gap-y-6 w-full sm:grid-cols-4 sm:w-3/4 text-left">

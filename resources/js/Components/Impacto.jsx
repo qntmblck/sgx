@@ -36,7 +36,7 @@ export default function Impacto() {
       <div
   className="absolute inset-0 -z-20 opacity-30 bg-center bg-no-repeat md:bg-fixed md:bg-cover"
   style={{
-    backgroundImage: "url('/img/calle.jpg')",
+    backgroundImage: "url('/img/calle.webp')",
     backgroundSize: 'cover',
     backgroundPosition: 'center',
     display: 'none',
@@ -46,7 +46,7 @@ export default function Impacto() {
 <style>
   {`
     @media (min-width: 768px) {
-      div[style*="/img/calle.jpg"] {
+      div[style*="/img/calle.webp"] {
         display: block !important;
       }
     }
@@ -141,7 +141,7 @@ export default function Impacto() {
       {/* Imagen final */}
 <div className="relative z-10 -mb-2 mt-10">
   <img
-    src="/img/buses.png"
+    src="/img/buses.webp"
     alt="Gama de buses ANKAI"
     className="mx-auto w-[90%] max-w-6xl object-contain translate-y-2 sm:translate-y-4 lg:translate-y-6 lg:hidden"
     loading="lazy"

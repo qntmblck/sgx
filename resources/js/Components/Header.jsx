@@ -149,7 +149,7 @@ export default function Header() {
     <header className={`fixed top-0 w-full z-50 transition duration-300 ${bgColor}`}>
       <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
         <Link href="/" className="flex items-center space-x-2">
-          <img src="/img/sgx.png" alt="SGX Logo" className="h-6 sm:h-8 w-auto transition-all" />
+          <img src="/img/sgx.webp" alt="SGX Logo" className="h-6 sm:h-8 w-auto transition-all" />
         </Link>
 
         <nav className={`hidden md:flex space-x-2 text-sm font-medium ${navTextColor}`}>

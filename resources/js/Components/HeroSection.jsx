@@ -12,7 +12,7 @@ export default function HeroSection() {
     <section
       id="inicio"
       className="relative w-full text-white px-6 pt-20 sm:pt-28 bg-cover bg-no-repeat bg-center bg-scroll sm:bg-fixed sm:bg-[center_35%]"
-      style={{ backgroundImage: 'url(/img/hero.png?v=2)' }}
+      style={{ backgroundImage: 'url(/img/hero.webp?v=2)' }}
     >
       {/* Degradado sobre fondo */}
       <div className="absolute inset-0 bg-gradient-to-r from-black/80 to-gray-800/40 sm:from-black/60 sm:to-gray-700/30 z-0" />
@@ -32,7 +32,7 @@ export default function HeroSection() {
           {/* Línea ANKAI */}
           <div className="flex items-center flex-wrap gap-3 text-4xl sm:text-4xl font-extrabold mb-6">
             <span>de</span>
-            <img src="/img/ankai.png" alt="ANKAI" className="h-8 sm:h-8 object-contain" />
+            <img src="/img/ankai.webp" alt="ANKAI" className="h-8 sm:h-8 object-contain" />
             <span>en Chile</span>
           </div>
 

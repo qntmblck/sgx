@@ -1,10 +1,10 @@
 import BeneficioDetalle from './BeneficioDetalle'
 
 const beneficios = [
-  { titulo: 'Chasis Monocasco', descripcion: 'Estructura 3 a 6 veces más resistente. Reducción de peso del 8%.', imagen: '/img/iconos/monocasco.png' },
-  { titulo: 'Controlador 5 en 1', descripcion: 'Control de motor, dirección, aire, distribución y CC.', imagen: '/img/iconos/controlador.png' },
-  { titulo: 'Protección IP67 + EMC', descripcion: 'Sistema sellado. Detección de humo y monitoreo térmico.', imagen: '/img/iconos/proteccion.png' },
-  { titulo: 'Batería Fosfato-Litio', descripcion: 'Mayor densidad energética y vida útil. -800 kg.', imagen: '/img/iconos/bateria.png' },
+  { titulo: 'Chasis Monocasco', descripcion: 'Estructura 3 a 6 veces más resistente. Reducción de peso del 8%.', imagen: '/img/iconos/monocasco.webp' },
+  { titulo: 'Controlador 5 en 1', descripcion: 'Control de motor, dirección, aire, distribución y CC.', imagen: '/img/iconos/controlador.webp' },
+  { titulo: 'Protección IP67 + EMC', descripcion: 'Sistema sellado. Detección de humo y monitoreo térmico.', imagen: '/img/iconos/proteccion.webp' },
+  { titulo: 'Batería Fosfato-Litio', descripcion: 'Mayor densidad energética y vida útil. -800 kg.', imagen: '/img/iconos/bateria.webp' },
   // Puedes continuar agregando los 21 beneficios aquí...
 ]
 

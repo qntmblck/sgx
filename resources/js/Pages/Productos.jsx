@@ -8,16 +8,16 @@ import ContactActions from '@/Components/ContactActions'
 
 export default function Productos() {
   const productos = [
-    { modelo: "G6 Eléctrico", categoria: "G6 Eléctrico", energia: "Eléctrico", largo: 6.5, pasajeros: "13+1", imagenes: [...Array(5)].map((_, i) => `/img/buses/g6-electric-${i + 1}.jpg`) },
-    { modelo: "G6 Diésel Euro VI", categoria: "G6 Diésel Euro VI", energia: "Diésel Euro VI", largo: 6.6, pasajeros: "23", imagenes: [...Array(5)].map((_, i) => `/img/buses/g6-diesel-${i + 1}.jpg`) },
-    { modelo: "G9 Eléctrico 8.5m", categoria: "G9 Eléctrico", energia: "Eléctrico", largo: 8.5, pasajeros: "15–30", imagenes: [...Array(5)].map((_, i) => `/img/buses/g9-electric-85-${i + 1}.jpg`) },
-    { modelo: "G9 Eléctrico 10.5m", categoria: "G9 Eléctrico", energia: "Eléctrico", largo: 10.5, pasajeros: "19–39", imagenes: [...Array(5)].map((_, i) => `/img/buses/g9-electric-85-${i + 1}.jpg`) },
-    { modelo: "G9 Eléctrico 12.0m", categoria: "G9 Eléctrico", energia: "Eléctrico", largo: 12.0, pasajeros: "34–38", imagenes: [...Array(5)].map((_, i) => `/img/buses/g9-electric-85-${i + 1}.jpg`) },
-    { modelo: "G9 Diésel Euro VI 10.5m", categoria: "G9 Diésel Euro VI", energia: "Diésel Euro VI", largo: 10.5, pasajeros: "N/D", imagenes: [...Array(5)].map((_, i) => `/img/buses/g9-electric-85-${i + 1}.jpg`) },
-    { modelo: "G9 Diésel Euro VI 12.0m", categoria: "G9 Diésel Euro VI", energia: "Diésel Euro VI", largo: 12.0, pasajeros: "N/D", imagenes: [...Array(5)].map((_, i) => `/img/buses/g9-electric-85-${i + 1}.jpg`) },
-    { modelo: "A9 Eléctrico 8.2m", categoria: "A9 Eléctrico", energia: "Eléctrico", largo: 8.2, pasajeros: "29", imagenes: [...Array(5)].map((_, i) => `/img/buses/a9-electric-82-${i + 1}.jpg`) },
-    { modelo: "A9 Eléctrico 11.3m", categoria: "A9 Eléctrico", energia: "Eléctrico", largo: 11.3, pasajeros: "N/D", imagenes: [...Array(5)].map((_, i) => `/img/buses/a9-electric-82-${i + 1}.jpg`) },
-    { modelo: "K7 Eléctrico 7.1m", categoria: "K7 Eléctrico", energia: "Eléctrico", largo: 7.1, pasajeros: "N/D", imagenes: [...Array(5)].map((_, i) => `/img/buses/a9-electric-82-${i + 1}.jpg`) }
+    { modelo: "G6 Eléctrico", categoria: "G6 Eléctrico", energia: "Eléctrico", largo: 6.5, pasajeros: "13+1", imagenes: [...Array(5)].map((_, i) => `/img/buses/g6-electric-${i + 1}.webp`) },
+    { modelo: "G6 Diésel Euro VI", categoria: "G6 Diésel Euro VI", energia: "Diésel Euro VI", largo: 6.6, pasajeros: "23", imagenes: [...Array(5)].map((_, i) => `/img/buses/g6-diesel-${i + 1}.webp`) },
+    { modelo: "G9 Eléctrico 8.5m", categoria: "G9 Eléctrico", energia: "Eléctrico", largo: 8.5, pasajeros: "15–30", imagenes: [...Array(5)].map((_, i) => `/img/buses/g9-electric-85-${i + 1}.webp`) },
+    { modelo: "G9 Eléctrico 10.5m", categoria: "G9 Eléctrico", energia: "Eléctrico", largo: 10.5, pasajeros: "19–39", imagenes: [...Array(5)].map((_, i) => `/img/buses/g9-electric-85-${i + 1}.webp`) },
+    { modelo: "G9 Eléctrico 12.0m", categoria: "G9 Eléctrico", energia: "Eléctrico", largo: 12.0, pasajeros: "34–38", imagenes: [...Array(5)].map((_, i) => `/img/buses/g9-electric-85-${i + 1}.webp`) },
+    { modelo: "G9 Diésel Euro VI 10.5m", categoria: "G9 Diésel Euro VI", energia: "Diésel Euro VI", largo: 10.5, pasajeros: "N/D", imagenes: [...Array(5)].map((_, i) => `/img/buses/g9-electric-85-${i + 1}.webp`) },
+    { modelo: "G9 Diésel Euro VI 12.0m", categoria: "G9 Diésel Euro VI", energia: "Diésel Euro VI", largo: 12.0, pasajeros: "N/D", imagenes: [...Array(5)].map((_, i) => `/img/buses/g9-electric-85-${i + 1}.webp`) },
+    { modelo: "A9 Eléctrico 8.2m", categoria: "A9 Eléctrico", energia: "Eléctrico", largo: 8.2, pasajeros: "29", imagenes: [...Array(5)].map((_, i) => `/img/buses/a9-electric-82-${i + 1}.webp`) },
+    { modelo: "A9 Eléctrico 11.3m", categoria: "A9 Eléctrico", energia: "Eléctrico", largo: 11.3, pasajeros: "N/D", imagenes: [...Array(5)].map((_, i) => `/img/buses/a9-electric-82-${i + 1}.webp`) },
+    { modelo: "K7 Eléctrico 7.1m", categoria: "K7 Eléctrico", energia: "Eléctrico", largo: 7.1, pasajeros: "N/D", imagenes: [...Array(5)].map((_, i) => `/img/buses/a9-electric-82-${i + 1}.webp`) }
   ]
 
   const [energia, setEnergia] = useState(['Eléctrico', 'Diésel Euro VI'])
@@ -138,7 +138,7 @@ export default function Productos() {
     <div className="relative">
       <div
         className="relative bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: "url('/img/productos.png')" }}
+        style={{ backgroundImage: "url('/img/productos.webp')" }}
       >
         <div className="absolute inset-0 bg-black/40" />
         <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8 pt-20 sm:pt-28 pb-24 text-center">
@@ -149,7 +149,7 @@ export default function Productos() {
 
 <div className="flex items-center justify-center flex-wrap gap-3 text-4xl sm:text-4xl font-extrabold text-white drop-shadow mb-6">
   <span className="whitespace-nowrap">de</span>
-  <img src="/img/ankai.png" alt="ANKAI" className="h-6 sm:h-6 object-contain" />
+  <img src="/img/ankai.webp" alt="ANKAI" className="h-6 sm:h-6 object-contain" />
   <span className="whitespace-nowrap">en Chile</span>
 </div>
 
@@ -179,7 +179,7 @@ export default function Productos() {
     {/* Sección productos */}
     <section
       className="relative z-0 bg-no-repeat bg-center bg-cover"
-      style={{ backgroundImage: "url('/img/catalogo.png')" }}
+      style={{ backgroundImage: "url('/img/catalogo.webp')" }}
     >
       <div className="absolute inset-0 bg-black/40 z-0" />
       <ProductoCard productos={productosFiltrados} />
