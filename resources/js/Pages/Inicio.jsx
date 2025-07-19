@@ -9,12 +9,18 @@ export default function Inicio() {
     <>
       <Head title="SGX · Inicio" />
 
-      {/* flex-col de altura exacta de la ventana, sin overflow */}
-      <div className="flex flex-col h-screen overflow-hidden">
+      {/*
+        - flex-col de altura 100vh
+        - overflow-auto en móvil, overflow-hidden en desktop
+      */}
+      <div className="flex flex-col h-screen overflow-auto md:overflow-hidden">
         <Header />
 
-        {/* main ocupa todo el espacio restante y oculta overflow */}
-        <main className="flex-1 overflow-hidden">
+        {/*
+          - flex-1: ocupa todo el espacio sobrante
+          - overflow-auto/md:overflow-hidden: idem contenedor padre
+        */}
+        <main className="flex-1 overflow-auto md:overflow-hidden">
           <HeroSection />
         </main>
 
