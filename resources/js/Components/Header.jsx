@@ -1,139 +1,44 @@
 import { useState, useEffect } from 'react'
-import { Link } from '@inertiajs/react'
+import { Link, usePage } from '@inertiajs/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 
 const navItems = [
   { name: 'Inicio', href: '/' },
-  { name: 'Nosotros', scrollTo: 'sobre' },
-  { name: 'Impacto', scrollTo: 'impacto' },
+  { name: 'Tecnología', href: '/tecnologia' },
   { name: 'Productos', href: '/productos' },
-  { name: 'Contacto', scrollTo: null, isContacto: true },
+  { name: 'Innovación', href: '/innovacion' },
 ]
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
-  const [activeSection, setActiveSection] = useState('')
-  const currentPath = typeof window !== 'undefined' ? window.location.pathname : '/'
+  const { url: currentPath } = usePage()
 
+  // Cambiar fondo al hacer scroll
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50)
     window.addEventListener('scroll', handleScroll)
-
-    const observers = []
-
-    if (currentPath === '/') {
-      const sectionIds = ['inicio', 'sobre', 'impacto']
-      sectionIds.forEach((id) => {
-        const el = document.getElementById(id)
-        if (!el) return
-        const observer = new IntersectionObserver(
-          ([entry]) => {
-            if (entry.isIntersecting) setActiveSection(`#${id}`)
-          },
-          { threshold: 0.6 }
-        )
-        observer.observe(el)
-        observers.push(observer)
-      })
-    }
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll)
-      observers.forEach((observer) => observer.disconnect())
-    }
-  }, [currentPath])
-
-  useEffect(() => {
-    const activarContacto = () => setActiveSection('#contacto')
-    const desactivarContacto = () => setActiveSection('')
-
-    window.addEventListener('activate-contacto', activarContacto)
-    window.addEventListener('deactivate-contacto', desactivarContacto)
-
-    return () => {
-      window.removeEventListener('activate-contacto', activarContacto)
-      window.removeEventListener('deactivate-contacto', desactivarContacto)
-    }
+    return () => window.removeEventListener('scroll', handleScroll)
   }, [])
-
-  const isActive = (item) => {
-    if (item.isContacto) return activeSection === '#contacto'
-
-    if (activeSection === '#contacto') return false // desactiva todo lo demás
-
-    if (item.href === '/' && currentPath === '/') {
-      const secciones = ['#sobre', '#impacto', '#contacto']
-      return !secciones.includes(activeSection)
-    }
-
-    if (item.href === '/productos') {
-      return currentPath === '/productos' && activeSection !== '#contacto'
-    }
-
-    if (item.scrollTo && currentPath === '/') {
-      return activeSection === `#${item.scrollTo}`
-    }
-
-    return false
-  }
-
-  const scrollOrRedirect = (id) => {
-    if (currentPath !== '/') {
-      window.location.href = `/#${id}`
-    } else {
-      setTimeout(() => {
-        const el = document.getElementById(id)
-        if (el) {
-          el.scrollIntoView({ behavior: 'smooth', block: 'start' })
-        }
-      }, 50)
-    }
-  }
-
-  const isMobile = () => window.innerWidth < 768
-
-  const handleContactoClick = () => {
-    setMobileMenuOpen(false)
-    const evento = new CustomEvent('toggle-contact-form', {
-      detail: { tipo: isMobile() ? 'whatsapp' : 'correo' }
-    })
-    window.dispatchEvent(evento)
-  }
 
   const baseClasses = 'px-4 py-2 rounded-md transition font-semibold'
   const bgColor = scrolled ? 'bg-white shadow-md' : 'bg-white/10 backdrop-blur'
   const navTextColor = scrolled ? 'text-neutral-800' : 'text-white'
-  const mobileTextColor = scrolled ? 'text-neutral-800' : 'text-white'
 
+  // Renderiza un ítem de navegación
   const renderNavItem = (item, isMobile = false) => {
-    const active = isActive(item)
-    const classes = `${isMobile ? 'flex-shrink-0' : ''} ${baseClasses} ${
-      active
+    const isActive = currentPath === item.href
+    const classes = [
+      isMobile ? 'flex-shrink-0' : '',
+      baseClasses,
+      isActive
         ? 'bg-gradient-to-br from-[#003b5c] to-[#00d084] text-white shadow'
-        : 'hover:text-lime-500 text-inherit'
-    }`
+        : 'hover:text-lime-500 text-inherit',
+    ]
+      .filter(Boolean)
+      .join(' ')
 
-    if (item.isContacto) {
-      return (
-        <button key={item.name} onClick={handleContactoClick} className={classes}>
-          {item.name}
-        </button>
-      )
-    }
-
-    return item.scrollTo ? (
-      <button
-        key={item.name}
-        onClick={() => {
-          setMobileMenuOpen(false)
-          scrollOrRedirect(item.scrollTo)
-        }}
-        className={classes}
-      >
-        {item.name}
-      </button>
-    ) : (
+    return (
       <Link
         key={item.name}
         href={item.href}
@@ -152,19 +57,28 @@ export default function Header() {
           <img src="/img/sgx.webp" alt="SGX Logo" className="h-6 sm:h-8 w-auto transition-all" />
         </Link>
 
+        {/* Menú escritorio */}
         <nav className={`hidden md:flex space-x-2 text-sm font-medium ${navTextColor}`}>
-          {navItems.map((item) => renderNavItem(item))}
+          {navItems.map(item => renderNavItem(item))}
         </nav>
 
-        <button className={`md:hidden ${navTextColor}`} onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
-          {mobileMenuOpen ? <XMarkIcon className="h-6 w-6" /> : <Bars3Icon className="h-6 w-6" />}
+        {/* Toggle móvil */}
+        <button
+          className={`md:hidden ${navTextColor}`}
+          onClick={() => setMobileMenuOpen(open => !open)}
+        >
+          {mobileMenuOpen
+            ? <XMarkIcon className="h-6 w-6" />
+            : <Bars3Icon className="h-6 w-6" />
+          }
         </button>
       </div>
 
+      {/* Menú móvil desplegable */}
       {mobileMenuOpen && (
         <div className={`${bgColor} md:hidden border-t border-white/10`}>
-          <nav className={`flex overflow-x-auto whitespace-nowrap px-4 py-4 gap-3 text-sm font-semibold ${mobileTextColor}`}>
-            {navItems.map((item) => renderNavItem(item, true))}
+          <nav className={`flex flex-col px-4 py-4 gap-3 text-sm font-semibold ${navTextColor}`}>
+            {navItems.map(item => renderNavItem(item, true))}
           </nav>
         </div>
       )}

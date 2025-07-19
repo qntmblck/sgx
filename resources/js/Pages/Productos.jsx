@@ -5,7 +5,6 @@ import ProductoCard from './Productos/ProductoCard'
 import BeneficiosTecnologicos from './Productos/BeneficiosTecnologicos'
 import ContactActions from '@/Components/ContactActions'
 
-
 export default function Productos() {
   const productos = [
     { modelo: "G6 Eléctrico", categoria: "G6 Eléctrico", energia: "Eléctrico", largo: 6.5, pasajeros: "13+1", imagenes: [...Array(5)].map((_, i) => `/img/buses/g6-electric-${i + 1}.webp`) },
@@ -131,63 +130,54 @@ export default function Productos() {
   )
 
   return (
-  <>
-    <Header />
+    <>
+      <Header />
 
-    {/* Hero con beneficios */}
-    <div className="relative">
-      <div
-        className="relative bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: "url('/img/productos.webp')" }}
-      >
-        <div className="absolute inset-0 bg-black/40" />
-        <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8 pt-20 sm:pt-28 pb-24 text-center">
-         {/* Título compuesto estilo ANKAI */}
-<h1 className="text-3xl sm:text-4xl font-extrabold leading-tight drop-shadow text-white mb-4 text-center">
-  Portafolio de Buses
-</h1>
-
-<div className="flex items-center justify-center flex-wrap gap-3 text-4xl sm:text-4xl font-extrabold text-white drop-shadow mb-6">
-  <span className="whitespace-nowrap">de</span>
-  <img src="/img/ankai.webp" alt="ANKAI" className="h-6 sm:h-6 object-contain" />
-  <span className="whitespace-nowrap">en Chile</span>
-</div>
-
-          <p className="text-white text-lg sm:text-xl max-w-3xl mx-auto mb-6">
-            Modelos eléctricos, urbanos, interurbanos y de alta capacidad adaptados a las necesidades del transporte moderno.
-          </p>
-          <BeneficiosTecnologicos />
+      {/* Hero con beneficios */}
+      <div className="relative">
+        <div
+          className="relative bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: "url('/img/productos.webp')" }}
+        >
+          <div className="absolute inset-0 bg-black/40" />
+          <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8 pt-20 sm:pt-28 pb-24 text-center">
+            <h1 className="text-3xl sm:text-4xl font-extrabold leading-tight drop-shadow text-white mb-4 text-center">
+              Portafolio de Buses
+            </h1>
+            <div className="flex items-center justify-center flex-wrap gap-3 text-4xl sm:text-4xl font-extrabold text-white drop-shadow mb-6">
+              <span className="whitespace-nowrap">de</span>
+              <img src="/img/ankai.webp" alt="ANKAI" className="h-6 sm:h-6 object-contain" />
+              <span className="whitespace-nowrap">en Chile</span>
+            </div>
+            <p className="text-white text-lg sm:text-xl max-w-3xl mx-auto mb-6">
+              Modelos eléctricos, urbanos, interurbanos y de alta capacidad adaptados a las necesidades del transporte moderno.
+            </p>
+            <BeneficiosTecnologicos />
+          </div>
+          <div className="absolute bottom-0 left-0 w-full h-16 bg-gradient-to-t from-white to-transparent z-20 pointer-events-none" />
         </div>
 
-        {/* Difuminado inferior invertido */}
-        <div className="absolute bottom-0 left-0 w-full h-16 bg-gradient-to-t from-white to-transparent z-20 pointer-events-none" />
+        {/* Filtro flotante */}
+        <div className="absolute top-full left-1/2 -translate-x-1/2 -translate-y-1/2 z-30 w-screen px-4">
+          <div className="flex justify-center">
+            <div className="inline-flex min-w-max gap-3 overflow-x-auto no-scrollbar">
+              {Filtros}
+            </div>
+          </div>
+        </div>
       </div>
 
-      {/* Filtro flotante centrado y fijo en una fila */}
-<div className="absolute top-full left-1/2 -translate-x-1/2 -translate-y-1/2 z-30 w-screen px-4">
-  <div className="flex justify-center">
-    <div className="inline-flex min-w-max gap-3 overflow-x-auto no-scrollbar">
-      {Filtros}
-    </div>
-  </div>
-</div>
+      {/* Sección productos */}
+      <section
+        className="relative z-0 bg-no-repeat bg-center bg-cover"
+        style={{ backgroundImage: "url('/img/catalogo.webp')" }}
+      >
+        <div className="absolute inset-0 bg-black/40 z-0" />
+        <ProductoCard productos={productosFiltrados} />
+      </section>
 
-
-
-    </div>
-
-    {/* Sección productos */}
-    <section
-      className="relative z-0 bg-no-repeat bg-center bg-cover"
-      style={{ backgroundImage: "url('/img/catalogo.webp')" }}
-    >
-      <div className="absolute inset-0 bg-black/40 z-0" />
-      <ProductoCard productos={productosFiltrados} />
-    </section>
-
-    <Footer />
-    <ContactActions />
-  </>
-)
-
+      <Footer />
+      <ContactActions />
+    </>
+  )
 }
