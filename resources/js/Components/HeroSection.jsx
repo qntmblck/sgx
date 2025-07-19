@@ -43,8 +43,8 @@ export default function HeroSection() {
 
       <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-3xl space-y-6">
         <h1 className="text-3xl sm:text-5xl md:text-6xl font-extrabold text-white leading-tight drop-shadow-lg">
-          Representantes Oficiales de{' '}
-          <span className="text-[#e63946]">ANKAI</span> en Chile
+          Representantes de{' '}
+          <span className="text-[#e63946]">Anhui Ankai Automobile Co. Ltd.</span> en Chile
         </h1>
 
         <p className="
