@@ -27,10 +27,13 @@ export default function HeroSection() {
       id="inicio"
       className="
         h-screen
+        max-h-screen
         relative
         flex items-center justify-center
         bg-cover bg-center
         overflow-hidden
+        overscroll-none
+        md:overflow-visible
       "
       style={{
         backgroundImage: 'url(/img/hero.webp?v=2)',
@@ -51,7 +54,7 @@ export default function HeroSection() {
             bg-black/30 px-3 py-1 rounded-md
             inline-block
           ">
-          Pioneros en soluciones de electromovilidad, impulsando el futuro del transporte público con tecnología, cobertura y experiencia.
+          Impulsando una movilidad sustentable y de alto estándar.
         </p>
 
         <div className="grid grid-cols-3 gap-4 mt-8">
@@ -80,7 +83,7 @@ export default function HeroSection() {
         </div>
       </div>
 
-      {/* Oculta la flecha en móvil, sólo aparece en pantallas ≥ sm */}
+      {/* Flecha de bajar: oculta en móvil (< sm) */}
       <div className="hidden sm:flex absolute bottom-6 w-full justify-center">
         <div className="animate-bounce p-2 bg-white/20 rounded-full">
           <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
