@@ -11,25 +11,27 @@ const navigation = {
 export default function Footer() {
   return (
     <footer className="bg-white text-[#111827] text-sm overflow-hidden">
-      {/* Línea verde */}
+      {/* Línea verde superior */}
       <div className="border-t border-[#00d084]" />
 
-      {/* Fila con logo, copyright y redes */}
-      <div className="max-w-7xl mx-auto px-6 py-6 flex items-center justify-between">
-        {/* Logo ANKAI */}
-        <img
-          src="/img/logo.webp"
-          alt="ANKAI Logo"
-          className="h-12 w-auto"
-        />
+      {/* Contenedor con 3 columnas */}
+      <div className="max-w-7xl mx-auto px-6 py-6 grid grid-cols-1 md:grid-cols-3 items-center gap-y-4">
+        {/* 1) Logo ANKAI */}
+        <div className="flex justify-center md:justify-start">
+          <img
+            src="/img/logo.webp"
+            alt="ANKAI Logo"
+            className="h-12 w-auto"
+          />
+        </div>
 
-        {/* Copyright */}
-        <p className="text-xs text-gray-500">
-          © 2024 SGX Chile. Todos los derechos reservados.
-        </p>
+        {/* 2) Derechos */}
+        <div className="text-center text-gray-500">
+          © 2024 SGX Chile. <br />Todos los derechos reservados.
+        </div>
 
-        {/* Iconos sociales */}
-        <div className="flex space-x-6 text-[#111827] text-lg">
+        {/* 3) Iconos sociales */}
+        <div className="flex justify-center md:justify-end space-x-6 text-[#111827] text-lg">
           {navigation.social.map(item => (
             <a
               key={item.name}

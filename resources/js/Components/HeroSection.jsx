@@ -18,10 +18,9 @@ function useCounter(target, { duration = 1500, delay = 0 } = {}) {
 }
 
 export default function HeroSection() {
-  // Nuevas métricas basadas en la investigación
-  const experiencia       = useCounter(60,  { duration: 2000, delay: 500 })   // 59 años de trayectoria
-  const paisesExportacion = useCounter(100, { duration: 2000, delay: 800 })   // +100 países
-  const certificaciones   = useCounter(4,   { duration: 2000, delay: 1100 })  // 4 certificaciones internacionales
+  const experiencia       = useCounter(60,  { duration: 2000, delay: 500 })
+  const paisesExportacion = useCounter(100, { duration: 2000, delay: 800 })
+  const certificaciones   = useCounter(4,   { duration: 2000, delay: 1100 })
 
   return (
     <section
@@ -30,15 +29,14 @@ export default function HeroSection() {
         h-screen
         relative
         flex items-center justify-center
-        bg-fixed bg-no-repeat
-        overflow-x-hidden
+        bg-cover bg-center
+        overflow-hidden
       "
       style={{
         backgroundImage: 'url(/img/hero.webp?v=2)',
-        backgroundSize:     '150% auto',
-        backgroundPosition: 'center top',
       }}
     >
+      {/* Overlay para contraste */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/60" />
 
       <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-3xl space-y-6">
@@ -56,7 +54,6 @@ export default function HeroSection() {
           Pioneros en soluciones de electromovilidad, impulsando el futuro del transporte público con tecnología, cobertura y experiencia.
         </p>
 
-        {/* Bloques con métricas contundentes */}
         <div className="grid grid-cols-3 gap-4 mt-8">
           {[
             { value: experiencia,       label: 'Años de Trayectoria' },
@@ -83,7 +80,8 @@ export default function HeroSection() {
         </div>
       </div>
 
-      <div className="absolute bottom-6 w-full flex justify-center">
+      {/* Oculta la flecha en móvil, sólo aparece en pantallas ≥ sm */}
+      <div className="hidden sm:flex absolute bottom-6 w-full justify-center">
         <div className="animate-bounce p-2 bg-white/20 rounded-full">
           <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
