@@ -19,7 +19,7 @@ function useCounter(target, { duration = 1500, delay = 0 } = {}) {
 
 export default function HeroSection() {
   // Nuevas métricas basadas en la investigación
-  const experiencia       = useCounter(59,  { duration: 2000, delay: 500 })   // 59 años de trayectoria
+  const experiencia       = useCounter(60,  { duration: 2000, delay: 500 })   // 59 años de trayectoria
   const paisesExportacion = useCounter(100, { duration: 2000, delay: 800 })   // +100 países
   const certificaciones   = useCounter(4,   { duration: 2000, delay: 1100 })  // 4 certificaciones internacionales
 
