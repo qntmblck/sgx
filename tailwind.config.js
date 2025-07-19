@@ -14,7 +14,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Figtree', ...defaultTheme.fontFamily.sans],
+        // Reemplazamos 'Figtree' por 'Segoe UI'
+        sans: ['"Segoe UI"', ...defaultTheme.fontFamily.sans],
       },
       keyframes: {
         carousel: {
@@ -36,7 +37,7 @@ export default {
         'fade-in-right': 'fade-in-right 1.2s ease-out forwards',
       },
       transformOrigin: {
-        'center': 'center',
+        center: 'center',
       },
       rotate: {
         'y-180': 'rotateY(180deg)',

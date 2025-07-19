@@ -8,13 +8,20 @@ export default function Inicio() {
   return (
     <>
       <Head title="SGX · Inicio" />
-      <Header />
-      <main>
-        <HeroSection />
-      </main>
-      <Footer />
+
+      {/* flex-col de altura exacta de la ventana, sin overflow */}
+      <div className="flex flex-col h-screen overflow-hidden">
+        <Header />
+
+        {/* main ocupa todo el espacio restante y oculta overflow */}
+        <main className="flex-1 overflow-hidden">
+          <HeroSection />
+        </main>
+
+        <Footer />
+      </div>
+
       <ContactActions />
     </>
   )
 }
-

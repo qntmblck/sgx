@@ -1,65 +1,105 @@
 import { useEffect, useState } from 'react'
-import PresenciaGlobal from './PresenciaGlobal'
+
+// Numeric animator hook (igual que antes)
+function useCounter(target, { duration = 1500, delay = 0 } = {}) {
+  const [count, setCount] = useState(0)
+  useEffect(() => {
+    const start = performance.now()
+    let frame
+    const step = (now) => {
+      const t = Math.min(1, (now - start - delay) / duration)
+      if (t > 0) setCount(Math.floor(t * target))
+      if (t < 1) frame = requestAnimationFrame(step)
+    }
+    frame = requestAnimationFrame(step)
+    return () => cancelAnimationFrame(frame)
+  }, [target, duration, delay])
+  return count
+}
 
 export default function HeroSection() {
-  const [loaded, setLoaded] = useState(false)
+  const certificaciones = useCounter(8, { duration: 2000, delay: 500 })
+  const innovaciones    = useCounter(4, { duration: 2000, delay: 800 })
+  const pioneros        = useCounter(1, { duration: 2000, delay: 1100 })
 
+  // trigger mounting animations
+  const [loaded, setLoaded] = useState(false)
   useEffect(() => {
     requestAnimationFrame(() => setLoaded(true))
   }, [])
 
+  const stats = [
+    { value: certificaciones, label: 'Certificaciones Internacionales' },
+    { value: innovaciones,    label: 'Tecnologías Clave' },
+    { value: pioneros,        label: 'Pioneros en Bus Eléctrico' },
+  ]
+
   return (
     <section
       id="inicio"
-      className="relative w-full text-white px-6 pt-20 sm:pt-28 bg-cover bg-no-repeat bg-center bg-scroll sm:bg-fixed sm:bg-[center_35%]"
-      style={{ backgroundImage: 'url(/img/hero.webp?v=2)' }}
+      className="h-screen relative flex items-center justify-center bg-fixed bg-no-repeat overflow-hidden"
+      style={{
+        backgroundImage: 'url(/img/hero.webp?v=2)',
+        backgroundSize:   '150% auto',
+        backgroundPosition: 'center top',
+      }}
     >
-      {/* Degradado sobre fondo */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black/80 to-gray-800/40 sm:from-black/60 sm:to-gray-700/30 z-0" />
+      {/* Overlay suave */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-transparent to-black/70" />
 
-      {/* Contenido principal */}
-      <div className="relative z-10 max-w-7xl mx-auto">
-        <div
-          className={`max-w-5xl transition-all duration-1000 ease-out ${
-            loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
-          }`}
+      {/* Contenido */}
+      <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-4xl space-y-6">
+        <h1
+          className={`text-4xl sm:text-5xl md:text-6xl font-extrabold text-white leading-tight drop-shadow-lg
+            transition-transform duration-700 ease-out
+            ${loaded ? 'animate-fade-in-right' : 'translate-x-[-20px] opacity-0'}`}
+          style={{ animationDelay: '200ms' }}
         >
-          {/* Título */}
-          <h1 className="text-4xl sm:text-4xl font-extrabold leading-tight drop-shadow mb-6">
-            Representantes Autorizados de
-          </h1>
+          Representantes Oficiales de{' '}
+          <span className="text-[#e63946]">ANKAI</span> en Chile
+        </h1>
 
-          {/* Línea ANKAI */}
-          <div className="flex items-center flex-wrap gap-3 text-4xl sm:text-4xl font-extrabold mb-6">
-            <span>de</span>
-            <img src="/img/ankai.webp" alt="ANKAI" className="h-8 sm:h-8 object-contain" />
-            <span>en Chile</span>
-          </div>
+        <p
+          className={`inline-block bg-black/50 px-4 py-2 rounded-md text-base sm:text-lg md:text-xl text-gray-100 mx-auto max-w-3xl
+            transition-opacity duration-700 ease-out
+            ${loaded ? 'animate-fade-up' : 'opacity-0'}`}
+          style={{ animationDelay: '400ms' }}
+        >
+          Pioneros en electromovilidad, impulsando el transporte público con tecnología, cobertura y experiencia.
+        </p>
 
-          {/* Subtítulo */}
-          <p className="text-base sm:text-xl font-semibold max-w-xl text-gray-100 mb-6">
-            Impulsamos una nueva era en el transporte público inteligente con tecnología de clase mundial.
-          </p>
-
-          {/* Botón alineado a la derecha */}
-          <div className="flex justify-end mb-12">
-            <a
-              href="/productos"
-              className="
-                inline-block font-bold rounded-md shadow transition-all duration-300
-                bg-gradient-to-br from-[#003b5c] to-[#00d084] hover:brightness-110
-                text-sm px-4 py-2 sm:text-base sm:px-5 sm:py-3 md:text-lg md:px-6
-              "
+        {/* Estadísticas */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-8">
+          {stats.map((stat, i) => (
+            <div
+              key={stat.label}
+              className={`
+                bg-white/10 backdrop-blur-sm rounded-lg p-6 transform transition-all duration-500 ease-out
+                hover:scale-105 hover:backdrop-blur-lg hover:shadow-2xl
+                ${loaded ? 'animate-fade-up' : 'opacity-0 translate-y-4'}
+              `}
+              style={{ animationDelay: `${600 + i * 200}ms` }}
             >
-              Ver Productos
-            </a>
-          </div>
+              <div className="text-4xl sm:text-5xl font-bold text-white">
+                {stat.value}{ stat.value === pioneros ? 'º' : '+' }
+              </div>
+              <div className="mt-1 text-gray-300 uppercase text-sm">
+                {stat.label}
+              </div>
+            </div>
+          ))}
         </div>
       </div>
 
-      {/* Carrusel PresenciaGlobal */}
-      <div className="relative z-10 mt-12">
-        <PresenciaGlobal />
+      {/* Indicador de scroll */}
+      <div className="absolute bottom-8 w-full flex justify-center">
+        <div className="animate-bounce p-2 bg-white/20 rounded-full transition-shadow hover:shadow-lg">
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none"
+               viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
+                  d="M19 9l-7 7-7-7" />
+          </svg>
+        </div>
       </div>
     </section>
   )
