@@ -33,7 +33,6 @@ export default function HeroSection() {
         bg-cover bg-center
         overflow-hidden
         overscroll-none
-        md:overflow-visible
       "
       style={{
         backgroundImage: 'url(/img/hero.webp?v=2)',
@@ -57,6 +56,7 @@ export default function HeroSection() {
           Impulsando una movilidad sustentable y de alto estándar.
         </p>
 
+        {/* Siempre 3 columnas, incluso en móvil */}
         <div className="grid grid-cols-3 gap-4 mt-8">
           {[
             { value: experiencia,       label: 'Años de Trayectoria' },
@@ -83,8 +83,8 @@ export default function HeroSection() {
         </div>
       </div>
 
-      {/* Flecha de bajar: oculta en móvil (< sm) */}
-      <div className="hidden sm:flex absolute bottom-6 w-full justify-center">
+      {/* Flecha de bajar: visible siempre, sin ocultar en móvil */}
+      <div className="absolute bottom-6 w-full flex justify-center">
         <div className="animate-bounce p-2 bg-white/20 rounded-full">
           <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
