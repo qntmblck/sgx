@@ -55,7 +55,7 @@ export default function HeroSection() {
             ${loaded ? 'animate-fade-in-right' : 'translate-x-[-20px] opacity-0'}`}
           style={{ animationDelay: '200ms' }}
         >
-          Representantes Oficiales de{' '}
+          Representantes de{' '}
           <span className="text-[#e63946]">ANKAI</span> en Chile
         </h1>
 
