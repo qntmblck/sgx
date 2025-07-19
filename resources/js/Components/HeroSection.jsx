@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 
-// Hook numérico (igual al anterior)
+// Hook numérico (idéntico al anterior)
 function useCounter(target, { duration = 1500, delay = 0 } = {}) {
   const [count, setCount] = useState(0)
   useEffect(() => {
@@ -21,21 +21,36 @@ export default function HeroSection() {
   const experiencia       = useCounter(60,  { duration: 2000, delay: 500 })
   const paisesExportacion = useCounter(100, { duration: 2000, delay: 800 })
   const certificaciones   = useCounter(4,   { duration: 2000, delay: 1100 })
+  const ref = useRef(null)
+
+  // Bloquear scroll táctil y de rueda solo dentro del hero
+  useEffect(() => {
+    const el = ref.current
+    if (!el) return
+    const prevent = e => e.preventDefault()
+    el.addEventListener('touchmove', prevent, { passive: false })
+    el.addEventListener('wheel', prevent, { passive: false })
+    return () => {
+      el.removeEventListener('touchmove', prevent)
+      el.removeEventListener('wheel', prevent)
+    }
+  }, [])
 
   return (
     <section
+      ref={ref}
       id="inicio"
       className="
-        h-screen
-        max-h-screen
         relative
-        flex items-center justify-center
+        flex flex-col items-center justify-center
+        min-h-screen
         bg-cover bg-center
         overflow-hidden
         overscroll-none
       "
       style={{
         backgroundImage: 'url(/img/hero.webp?v=2)',
+        touchAction: 'none'
       }}
     >
       {/* Overlay para contraste */}
@@ -56,8 +71,8 @@ export default function HeroSection() {
           Impulsando una movilidad sustentable y de alto estándar.
         </p>
 
-        {/* Siempre 3 columnas, incluso en móvil */}
-        <div className="grid grid-cols-3 gap-4 mt-8">
+        {/* Tres bloques siempre en una fila */}
+        <div className="flex flex-nowrap justify-center space-x-4 mt-8 w-full px-4">
           {[
             { value: experiencia,       label: 'Años de Trayectoria' },
             { value: paisesExportacion, label: 'Países de Exportación' },
@@ -66,6 +81,7 @@ export default function HeroSection() {
             <div
               key={label}
               className="
+                flex-1 min-w-0
                 bg-white/10 backdrop-blur-sm
                 rounded-lg p-4 sm:p-6
                 flex flex-col items-center
