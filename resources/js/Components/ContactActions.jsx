@@ -1,25 +1,108 @@
 // ContactActions.jsx
-import { useState, useEffect } from 'react'
-import { PhoneCall, Mail, MessageSquare, ChevronLeft } from 'lucide-react'
+import { useState } from 'react'
+import {
+  PhoneCall,
+  Mail,
+  MessageSquare,
+  ChevronLeft,
+  X as XIcon
+} from 'lucide-react'
 
 export default function ContactActions() {
   const [menuOpen, setMenuOpen] = useState(false)
+  const [showEmailForm, setShowEmailForm] = useState(false)
+  const [showWhatsAppForm, setShowWhatsAppForm] = useState(false)
 
-  // Opcional: lógica de auto-apertura al llegar al bottom, formularios, etc.
-  // … tu lógica de showWhatsAppForm / showEmailForm aquí si la necesitas …
+  const toggleMenu = () => {
+    const next = !menuOpen
+    setMenuOpen(next)
+    if (!next) {
+      setShowEmailForm(false)
+      setShowWhatsAppForm(false)
+    }
+  }
+
+  const handleEmailSubmit = e => {
+    e.preventDefault()
+    const body = e.target.elements.body.value
+    window.location.href =
+      `mailto:contacto@sgx.cl?subject=Contacto%20SGX&body=${encodeURIComponent(body)}`
+  }
+
+  const handleWhatsAppSubmit = e => {
+    e.preventDefault()
+    const body = e.target.elements.body.value
+    window.open(
+      `https://api.whatsapp.com/send?phone=56962365714&text=${encodeURIComponent(body)}`,
+      '_blank'
+    )
+  }
 
   return (
-    <div className="fixed bottom-6 right-0 flex items-end z-50 pointer-events-none">
-      {/* CONTENEDOR DE BOTONES (se desliza) */}
+    <div className="fixed bottom-24 right-2 flex flex-col items-center z-50 pointer-events-none">
+      {/* Email dialog */}
+      {showEmailForm && (
+        <div className="absolute bottom-20 right-20 w-56 bg-white rounded-lg shadow-lg p-4 text-sm text-gray-800 pointer-events-auto">
+          <div className="flex items-center justify-between mb-2">
+            <Mail className="w-5 h-5 text-blue-600" />
+            <button onClick={() => setShowEmailForm(false)}>
+              <XIcon className="w-5 h-5 text-gray-500" />
+            </button>
+          </div>
+          <form onSubmit={handleEmailSubmit} className="space-y-2">
+            <textarea
+              name="body"
+              rows={3}
+              placeholder="Escribe tu mensaje..."
+              className="w-full border border-gray-300 rounded px-2 py-1 text-sm resize-none"
+            />
+            <button
+              type="submit"
+              className="w-full bg-[#1a73e8] text-white py-1 rounded text-sm"
+            >
+              Enviar
+            </button>
+          </form>
+        </div>
+      )}
+
+      {/* WhatsApp dialog */}
+      {showWhatsAppForm && (
+        <div className="absolute bottom-20 right-20 w-56 bg-white rounded-lg shadow-lg p-4 text-sm text-gray-800 pointer-events-auto">
+          <div className="flex items-center justify-between mb-2">
+            {/* FontAwesome WhatsApp icon */}
+            <i className="fa-brands fa-whatsapp w-5 h-5 text-green-500" />
+            <button onClick={() => setShowWhatsAppForm(false)}>
+              <XIcon className="w-5 h-5 text-gray-500" />
+            </button>
+          </div>
+          <form onSubmit={handleWhatsAppSubmit} className="space-y-2">
+            <textarea
+              name="body"
+              rows={3}
+              placeholder="Escribe tu mensaje..."
+              className="w-full border border-gray-300 rounded px-2 py-1 text-sm resize-none"
+            />
+            <button
+              type="submit"
+              className="w-full bg-[#25d366] text-white py-1 rounded text-sm"
+            >
+              Enviar
+            </button>
+          </form>
+        </div>
+      )}
+
+      {/* action buttons */}
       <div
         className={`
           flex flex-col items-center space-y-3
           transition-transform duration-300 ease-out
           pointer-events-auto
-          ${menuOpen ? 'translate-x-0' : 'translate-x-16'}
+          ${menuOpen ? 'opacity-100 -translate-y-20' : 'opacity-0 translate-y-0'}
         `}
       >
-        {/* Llamada */}
+        {/* Call */}
         <a
           href="tel:+56962365714"
           className="w-12 h-12 bg-[#005c47] text-white rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform"
@@ -28,9 +111,12 @@ export default function ContactActions() {
           <PhoneCall className="w-6 h-6" />
         </a>
 
-        {/* Correo */}
+        {/* Email */}
         <button
-          onClick={() => {/* abrir formulario correo */}}
+          onClick={() => {
+            setShowEmailForm(o => !o)
+            setShowWhatsAppForm(false)
+          }}
           className="w-12 h-12 bg-[#1a73e8] text-white rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform"
           aria-label="Email"
         >
@@ -39,7 +125,10 @@ export default function ContactActions() {
 
         {/* WhatsApp */}
         <button
-          onClick={() => {/* abrir formulario WhatsApp */}}
+          onClick={() => {
+            setShowWhatsAppForm(o => !o)
+            setShowEmailForm(false)
+          }}
           className="w-12 h-12 bg-[#25d366] text-white rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform"
           aria-label="WhatsApp"
         >
@@ -47,30 +136,27 @@ export default function ContactActions() {
         </button>
       </div>
 
-      {/* BOTÓN PRINCIPAL */}
+      {/* main toggle */}
       <button
-        onClick={() => setMenuOpen(open => !open)}
+        onClick={toggleMenu}
         className="
-          w-14 h-14
-          bg-white/30 backdrop-blur-md
-          hover:bg-black/60 hover:backdrop-blur-none
-          text-white
-          rounded-l-full
+          w-8 h-8
+          bg-white/40 backdrop-blur-md
+          hover:bg-white/70
+          text-[#111827]
+          rounded-full
           flex items-center justify-center
-          shadow-xl
-          transition-colors transition-transform
+          shadow-2xl
+          border-2 border-white/50
+          transition-all duration-200
           active:scale-95
           pointer-events-auto
         "
         aria-label={menuOpen ? 'Cerrar contactos' : 'Abrir contactos'}
       >
-        <ChevronLeft
-          className={`
-            w-6 h-6
-            transition-transform duration-300
-            ${menuOpen ? 'rotate-180' : ''}
-          `}
-        />
+        {menuOpen
+          ? <XIcon className="w-8 h-8" />
+          : <ChevronLeft className="w-8 h-8" />}
       </button>
     </div>
   )

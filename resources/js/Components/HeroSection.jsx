@@ -82,15 +82,6 @@ export default function HeroSection() {
           ))}
         </div>
       </div>
-
-      {/* Flecha de bajar: visible siempre, sin ocultar en móvil */}
-      <div className="absolute bottom-6 w-full flex justify-center">
-        <div className="animate-bounce p-2 bg-white/20 rounded-full">
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-          </svg>
-        </div>
-      </div>
     </section>
   )
 }
