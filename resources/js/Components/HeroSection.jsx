@@ -27,8 +27,9 @@ export default function HeroSection() {
       id="inicio"
       className="
         relative flex flex-col items-center justify-center
-        min-h-screen bg-cover bg-center
+        bg-cover bg-center
         overflow-x-hidden
+        py-16 sm:py-24 lg:py-32
       "
       style={{ backgroundImage: 'url(/img/hero.webp?v=2)' }}
     >
