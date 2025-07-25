@@ -11,16 +11,18 @@ export default function Inicio() {
 
       {/*
         - flex-col de altura 100vh
-        - overflow-auto en móvil, overflow-hidden en desktop
+        - overflow-y-auto permite scroll vertical
+        - overflow-x-hidden elimina scroll horizontal
+        - en desktop mantenemos overflow-hidden
       */}
-      <div className="flex flex-col h-screen overflow-auto md:overflow-hidden">
+      <div className="flex flex-col h-screen overflow-y-auto overflow-x-hidden md:overflow-hidden">
         <Header />
 
         {/*
-          - flex-1: ocupa todo el espacio sobrante
-          - overflow-auto/md:overflow-hidden: idem contenedor padre
+          - flex-1 ocupa todo el espacio sobrante
+          - mismo control de overflow que el contenedor padre
         */}
-        <main className="flex-1 overflow-auto md:overflow-hidden">
+        <main className="flex-1 overflow-y-auto overflow-x-hidden md:overflow-hidden">
           <HeroSection />
         </main>
 

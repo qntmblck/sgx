@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from 'react'
+import { useEffect, useState } from 'react'
 
 // Hook numérico (idéntico al anterior)
 function useCounter(target, { duration = 1500, delay = 0 } = {}) {
@@ -21,57 +21,45 @@ export default function HeroSection() {
   const experiencia       = useCounter(60,  { duration: 2000, delay: 500 })
   const paisesExportacion = useCounter(100, { duration: 2000, delay: 800 })
   const certificaciones   = useCounter(4,   { duration: 2000, delay: 1100 })
-  const ref = useRef(null)
-
-  // Bloquear scroll táctil y de rueda solo dentro del hero
-  useEffect(() => {
-    const el = ref.current
-    if (!el) return
-    const prevent = e => e.preventDefault()
-    el.addEventListener('touchmove', prevent, { passive: false })
-    el.addEventListener('wheel', prevent, { passive: false })
-    return () => {
-      el.removeEventListener('touchmove', prevent)
-      el.removeEventListener('wheel', prevent)
-    }
-  }, [])
 
   return (
     <section
-      ref={ref}
       id="inicio"
       className="
-        relative
-        flex flex-col items-center justify-center
-        min-h-screen
-        bg-cover bg-center
-        overflow-hidden
-        overscroll-none
+        relative flex flex-col items-center justify-center
+        min-h-screen bg-cover bg-center
+        overflow-x-hidden
       "
-      style={{
-        backgroundImage: 'url(/img/hero.webp?v=2)',
-        touchAction: 'none'
-      }}
+      style={{ backgroundImage: 'url(/img/hero.webp?v=2)' }}
     >
       {/* Overlay para contraste */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/60" />
 
-      <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-3xl space-y-6">
-        <h1 className="text-3xl sm:text-5xl md:text-6xl font-extrabold text-white leading-tight drop-shadow-lg">
+      {/* Contenedor centrado con ancho máximo */}
+      <div className="
+        relative z-10
+        w-full max-w-3xl mx-auto
+        px-4 sm:px-6 lg:px-8
+        space-y-6
+      ">
+        <h1 className="
+          text-3xl sm:text-5xl md:text-6xl
+          font-extrabold text-white leading-tight drop-shadow-lg
+          break-words
+        ">
           Representantes de{' '}
-          <span className="text-[#e63946]">Anhui Ankai Automobile Co. Ltd.</span> en Chile
+          <span className="text-[#e63946]">
+            Anhui Ankai Automobile Co. Ltd.
+          </span> en Chile
         </h1>
 
         <p className="
-            text-sm sm:text-lg md:text-xl
-            text-gray-100
-            bg-black/30 px-3 py-1 rounded-md
-            inline-block
-          ">
+          text-sm sm:text-lg md:text-xl
+          text-gray-100 bg-black/30 px-3 py-1 rounded-md inline-block
+        ">
           Impulsando una movilidad sustentable y de alto estándar.
         </p>
 
-        {/* Tres bloques siempre en una fila */}
         <div className="flex flex-nowrap justify-center space-x-4 mt-8 w-full px-4">
           {[
             { value: experiencia,       label: 'Años de Trayectoria' },
