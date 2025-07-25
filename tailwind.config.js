@@ -17,6 +17,12 @@ export default {
         // Reemplazamos 'Figtree' por 'Segoe UI'
         sans: ['"Segoe UI"', ...defaultTheme.fontFamily.sans],
       },
+
+      // Agregamos la imagen de fondo del Hero como utilería de Tailwind
+      backgroundImage: {
+        'hero-cover': "url('/img/hero.webp?v=2')",
+      },
+
       keyframes: {
         carousel: {
           '0%': { transform: 'translateX(0%)' },

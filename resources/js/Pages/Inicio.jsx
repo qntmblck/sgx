@@ -10,18 +10,17 @@ export default function Inicio() {
       <Head title="SGX · Inicio" />
 
       {/*
-        - min-h-screen asegura que al menos cubra toda la altura
-        - no hay overflow-y en este div: el scroll recae en el body
+        - quitamos cualquier flex para que el main solo ocupe lo que necesita
         - overflow-x-hidden para evitar scroll horizontal
       */}
-      <div className="flex flex-col min-h-screen overflow-x-hidden">
+      <div className="overflow-x-hidden">
         <Header />
 
         {/*
-          - flex-1 estira el hero para llenar el espacio sobrante
-          - sin overflow: cualquier scroll aquí hace scroll de toda la página
+          - eliminamos flex-1: el HeroSection se dimensiona a su contenido
+          - sin clases extra de layout
         */}
-        <main className="flex-1">
+        <main>
           <HeroSection />
         </main>
 
