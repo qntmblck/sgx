@@ -23,6 +23,11 @@ export default {
         'hero-cover': "url('/img/hero.webp?v=2')",
       },
 
+      // Permite animar gradientes y escalarlos al doble de tamaño
+      backgroundSize: {
+        '200%': '200% 200%',
+      },
+
       keyframes: {
         carousel: {
           '0%': { transform: 'translateX(0%)' },
@@ -36,11 +41,18 @@ export default {
           '0%': { opacity: 0, transform: 'translateX(60px)' },
           '100%': { opacity: 1, transform: 'translateX(0)' },
         },
+        // Nuevo keyframe para desplazar el gradiente horizontalmente
+        'gradient-x': {
+          '0%, 100%': { 'background-position': '0% 50%' },
+          '50%': { 'background-position': '100% 50%' },
+        },
       },
       animation: {
         carousel: 'carousel 40s linear infinite',
         'fade-up': 'fade-up 0.8s ease-out forwards',
         'fade-in-right': 'fade-in-right 1.2s ease-out forwards',
+        // Nueva animación de gradiente
+        'gradient-x': 'gradient-x 10s ease infinite',
       },
       transformOrigin: {
         center: 'center',
