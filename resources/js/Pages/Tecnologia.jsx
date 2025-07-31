@@ -19,16 +19,16 @@ export default function Tecnologia() {
       <Head title="SGX · Tecnología" />
       <Header />
 
-      {/* ——— Hero con gradiente animado ——— */}
+      {/* ——— Hero con imagen de fondo ——— */}
       <section
         id="tecnologia-hero"
         className="
           relative flex items-center justify-center
           py-24
-          bg-gradient-to-r from-[#003b5c] via-[#005a8d] to-[#00d084]
-          bg-[length:200%] animate-gradient-x
+          bg-cover bg-center
           overflow-x-hidden
         "
+        style={{ backgroundImage: "url('/img/productos.webp')" }}
       >
         <div className="absolute inset-0 bg-black/40" />
         <div className="relative z-10 max-w-3xl mx-auto px-6 text-center space-y-4">
@@ -44,6 +44,7 @@ export default function Tecnologia() {
           </p>
         </div>
       </section>
+
 
       <WaveSeparator />
 
