@@ -16,7 +16,7 @@ const WaveSeparator = () => (
 export default function Tecnologia() {
   return (
     <>
-      <Head title="SGX · Tecnología" />
+      <Head title="Tecnología" />
       <Header />
 
       {/* ——— Hero con imagen de fondo ——— */}
@@ -33,25 +33,22 @@ export default function Tecnologia() {
         <div className="absolute inset-0 bg-black/40" />
         <div className="relative z-10 max-w-3xl mx-auto px-6 text-center space-y-4">
           <h1 className="text-3xl sm:text-5xl font-extrabold text-white tracking-wide drop-shadow-lg">
-            Tecnología en SGX
+            Tecnología
           </h1>
           <p className="text-lg text-white/90 leading-relaxed">
-            Basada en más de 20 años de transferencia de ingeniería alemana de{' '}
-            <span className="font-semibold">Kässbohrer / Setra</span> (hoy{' '}
-            <span className="font-semibold">EvoBus</span> de Daimler AG), la
-            carrocería monocasco de Ankai marca el estándar mundial en
-            resistencia, espacio e innovación.
+            La tecnología clave y matriz productiva de Ankai se deriva del
+            líder mundial en producción de autobuses, la empresa alemana
+            Kässbohrer Setra, hoy EVO BUS, del grupo Daimler Benz.
           </p>
         </div>
       </section>
-
 
       <WaveSeparator />
 
       {/* ——— Detalles Técnicos ——— */}
       <main className="bg-gray-50">
         <section className="max-w-7xl mx-auto px-6 py-16 space-y-16">
-          {/* Herencia Alemana & Monocasco */}
+          {/* Herencia Alemana */}
           <motion.div
             className="space-y-6"
             initial={{ opacity: 0, y: 20 }}
@@ -60,11 +57,11 @@ export default function Tecnologia() {
             transition={{ duration: 0.6 }}
           >
             <h2 className="sticky top-24 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-md text-2xl font-extrabold text-gray-900">
-              Herencia Alemana & Diseño Monocasco
+              Herencia Alemana
             </h2>
             <p className="text-gray-700 leading-relaxed">
               Nuestras unidades Ankai usan un chasis monocasco patentado — una
-              construcción de “cáscara única” sin bastidor— licenciada
+              construcción de “cáscara única” sin bastidor — licenciada
               originalmente por Setra. Esto ofrece:
             </p>
             <ul className="list-disc list-inside text-gray-700 space-y-2">
@@ -81,6 +78,23 @@ export default function Tecnologia() {
                 exteriores.
               </li>
             </ul>
+            <p className="text-gray-700 leading-relaxed">
+              A partir de 1993, Ankai inicia su cooperación con SETRA por los primeros
+              10 años, introduciendo el modelo S215 HD.
+            </p>
+            <p className="text-gray-700 leading-relaxed">
+              En 2003, se inicia la segunda década de cooperación con Kässbohrer Setra,
+              introduciendo el modelo S315 HD.
+            </p>
+            <p className="text-gray-700 leading-relaxed">
+              Hacia el año 2006, Ankai y Kässbohrer Setra colaboran para la introducción
+              del modelo Axtra 400.
+            </p>
+            <p className="text-gray-700 leading-relaxed">
+              En 2008, Ankai obtiene la patente de invención nacional del diseño
+              “Monocoque”, consolidando la absorción y masterización de la tecnología
+              “Monocoque” y aplicándola a toda su línea productiva.
+            </p>
           </motion.div>
 
           <WaveSeparator />
@@ -97,8 +111,8 @@ export default function Tecnologia() {
               Sistemas de Calidad & Homologaciones
             </h2>
             <p className="text-gray-700 leading-relaxed">
-              Todos los buses SGX‑Ankai se fabrican bajo un sistema de gestión
-              certificado <strong>IATF 16949</strong>, garantizando control en
+              Todos los buses SGX-Ankai se fabrican bajo un sistema de gestión
+              certificado <strong>IATF 16949</strong>, garantizando control en
               cada etapa. Entre nuestras homologaciones:
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -113,7 +127,7 @@ export default function Tecnologia() {
                 },
                 {
                   title: 'DOT & GJB9001',
-                  desc: 'Aprobación DOT de EE.UU. y norma militar china GJB9001 2001 para máxima fiabilidad.',
+                  desc: 'Aprobación DOT de EE.UU. y norma militar china GJB9001 2001 para máxima fiabilidad.',
                 },
                 {
                   title: 'Electrofóresis',
@@ -155,22 +169,19 @@ export default function Tecnologia() {
               Liderazgo en Nuevas Energías
             </h2>
             <p className="text-gray-700 leading-relaxed">
-              Ankai fue pionero con el primer bus eléctrico en ruta urbana
-              (2010) y proveyó flota eléctrica en Beijing 2008. Hoy SGX ofrece:
+              Ankai es una de las compañías más representativas en el campo de la
+              producción de Buses de Nueva Energía. Somos los primeros en desarrollar
+              investigación aplicada en el campo de Nueva Energía, la cual iniciamos
+              en el año 2003. Al año 2019, Ankai ya contaba con productos de Nueva
+              Energía de sexta generación, en las series "City Bus", "Inter-City Bus"
+              y "Special Purpose Vehicle", tanto en versiones eléctricas puras e híbridas.
             </p>
-            <ul className="list-disc list-inside text-gray-700 space-y-2">
-              <li>
-                <strong>e‑Control Management</strong>: optimización de energía
-                en tiempo real.
-              </li>
-              <li>
-                <strong>Baterías probadas</strong> en el Centro Nacional de
-                Investigación de Buses Eléctricos (2011).
-              </li>
-              <li>
-                <strong>Autonomía hasta 350 km</strong> en ciclo urbano.
-              </li>
-            </ul>
+            <p className="text-gray-700 leading-relaxed">
+              Ankai es la primera empresa en listar un bus eléctrico en el Boletín
+              Nacional, y la primera en poner en operación un bus eléctrico en China.
+              Actualmente, somos N°1 en cantidad de modelos registrados en el Boletín
+              Nacional con 66 registros.
+            </p>
           </motion.div>
 
           <WaveSeparator />
@@ -187,11 +198,10 @@ export default function Tecnologia() {
               I+D+i & Innovación
             </h2>
             <p className="text-gray-700 leading-relaxed">
-              Con alianzas con Siemens (Alemania) y universidades como Shanghai
-              Jiao Tong, Ankai ha registrado más de <strong>1.700 patentes</strong>{' '}
-              y ha ganado <strong>37 premios nacionales</strong>. Nuestros
-              laboratorios cubren rendimiento, EMC y pruebas en temperaturas
-              extremas.
+              Con alianzas con Siemens (Alemania) y universidades como Shanghai Jiao Tong,
+              Ankai ha registrado más de <strong>1.700 patentes</strong> y ha ganado
+              <strong>37 premios nacionales</strong>. Nuestros laboratorios cubren rendimiento,
+              EMC y pruebas en temperaturas extremas.
             </p>
           </motion.div>
 
@@ -212,7 +222,7 @@ export default function Tecnologia() {
               Con <strong>más espacio</strong> para viajes largos Norte–Sur,{' '}
               <strong>mayor dureza</strong> en caminos rurales y{' '}
               <strong>ligero peso</strong> para ahorrar bencina, nuestros buses
-              SGX-Ankai enfrentan la Ruta 5, la costa y la Patagonia con confort,
+              SGX-Ankai enfrentan la Ruta 5, la costa y la Patagonia con confort,
               seguridad y eficiencia.
             </p>
           </motion.div>
