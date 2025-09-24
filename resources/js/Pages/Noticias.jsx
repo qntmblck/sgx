@@ -6,6 +6,27 @@ import { motion } from 'framer-motion'
 import { Calendar, MapPin, Megaphone, ExternalLink } from 'lucide-react'
 
 export default function Noticias() {
+  // Abre el diálogo de WhatsApp del ContactActions (si está presente).
+  // Fallback: abre WhatsApp Web con mensaje prellenado.
+  const handleMoreInfoClick = () => {
+    try {
+      // 1) Intento directo: simular clic en el botón de WhatsApp del ContactActions
+      const waBtn = document.querySelector('button[aria-label="WhatsApp"]')
+      if (waBtn) {
+        waBtn.click()
+        return
+      }
+    } catch (_) {
+      // no-op
+    }
+    // 2) Fallback: abrir WhatsApp Web con el mismo número/mensaje del ContactActions
+    const msg = `Hola SGX, me interesa recibir más información sobre el Seminario PUCV y el ingreso de Ankai a Chile.`
+    window.open(
+      `https://api.whatsapp.com/send?phone=56962365714&text=${encodeURIComponent(msg)}`,
+      '_blank'
+    )
+  }
+
   return (
     <>
       <Head title="SGX · Noticias" />
@@ -99,22 +120,18 @@ export default function Noticias() {
                   y contenidos formativos que conectan la tecnología con el día a día de las ciudades.
                 </p>
 
-                <div className="flex flex-wrap gap-3 pt-2">
-                  <a
-                    href="#"
+                {/* CTA único: abre el diálogo de WhatsApp del ContactActions */}
+                <div className="pt-2">
+                  <button
+                    type="button"
+                    onClick={handleMoreInfoClick}
                     className="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-white bg-[#005a8d] hover:bg-[#00466e] transition shadow"
                     aria-label="Más información del seminario"
                   >
                     <Megaphone size={18} />
                     Más información
                     <ExternalLink size={16} className="opacity-80" />
-                  </a>
-                  <a
-                    href="/contacto"
-                    className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-gray-300 text-gray-800 hover:bg-gray-50 transition"
-                  >
-                    Contacto prensa
-                  </a>
+                  </button>
                 </div>
               </div>
             </div>
