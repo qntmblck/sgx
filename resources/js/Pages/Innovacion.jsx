@@ -68,20 +68,21 @@ export default function Innovacion() {
             <p className="text-gray-700 leading-relaxed">
               Contamos con un Centro Nacional de I+D para vehículos eléctricos y cinco
               laboratorios especializados, trabajando mano a mano con universidades
-              y centros postdoctorales en China y Chile.
+              y centros postdoctorales.
             </p>
             <ul className="list-disc list-inside text-gray-700 space-y-2">
               <li>
                 <Database size={20} className="inline-block mr-2 text-[#005a8d]" />
-                Laboratorios de tren motriz, baterías, EMC, rendimiento y durabilidad.
+                Laboratorios de tren motriz, baterías, EMC, desempeño y durabilidad.
               </li>
               <li>
                 <Cloud size={20} className="inline-block mr-2 text-[#005a8d]" />
-                Simulación en la nube y gemelo digital para pruebas en rutas reales.
+                Simulación en la nube y gemelo digital para validar en rutas reales.
               </li>
               <li>
                 <Cpu size={20} className="inline-block mr-2 text-[#005a8d]" />
-                Modelos de simulación de IA para optimizar diseño y mantenimiento.
+                Modelos de simulación avanzada (elementos finitos, análisis térmico y vibracional)
+                para optimizar diseño y mantenimiento.
               </li>
             </ul>
           </motion.div>
@@ -100,18 +101,17 @@ export default function Innovacion() {
               Conectividad y Gestión Inteligente de Flotas
             </h2>
             <p className="text-gray-700 leading-relaxed">
-              Nuestras plataformas de telemetría y diagnóstico remoto ofrecen visibilidad
-              total del desempeño y permiten mantenimiento predictivo, reduciendo tiempos
-              de parada y optimizando costos operativos.
+              Plataformas de telemetría y diagnóstico remoto habilitan mantenimiento predictivo
+              basado en datos, reduciendo paradas y optimizando el costo total de operación.
             </p>
             <ul className="list-disc list-inside text-gray-700 space-y-2">
               <li>
                 <Cloud size={20} className="inline-block mr-2 text-[#005a8d]" />
-                Dashboard con KPIs en tiempo real: consumo, disponibilidad y alertas.
+                Dashboard con KPIs en tiempo real: consumo, disponibilidad, alertas y cumplimiento de rutas.
               </li>
               <li>
                 <Users size={20} className="inline-block mr-2 text-[#005a8d]" />
-                Apps móviles para conductores y gestores con notificaciones y rutas.
+                Apps móviles para conductores y gestores con notificaciones, checklists y asistencia en ruta.
               </li>
             </ul>
           </motion.div>
@@ -130,21 +130,20 @@ export default function Innovacion() {
               Movilidad Autónoma & Energías Limpias
             </h2>
             <p className="text-gray-700 leading-relaxed">
-              Pioneros en operación de buses autónomos L4 y prototipos de hidrógeno,
-              con múltiples pilotos en Asia y pruebas en Chile para liderar la transición
-              a cero emisiones.
+              Experiencia con pilotos de conducción autónoma y desarrollo de buses de hidrógeno
+              con celdas de combustible, como parte de la hoja de ruta hacia cero emisiones.
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <div className="flex items-start space-x-3">
                 <Zap size={24} className="text-[#005a8d]" />
                 <span className="text-gray-700">
-                  Operación real de buses autónomos L4 en rutas urbanas y suburbanas.
+                  Operaciones piloto en entornos urbanos y suburbanos controlados.
                 </span>
               </div>
               <div className="flex items-start space-x-3">
                 <Infinity size={24} className="text-[#005a8d]" />
                 <span className="text-gray-700">
-                  Pilotos de hidrógeno con +400 km autonomía y recarga en 10 minutos.
+                  Prototipos de hidrógeno en evaluación para ampliar autonomía y reducir tiempos de recarga.
                 </span>
               </div>
             </div>
@@ -164,19 +163,41 @@ export default function Innovacion() {
               Servicio Postventa & Mantenimiento Predictivo
             </h2>
             <p className="text-gray-700 leading-relaxed">
-              Un sistema de IA analiza datos de flota para anticipar fallas y programar
-              mantenimientos, logrando una reducción del 30% en paradas no planificadas
-              y alta disponibilidad operativa.
+              Monitoreo de condición con reglas y umbrales por componente (temperatura, vibración, voltaje),
+              integrando metodologías FMEA/RCM, seguimiento de MTBF/MTTR y trazabilidad por VIN.
             </p>
             <ul className="list-disc list-inside text-gray-700 space-y-2">
               <li>
                 <ShieldCheck size={20} className="inline-block mr-2 text-[#005a8d]" />
-                Alertas automáticas de reemplazo de componentes clave.
+                Alertas automáticas y disparadores de intervención programada para maximizar disponibilidad.
               </li>
               <li>
                 <Globe size={20} className="inline-block mr-2 text-[#005a8d]" />
-                Red global de centros de servicio y repuestos con entrega en 24 h.
+                Red global de centros de servicio y repuestos con cobertura expedita.
               </li>
+            </ul>
+          </motion.div>
+
+          <WaveSeparator />
+
+          {/* Seguridad, Robustez & Estándares */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.35 }}
+            className="space-y-6"
+          >
+            <h2 className="text-2xl font-extrabold text-gray-900">
+              Seguridad, Robustez & Estándares
+            </h2>
+            <ul className="list-disc list-inside text-gray-700 space-y-2">
+              <li>Protección y estanqueidad IP67 en componentes críticos y ensayos de vadeo.</li>
+              <li>Rangos de operación validados entre –40 °C y 60 °C.</li>
+              <li>Compatibilidad electromagnética (EMC) a nivel de vehículo y cableado.</li>
+              <li>Recuperación de energía de frenado (EBS) integrada con control de estabilidad.</li>
+              <li>Aligeramiento estructural y optimización de baterías para mayor eficiencia.</li>
+              <li>Suite de asistencia al conductor (PCW, HMW, FCW, LDW, SLI) y prioridad de dirección.</li>
             </ul>
           </motion.div>
 
@@ -196,8 +217,8 @@ export default function Innovacion() {
             <div className="flex items-start space-x-3">
               <Award size={24} className="text-[#005a8d]" />
               <p className="text-gray-700 leading-relaxed">
-                Más de 1.700 patentes registradas y liderazgo en la definición de
-                25 estándares nacionales e internacionales de transporte.
+                Liderazgo histórico en innovación aplicada a buses de nueva energía, con centros nacionales
+                de I+D e integración de sistemas que han marcado hitos técnicos en la industria.
               </p>
             </div>
           </motion.div>
