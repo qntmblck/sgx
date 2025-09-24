@@ -7,6 +7,7 @@ const navItems = [
   { name: 'Tecnología', href: '/tecnologia' },
   { name: 'Productos', href: '/productos' },
   { name: 'Innovación', href: '/innovacion' },
+  { name: 'Noticias', href: '/noticias' }, // ← NUEVO
 ]
 
 export default function Header() {

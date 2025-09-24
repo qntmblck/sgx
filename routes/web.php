@@ -39,6 +39,10 @@ Route::get('/innovacion', function () {
     return Inertia::render('Innovacion');
 })->name('innovacion');
 
+Route::get('/noticias', function () {
+    return Inertia::render('Noticias');   // ← NUEVA RUTA
+})->name('noticias');
+
 // -----------------------------
 // Rutas protegidas para perfil
 // -----------------------------
