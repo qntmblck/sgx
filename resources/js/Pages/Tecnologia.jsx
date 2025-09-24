@@ -99,7 +99,7 @@ export default function Tecnologia() {
 
           <WaveSeparator />
 
-          {/* Sistemas de Calidad & Homologaciones */}
+          {/* Sistemas de Calidad & Homologaciones (sin electrofóresis) */}
           <motion.div
             className="space-y-6"
             initial={{ opacity: 0, y: 20 }}
@@ -129,10 +129,6 @@ export default function Tecnologia() {
                   title: 'DOT & GJB9001',
                   desc: 'Aprobación DOT de EE.UU. y norma militar china GJB9001 2001 para máxima fiabilidad.',
                 },
-                {
-                  title: 'Electrofóresis',
-                  desc: 'Revestimiento catódico de alta adherencia que protege contra la corrosión en climas costeros y montañosos.',
-                },
               ].map(({ title, desc }) => (
                 <div
                   key={title}
@@ -153,6 +149,32 @@ export default function Tecnologia() {
                 </div>
               ))}
             </div>
+          </motion.div>
+
+          <WaveSeparator />
+
+          {/* Proceso Anticorrosión: Electrofóresis (E-coat) */}
+          <motion.div
+            className="space-y-6"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.15 }}
+          >
+            <h2 className="sticky top-24 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-md text-2xl font-extrabold text-gray-900">
+              Proceso Anticorrosión: Electrofóresis (E-coat)
+            </h2>
+            <p className="text-gray-700 leading-relaxed">
+              La <strong>electrofóresis</strong> es un <em>proceso de recubrimiento</em> de la carrocería,
+              no un sistema de calidad ni una homologación. Mediante inmersión y corriente eléctrica,
+              deposita una capa uniforme de pintura catódica con alta adherencia que <strong>protege contra
+              la corrosión</strong> y mejora la durabilidad del vehículo.
+            </p>
+            <ul className="list-disc list-inside text-gray-700 space-y-2">
+              <li>Cobertura homogénea incluso en cavidades y soldaduras.</li>
+              <li>Excelente resistencia a niebla salina y ambientes agresivos.</li>
+              <li>Base ideal para capas posteriores (primers y acabados).</li>
+            </ul>
           </motion.div>
 
           <WaveSeparator />
@@ -207,25 +229,7 @@ export default function Tecnologia() {
 
           <WaveSeparator />
 
-          {/* Pensado para Chile */}
-          <motion.div
-            className="bg-white/20 backdrop-blur-lg rounded-2xl p-8 shadow-md text-center space-y-4"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-          >
-            <h2 className="text-2xl font-extrabold text-gray-900">
-              Pensado para Chile
-            </h2>
-            <p className="text-gray-700 leading-relaxed">
-              Con <strong>más espacio</strong> para viajes largos Norte–Sur,{' '}
-              <strong>mayor dureza</strong> en caminos rurales y{' '}
-              <strong>ligero peso</strong> para ahorrar bencina, nuestros buses
-              SGX-Ankai enfrentan la Ruta 5, la costa y la Patagonia con confort,
-              seguridad y eficiencia.
-            </p>
-          </motion.div>
+          {/* Nota: Se eliminó la sección "Pensado para Chile" */}
         </section>
       </main>
 
