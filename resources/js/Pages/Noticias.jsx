@@ -137,38 +137,7 @@ export default function Noticias() {
             </div>
           </motion.article>
 
-          {/* Bloque de contexto de marca (para público general) */}
-          <motion.article
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="bg-white rounded-2xl shadow-sm p-6 lg:p-8 space-y-4"
-          >
-            <h2 className="text-xl font-extrabold text-gray-900">
-              ¿Quién es Ankai y por qué es relevante para Chile?
-            </h2>
-            <p className="text-gray-700">
-              <strong>Ankai</strong> es una marca con trayectoria en buses de nueva energía (eléctricos e híbridos enchufables),
-              respaldada por centros de I+D, laboratorios especializados y una plataforma tecnológica enfocada en seguridad,
-              autonomía y confort. Aunque aún no opera en Chile, su llegada puede traducirse en <em>flotas más limpias</em>,
-              <em>viajes más silenciosos</em> y <em>mejor eficiencia operativa</em> para el transporte público y privado.
-            </p>
-            <ul className="grid md:grid-cols-3 gap-4 text-gray-700">
-              <li className="bg-gray-50 rounded-lg p-4">
-                <span className="block font-semibold text-gray-900">Innovación útil</span>
-                Mejoras continuas en autonomía, consumo y confort para viajes diarios más agradables.
-              </li>
-              <li className="bg-gray-50 rounded-lg p-4">
-                <span className="block font-semibold text-gray-900">Seguridad como estándar</span>
-                Asistencias al conductor y diseño estructural para proteger a personas pasajeras y conductoras.
-              </li>
-              <li className="bg-gray-50 rounded-lg p-4">
-                <span className="block font-semibold text-gray-900">Eficiencia y sustentabilidad</span>
-                Menor costo por kilómetro y menos emisiones locales en las ciudades.
-              </li>
-            </ul>
-          </motion.article>
+
 
         </section>
       </main>
