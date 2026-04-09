@@ -16,8 +16,14 @@ export default function SeriesIntro({ serie }) {
           </h2>
 
           <p className="mt-5 text-slate-600 leading-relaxed">
-            {serie.descripcion}
-          </p>
+  {serie.descripcion}
+</p>
+
+{serie.descripcionExtra && (
+  <p className="mt-4 text-slate-600 leading-relaxed">
+    {serie.descripcionExtra}
+  </p>
+)}
 
           <div className="mt-6 flex flex-wrap gap-2">
             {serie.highlights.map((item) => (

@@ -113,7 +113,11 @@ export const catalogoSeries = [
     nombre: 'Serie A6',
     subtitulo: 'Plataforma para recorridos mayores y operaciones especiales',
     descripcion:
-      'Plataforma eléctrica orientada a servicios de mayor recorrido, con foco en confort, autonomía y flexibilidad operativa. Disponible en configuraciones de media y gran longitud, permite cubrir operaciones interurbanas, especiales o mixtas. Complementa la oferta urbana en escenarios donde el perfil de servicio es distinto.',
+      'La Serie A6 de Ankai ha sido diseñada para operaciones de transporte en entornos exigentes, combinando confort de alto estándar con una estructura optimizada para brindar seguridad y durabilidad. Su diseño estructural cumple con la normativa UNECE R066.02, garantizando protección ante eventos de volcamiento, un atributo crítico para aplicaciones industriales y faenas productivas (minería, construcción,).',
+    descripcionExtra:
+    'Pensada para transporte de personal en minería, energía y servicios interurbanos, la Serie A6 ofrece una plataforma robusta, eficiente y adaptable, capax de operar de forma continua bajo condiciones de alta exigencia operacional. Su configuración prioriza la estabilidad, el confort del pasajero y la confiabilidad mecánica.',
+
+
     highlights: [
       'Mayor recorrido y flexibilidad operacional',
       'Foco en confort y autonomía',
