@@ -12,7 +12,7 @@ export const catalogoSeries = [
       'Operación urbana de alta exigencia',
       'Plataforma modular y estandarizable',
       'Alta confiabilidad operativa',
-      'Base tecnológica del portafolio eléctrico SGX',
+      'Base tecnológica para transporte público urbano',
     ],
     imagenHero: '/img/catalogo/e9/hero.webp',
     variantes: [
