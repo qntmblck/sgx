@@ -114,7 +114,7 @@ export const catalogoSeries = [
   {
     id: 'a6',
     nombre: 'Serie A6',
-    subtitulo: 'Plataforma para recorridos mayores y operaciones especiales',
+    subtitulo: 'Plataforma de Buses Eléctricos para aplicaciones en Transporte Interurbano, Industrial y Corporativo',
     descripcion:
       'La Serie A6 de Ankai ha sido diseñada para operaciones de transporte en entornos exigentes, combinando confort de alto estándar con una estructura optimizada para brindar seguridad y durabilidad. Su diseño estructural cumple con la normativa UNECE R066.02, garantizando protección ante eventos de volcamiento, un atributo crítico para aplicaciones industriales y faenas productivas (minería, construcción, energía).',
     descripcionExtra:
