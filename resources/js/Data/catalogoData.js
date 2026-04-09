@@ -9,10 +9,10 @@ export const catalogoSeries = [
     'La Serie E9 integra soluciones de seguridad vial (sistemas de detección de proximidad de elementos), contador de pasajeros, pantallas de información interior y seguridad activa (sistema de alerta de cambio de carril - LDW, advertencia de colisión - ACW, advertencia de fatiga del conductor - DSW)',
 
     highlights: [
-      'Operación urbana de alta exigencia',
-      'Plataforma modular y estandarizable',
-      'Alta confiabilidad operativa',
-      'Base tecnológica para transporte público urbano',
+      'Estándar RED y Sistema de Concesión de Vías',
+      'Double Deck turístico',
+      'Eficiencia y reducción del costo operativo por kilómetro',
+      'Base tecnológica para Transporte Público urbano',
     ],
     imagenHero: '/img/catalogo/e9/hero.webp',
     variantes: [
@@ -118,13 +118,13 @@ export const catalogoSeries = [
     descripcion:
       'La Serie A6 de Ankai ha sido diseñada para operaciones de transporte en entornos exigentes, combinando confort de alto estándar con una estructura optimizada para brindar seguridad y durabilidad. Su diseño estructural cumple con la normativa UNECE R066.02, garantizando protección ante eventos de volcamiento, un atributo crítico para aplicaciones industriales y faenas productivas (minería, construcción, energía).',
     descripcionExtra:
-    'Pensada para transporte de personal en minería, energía y servicios interurbanos, la Serie A6 ofrece una plataforma robusta, eficiente y adaptable, capax de operar de forma continua bajo condiciones de alta exigencia operacional. Su configuración prioriza la estabilidad, el confort del pasajero y la confiabilidad mecánica.',
+    'Pensada para transporte de personal en minería, energía y servicios interurbanos, la Serie A6 ofrece una plataforma robusta, eficiente y adaptable, capaz de operar de forma continua bajo condiciones de alta exigencia operacional y extensión territorial. Su configuración prioriza la estabilidad, el confort del pasajero y la confiabilidad mecánica.',
 
 
     highlights: [
       'Mayor recorrido y flexibilidad operacional',
       'Foco en confort y autonomía',
-      'Aplicaciones interurbanas y especiales',
+      'Aplicaciones en minería, recorridos interurbanos y especiales',
       'Complemento a la oferta urbana',
     ],
     imagenHero: '/img/catalogo/a6/hero.webp',
