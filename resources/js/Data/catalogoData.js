@@ -4,7 +4,10 @@ export const catalogoSeries = [
     nombre: 'Serie E9',
     subtitulo: 'Plataforma urbana eléctrica de alta confiabilidad',
     descripcion:
-      'Sexta generación de buses eléctricos Ankai diseñada para operación de transporte público urbano. Plataforma modular disponible en largos de 8.5 a 12 metros, orientada a alta confiabilidad operativa y estandarización de flota. Constituye la base tecnológica del portafolio eléctrico para sistemas regulados.',
+      'La sexta y más avanzada generación de buses eléctricos Ankai diseñada para operación de transporte público urbano. La Serie E9 representa la base tecnológica de buses tipo estándar RED, disponible en largos de 8.5, 8.7, 8.9, 10.5 y 12 metros Su menor peso estructural y diseño monocasco optimiza la operación urbana y reduce los costos operativos por kilómetro, elemento crítico en sistemas de concesión de vías.',
+    descripcionExtra:
+    'La Serie E9 integra soluciones de seguridad vial (sistemas de detección de proximidad de elementos), contador de pasajeros, pantallas de información interior y seguridad activa (sistema de alerta de cambio de carril - LDW, advertencia de colisión - ACW, advertencia de fatiga del conductor - DSW)'
+
     highlights: [
       'Operación urbana de alta exigencia',
       'Plataforma modular y estandarizable',
