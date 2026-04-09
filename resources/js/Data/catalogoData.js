@@ -6,7 +6,7 @@ export const catalogoSeries = [
     descripcion:
       'La sexta y más avanzada generación de buses eléctricos Ankai diseñada para operación de transporte público urbano. La Serie E9 representa la base tecnológica de buses tipo estándar RED, disponible en largos de 8.5, 8.7, 8.9, 10.5 y 12 metros Su menor peso estructural y diseño monocasco optimiza la operación urbana y reduce los costos operativos por kilómetro, elemento crítico en sistemas de concesión de vías.',
     descripcionExtra:
-    'La Serie E9 integra soluciones de seguridad vial (sistemas de detección de proximidad de elementos), contador de pasajeros, pantallas de información interior y seguridad activa (sistema de alerta de cambio de carril - LDW, advertencia de colisión - ACW, advertencia de fatiga del conductor - DSW)'
+    'La Serie E9 integra soluciones de seguridad vial (sistemas de detección de proximidad de elementos), contador de pasajeros, pantallas de información interior y seguridad activa (sistema de alerta de cambio de carril - LDW, advertencia de colisión - ACW, advertencia de fatiga del conductor - DSW)',
 
     highlights: [
       'Operación urbana de alta exigencia',
