@@ -17,7 +17,7 @@ export default function CatalogHero() {
           </h1>
 
           <p className="mt-5 max-w-2xl text-sm sm:text-base lg:text-lg text-white/85 leading-relaxed">
-            Explora la oferta SGX Chile & Ankai Bus para toda la gama de servicios de transporte de pasajerosa: Serie E9 para transporte público urbano tipo RED y double deck turístico,
+            Explora la oferta SGX Chile & Ankai Bus para toda la gama de servicios de transporte de pasajeros: Serie E9 para transporte público urbano tipo RED y double deck turístico,
             Serie A6 para recorridos mayores y servicios industriales y minería, y Serie K7 para transporte colectivo de pasajeros con aplicaciones urbanas, escolares y corporativas/ejecutivas.
           </p>
         </div>
