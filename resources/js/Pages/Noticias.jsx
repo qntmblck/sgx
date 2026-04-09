@@ -46,7 +46,7 @@ export default function Noticias() {
             Noticias & Actualidad
           </h1>
           <p className="text-white/90">
-            Avances, actividades y hitos de SGX — representante de Ankai — en su camino de ingreso al mercado chileno.
+            Noticias, actividades e hitos de SGX Chile & Ankai Bus.
           </p>
         </div>
       </section>
