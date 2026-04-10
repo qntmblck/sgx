@@ -22,8 +22,8 @@ export const catalogoSeries = [
         largo: '8.5 m',
         categoria: 'Urbano',
         energia: 'Eléctrico',
-        pasajeros: '15–30',
-        autonomia: 'Según configuración operacional',
+        pasajeros: '50 - 60',
+        autonomia: '>250 km',
         imagenes: [
           '/img/buses/g9-electric-85/1.webp',
           '/img/buses/g9-electric-85/2.webp',
@@ -40,36 +40,13 @@ export const catalogoSeries = [
         ],
       },
       {
-        id: 'e9-105',
-        nombre: 'E9 · 10.5 m',
-        largo: '10.5 m',
-        categoria: 'Urbano',
-        energia: 'Eléctrico',
-        pasajeros: '19–39',
-        autonomia: 'Según configuración operacional',
-        imagenes: [
-          '/img/buses/g9-electric-105/1.webp',
-          '/img/buses/g9-electric-105/2.webp',
-        ],
-        destacados: [
-          'Formato intermedio de alta flexibilidad',
-          'Balance entre capacidad y maniobrabilidad',
-          'Estandarización de flota',
-        ],
-        especificaciones: [
-          'Configuración adaptable a distintos recorridos',
-          'Integración con operación urbana',
-          'Diseño enfocado en continuidad operacional',
-        ],
-      },
-      {
         id: 'e9-120',
         nombre: 'E9 · 12 m',
         largo: '12 m',
         categoria: 'Urbano',
         energia: 'Eléctrico',
-        pasajeros: '34–38',
-        autonomia: 'Según configuración operacional',
+        pasajeros: '>70',
+        autonomia: '>300 km',
         imagenes: [
           '/img/buses/g9-electric-120/1.webp',
           '/img/buses/g9-electric-120/2.webp',
@@ -77,13 +54,11 @@ export const catalogoSeries = [
         ],
         destacados: [
           'Formato estándar de alta capacidad',
-          'Pensado para sistemas regulados',
-          'Base de flota urbana escalable',
+          'Estándar RED metropolitano',
         ],
         especificaciones: [
           'Plataforma principal para operación urbana',
           'Alta robustez operativa',
-          'Preparado para ecosistemas de telemetría',
         ],
       },
       {
