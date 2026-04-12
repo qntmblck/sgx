@@ -514,8 +514,8 @@ const TabButton = ({ label, active, onClick }) => (
 )
 
 const ContentImage = ({ src, alt }) => (
-  <figure className="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm">
-    <img src={src} alt={alt} className="h-auto w-full object-cover" loading="lazy" />
+  <figure className="mx-auto max-w-4xl overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm">
+    <img src={src} alt={alt} className="h-auto w-full object-contain" loading="lazy" />
   </figure>
 )
 
@@ -590,8 +590,6 @@ export default function Tecnologia() {
               transition={{ duration: 0.45 }}
               className="rounded-[2rem] border border-slate-200 bg-white p-5 shadow-sm sm:p-8"
             >
-
-
               <div className="mb-8 overflow-x-auto pb-2">
                 <div className="flex min-w-max gap-3">
                   {tabs.map((tab) => (
