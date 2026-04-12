@@ -9,18 +9,10 @@ export default function Inicio() {
     <>
       <Head title="SGX · Inicio" />
 
-      {/*
-        - quitamos cualquier flex para que el main solo ocupe lo que necesita
-        - overflow-x-hidden para evitar scroll horizontal
-      */}
-      <div className="overflow-x-hidden">
+      <div className="min-h-screen flex flex-col overflow-x-hidden">
         <Header />
 
-        {/*
-          - eliminamos flex-1: el HeroSection se dimensiona a su contenido
-          - sin clases extra de layout
-        */}
-        <main>
+        <main className="flex-1 pt-20 flex">
           <HeroSection />
         </main>
 
