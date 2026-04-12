@@ -6,7 +6,6 @@ const navItems = [
   { name: 'Inicio', href: '/' },
   { name: 'Tecnología', href: '/tecnologia' },
   { name: 'Productos', href: '/productos' },
-  { name: 'Innovación', href: '/innovacion' },
   { name: 'Noticias', href: '/noticias' },
 ]
 
