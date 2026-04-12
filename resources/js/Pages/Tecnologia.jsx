@@ -14,6 +14,9 @@ const fadeUp = {
 const sectionTitleClass =
   'text-2xl sm:text-3xl font-extrabold text-gray-900 tracking-tight'
 
+const sectionEyebrowClass =
+  'text-sm font-semibold uppercase tracking-[0.18em] text-emerald-700'
+
 const subsectionTitleClass =
   'text-xl sm:text-2xl font-bold text-gray-900'
 
@@ -47,7 +50,6 @@ export default function Tecnologia() {
         <Header />
 
         <main className="flex-1 pt-20">
-          {/* Hero */}
           <section className="relative overflow-hidden bg-[#0b1320]">
             <div className="absolute inset-0">
               <img
@@ -68,14 +70,13 @@ export default function Tecnologia() {
                 </span>
 
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight">
-                  Ingeniería, producción industrial, sistemas integrados y telemetría
+                  Tecnología avanzada para una operación más segura, eficiente y confiable
                 </h1>
 
                 <p className="text-base sm:text-lg text-white/90 leading-relaxed max-w-3xl">
-                  La base tecnológica de los buses Ankai se origina en la transferencia
-                  de conocimiento desde la industria alemana, específicamente a través
-                  de su cooperación con Kässbohrer SETRA, hoy parte de EVO BUS del grupo
-                  Daimler-Benz.
+                  La ingeniería de Ankai integra desarrollo estructural, procesos industriales
+                  avanzados, sistemas de seguridad y plataformas de gestión operacional, dando
+                  forma a buses diseñados para superar las exigencias del transporte moderno en Chile.
                 </p>
               </motion.div>
             </div>
@@ -83,13 +84,9 @@ export default function Tecnologia() {
 
           <section className="bg-gray-50">
             <div className="max-w-7xl mx-auto px-6 py-14 sm:py-16 space-y-16 sm:space-y-20">
-
-              {/* TAB 1 */}
               <motion.section {...fadeUp} className="space-y-8">
                 <div className="space-y-4">
-                  <p className="text-sm font-semibold uppercase tracking-[0.18em] text-emerald-700">
-                    Tab #1
-                  </p>
+                  <p className={sectionEyebrowClass}>Plataforma tecnológica</p>
                   <h2 className={sectionTitleClass}>Origen Tecnológico</h2>
                   <p className={paragraphClass}>
                     La base tecnológica de los buses Ankai se origina en la transferencia
@@ -141,7 +138,7 @@ export default function Tecnologia() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-4 rounded-2xl bg-white p-6 shadow-sm border border-gray-200">
                     <h4 className="text-lg font-bold text-gray-900">
-                      Primera etapa (1993): Introducción Tecnológica
+                      Primera etapa: Introducción tecnológica
                     </h4>
                     <p className={paragraphClass}>
                       Se inicia la primera década de cooperación técnica con SETRA,
@@ -153,7 +150,7 @@ export default function Tecnologia() {
 
                   <div className="space-y-4 rounded-2xl bg-white p-6 shadow-sm border border-gray-200">
                     <h4 className="text-lg font-bold text-gray-900">
-                      Segunda etapa (2003): Consolidación del Conocimiento
+                      Segunda etapa: Consolidación del conocimiento
                     </h4>
                     <p className={paragraphClass}>
                       Se desarrolla una segunda década de colaboración, profundizando la
@@ -164,7 +161,7 @@ export default function Tecnologia() {
 
                   <div className="space-y-4 rounded-2xl bg-white p-6 shadow-sm border border-gray-200">
                     <h4 className="text-lg font-bold text-gray-900">
-                      Tercera etapa (2006): Adaptación y Desarrollo Propio
+                      Tercera etapa: Adaptación y desarrollo propio
                     </h4>
                     <p className={paragraphClass}>
                       A partir de la experiencia adquirida, Ankai adapta y optimiza estas
@@ -175,13 +172,12 @@ export default function Tecnologia() {
 
                   <div className="space-y-4 rounded-2xl bg-white p-6 shadow-sm border border-gray-200">
                     <h4 className="text-lg font-bold text-gray-900">
-                      Cuarta etapa (2008): Dominio de la Tecnología “Monocasco”
+                      Cuarta etapa: Dominio de la tecnología monocasco
                     </h4>
                     <p className={paragraphClass}>
                       Como resultado de este proceso, Ankai logra absorber y desarrollar
-                      completamente la tecnología de estructura monocasco (monocoque),
-                      originalmente aplicada en la industria aeronáutica y posteriormente en
-                      buses de alto estándar.
+                      completamente la tecnología de estructura monocasco, originalmente
+                      aplicada en la industria aeronáutica y posteriormente en buses de alto estándar.
                     </p>
                     <p className={paragraphClass}>
                       En 2008, la compañía obtiene la patente de invención de esta tecnología,
@@ -192,7 +188,7 @@ export default function Tecnologia() {
                 </div>
 
                 <div className="space-y-4">
-                  <h3 className={subsectionTitleClass}>Concepto de “Monocasco”</h3>
+                  <h3 className={subsectionTitleClass}>Concepto de monocasco</h3>
                   <p className={paragraphClass}>
                     El diseño monocasco se basa en una estructura integral, donde la
                     carrocería actúa como un único elemento resistente, eliminando la
@@ -209,7 +205,7 @@ export default function Tecnologia() {
                   />
 
                   <div className="rounded-2xl bg-white p-6 shadow-sm border border-gray-200 space-y-4">
-                    <h3 className={subsectionTitleClass}>Principios de Diseño</h3>
+                    <h3 className={subsectionTitleClass}>Principios de diseño</h3>
                     <p className={paragraphClass}>
                       La estructura monocasco del bus se creó a partir del concepto de un
                       avión, con principios similares de diseño:
@@ -233,12 +229,9 @@ export default function Tecnologia() {
 
               <SectionDivider />
 
-              {/* TAB 2 */}
               <motion.section {...fadeUp} className="space-y-8">
                 <div className="space-y-4">
-                  <p className="text-sm font-semibold uppercase tracking-[0.18em] text-emerald-700">
-                    Tab #2
-                  </p>
+                  <p className={sectionEyebrowClass}>Diseño y validación</p>
                   <h2 className={sectionTitleClass}>Ingeniería y Desarrollo</h2>
                   <p className={paragraphClass}>
                     El desarrollo de un bus moderno no comienza en la línea de producción,
@@ -312,8 +305,7 @@ export default function Tecnologia() {
                     <h3 className={subsectionTitleClass}>Simulación Térmica</h3>
                     <p className={paragraphClass}>
                       Se modela la gestión térmica de los sistemas críticos del vehículo,
-                      asegurando un adecuado comportamiento en condiciones de operación
-                      exigentes.
+                      asegurando un adecuado comportamiento en condiciones de operación exigentes.
                     </p>
                   </div>
 
@@ -339,12 +331,9 @@ export default function Tecnologia() {
 
               <SectionDivider />
 
-              {/* TAB 3 */}
               <motion.section {...fadeUp} className="space-y-8">
                 <div className="space-y-4">
-                  <p className="text-sm font-semibold uppercase tracking-[0.18em] text-emerald-700">
-                    Tab #3
-                  </p>
+                  <p className={sectionEyebrowClass}>Capacidad industrial</p>
                   <h2 className={sectionTitleClass}>Producción Industrial</h2>
                   <p className={paragraphClass}>
                     El desempeño de un bus no se define únicamente en su diseño, sino en la
@@ -404,8 +393,7 @@ export default function Tecnologia() {
                     producción en “U” diseñada científicamente. Gracias al sistema de
                     transporte automático mecanizado y a una disposición de procesos
                     eficiente, el avanzado sistema de gestión TPS permite una producción
-                    continua, rápida y eficiente, mejorando significativamente la
-                    productividad.
+                    continua, rápida y eficiente, mejorando significativamente la productividad.
                   </p>
                 </div>
 
@@ -496,12 +484,9 @@ export default function Tecnologia() {
 
               <SectionDivider />
 
-              {/* TAB 4 */}
               <motion.section {...fadeUp} className="space-y-8">
                 <div className="space-y-4">
-                  <p className="text-sm font-semibold uppercase tracking-[0.18em] text-emerald-700">
-                    Tab #4
-                  </p>
+                  <p className={sectionEyebrowClass}>Seguridad y control</p>
                   <h2 className={sectionTitleClass}>Sistemas Tecnológicos Integrados</h2>
                   <p className={paragraphClass}>
                     El desempeño y la seguridad de un bus en operación no depende únicamente
@@ -522,16 +507,14 @@ export default function Tecnologia() {
                     <p className={paragraphClass}>
                       El sistema del vehículo incorpora controladores altamente integrados
                       que coordinan el funcionamiento de los principales subsistemas,
-                      incluyendo propulsión, dirección, compresión de aire y distribución
-                      eléctrica.
+                      incluyendo propulsión, dirección, compresión de aire y distribución eléctrica.
                     </p>
                     <p className={paragraphClass}>
                       El controlador integrado 5 en 1 combina el controlador del motor de
                       tracción, el controlador del motor de dirección asistida electrónica,
                       el controlador del motor del compresor de aire, el controlador de motor
                       DC/DC y la distribución de alta tensión. Este diseño permite alcanzar
-                      mayor eficiencia, ahorro energético y un nivel superior de seguridad y
-                      confiabilidad.
+                      mayor eficiencia, ahorro energético y un nivel superior de seguridad y confiabilidad.
                     </p>
                   </div>
 
@@ -559,8 +542,7 @@ export default function Tecnologia() {
                       alto voltaje: protección contra sobrecorriente, sistema de detección de
                       humo y fuego, conmutación contra sobrecorriente, sistemas de
                       distribución segura de la alimentación de alto voltaje, protección
-                      activa y aislamiento, y protección activa contra sobrecorriente y
-                      sobretensión.
+                      activa y aislamiento, y protección activa contra sobrecorriente y sobretensión.
                     </p>
                     <p className={paragraphClass}>
                       A su vez, el sistema de baterías incorpora cinco capas de protección
@@ -615,7 +597,7 @@ export default function Tecnologia() {
                         'Sistema de monitoreo de velocidad que permite advertir al conductor cuando se superan los límites definidos o condiciones de operación seguras. Esta función contribuye a una conducción más controlada, especialmente en entornos urbanos o zonas con restricciones específicas.',
                     },
                     {
-                      title: 'Slope Start Assist (SSA /HSA)',
+                      title: 'Slope Start Assist (SSA / HSA)',
                       text:
                         'Sistema de asistencia en partida en pendiente que evita el retroceso involuntario del vehículo al iniciar la marcha en inclinaciones. Esta función mejora el control del bus en maniobras críticas, especialmente en zonas urbanas con topografía exigente.',
                     },
@@ -652,39 +634,31 @@ export default function Tecnologia() {
                       El vehículo ha sido diseñado para operar de manera confiable en
                       condiciones ambientales exigentes, incorporando soluciones técnicas
                       orientadas a proteger sus sistemas críticos frente a factores externos
-                      como humedad, polvo, variaciones térmicas y condiciones de operación
-                      severas.
+                      como humedad, polvo, variaciones térmicas y condiciones de operación severas.
                     </p>
                     <p className={paragraphClass}>
                       A nivel de componentes eléctricos y electrónicos, se consideran
                       estándares de protección elevados, incluyendo grados de sellado que
                       permiten evitar el ingreso de agua y partículas, asegurando la
-                      continuidad operativa incluso en entornos adversos. Esto resulta
-                      particularmente relevante en sistemas de alto voltaje, donde la
-                      integridad del aislamiento y la protección frente a agentes externos son
-                      fundamentales para la seguridad del vehículo.
+                      continuidad operativa incluso en entornos adversos.
                     </p>
                     <p className={paragraphClass}>
                       En términos de operación en terreno, el bus cuenta con capacidades que
                       le permiten enfrentar condiciones urbanas complejas, incluyendo
                       escenarios de anegamiento. La configuración del sistema eléctrico y la
                       ubicación de componentes críticos permiten alcanzar capacidades de
-                      vadeo superiores a los 500 mm, manteniendo la operatividad del vehículo
-                      en condiciones de acumulación de agua en la vía.
+                      vadeo superiores a los 500 mm.
                     </p>
                     <p className={paragraphClass}>
                       Adicionalmente, el diseño considera un rango amplio de operación
                       térmica, permitiendo el funcionamiento del vehículo en temperaturas
                       extremas, desde climas fríos hasta condiciones de alta temperatura, sin
-                      comprometer el desempeño de los sistemas de propulsión, baterías o
-                      control.
+                      comprometer el desempeño de los sistemas de propulsión, baterías o control.
                     </p>
                     <p className={paragraphClass}>
-                      Estas características permiten que el vehículo no solo cumpla con
-                      condiciones estándar de operación, sino que esté preparado para
-                      enfrentar escenarios reales donde la continuidad del servicio es
-                      crítica, reduciendo riesgos de falla y asegurando disponibilidad
-                      operativa en el tiempo.
+                      Estas características permiten enfrentar escenarios reales donde la
+                      continuidad del servicio es crítica, reduciendo riesgos de falla y
+                      asegurando disponibilidad operativa en el tiempo.
                     </p>
                   </div>
                 </div>
@@ -692,12 +666,9 @@ export default function Tecnologia() {
 
               <SectionDivider />
 
-              {/* TAB 5 */}
               <motion.section {...fadeUp} className="space-y-8">
                 <div className="space-y-4">
-                  <p className="text-sm font-semibold uppercase tracking-[0.18em] text-emerald-700">
-                    Tab #5
-                  </p>
+                  <p className={sectionEyebrowClass}>Operación inteligente</p>
                   <h2 className={sectionTitleClass}>Plataforma Inteligente y Telemetría</h2>
                   <p className={paragraphClass}>
                     La telemetría corresponde al conjunto de tecnologías que permiten
@@ -706,8 +677,7 @@ export default function Tecnologia() {
                     sistemas, comportamiento de conducción y desempeño energético.
                   </p>
                   <p className={paragraphClass}>
-                    En el contexto del transporte público moderno -y particularmente en Chile
-                    bajo el modelo de Sistema de Concesión de Vías- la telemetría constituye
+                    En el contexto del transporte público moderno, la telemetría constituye
                     un estándar mínimo para la operación, ya que permite monitorear el
                     cumplimiento de los programas operacionales, la calidad del servicio y la
                     trazabilidad de la flota.
@@ -742,7 +712,7 @@ export default function Tecnologia() {
                       análisis de comportamiento en la conducción.
                     </p>
                     <p className={paragraphClass}>
-                      Este desarrollo les da soporte a los clientes para tener un control
+                      Este desarrollo da soporte a los clientes para tener un control
                       razonable sobre la flota, analizar el comportamiento de sus conductores
                       y definir estrategias inteligentes de carga del vehículo.
                     </p>
@@ -762,8 +732,7 @@ export default function Tecnologia() {
                     </p>
                     <p className={paragraphClass}>
                       En este contexto, SGX cumple un rol central como integrador,
-                      articulando la plataforma del fabricante con soluciones tecnológicas
-                      especializadas.
+                      articulando la plataforma del fabricante con soluciones tecnológicas especializadas.
                     </p>
                   </div>
 
@@ -776,7 +745,7 @@ export default function Tecnologia() {
 
                 <div className="space-y-4 rounded-2xl bg-white p-6 shadow-sm border border-gray-200">
                   <h3 className={subsectionTitleClass}>
-                    Sistema de Información embarcado y Gestión de la Operación
+                    Sistema de Información Embarcado y Gestión de la Operación
                   </h3>
                   <p className={paragraphClass}>
                     El vehículo incorpora una arquitectura de sistemas embarcados que permite
@@ -786,9 +755,7 @@ export default function Tecnologia() {
                   <p className={paragraphClass}>
                     Esta infraestructura no solo permite el monitoreo del estado del bus, sino
                     que habilita directamente la gestión de la operación, estableciendo una
-                    conexión permanente entre el vehículo y los centros de control. De esta
-                    forma, la información generada a bordo se transforma en una herramienta
-                    activa para la toma de decisiones operacionales.
+                    conexión permanente entre el vehículo y los centros de control.
                   </p>
                   <p className={paragraphClass}>
                     A través de esta integración, es posible coordinar la planificación,
@@ -811,27 +778,20 @@ export default function Tecnologia() {
                       </h3>
                       <p className={paragraphClass}>
                         La información generada por los sistemas embarcados se procesa
-                        mediante herramientas de análisis e inteligencia articial (IA). La
+                        mediante herramientas de análisis e inteligencia artificial. La
                         telemetría no sólo permite monitorear el estado del vehículo, sino
-                        que constituye la base para la gestión integral de la operación,
-                        independiente del tipo de sistema de transporte en el que se utilice.
+                        que constituye la base para la gestión integral de la operación.
                       </p>
                       <p className={paragraphClass}>
-                        En sistemas regulados, como el Modelo de Concesión de Vías, estos
-                        datos permiten medir el cumplimiento de indicadores definidos por la
-                        autoridad, tales como frecuencia, puntualidad y kilómetros
-                        comerciales válidos. Sin embargo, en operaciones privadas o no
-                        concesionadas, la telemetría cumple un rol igualmente crítico, ya
-                        que permite construir y optimizar modelos operacionales y financieros
-                        que, aunque no estén formalmente definidos, existen de manera
-                        implícita en la operación diaria.
+                        En sistemas regulados, estos datos permiten medir el cumplimiento de
+                        indicadores como frecuencia, puntualidad y kilómetros comerciales válidos.
+                        En operaciones privadas, permiten construir y optimizar modelos
+                        operacionales y financieros basados en evidencia real.
                       </p>
                       <p className={paragraphClass}>
                         A partir de esta información, es posible estructurar, validar y
-                        mejorar el Programa Operacional (PO), entendido como la forma en que
-                        la flota se organiza para cumplir con los niveles de servicio
-                        esperados, optimizando recursos, reduciendo costos y asegurando
-                        continuidad operacional.
+                        mejorar el programa operacional, optimizando recursos, reduciendo costos
+                        y asegurando continuidad operacional.
                       </p>
                     </div>
                   </div>
@@ -842,30 +802,29 @@ export default function Tecnologia() {
                     <h3 className={subsectionTitleClass}>Indicadores Operacionales</h3>
                     <p className={paragraphClass}>
                       La plataforma permite monitorear y analizar indicadores fundamentales
-                      para cualquier tipo de operación de transporte de pasajeros, tales como:
+                      para cualquier tipo de operación de transporte de pasajeros:
                     </p>
                     <ul className="space-y-3 text-gray-700 text-sm sm:text-base">
-                      <li>Cumplimiento del Programa Operacional (PO): seguimiento de la ejecución real de los servicios respecto a lo planificado</li>
-                      <li>Frecuencia y Regularidad: Control de intervalos entre vehículos y consistencia del servicio</li>
-                      <li>Puntualidad: Evaluación del desempeño respecto a horarios definidos o esperados</li>
-                      <li>Kilómetros Operacionales (comerciales y en vacío): Análisis del uso efectivo de la flota y sus ineficiencias</li>
-                      <li>Trazabilidad de la Operación: Registro completo del recorrido y comportamiento del vehículo y el personal de conducción</li>
+                      <li>Cumplimiento del programa operacional</li>
+                      <li>Frecuencia y regularidad</li>
+                      <li>Puntualidad</li>
+                      <li>Kilómetros operacionales</li>
+                      <li>Trazabilidad completa de la operación</li>
                     </ul>
                   </div>
 
                   <div className="rounded-2xl bg-white p-6 shadow-sm border border-gray-200 space-y-4 xl:col-span-1">
                     <h3 className={subsectionTitleClass}>Gestión de la Eficiencia Operacional</h3>
                     <p className={paragraphClass}>
-                      El análisis de datos permite identificar desviaciones y oportunidad de
-                      mejora en la operación, incluyendo:
+                      El análisis de datos permite identificar desviaciones y oportunidades de mejora:
                     </p>
                     <ul className="space-y-3 text-gray-700 text-sm sm:text-base">
                       <li>Velocidad promedio por ruta</li>
                       <li>Optimización de frecuencias</li>
                       <li>Relación entre kilómetros productivos y no productivos</li>
-                      <li>Consumo energético real por condiciones de operación</li>
+                      <li>Consumo energético real por condición operacional</li>
                       <li>Demanda del servicio</li>
-                      <li>Impacto del estilo de conducción en la eficiencia y el desgaste mecánico</li>
+                      <li>Impacto del estilo de conducción</li>
                     </ul>
                   </div>
 
@@ -877,10 +836,9 @@ export default function Tecnologia() {
                       decisiones operacionales y financieras.
                     </p>
                     <p className={paragraphClass}>
-                      En sistemas concesionados, esto se traduce en el cumplimiento de
-                      indicadores que determinan ingresos económicos. En sistemas privados,
-                      permite evaluar la rentabilidad de la operación en tiempo real,
-                      optimizar la asignación de recursos y controlar costos operacionales.
+                      En sistemas concesionados, esto se traduce en indicadores que determinan
+                      ingresos. En sistemas privados, permite evaluar rentabilidad,
+                      optimizar recursos y controlar costos operacionales.
                     </p>
                   </div>
                 </div>
@@ -889,8 +847,7 @@ export default function Tecnologia() {
                   <h3 className={subsectionTitleClass}>Validación y Mejora Continua</h3>
                   <p className={paragraphClass}>
                     El uso continuo de datos permite contrastar la operación real con las
-                    proyecciones iniciales, generando un proceso de mejorar continua basado
-                    en evidencia.
+                    proyecciones iniciales, generando un proceso de mejora continua basado en evidencia.
                   </p>
                   <p className={paragraphClass}>Esto permite:</p>
                   <ul className="space-y-3 text-gray-700 text-sm sm:text-base">
@@ -901,8 +858,7 @@ export default function Tecnologia() {
                   </ul>
                   <p className={paragraphClass}>
                     En ese contexto, la telemetría deja de ser una mera herramienta de
-                    monitoreo y pasa a ser un sistema de soporte integral para la toma de
-                    decisiones estratégicas.
+                    monitoreo y pasa a ser un sistema de soporte integral para la toma de decisiones estratégicas.
                   </p>
                 </div>
 
@@ -912,35 +868,29 @@ export default function Tecnologia() {
                   </h3>
                   <p className="text-white/95 leading-relaxed text-sm sm:text-base">
                     En SGX Chile tenemos la convicción de que la adopción de nuevas
-                    tecnologías -y en particular la electromovilidad- no depende únicamente
+                    tecnologías, y en particular la electromovilidad, no depende únicamente
                     del producto, sino de la capacidad de los operadores para incorporar,
                     entender y optimizar su uso en condiciones reales de operación.
                   </p>
                   <p className="text-white/95 leading-relaxed text-sm sm:text-base">
-                    En este contexto, uno de los principales desafíos no es la tecnología en
-                    sí, sino la curva de aprendizaje asociada a su implementación. Reducir
-                    esa brecha es clave para capturar los beneficios reales de eficiencia,
-                    desempeño y rentabilidad que ofrece la electromovilidad.
+                    Reducir la curva de aprendizaje es clave para capturar los beneficios
+                    reales de eficiencia, desempeño y rentabilidad que ofrece la electromovilidad.
                   </p>
                   <p className="text-white/95 leading-relaxed text-sm sm:text-base">
                     Por ello, nuestro enfoque no se limita a la provisión de buses, sino que
-                    busca acompañar estratégicamente a los operadores en su proceso de
-                    transición, entregando herramientas, información y criterios que les
-                    permitan operar bajo los más altos estándares de eficiencia operacional.
+                    busca acompañar estratégicamente a los operadores en su proceso de transición,
+                    entregando herramientas, información y criterios para operar bajo los más altos
+                    estándares de eficiencia operacional.
                   </p>
                   <p className="text-white/95 leading-relaxed text-sm sm:text-base">
-                    Nuestra visión es que cualquier operador -independiente de su tamaño,
-                    ubicación o nivel de desarrollo- pueda acceder a estos estándares, desde
-                    sistemas urbanos complejos hasta operaciones regionales a lo largo de todo
-                    Chile, desde Arica hasta Punta Arenas.
+                    Nuestra visión es que cualquier operador pueda acceder a estos estándares,
+                    desde sistemas urbanos complejos hasta operaciones regionales a lo largo de Chile.
                   </p>
                   <p className="text-lg sm:text-xl font-semibold">
-                    Porque la electromovilidad no es sólo un cambio tecnológico, es un cambio
-                    en la forma de operar.
+                    La electromovilidad no es sólo un cambio tecnológico, es una nueva forma de operar.
                   </p>
                   <p className="text-lg sm:text-xl font-bold">
-                    ¿Estás preparado para dar el siguiente paso y operar bajo los estándares
-                    de la electromovilidad con SGX Chile & Ankai Bus?
+                    ¿Está tu operación preparada para dar el siguiente paso con SGX Chile y Ankai Bus?
                   </p>
                 </div>
               </motion.section>
