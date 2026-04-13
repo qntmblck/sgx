@@ -7,7 +7,7 @@ import { createRoot } from 'react-dom/client';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
 
-const appName = import.meta.env.VITE_APP_NAME || 'SGX';
+const appName = import.meta.env.VITE_APP_NAME || 'SGX Chile';
 
 
 createInertiaApp({
