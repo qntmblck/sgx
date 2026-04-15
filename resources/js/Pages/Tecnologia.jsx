@@ -38,7 +38,7 @@ const tabs = [
         type: 'paragraph',
         text: 'A partir de esta colaboración, se introducen modelos desarrollados bajo licencia, permitiendo la adopción progresiva de tecnologías estructurales avanzadas y metodologías de diseño propias de la ingeniería alemana.',
       },
-      { type: 'image', src: '/img/tecnologia/tec_1.png', alt: 'Origen tecnológico Ankai - imagen 1' },
+      { type: 'image', src: '/img/tecnologia/tec_1.webp', alt: 'Origen tecnológico Ankai - imagen 1' },
       {
         type: 'feature',
         title: 'Primera etapa (1993): Introducción Tecnológica',
@@ -87,12 +87,12 @@ const tabs = [
           'Espacio: lo más amplio posible',
         ],
       },
-      { type: 'image', src: '/img/tecnologia/tec_2.png', alt: 'Origen tecnológico Ankai - imagen 2' },
+      { type: 'image', src: '/img/tecnologia/tec_2.webp', alt: 'Origen tecnológico Ankai - imagen 2' },
       {
         type: 'paragraph',
         text: 'El origen tecnológico de Ankai no responde únicamente a una colaboración inicial, sino a un proceso continuo de absorción, desarrollo y aplicación de ingeniería, que permite hoy contar con una plataforma tecnológica propia, basada en estándares internacionales y adaptada a distintas condiciones operacionales.',
       },
-      { type: 'image', src: '/img/tecnologia/tec_3.png', alt: 'Origen tecnológico Ankai - imagen 3' },
+      { type: 'image', src: '/img/tecnologia/tec_3.webp', alt: 'Origen tecnológico Ankai - imagen 3' },
     ],
   },
   {
@@ -107,7 +107,7 @@ const tabs = [
         type: 'paragraph',
         text: 'Ankai integra herramientas avanzadas de modelación, simulación y validación para desarrollar sus vehículos, permitiendo anticipar su comportamiento en operación real y optimizar su desempeño desde la etapa de diseño.',
       },
-      { type: 'image', src: '/img/tecnologia/tec_4.png', alt: 'Ingeniería y desarrollo - imagen 1' },
+      { type: 'image', src: '/img/tecnologia/tec_4.webp', alt: 'Ingeniería y desarrollo - imagen 1' },
       {
         type: 'paragraph',
         text: 'El proceso de ingeniería incorpora simulaciones digitales que permiten evaluar el comportamiento del vehículo bajo distintas condiciones operacionales, reduciendo la incertidumbre y mejorando la calidad del diseño final.',
@@ -117,25 +117,25 @@ const tabs = [
         title: 'Simulación Estructural',
         text: 'Se analiza digitalmente la estructura del vehículo para evaluar su resistencia, deformación y distribución de cargas, optimizando su desempeño antes de su construcción.',
       },
-      { type: 'image', src: '/img/tecnologia/tec_5.png', alt: 'Ingeniería y desarrollo - imagen 2' },
+      { type: 'image', src: '/img/tecnologia/tec_5.webp', alt: 'Ingeniería y desarrollo - imagen 2' },
       {
         type: 'feature',
         title: 'Simulación Dinámica, Colisión y Seguridad',
         text: 'Se estudia el comportamiento dinámico del vehículo, incluyendo estabilidad, maniobrabilidad y respuesta en operación. Se simulan distintos escenarios de impacto, incluyendo colisiones frontales, laterales y volcamiento, con el objetivo de evaluar la integridad estructural del vehículo.',
       },
-      { type: 'image', src: '/img/tecnologia/tec_6.png', alt: 'Ingeniería y desarrollo - imagen 3' },
+      { type: 'image', src: '/img/tecnologia/tec_6.webp', alt: 'Ingeniería y desarrollo - imagen 3' },
       {
         type: 'feature',
         title: 'Simulación Térmica',
         text: 'Se modela la gestión térmica de los sistemas críticos del vehículo, asegurando un adecuado comportamiento en condiciones de operación exigentes.',
       },
-      { type: 'image', src: '/img/tecnologia/tec_7.png', alt: 'Ingeniería y desarrollo - imagen 4' },
+      { type: 'image', src: '/img/tecnologia/tec_7.webp', alt: 'Ingeniería y desarrollo - imagen 4' },
       {
         type: 'feature',
         title: 'Simulación Electrónica y Energética',
         text: 'Se modela el consumo energético y el desempeño del sistema de propulsión, permitiendo optimizar eficiencia y autonomía. Se desarrollan y validan sistemas de control electrónico mediante simulación, incluyendo estrategias de operación e integración de componentes.',
       },
-      { type: 'image', src: '/img/tecnologia/tec_8.png', alt: 'Ingeniería y desarrollo - imagen 5' },
+      { type: 'image', src: '/img/tecnologia/tec_8.webp', alt: 'Ingeniería y desarrollo - imagen 5' },
     ],
   },
   {
@@ -166,13 +166,13 @@ const tabs = [
         type: 'paragraph',
         text: 'Ankai es la única empresa en China que cuenta con el Centro Nacional de Investigación y Desarrollo (I+D) en Integración de Sistemas de Buses Eléctricos, además de liderar el Centro Nacional y Local de Ingeniería en Desarrollo y Aplicación de Sistemas de Buses Eléctricos.',
       },
-      { type: 'image', src: '/img/tecnologia/tec_9.png', alt: 'Producción industrial - imagen 1' },
+      { type: 'image', src: '/img/tecnologia/tec_9.webp', alt: 'Producción industrial - imagen 1' },
       {
         type: 'feature',
         title: 'Flujo Productivo Integrado',
         text: 'Ankai cuenta con talleres de producción modernos y una línea de producción en “U” diseñada científicamente. Gracias al sistema de transporte automático mecanizado y a una disposición de procesos eficiente, el avanzado sistema de gestión TPS permite una producción continua, rápida y eficiente, mejorando significativamente la productividad.',
       },
-      { type: 'image', src: '/img/tecnologia/tec_10.png', alt: 'Producción industrial - imagen 2' },
+      { type: 'image', src: '/img/tecnologia/tec_10.webp', alt: 'Producción industrial - imagen 2' },
       {
         type: 'feature',
         title: 'Soldadura Estructural Robotizada',
@@ -186,7 +186,7 @@ const tabs = [
         type: 'paragraph',
         text: 'Este enfoque garantiza continuidad estructural, mejora la calidad de las uniones y reduce desviaciones en el proceso productivo.',
       },
-      { type: 'image', src: '/img/tecnologia/tec_11.png', alt: 'Producción industrial - imagen 3' },
+      { type: 'image', src: '/img/tecnologia/tec_11.webp', alt: 'Producción industrial - imagen 3' },
       {
         type: 'feature',
         title: 'Protección Anti-Corrosión: Electrofóresis Catódica (E-Coat)',
@@ -200,7 +200,7 @@ const tabs = [
         type: 'paragraph',
         text: 'Este proceso permite proteger toda la carrocería, incluyendo cavidades internas y zonas de difícil acceso.',
       },
-      { type: 'image', src: '/img/tecnologia/tec_12.png', alt: 'Producción industrial - imagen 4' },
+      { type: 'image', src: '/img/tecnologia/tec_12.webp', alt: 'Producción industrial - imagen 4' },
       {
         type: 'paragraph',
         text: 'La integración de procesos de diseño estructural, soldadura robotizada, tratamiento anticorrosivo y pintura automatizada permite asegurar que cada bus fabricado mantenga un estándar consistente de calidad, durabilidad y desempeño.',
@@ -236,13 +236,13 @@ const tabs = [
         type: 'paragraph',
         text: 'El controlador integrado 5 en 1 combina el controlador del motor de tracción, el controlador del motor de dirección asistida electrónica, el controlador del motor del compresor de aire, el controlador de motor DC/DC y la distribución de alta tensión. Este diseño permite alcanzar mayor eficiencia, ahorro energético y un nivel superior de seguridad y confiabilidad.',
       },
-      { type: 'image', src: '/img/tecnologia/tec_13.png', alt: 'Sistemas tecnológicos integrados - imagen 1' },
+      { type: 'image', src: '/img/tecnologia/tec_13.webp', alt: 'Sistemas tecnológicos integrados - imagen 1' },
       {
         type: 'feature',
         title: 'Seguridad de los Sistemas de Alto Voltaje y Sistema de Batería',
         text: 'El sistema eléctrico del vehículo incorpora seis niveles de protección que permiten gestionar de manera segura la operación del sistema de alto voltaje: protección contra sobrecorriente, sistema de detección de humo y fuego, conmutación contra sobrecorriente, sistemas de distribución segura de la alimentación de alto voltaje, protección activa y aislamiento, y protección activa contra sobrecorriente y sobretensión. A su vez, el sistema de baterías incorpora cinco capas de protección orientadas a prevenir fallas críticas y asegurar operación segura en todo momento: diseño ignífugo y retardante de llamas, sistemas de detección de humo, sistema de protección contra sobrecorriente, sobretensión, sobrecarga y sobredescarga, sistemas de desbloqueo y desmontaje rápido, y sistema automático de detección de incendios.',
       },
-      { type: 'image', src: '/img/tecnologia/tec_14.png', alt: 'Sistemas tecnológicos integrados - imagen 2' },
+      { type: 'image', src: '/img/tecnologia/tec_14.webp', alt: 'Sistemas tecnológicos integrados - imagen 2' },
       {
         type: 'feature',
         title: 'Sistemas de Seguridad Activa y Asistencia al Conductor',
@@ -281,13 +281,13 @@ const tabs = [
         title: 'Slope Start Assist (SSA / HSA)',
         text: 'Sistema de asistencia en partida en pendiente que evita el retroceso involuntario del vehículo al iniciar la marcha en inclinaciones. Esta función mejora el control del bus en maniobras críticas, especialmente en zonas urbanas con topografía exigente.',
       },
-      { type: 'image', src: '/img/tecnologia/tec_15.png', alt: 'Sistemas tecnológicos integrados - imagen 3' },
+      { type: 'image', src: '/img/tecnologia/tec_15.webp', alt: 'Sistemas tecnológicos integrados - imagen 3' },
       {
         type: 'feature',
         title: 'Compatibilidad Electromagnética (EMC)',
         text: 'El diseño del vehículo considera criterios de compatibilidad electromagnética a nivel de sistema, asegurando funcionamiento estable de todos los componentes electrónicos.',
       },
-      { type: 'image', src: '/img/tecnologia/tec_16.png', alt: 'Sistemas tecnológicos integrados - imagen 4' },
+      { type: 'image', src: '/img/tecnologia/tec_16.webp', alt: 'Sistemas tecnológicos integrados - imagen 4' },
       {
         type: 'feature',
         title: 'Protección Ambiental y Operativa',
@@ -309,7 +309,7 @@ const tabs = [
         type: 'paragraph',
         text: 'Estas características permiten que el vehículo no solo cumpla con condiciones estándar de operación, sino que esté preparado para enfrentar escenarios reales donde la continuidad del servicio es crítica, reduciendo riesgos de falla y asegurando disponibilidad operativa en el tiempo.',
       },
-      { type: 'image', src: '/img/tecnologia/tec_17.png', alt: 'Sistemas tecnológicos integrados - imagen 5' },
+      { type: 'image', src: '/img/tecnologia/tec_17.webp', alt: 'Sistemas tecnológicos integrados - imagen 5' },
     ],
   },
   {
@@ -341,7 +341,7 @@ const tabs = [
         type: 'paragraph',
         text: 'Este desarrollo les da soporte a los clientes para tener un control razonable sobre la flota, analizar el comportamiento de sus conductores y definir estrategias inteligentes de carga del vehículo.',
       },
-      { type: 'image', src: '/img/tecnologia/tec_18.png', alt: 'Plataforma inteligente y telemetría - imagen 1' },
+      { type: 'image', src: '/img/tecnologia/tec_18.webp', alt: 'Plataforma inteligente y telemetría - imagen 1' },
       {
         type: 'feature',
         title: 'Integración Tecnológica (ANKAI – SGX – MAGNETIC NORTH)',
@@ -351,7 +351,7 @@ const tabs = [
         type: 'paragraph',
         text: 'En este contexto, SGX cumple un rol central como integrador, articulando la plataforma del fabricante con soluciones tecnológicas especializadas.',
       },
-      { type: 'image', src: '/img/tecnologia/tec_19.png', alt: 'Plataforma inteligente y telemetría - imagen 2' },
+      { type: 'image', src: '/img/tecnologia/tec_19.webp', alt: 'Plataforma inteligente y telemetría - imagen 2' },
       {
         type: 'feature',
         title: 'Sistema de Información Embarcado y Gestión de la Operación',
@@ -365,7 +365,7 @@ const tabs = [
         type: 'paragraph',
         text: 'A través de esta integración, es posible coordinar la planificación, ejecución y control del servicio en tiempo real, mejorando la eficiencia del sistema y asegurando el cumplimiento de los programas operacionales.',
       },
-      { type: 'image', src: '/img/tecnologia/tec_20.png', alt: 'Plataforma inteligente y telemetría - imagen 3' },
+      { type: 'image', src: '/img/tecnologia/tec_20.webp', alt: 'Plataforma inteligente y telemetría - imagen 3' },
       {
         type: 'feature',
         title: 'Análisis de Datos y Optimización de la Operación',
@@ -472,7 +472,7 @@ const tabs = [
         type: 'closingQuestion',
         text: '¿Estás preparado para dar el siguiente paso y operar bajo los estándares de la electromovilidad con SGX Chile & Ankai Bus?',
       },
-      { type: 'image', src: '/img/tecnologia/tec_21.png', alt: 'Plataforma inteligente y telemetría - imagen 4' },
+      { type: 'image', src: '/img/tecnologia/tec_21.webp', alt: 'Plataforma inteligente y telemetría - imagen 4' },
     ],
   },
 ]

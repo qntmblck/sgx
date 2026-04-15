@@ -3,7 +3,7 @@ const fs = require("fs");
 const path = require("path");
 
 const inputDir = path.join(__dirname, "public", "img");
-const validExtensions = [".jpg", ".jpeg", ".png"];
+const validExtensions = [".jpg", ".jpeg", ".webp"];
 
 function processDirectory(dir) {
   fs.readdirSync(dir).forEach(file => {

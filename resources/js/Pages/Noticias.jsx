@@ -67,7 +67,7 @@ export default function Noticias() {
               {/* Imagen / banner del evento */}
               <div className="relative">
                 <img
-                  src="/img/noticias/seminario-pucv.jpg"
+                  src="/img/noticias/seminario-pucv.webp"
                   alt="Seminario en la Pontificia Universidad Católica de Valparaíso"
                   className="w-full h-72 lg:h-full object-cover"
                 />

@@ -2,37 +2,37 @@ import { useEffect, useMemo, useState } from 'react'
 import ImgSafe from '@/Components/UI/ImgSafe'
 
 const E9_ALBUM = [
-  '/img/productos/E9_1.png',
-  '/img/productos/E9_2.png',
-  '/img/productos/E9_3.png',
-  '/img/productos/E9_4.png',
-  '/img/productos/E9_5.png',
-  '/img/productos/E9_6.png',
-  '/img/productos/E9_7.png',
-  '/img/productos/E9_8.png',
-  '/img/productos/E9_9.png',
-  '/img/productos/E9_10.png',
-  '/img/productos/E9_11.png',
-  '/img/productos/E9_DD_1.png',
-  '/img/productos/E9_DD_2.png',
+  '/img/productos/E9_1.webp',
+  '/img/productos/E9_2.webp',
+  '/img/productos/E9_3.webp',
+  '/img/productos/E9_4.webp',
+  '/img/productos/E9_5.webp',
+  '/img/productos/E9_6.webp',
+  '/img/productos/E9_7.webp',
+  '/img/productos/E9_8.webp',
+  '/img/productos/E9_9.webp',
+  '/img/productos/E9_10.webp',
+  '/img/productos/E9_11.webp',
+  '/img/productos/E9_DD_1.webp',
+  '/img/productos/E9_DD_2.webp',
 ]
 
 const A6_ALBUM = [
-  '/img/productos/A6_1.jpg',
-  '/img/productos/A6_2.jpg',
-  '/img/productos/A6_3.jpg',
-  '/img/productos/A6_4.jpg',
+  '/img/productos/A6_1.webp',
+  '/img/productos/A6_2.webp',
+  '/img/productos/A6_3.webp',
+  '/img/productos/A6_4.webp',
 ]
 
 const K7_ALBUM = [
-  '/img/productos/K7_1.jpg',
-  '/img/productos/K7_2.jpg',
-  '/img/productos/K7_3.jpg',
-  '/img/productos/K7_4.jpg',
+  '/img/productos/K7_1.webp',
+  '/img/productos/K7_2.webp',
+  '/img/productos/K7_3.webp',
+  '/img/productos/K7_4.webp',
 ]
 
 const MOTOR_ALBUM = [
-  '/img/productos/M_1.jpg',
+  '/img/productos/M_1.webp',
 ]
 
 const SERIES = {
