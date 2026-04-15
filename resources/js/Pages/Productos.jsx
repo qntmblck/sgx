@@ -6,7 +6,6 @@ import Footer from '@/Components/Footer'
 import ContactActions from '@/Components/ContactActions'
 
 import CatalogHero from '@/Components/Productos/CatalogHero'
-import SeriesTabs from '@/Components/Productos/SeriesTabs'
 import SeriesIntro from '@/Components/Productos/SeriesIntro'
 import VariantDrawer from '@/Components/Productos/VariantDrawer'
 import ProductCTA from '@/Components/Productos/ProductCTA'
@@ -42,14 +41,6 @@ export default function Productos() {
       <main className="overflow-x-hidden bg-white">
         <CatalogHero />
 
-        <SeriesTabs
-          series={catalogoSeries}
-          activeSeriesId={activeSeriesId}
-          onChange={(id) => {
-            setActiveSeriesId(id)
-            setOpenVariant(null)
-          }}
-        />
 
         <SeriesIntro serie={activeSeries} />
 

@@ -17,6 +17,78 @@ const E9_ALBUM = [
   '/img/productos/E9_DD_2.png',
 ]
 
+const A6_ALBUM = [
+  '/img/productos/A6_1.jpg',
+  '/img/productos/A6_2.jpg',
+  '/img/productos/A6_3.jpg',
+  '/img/productos/A6_4.jpg',
+]
+
+const K7_ALBUM = [
+  '/img/productos/K7_1.jpg',
+  '/img/productos/K7_2.jpg',
+  '/img/productos/K7_3.jpg',
+  '/img/productos/K7_4.jpg',
+]
+
+const MOTOR_ALBUM = [
+  '/img/productos/M_1.jpg',
+]
+
+const SERIES = {
+  E9: {
+    id: 'E9',
+    nombre: 'Serie E9',
+    subtitulo: 'Buses eléctricos urbanos e interurbanos de alta capacidad',
+    descripcion:
+      'La Serie E9 reúne configuraciones orientadas a operación urbana de estándar alto, con versiones de 8.5 m, 10.5 m, 12 m y Double Deck. Incorpora soluciones de seguridad activa, accesibilidad, confort para pasajeros y compatibilidad con requerimientos operacionales exigentes.',
+    descripcionExtra:
+      'Esta familia está pensada para adaptarse a distintos escenarios de transporte público y privado, manteniendo una base tecnológica consistente en baterías CATL, frenos WABCO, ejes Dongfeng DANA y plataformas de asistencia al conductor.',
+    highlights: [
+      'Operación urbana',
+      'Estándar RED',
+      'AEBS + ESC + EPB',
+      'ECAS',
+      'Accesibilidad universal',
+    ],
+    album: E9_ALBUM,
+  },
+  A6: {
+    id: 'A6',
+    nombre: 'Serie A6',
+    subtitulo: 'Buses eléctricos para transporte de pasajeros de media y alta capacidad',
+    descripcion:
+      'La Serie A6 ofrece configuraciones de 8.2 m y 11.3 m orientadas a servicios de traslado, operación interurbana y soluciones de movilidad con foco en confort, eficiencia y seguridad.',
+    descripcionExtra:
+      'Su configuración incorpora carrocería confortable, climatización, Wi-Fi, puertos USB y sistemas avanzados de asistencia al conductor, manteniendo una plataforma eléctrica robusta y competitiva.',
+    highlights: [
+      'Transporte de pasajeros',
+      'Confort y seguridad',
+      'Wi-Fi y USB',
+      'Frenos WABCO',
+      'Suspensión neumática',
+    ],
+    album: A6_ALBUM,
+  },
+  K7: {
+    id: 'K7',
+    nombre: 'Serie K7',
+    subtitulo: 'Minibús eléctrico compacto para operación eficiente',
+    descripcion:
+      'La Serie K7 corresponde a una solución compacta de 7 metros, ideal para recorridos de menor demanda, servicios corporativos, alimentadores y operación en entornos urbanos con restricciones de espacio.',
+    descripcionExtra:
+      'Combina maniobrabilidad, eficiencia energética y equipamiento de seguridad, ofreciendo una alternativa eléctrica moderna para segmentos de menor tamaño.',
+    highlights: [
+      'Formato compacto',
+      'Alta maniobrabilidad',
+      'Operación urbana',
+      'Batería CATL',
+      'Seguridad activa',
+    ],
+    album: K7_ALBUM,
+  },
+}
+
 const E9_SPECS = [
   {
     id: 'e9-85',
@@ -42,7 +114,7 @@ const E9_SPECS = [
       ],
       [
         'Adicionales',
-        'Aire acondicionado, RACK tecnológico (Resolución Exenta 4772/2023 MTT), cabina cerrada para el conductor, Wi‑Fi, contador de pasajeros, puertos USB, monitor de retroceso de 7’’, monitor de información interior de 21’’, rampa de acceso, soporte para silla de ruedas, 2 extintores de 4 kg, 1 chaleco reflectante, 1 triángulo reflectante, 2 cuñas de estacionamiento',
+        'Aire acondicionado, RACK tecnológico (Resolución Exenta 4772/2023 MTT), cabina cerrada para el conductor, Wi-Fi, contador de pasajeros, puertos USB, monitor de retroceso de 7’’, monitor de información interior de 21’’, rampa de acceso, soporte para silla de ruedas, 2 extintores de 4 kg, 1 chaleco reflectante, 1 triángulo reflectante, 2 cuñas de estacionamiento',
       ],
     ],
   },
@@ -70,7 +142,7 @@ const E9_SPECS = [
       ],
       [
         'Adicionales',
-        'Aire acondicionado, RACK tecnológico (Resolución Exenta 4772/2023 MTT), cabina cerrada para el conductor, Wi‑Fi, contador de pasajeros, puertos USB, monitor de retroceso de 7’’, monitor de información interior de 21’’, rampa de acceso, soporte para silla de ruedas, 2 extintores de 4 kg, 1 chaleco reflectante, 1 triángulo reflectante, 2 cuñas de estacionamiento',
+        'Aire acondicionado, RACK tecnológico (Resolución Exenta 4772/2023 MTT), cabina cerrada para el conductor, Wi-Fi, contador de pasajeros, puertos USB, monitor de retroceso de 7’’, monitor de información interior de 21’’, rampa de acceso, soporte para silla de ruedas, 2 extintores de 4 kg, 1 chaleco reflectante, 1 triángulo reflectante, 2 cuñas de estacionamiento',
       ],
     ],
   },
@@ -98,7 +170,7 @@ const E9_SPECS = [
       ],
       [
         'Adicionales',
-        'Aire acondicionado, RACK tecnológico (Resolución Exenta 4772/2023 MTT), cabina cerrada para el conductor, Wi‑Fi, contador de pasajeros, puertos USB, monitor de retroceso de 7’’, monitor de información interior de 21’’, rampa de acceso, soporte para silla de ruedas, 2 extintores de 4 kg, 1 chaleco reflectante, 1 triángulo reflectante, 2 cuñas de estacionamiento',
+        'Aire acondicionado, RACK tecnológico (Resolución Exenta 4772/2023 MTT), cabina cerrada para el conductor, Wi-Fi, contador de pasajeros, puertos USB, monitor de retroceso de 7’’, monitor de información interior de 21’’, rampa de acceso, soporte para silla de ruedas, 2 extintores de 4 kg, 1 chaleco reflectante, 1 triángulo reflectante, 2 cuñas de estacionamiento',
       ],
     ],
   },
@@ -126,11 +198,110 @@ const E9_SPECS = [
       ],
       [
         'Adicionales',
-        'Aire acondicionado, cabina cerrada para el conductor, Wi‑Fi, contador de pasajeros, puertos USB, monitor de retroceso de 7’’, monitor de información interior de 21’’, rampa de acceso, soporte para silla de ruedas, 2 extintores de 4 kg, 1 chaleco reflectante, 1 triángulo reflectante, 2 cuñas de estacionamiento',
+        'Aire acondicionado, cabina cerrada para el conductor, Wi-Fi, contador de pasajeros, puertos USB, monitor de retroceso de 7’’, monitor de información interior de 21’’, rampa de acceso, soporte para silla de ruedas, 2 extintores de 4 kg, 1 chaleco reflectante, 1 triángulo reflectante, 2 cuñas de estacionamiento',
       ],
     ],
   },
 ]
+
+const A6_SPECS = [
+  {
+    id: 'a6-82',
+    label: '8.2 m',
+    title: 'Serie A6 – Tipología 8.2 m',
+    items: [
+      ['Modelo', 'HFF6829KEV'],
+      ['Dimensiones', '8245 × 2500 × 3430'],
+      ['Asientos', '33 + 1'],
+      ['Batería', 'CATL 200.54 kWh – 1 puerto CCS2'],
+      ['Motor', 'DANA Permanent Magnet Synchronous Motor | Potencia nominal: 145 kW | Potencia máxima: 245 kW'],
+      ['Frenos', 'WABCO'],
+      ['Ejes', 'Dongfeng DANA'],
+      ['Neumáticos', '255/70 R22.5 | Llantas de acero inoxidable'],
+      ['Pintura', 'A confirmar por el comprador'],
+      ['Parabrisas', 'Vidrio laminado con parasol. Vidrios laterales con cortinas.'],
+      ['Peso en vacío', '9200 kg'],
+      ['Peso máximo', '14200 kg'],
+      ['Autonomía', '>250 km'],
+      ['Suspensión', 'Neumática'],
+      [
+        'Sistemas de Seguridad y Asistencia al Conductor',
+        'AEBS (ABS + EBS integrado) – ESC: Control electrónico de estabilidad – EPB: Freno de estacionamiento electrónico – LDW: Advertencia de salida de carril – ACW: Advertencia de colisión – DSW: Advertencia de fatiga del conductor',
+      ],
+      [
+        'Adicionales',
+        'Aire acondicionado, Wi-Fi, contador de pasajeros, puertos USB, monitor de retroceso de 7’’, 2 extintores de 4 kg, 1 chaleco reflectante, 1 triángulo reflectante, 2 cuñas de estacionamiento',
+      ],
+    ],
+  },
+  {
+    id: 'a6-113',
+    label: '11.3 m',
+    title: 'Serie A6 – Tipología 11.3 m',
+    items: [
+      ['Modelo', 'HFF6113KEV2'],
+      ['Dimensiones', '11300 × 2500 × 3450'],
+      ['Asientos', '47 + 1'],
+      ['Batería', 'CATL 338.4 kWh / 399 kWh – 1 puerto CCS2'],
+      ['Motor', 'ANKAI Permanent Magnet Synchronous Motor | Potencia nominal: 120 kW | Potencia máxima: 245 kW'],
+      ['Frenos', 'WABCO'],
+      ['Ejes', 'Dongfeng DANA'],
+      ['Neumáticos', '295/80 R22.5 | Llantas de acero inoxidable'],
+      ['Pintura', 'A confirmar por el comprador'],
+      ['Parabrisas', 'Vidrio laminado con parasol. Vidrios laterales con cortinas.'],
+      ['Peso en vacío', '12200 kg'],
+      ['Peso máximo', '18000 kg'],
+      ['Autonomía', '>250 km'],
+      ['Suspensión', 'Neumática'],
+      [
+        'Sistemas de Seguridad y Asistencia al Conductor',
+        'AEBS (ABS + EBS integrado) – ESC: Control electrónico de estabilidad – EPB: Freno de estacionamiento electrónico – LDW: Advertencia de salida de carril – ACW: Advertencia de colisión – DSW: Advertencia de fatiga del conductor',
+      ],
+      [
+        'Adicionales',
+        'Aire acondicionado, Wi-Fi, contador de pasajeros, puertos USB, monitor de retroceso de 7’’, 2 extintores de 4 kg, 1 chaleco reflectante, 1 triángulo reflectante, 2 cuñas de estacionamiento',
+      ],
+    ],
+  },
+]
+
+const K7_SPECS = [
+  {
+    id: 'k7-7',
+    label: '7 m',
+    title: 'Serie K7 – Tipología 7 m',
+    items: [
+      ['Modelo', 'HFF6710BEV'],
+      ['Dimensiones', '7145 × 2040 × 2725 / 2785'],
+      ['Asientos', '18 + 1'],
+      ['Batería', 'CATL 139.78 kWh – 1 puerto CCS2'],
+      ['Motor', 'ANKAI Permanent Magnet Synchronous Motor | Potencia nominal: 80 kW | Potencia máxima: 150 kW'],
+      ['Frenos', 'WABCO'],
+      ['Ejes', 'Dongfeng DANA'],
+      ['Neumáticos', '215/75 R17.5 | Llantas de acero inoxidable'],
+      ['Pintura', 'A confirmar por el comprador'],
+      ['Parabrisas', 'Vidrio laminado con parasol.'],
+      ['Peso en vacío', '5700 kg'],
+      ['Peso máximo', '8200 kg'],
+      ['Autonomía', '>200 km'],
+      ['Suspensión', 'Neumática'],
+      [
+        'Sistemas de Seguridad y Asistencia al Conductor',
+        'AEBS (ABS + EBS integrado) – ESC: Control electrónico de estabilidad – EPB: Freno de estacionamiento electrónico – LDW: Advertencia de salida de carril – ACW: Advertencia de colisión – DSW: Advertencia de fatiga del conductor',
+      ],
+      [
+        'Adicionales',
+        'Aire acondicionado, Wi-Fi, contador de pasajeros, 2 extintores de 4 kg, 1 chaleco reflectante, 1 triángulo reflectante, 2 cuñas de estacionamiento',
+      ],
+    ],
+  },
+]
+
+const SERIES_SPECS = {
+  E9: E9_SPECS,
+  A6: A6_SPECS,
+  K7: K7_SPECS,
+}
 
 function AlbumViewer({ images, altBase }) {
   const [activeIndex, setActiveIndex] = useState(0)
@@ -160,6 +331,7 @@ function AlbumViewer({ images, altBase }) {
               type="button"
               onClick={goPrev}
               className="absolute left-3 top-1/2 -translate-y-1/2 rounded-full bg-white/90 px-3 py-2 text-sm font-semibold text-slate-800 shadow transition hover:bg-white"
+              aria-label="Imagen anterior"
             >
               ‹
             </button>
@@ -167,6 +339,7 @@ function AlbumViewer({ images, altBase }) {
               type="button"
               onClick={goNext}
               className="absolute right-3 top-1/2 -translate-y-1/2 rounded-full bg-white/90 px-3 py-2 text-sm font-semibold text-slate-800 shadow transition hover:bg-white"
+              aria-label="Imagen siguiente"
             >
               ›
             </button>
@@ -185,7 +358,7 @@ function AlbumViewer({ images, altBase }) {
 
             return (
               <button
-                key={src}
+                key={`${src}-${index}`}
                 type="button"
                 onClick={() => setActiveIndex(index)}
                 className={[
@@ -194,6 +367,7 @@ function AlbumViewer({ images, altBase }) {
                     ? 'border-[#005a8d] ring-2 ring-[#005a8d]/20'
                     : 'border-slate-200 hover:border-slate-300',
                 ].join(' ')}
+                aria-label={`Ver imagen ${index + 1}`}
               >
                 <ImgSafe
                   src={src}
@@ -209,7 +383,41 @@ function AlbumViewer({ images, altBase }) {
   )
 }
 
-function SpecTabs({ specs }) {
+function SeriesTabs({ activeSeriesId, onChange }) {
+  const tabs = [
+    { id: 'E9', label: 'Serie E9' },
+    { id: 'A6', label: 'Serie A6' },
+    { id: 'K7', label: 'Serie K7' },
+  ]
+
+  return (
+    <div className="mb-8 overflow-x-auto pb-2">
+      <div className="flex min-w-max gap-3">
+        {tabs.map((tab) => {
+          const active = tab.id === activeSeriesId
+
+          return (
+            <button
+              key={tab.id}
+              type="button"
+              onClick={() => onChange(tab.id)}
+              className={[
+                'whitespace-nowrap rounded-full px-5 py-2.5 text-sm font-semibold transition',
+                active
+                  ? 'bg-[#005a8d] text-white shadow'
+                  : 'border border-slate-200 bg-white text-slate-700 hover:bg-slate-100',
+              ].join(' ')}
+            >
+              {tab.label}
+            </button>
+          )
+        })}
+      </div>
+    </div>
+  )
+}
+
+function SpecTabs({ specs, serieLabel }) {
   const [activeSpecId, setActiveSpecId] = useState(specs[0]?.id ?? null)
 
   useEffect(() => {
@@ -224,7 +432,7 @@ function SpecTabs({ specs }) {
     <div className="mt-10 rounded-3xl border border-slate-200 bg-slate-50 p-5 sm:p-6">
       <div className="mb-5">
         <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#005a8d]">
-          Serie E9 · Configuraciones técnicas
+          {serieLabel} · Configuraciones técnicas
         </p>
         <h3 className="mt-2 text-2xl font-extrabold text-slate-900 sm:text-3xl">
           Especificaciones por tipología
@@ -278,47 +486,66 @@ function SpecTabs({ specs }) {
 }
 
 export default function SeriesIntro({ serie }) {
-  const isSerieE9 = useMemo(() => {
+  const initialSeriesId = useMemo(() => {
     const nombre = serie?.nombre?.toLowerCase?.() ?? ''
-    return nombre.includes('e9')
+
+    if (nombre.includes('a6')) return 'A6'
+    if (nombre.includes('k7')) return 'K7'
+    return 'E9'
   }, [serie])
 
+  const [activeSeriesId, setActiveSeriesId] = useState(initialSeriesId)
+
+  useEffect(() => {
+    setActiveSeriesId(initialSeriesId)
+  }, [initialSeriesId])
+
+  const activeSeries = useMemo(() => {
+    return SERIES[activeSeriesId] ?? SERIES.E9
+  }, [activeSeriesId])
+
+  const activeSpecs = useMemo(() => {
+    return SERIES_SPECS[activeSeriesId] ?? E9_SPECS
+  }, [activeSeriesId])
+
   const albumImages = useMemo(() => {
-    if (isSerieE9) return E9_ALBUM
+    if (activeSeries?.album?.length) return activeSeries.album
     if (serie?.imagenesGaleria?.length) return serie.imagenesGaleria
     if (serie?.album?.length) return serie.album
     if (serie?.imagenHero) return [serie.imagenHero]
     return []
-  }, [isSerieE9, serie])
+  }, [activeSeries, serie])
 
-  if (!serie) return null
+  if (!serie && !activeSeries) return null
 
   return (
     <section className="bg-white">
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6">
+        <SeriesTabs activeSeriesId={activeSeriesId} onChange={setActiveSeriesId} />
+
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-2 lg:items-start">
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#005a8d]">
-              {serie.nombre}
+              {activeSeries.nombre}
             </p>
 
             <h2 className="mt-3 text-3xl font-extrabold leading-tight text-slate-900 sm:text-4xl">
-              {serie.subtitulo}
+              {activeSeries.subtitulo}
             </h2>
 
             <p className="mt-5 text-slate-600 leading-relaxed">
-              {serie.descripcion}
+              {activeSeries.descripcion}
             </p>
 
-            {serie.descripcionExtra && (
+            {activeSeries.descripcionExtra && (
               <p className="mt-4 text-slate-600 leading-relaxed">
-                {serie.descripcionExtra}
+                {activeSeries.descripcionExtra}
               </p>
             )}
 
-            {serie.highlights?.length > 0 && (
+            {activeSeries.highlights?.length > 0 && (
               <div className="mt-6 flex flex-wrap gap-2">
-                {serie.highlights.map((item) => (
+                {activeSeries.highlights.map((item) => (
                   <span
                     key={item}
                     className="rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-700"
@@ -330,10 +557,10 @@ export default function SeriesIntro({ serie }) {
             )}
           </div>
 
-          <AlbumViewer images={albumImages} altBase={serie.nombre} />
+          <AlbumViewer images={albumImages} altBase={activeSeries.nombre} />
         </div>
 
-        {isSerieE9 && <SpecTabs specs={E9_SPECS} />}
+        <SpecTabs specs={activeSpecs} serieLabel={activeSeries.nombre} />
       </div>
     </section>
   )
