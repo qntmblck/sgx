@@ -385,9 +385,9 @@ function AlbumViewer({ images, altBase }) {
 
 function SeriesTabs({ activeSeriesId, onChange }) {
   const tabs = [
-    { id: 'E9', label: 'Serie E9' },
-    { id: 'A6', label: 'Serie A6' },
-    { id: 'K7', label: 'Serie K7' },
+    { id: 'E9', label: 'Serie E9: Transporte Público Urbano' },
+    { id: 'A6', label: 'Serie A6: Transporte Interurbano y Minería' },
+    { id: 'K7', label: 'Serie K7 Van Eléctrica de Lujo' },
   ]
 
   return (
