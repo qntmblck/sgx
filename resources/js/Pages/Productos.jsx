@@ -8,7 +8,6 @@ import ContactActions from '@/Components/ContactActions'
 import CatalogHero from '@/Components/Productos/CatalogHero'
 import SeriesIntro from '@/Components/Productos/SeriesIntro'
 import VariantDrawer from '@/Components/Productos/VariantDrawer'
-import ProductCTA from '@/Components/Productos/ProductCTA'
 
 import { catalogoSeries } from '@/Data/catalogoData'
 
@@ -45,7 +44,6 @@ export default function Productos() {
         <SeriesIntro serie={activeSeries} />
 
 
-        <ProductCTA />
       </main>
 
       <VariantDrawer
