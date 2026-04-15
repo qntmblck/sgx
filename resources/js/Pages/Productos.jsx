@@ -8,7 +8,6 @@ import ContactActions from '@/Components/ContactActions'
 import CatalogHero from '@/Components/Productos/CatalogHero'
 import SeriesTabs from '@/Components/Productos/SeriesTabs'
 import SeriesIntro from '@/Components/Productos/SeriesIntro'
-import VariantCards from '@/Components/Productos/VariantCards'
 import VariantDrawer from '@/Components/Productos/VariantDrawer'
 import ProductCTA from '@/Components/Productos/ProductCTA'
 
@@ -54,10 +53,6 @@ export default function Productos() {
 
         <SeriesIntro serie={activeSeries} />
 
-        <VariantCards
-          variantes={activeSeries?.variantes ?? []}
-          onOpen={setOpenVariant}
-        />
 
         <ProductCTA />
       </main>
