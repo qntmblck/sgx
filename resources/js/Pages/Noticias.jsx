@@ -3,43 +3,16 @@ import Header from '@/Components/Header'
 import Footer from '@/Components/Footer'
 import ContactActions from '@/Components/ContactActions'
 import { motion } from 'framer-motion'
-import { Calendar, MapPin, Megaphone, ExternalLink } from 'lucide-react'
+import { Calendar, MapPin } from 'lucide-react'
 
 export default function Noticias() {
-  // Abre el diálogo de WhatsApp del ContactActions (si está presente).
-  // Fallback: abre WhatsApp Web con mensaje prellenado.
-  const handleMoreInfoClick = () => {
-    try {
-      // 1) Intento directo: simular clic en el botón de WhatsApp del ContactActions
-      const waBtn = document.querySelector('button[aria-label="WhatsApp"]')
-      if (waBtn) {
-        waBtn.click()
-        return
-      }
-    } catch (_) {
-      // no-op
-    }
-    // 2) Fallback: abrir WhatsApp Web con el mismo número/mensaje del ContactActions
-    const msg = `Hola SGX, me interesa recibir más información sobre el Seminario PUCV y el ingreso de Ankai a Chile.`
-    window.open(
-      `https://api.whatsapp.com/send?phone=56962365714&text=${encodeURIComponent(msg)}`,
-      '_blank'
-    )
-  }
-
   return (
     <>
       <Head title="SGX · Noticias" />
       <Header />
 
       {/* Hero */}
-      <section
-        className="
-          relative flex items-center justify-center py-20
-          bg-gradient-to-r from-[#003b5c] via-[#005a8d] to-[#00d084]
-          bg-[length:200%] animate-gradient-x overflow-x-hidden
-        "
-      >
+      <section className="relative flex items-center justify-center py-20 bg-gradient-to-r from-[#003b5c] via-[#005a8d] to-[#00d084] bg-[length:200%] animate-gradient-x overflow-x-hidden">
         <div className="absolute inset-0 bg-black/30" />
         <div className="relative z-10 max-w-4xl mx-auto px-6 text-center space-y-4">
           <h1 className="text-4xl sm:text-5xl font-extrabold text-white drop-shadow">
@@ -55,7 +28,7 @@ export default function Noticias() {
       <main className="bg-gray-50">
         <section className="max-w-7xl mx-auto px-6 py-16 space-y-10">
 
-          {/* Nota principal: Seminario PUCV */}
+          {/* Nota principal */}
           <motion.article
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -63,81 +36,65 @@ export default function Noticias() {
             transition={{ duration: 0.6 }}
             className="bg-white rounded-2xl shadow-sm overflow-hidden"
           >
-            <div className="grid grid-cols-1 lg:grid-cols-2">
-              {/* Imagen / banner del evento */}
-              <div className="relative">
-                <img
-                  src="/img/noticias/seminario-pucv.webp"
-                  alt="Seminario en la Pontificia Universidad Católica de Valparaíso"
-                  className="w-full h-72 lg:h-full object-cover"
-                />
-                <span className="
-                  absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-semibold
-                  bg-white/90 text-[#003b5c] shadow
-                ">
-                  Evento
+            <div className="p-6 lg:p-8 space-y-6">
+
+              {/* Título */}
+              <h2 className="text-2xl font-extrabold text-gray-900 leading-snug">
+                Seminario “Valparaíso 2025–2035: Desafíos y Oportunidades para una Movilidad Sustentable”
+              </h2>
+
+              {/* Meta */}
+              <div className="flex flex-wrap items-center gap-4 text-sm text-gray-600">
+                <span className="inline-flex items-center gap-2">
+                  <Calendar size={16} />
+                  Septiembre 2025 · Valparaíso
+                </span>
+                <span className="inline-flex items-center gap-2">
+                  <MapPin size={16} />
+                  Escuela de Ingeniería y Construcción — PUCV
                 </span>
               </div>
 
-              {/* Texto */}
-              <div className="p-6 lg:p-8 space-y-4">
-                <h2 className="text-2xl font-extrabold text-gray-900 leading-snug">
-                  Seminario “Valparaíso 2025–2035: Desafíos y Oportunidades para una Movilidad Sustentable”
-                </h2>
+              {/* Texto principal */}
+              <div className="space-y-4 text-gray-700 leading-relaxed">
+                <p>
+                  El 24 de septiembre de 2025, SGX Chile, en conjunto con la Pontificia Universidad Católica de Valparaíso, organizó el seminario “Valparaíso 2025–2035: Desafíos y Oportunidades para una Movilidad Sustentable”. La actividad abordó distintas visiones en torno a la licitación de las unidades de servicio 1 y 2, así como los principales desafíos de la región para avanzar hacia un sistema de transporte más moderno y eficiente.
+                </p>
 
-                <div className="flex flex-wrap items-center gap-4 text-sm text-gray-600">
-                  <span className="inline-flex items-center gap-2">
-                    <Calendar size={16} />
-                    2025 (PUCV, Valparaíso)
-                  </span>
-                  <span className="inline-flex items-center gap-2">
-                    <MapPin size={16} />
-                    Escuela de Ingeniería de Construcción y Transporte — PUCV
-                  </span>
-                </div>
-
-                <p className="text-gray-700 leading-relaxed">
-                  La <strong>Pontificia Universidad Católica de Valparaíso (PUCV)</strong> y <strong>SGX Chile SpA</strong> —representante de <strong>Ankai</strong>— realizaron
-                  un seminario para abordar cómo la región puede acelerar la transición hacia una <em>movilidad más limpia, segura y eficiente</em>.
-                  La jornada reunió a academia y sector privado para analizar tendencias y buenas prácticas que permitan preparar a Valparaíso
-                  para la próxima década.
+                <p>
+                  La jornada contó con la ponencia del Dr. Stefan Steiniger, Director del Magíster en Ingeniería en Transporte de la PUCV, y con la exposición de Sebastián Gatica, Director de SGX Chile. En este contexto, se analizaron temas clave para la transición del sistema de transporte regional:
                 </p>
 
                 <div className="bg-gray-50 rounded-xl p-4">
-                  <h3 className="text-sm font-bold text-gray-900 uppercase tracking-wide mb-2">Temas destacados</h3>
-                  <ul className="list-disc list-inside text-gray-700 space-y-1">
-                    <li>Infraestructura eléctrica y vial para flotas sostenibles.</li>
-                    <li>Calidad del servicio y experiencia de las personas usuarias.</li>
-                    <li>Tecnología, operación y adaptación territorial.</li>
-                    <li>Panel de conversación con expertos del sector.</li>
+                  <ul className="list-disc list-inside space-y-1">
+                    <li>Desafíos de la planificación de la red de transporte regional</li>
+                    <li>Eficiencia energética y efectos de la geografía en la operación eléctrica</li>
+                    <li>Pendientes máximas y longitudes de viaje</li>
+                    <li>Telemetría y gestión de flota</li>
+                    <li>Formación de capital humano y profesionalización de conductores</li>
+                    <li>Cadena de valor: operadores, autoridades, proveedores e instituciones</li>
                   </ul>
                 </div>
 
-                <p className="text-gray-700 leading-relaxed">
-                  Para el público general, el mensaje es claro: <strong>Ankai</strong> es sinónimo de innovación con respaldo real.
-                  Aporta buses de nueva energía con foco en seguridad, confort y eficiencia, y suma la experiencia industrial necesaria
-                  para acompañar procesos de transformación del transporte. En Chile, SGX impulsa este aterrizaje con actividades abiertas
-                  y contenidos formativos que conectan la tecnología con el día a día de las ciudades.
+                <p>
+                  El seminario concluyó con un panel de conversación que reunió a representantes del sector público y privado, destacando la participación de Mariano Pola (Grupo Micrológica), la Senadora Camila Flores —Presidenta de la Comisión de Transportes y Telecomunicaciones del Senado— y Manuel Millones, Delegado Presidencial Regional de Valparaíso.
                 </p>
 
-                {/* CTA único: abre el diálogo de WhatsApp del ContactActions */}
-                <div className="pt-2">
-                  <button
-                    type="button"
-                    onClick={handleMoreInfoClick}
-                    className="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-white bg-[#005a8d] hover:bg-[#00466e] transition shadow"
-                    aria-label="Más información del seminario"
-                  >
-                    <Megaphone size={18} />
-                    Más información
-                    <ExternalLink size={16} className="opacity-80" />
-                  </button>
-                </div>
+                <p>
+                  La instancia permitió abordar, desde distintas perspectivas, los principales desafíos técnicos y operacionales que enfrenta la región en esta etapa de transición. Asimismo, se generó un espacio de intercambio entre autoridades, expertos en transporte, SGX Chile —desde la perspectiva de la provisión de buses aptos para las condiciones de pendiente— y operadores de transporte de las regiones de Valparaíso, Santiago y Coquimbo.
+                </p>
               </div>
+
+              {/* Galería */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                <img src="/img/noticias/S1.jpeg" className="rounded-xl object-cover w-full h-56" />
+                <img src="/img/noticias/S2.jpeg" className="rounded-xl object-cover w-full h-56" />
+                <img src="/img/noticias/S3.jpeg" className="rounded-xl object-cover w-full h-56" />
+                <img src="/img/noticias/S4.jpeg" className="rounded-xl object-cover w-full h-56" />
+              </div>
+
             </div>
           </motion.article>
-
-
 
         </section>
       </main>
