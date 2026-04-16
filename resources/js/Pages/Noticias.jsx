@@ -87,10 +87,10 @@ export default function Noticias() {
 
               {/* Galería */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-                <img src="/img/noticias/S1.jpeg" className="rounded-xl object-cover w-full h-56" />
-                <img src="/img/noticias/S2.jpeg" className="rounded-xl object-cover w-full h-56" />
-                <img src="/img/noticias/S3.jpeg" className="rounded-xl object-cover w-full h-56" />
-                <img src="/img/noticias/S4.jpeg" className="rounded-xl object-cover w-full h-56" />
+                <img src="/img/noticias/S1.webp" className="rounded-xl object-cover w-full h-56" />
+                <img src="/img/noticias/S2.webp" className="rounded-xl object-cover w-full h-56" />
+                <img src="/img/noticias/S3.webp" className="rounded-xl object-cover w-full h-56" />
+                <img src="/img/noticias/S4.webp" className="rounded-xl object-cover w-full h-56" />
               </div>
 
             </div>
