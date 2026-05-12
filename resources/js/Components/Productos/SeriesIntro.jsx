@@ -520,7 +520,7 @@ export default function SeriesIntro({ serie }) {
 
   return (
     <section className="bg-gray-50">
-      <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16">
+      <div className="mx-auto max-w-7xl px-4 pt-6 pb-12 sm:px-6 sm:pt-8 sm:pb-16">
         <div className="rounded-[2rem] border border-slate-200 bg-white p-5 shadow-sm sm:p-8">
           <SeriesTabs activeSeriesId={activeSeriesId} onChange={setActiveSeriesId} />
 

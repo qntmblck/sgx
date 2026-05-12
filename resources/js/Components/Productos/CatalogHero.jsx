@@ -6,7 +6,7 @@ export default function CatalogHero() {
     >
       <div className="absolute inset-0 bg-slate-950/60" />
 
-      <div className="relative z-10 mx-auto max-w-7xl px-4 pt-24 pb-14 text-white sm:px-6 sm:pt-28 sm:pb-20">
+      <div className="relative z-10 mx-auto max-w-7xl px-4 pt-24 pb-8 text-white sm:px-6 sm:pt-28 sm:pb-10">
         <div className="max-w-4xl">
           <span className="inline-flex rounded-full border border-white/20 bg-white/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.25em] text-white/80 backdrop-blur-sm">
             SGX Chile · Catálogo 2026

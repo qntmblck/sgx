@@ -7,7 +7,7 @@ import { useRef, useState } from 'react'
 
 const WaveSeparator = () => (
   <div className="-mt-1">
-    <svg viewBox="0 0 1200 100" preserveAspectRatio="none" className="h-8 w-full">
+    <svg viewBox="0 0 1200 100" preserveAspectRatio="none" className="h-4 w-full">
       <path d="M0,0 C600,100 600,100 1200,0 L1200,100 L0,100 Z" fill="rgb(249 250 251)" />
     </svg>
   </div>
@@ -534,7 +534,7 @@ const breadcrumbSchema = {
 const Hero = () => (
   <section
     id="tecnologia-hero"
-    className="relative flex items-center justify-center overflow-hidden bg-cover bg-center py-20 sm:py-24"
+    className="relative flex items-center justify-center overflow-hidden bg-cover bg-center py-16 sm:py-20"
     style={{ backgroundImage: "url('/img/productos.webp')" }}
   >
     <div className="absolute inset-0 bg-slate-950/60" />
@@ -581,7 +581,7 @@ const TabsScroller = ({ children }) => {
   }
 
   return (
-    <div className="relative mb-8">
+    <div className="relative mx-auto mb-7 max-w-3xl">
       <button
         type="button"
         onClick={() => scroll(-1)}
@@ -593,7 +593,7 @@ const TabsScroller = ({ children }) => {
 
       <div
         ref={scrollRef}
-        className="overflow-x-auto px-1 pb-3 sm:px-12 [&::-webkit-scrollbar]:h-2 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-slate-300 [&::-webkit-scrollbar-track]:rounded-full [&::-webkit-scrollbar-track]:bg-slate-100"
+        className="overflow-x-auto px-1 pb-3 [scrollbar-color:#cbd5e1_#f1f5f9] [scrollbar-width:thin] sm:px-12 [&::-webkit-scrollbar]:h-2 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-slate-300 [&::-webkit-scrollbar-track]:rounded-full [&::-webkit-scrollbar-track]:bg-slate-100"
       >
         <div className="flex min-w-max gap-3">{children}</div>
       </div>
@@ -738,7 +738,7 @@ export default function Tecnologia() {
         <WaveSeparator />
 
         <main className="bg-gray-50">
-          <section className="mx-auto max-w-7xl px-4 pt-6 pb-12 sm:px-6 sm:pt-8 sm:pb-16">
+          <section className="mx-auto max-w-7xl px-4 pt-4 pb-12 sm:px-6 sm:pt-5 sm:pb-16">
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
