@@ -30,19 +30,17 @@ export default function Innovacion() {
       <Head title="SGX · Innovación" />
       <Header />
 
-      {/* Hero animado con gradiente */}
       <section
         id="innovacion-hero"
-        className="relative flex items-center justify-center py-24
-          bg-gradient-to-r from-[#003b5c] via-[#005a8d] to-[#00d084]
-          bg-[length:200%] animate-gradient-x overflow-x-hidden"
+        className="relative flex items-center justify-center overflow-hidden bg-cover bg-center py-24 sm:py-28"
+        style={{ backgroundImage: "url('/img/productos.webp')" }}
       >
-        <div className="absolute inset-0 bg-black/40" />
-        <div className="relative z-10 max-w-3xl mx-auto px-6 text-center space-y-4">
-          <h1 className="text-4xl sm:text-5xl font-extrabold text-white drop-shadow-lg">
+        <div className="absolute inset-0 bg-slate-950/60" />
+        <div className="relative z-10 mx-auto flex max-w-5xl flex-col items-center px-6 text-center">
+          <h1 className="max-w-4xl text-3xl font-extrabold tracking-tight text-white drop-shadow-lg sm:text-5xl">
             Innovación & Futuro
           </h1>
-          <p className="text-lg text-white/90 leading-relaxed">
+          <p className="mt-5 max-w-3xl text-base leading-7 text-white/90 sm:text-lg">
             Más allá de la tecnología, diseñamos ecosistemas y servicios que garantizan
             seguridad, eficiencia y sostenibilidad en cada etapa del ciclo de vida.
           </p>
@@ -52,7 +50,8 @@ export default function Innovacion() {
       <WaveSeparator />
 
       <main className="bg-gray-50">
-        <section className="max-w-7xl mx-auto px-6 py-16 space-y-16">
+        <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16">
+          <div className="rounded-[2rem] border border-slate-200 bg-white p-5 shadow-sm sm:p-8 space-y-12">
 
           {/* I+D y Ecosistema de Investigación */}
           <motion.div
@@ -60,7 +59,7 @@ export default function Innovacion() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="space-y-6"
+            className="space-y-5 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm"
           >
             <h2 className="text-2xl font-extrabold text-gray-900">
               Ecosistema de I+D y Colaboraciones
@@ -72,15 +71,15 @@ export default function Innovacion() {
             </p>
             <ul className="list-disc list-inside text-gray-700 space-y-2">
               <li>
-                <Database size={20} className="inline-block mr-2 text-[#005a8d]" />
+                <Database size={20} className="inline-block mr-2 text-red-700" />
                 Laboratorios de tren motriz, baterías, EMC, desempeño y durabilidad.
               </li>
               <li>
-                <Cloud size={20} className="inline-block mr-2 text-[#005a8d]" />
+                <Cloud size={20} className="inline-block mr-2 text-red-700" />
                 Simulación en la nube y gemelo digital para validar en rutas reales.
               </li>
               <li>
-                <Cpu size={20} className="inline-block mr-2 text-[#005a8d]" />
+                <Cpu size={20} className="inline-block mr-2 text-red-700" />
                 Modelos de simulación avanzada (elementos finitos, análisis térmico y vibracional)
                 para optimizar diseño y mantenimiento.
               </li>
@@ -95,7 +94,7 @@ export default function Innovacion() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="space-y-6"
+            className="space-y-5 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm"
           >
             <h2 className="text-2xl font-extrabold text-gray-900">
               Conectividad y Gestión Inteligente de Flotas
@@ -106,11 +105,11 @@ export default function Innovacion() {
             </p>
             <ul className="list-disc list-inside text-gray-700 space-y-2">
               <li>
-                <Cloud size={20} className="inline-block mr-2 text-[#005a8d]" />
+                <Cloud size={20} className="inline-block mr-2 text-red-700" />
                 Dashboard con KPIs en tiempo real: consumo, disponibilidad, alertas y cumplimiento de rutas.
               </li>
               <li>
-                <Users size={20} className="inline-block mr-2 text-[#005a8d]" />
+                <Users size={20} className="inline-block mr-2 text-red-700" />
                 Apps móviles para conductores y gestores con notificaciones, checklists y asistencia en ruta.
               </li>
             </ul>
@@ -124,7 +123,7 @@ export default function Innovacion() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="space-y-6"
+            className="space-y-5 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm"
           >
             <h2 className="text-2xl font-extrabold text-gray-900">
               Movilidad Autónoma & Energías Limpias
@@ -135,13 +134,13 @@ export default function Innovacion() {
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <div className="flex items-start space-x-3">
-                <Zap size={24} className="text-[#005a8d]" />
+                <Zap size={24} className="text-red-700" />
                 <span className="text-gray-700">
                   Operaciones piloto en entornos urbanos y suburbanos controlados.
                 </span>
               </div>
               <div className="flex items-start space-x-3">
-                <Infinity size={24} className="text-[#005a8d]" />
+                <Infinity size={24} className="text-red-700" />
                 <span className="text-gray-700">
                   Prototipos de hidrógeno en evaluación para ampliar autonomía y reducir tiempos de recarga.
                 </span>
@@ -157,7 +156,7 @@ export default function Innovacion() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="space-y-6"
+            className="space-y-5 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm"
           >
             <h2 className="text-2xl font-extrabold text-gray-900">
               Servicio Postventa & Mantenimiento Predictivo
@@ -168,11 +167,11 @@ export default function Innovacion() {
             </p>
             <ul className="list-disc list-inside text-gray-700 space-y-2">
               <li>
-                <ShieldCheck size={20} className="inline-block mr-2 text-[#005a8d]" />
+                <ShieldCheck size={20} className="inline-block mr-2 text-red-700" />
                 Alertas automáticas y disparadores de intervención programada para maximizar disponibilidad.
               </li>
               <li>
-                <Globe size={20} className="inline-block mr-2 text-[#005a8d]" />
+                <Globe size={20} className="inline-block mr-2 text-red-700" />
                 Red global de centros de servicio y repuestos con cobertura expedita.
               </li>
             </ul>
@@ -186,7 +185,7 @@ export default function Innovacion() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.35 }}
-            className="space-y-6"
+            className="space-y-5 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm"
           >
             <h2 className="text-2xl font-extrabold text-gray-900">
               Seguridad, Robustez & Estándares
@@ -209,13 +208,13 @@ export default function Innovacion() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="space-y-6"
+            className="space-y-5 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm"
           >
             <h2 className="text-2xl font-extrabold text-gray-900">
               Patentes & Estándares
             </h2>
             <div className="flex items-start space-x-3">
-              <Award size={24} className="text-[#005a8d]" />
+              <Award size={24} className="text-red-700" />
               <p className="text-gray-700 leading-relaxed">
                 Liderazgo histórico en innovación aplicada a buses de nueva energía, con centros nacionales
                 de I+D e integración de sistemas que han marcado hitos técnicos en la industria.
@@ -231,7 +230,7 @@ export default function Innovacion() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.5 }}
-            className="text-center space-y-4 bg-white/20 backdrop-blur-lg rounded-2xl p-8 shadow-md"
+            className="rounded-3xl border border-red-200 bg-red-50 p-8 text-center shadow-sm space-y-4"
           >
             <h2 className="text-2xl font-extrabold text-gray-900">
               Elevemos tu Flota al Futuro
@@ -241,7 +240,7 @@ export default function Innovacion() {
               eficiencia, seguridad y sostenibilidad en cada kilómetro de tu operación.
             </p>
           </motion.div>
-
+          </div>
         </section>
       </main>
 

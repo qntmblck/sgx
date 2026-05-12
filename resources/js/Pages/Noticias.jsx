@@ -12,13 +12,16 @@ export default function Noticias() {
       <Header />
 
       {/* Hero */}
-      <section className="relative flex items-center justify-center py-20 bg-gradient-to-r from-[#003b5c] via-[#005a8d] to-[#00d084] bg-[length:200%] animate-gradient-x overflow-x-hidden">
-        <div className="absolute inset-0 bg-black/30" />
-        <div className="relative z-10 max-w-4xl mx-auto px-6 text-center space-y-4">
-          <h1 className="text-4xl sm:text-5xl font-extrabold text-white drop-shadow">
+      <section
+        className="relative flex items-center justify-center overflow-hidden bg-cover bg-center py-24 sm:py-28"
+        style={{ backgroundImage: "url('/img/productos.webp')" }}
+      >
+        <div className="absolute inset-0 bg-slate-950/60" />
+        <div className="relative z-10 mx-auto flex max-w-5xl flex-col items-center px-6 text-center">
+          <h1 className="max-w-4xl text-3xl font-extrabold tracking-tight text-white drop-shadow-lg sm:text-5xl">
             Noticias & Actualidad
           </h1>
-          <p className="text-white/90">
+          <p className="mt-5 max-w-3xl text-base leading-7 text-white/90 sm:text-lg">
             Noticias, actividades e hitos de SGX Chile & Ankai Bus.
           </p>
         </div>
@@ -26,7 +29,7 @@ export default function Noticias() {
 
       {/* Contenido */}
       <main className="bg-gray-50">
-        <section className="max-w-7xl mx-auto px-6 py-16 space-y-10">
+        <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16">
 
           {/* Nota principal */}
           <motion.article
@@ -34,17 +37,17 @@ export default function Noticias() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="bg-white rounded-2xl shadow-sm overflow-hidden"
+            className="overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-sm"
           >
             <div className="p-6 lg:p-8 space-y-6">
 
               {/* Título */}
-              <h2 className="text-2xl font-extrabold text-gray-900 leading-snug">
+              <h2 className="text-2xl font-extrabold leading-snug text-slate-900 sm:text-3xl">
                 Seminario “Valparaíso 2025–2035: Desafíos y Oportunidades para una Movilidad Sustentable”
               </h2>
 
               {/* Meta */}
-              <div className="flex flex-wrap items-center gap-4 text-sm text-gray-600">
+              <div className="flex flex-wrap items-center gap-4 text-sm font-semibold text-red-800">
                 <span className="inline-flex items-center gap-2">
                   <Calendar size={16} />
                   Septiembre 2025 · Valparaíso
@@ -56,7 +59,7 @@ export default function Noticias() {
               </div>
 
               {/* Texto principal */}
-              <div className="space-y-4 text-gray-700 leading-relaxed">
+              <div className="space-y-4 text-[17px] leading-8 text-slate-700">
                 <p>
                   El 24 de septiembre de 2025, SGX Chile, en conjunto con la Pontificia Universidad Católica de Valparaíso, organizó el seminario “Valparaíso 2025–2035: Desafíos y Oportunidades para una Movilidad Sustentable”. La actividad abordó distintas visiones en torno a la licitación de las unidades de servicio 1 y 2, así como los principales desafíos de la región para avanzar hacia un sistema de transporte más moderno y eficiente.
                 </p>
@@ -65,8 +68,8 @@ export default function Noticias() {
                   La jornada contó con la ponencia del Dr. Stefan Steiniger, Director del Magíster en Ingeniería en Transporte de la PUCV, y con la exposición de Sebastián Gatica, Director de SGX Chile. En este contexto, se analizaron temas clave para la transición del sistema de transporte regional:
                 </p>
 
-                <div className="bg-gray-50 rounded-xl p-4">
-                  <ul className="list-disc list-inside space-y-1">
+                <div className="rounded-3xl border border-slate-200 bg-slate-50 p-5">
+                  <ul className="list-disc space-y-2 pl-6 marker:text-red-700">
                     <li>Desafíos de la planificación de la red de transporte regional</li>
                     <li>Eficiencia energética y efectos de la geografía en la operación eléctrica</li>
                     <li>Pendientes máximas y longitudes de viaje</li>
@@ -87,10 +90,10 @@ export default function Noticias() {
 
               {/* Galería */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-                <img src="/img/noticias/S1.webp" className="rounded-xl object-cover w-full h-56" />
-                <img src="/img/noticias/S2.webp" className="rounded-xl object-cover w-full h-56" />
-                <img src="/img/noticias/S3.webp" className="rounded-xl object-cover w-full h-56" />
-                <img src="/img/noticias/S4.webp" className="rounded-xl object-cover w-full h-56" />
+                <img src="/img/noticias/S1.webp" className="h-56 w-full rounded-3xl border border-slate-200 object-cover" />
+                <img src="/img/noticias/S2.webp" className="h-56 w-full rounded-3xl border border-slate-200 object-cover" />
+                <img src="/img/noticias/S3.webp" className="h-56 w-full rounded-3xl border border-slate-200 object-cover" />
+                <img src="/img/noticias/S4.webp" className="h-56 w-full rounded-3xl border border-slate-200 object-cover" />
               </div>
 
             </div>

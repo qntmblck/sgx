@@ -39,7 +39,7 @@ export default function HeroSection() {
       "
       style={{ backgroundImage: 'url(/img/hero.webp?v=2)' }}
     >
-      <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/60" />
+      <div className="absolute inset-0 bg-slate-950/65" />
 
       <div
         className="
@@ -57,7 +57,7 @@ export default function HeroSection() {
           "
         >
           Representantes de{' '}
-          <span className="text-[#e63946]">
+          <span className="text-red-400">
             Anhui Ankai Automobile Co. Ltd.
           </span>{' '}
           en Chile
@@ -66,7 +66,7 @@ export default function HeroSection() {
         <p
           className="
             text-sm sm:text-lg md:text-xl
-            text-gray-100 bg-black/30 px-3 py-1 rounded-md inline-block
+            text-gray-100 bg-white/10 border border-white/15 px-4 py-2 rounded-full inline-block backdrop-blur-sm
           "
         >
           Impulsando una movilidad sustentable y de alto estándar.
@@ -82,10 +82,10 @@ export default function HeroSection() {
               key={label}
               className="
                 flex-1 min-w-0
-                bg-white/10 backdrop-blur-sm
-                rounded-lg p-4 sm:p-6
+                border border-white/15 bg-white/10 backdrop-blur-sm
+                rounded-3xl p-4 sm:p-6
                 flex flex-col items-center
-                transition-transform hover:scale-105
+                shadow-sm transition-transform hover:-translate-y-1
               "
             >
               <div className="text-2xl sm:text-4xl font-bold text-white">

@@ -36,14 +36,14 @@ export default function Header() {
   }
 
   const linkBaseClasses =
-    'inline-flex items-center rounded-lg px-4 py-2 text-sm font-semibold transition-all duration-200'
+    'inline-flex items-center rounded-full border px-4 py-2 text-sm font-semibold transition-all duration-200'
 
   const renderNavItem = (item, isMobile = false) => {
     const isActive = isActivePath(item.href)
 
     const classes = isActive
-      ? `${linkBaseClasses} bg-gradient-to-r from-[#00795f] to-[#00b894] text-white shadow-sm`
-      : `${linkBaseClasses} text-slate-700 hover:text-[#00795f] hover:bg-slate-100`
+      ? `${linkBaseClasses} border-red-700 bg-red-700 text-white shadow-md shadow-red-700/20`
+      : `${linkBaseClasses} border-transparent text-slate-700 hover:border-red-200 hover:bg-white hover:text-red-700`
 
     return (
       <Link
@@ -80,7 +80,7 @@ export default function Header() {
 
         <button
           type="button"
-          className="inline-flex items-center justify-center rounded-lg p-2 text-slate-700 transition hover:bg-slate-100 hover:text-[#00795f] md:hidden"
+          className="inline-flex items-center justify-center rounded-full border border-slate-200 p-2 text-slate-700 transition hover:border-red-200 hover:bg-red-50 hover:text-red-700 md:hidden"
           onClick={() => setMobileMenuOpen((prev) => !prev)}
           aria-label={mobileMenuOpen ? 'Cerrar menú' : 'Abrir menú'}
           aria-expanded={mobileMenuOpen}

@@ -364,8 +364,8 @@ function AlbumViewer({ images, altBase }) {
                 className={[
                   'relative h-20 w-28 shrink-0 overflow-hidden rounded-2xl border transition',
                   active
-                    ? 'border-[#005a8d] ring-2 ring-[#005a8d]/20'
-                    : 'border-slate-200 hover:border-slate-300',
+                    ? 'border-red-700 ring-2 ring-red-700/20'
+                    : 'border-slate-200 hover:border-red-200',
                 ].join(' ')}
                 aria-label={`Ver imagen ${index + 1}`}
               >
@@ -404,8 +404,8 @@ function SeriesTabs({ activeSeriesId, onChange }) {
               className={[
                 'whitespace-nowrap rounded-full px-5 py-2.5 text-sm font-semibold transition',
                 active
-                  ? 'bg-[#005a8d] text-white shadow'
-                  : 'border border-slate-200 bg-white text-slate-700 hover:bg-slate-100',
+                  ? 'border border-red-700 bg-red-700 text-white shadow-md shadow-red-700/20'
+                  : 'border border-slate-200 bg-white text-slate-700 hover:border-red-200 hover:text-red-700',
               ].join(' ')}
             >
               {tab.label}
@@ -429,9 +429,9 @@ function SpecTabs({ specs, serieLabel }) {
   if (!specs?.length) return null
 
   return (
-    <div className="mt-10 rounded-3xl border border-slate-200 bg-slate-50 p-5 sm:p-6">
+    <div className="mt-10 rounded-[2rem] border border-slate-200 bg-slate-50 p-5 sm:p-6">
       <div className="mb-5">
-        <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#005a8d]">
+        <p className="text-sm font-semibold uppercase tracking-[0.18em] text-red-700">
           {serieLabel} · Configuraciones técnicas
         </p>
         <h3 className="mt-2 text-2xl font-extrabold text-slate-900 sm:text-3xl">
@@ -452,8 +452,8 @@ function SpecTabs({ specs, serieLabel }) {
                 className={[
                   'whitespace-nowrap rounded-full px-4 py-2 text-sm font-semibold transition',
                   active
-                    ? 'bg-[#005a8d] text-white shadow'
-                    : 'border border-slate-200 bg-white text-slate-700 hover:bg-slate-100',
+                    ? 'border border-red-700 bg-red-700 text-white shadow-md shadow-red-700/20'
+                    : 'border border-slate-200 bg-white text-slate-700 hover:border-red-200 hover:text-red-700',
                 ].join(' ')}
               >
                 {item.label}
@@ -470,7 +470,7 @@ function SpecTabs({ specs, serieLabel }) {
 
         <dl className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-2">
           {activeSpec.items.map(([label, value]) => (
-            <div key={label} className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
+            <div key={label} className="rounded-3xl border border-slate-200 bg-slate-50 p-4">
               <dt className="text-sm font-bold uppercase tracking-wide text-slate-900">
                 {label}
               </dt>
@@ -519,48 +519,50 @@ export default function SeriesIntro({ serie }) {
   if (!serie && !activeSeries) return null
 
   return (
-    <section className="bg-white">
-      <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6">
-        <SeriesTabs activeSeriesId={activeSeriesId} onChange={setActiveSeriesId} />
+    <section className="bg-gray-50">
+      <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16">
+        <div className="rounded-[2rem] border border-slate-200 bg-white p-5 shadow-sm sm:p-8">
+          <SeriesTabs activeSeriesId={activeSeriesId} onChange={setActiveSeriesId} />
 
-        <div className="grid grid-cols-1 gap-10 lg:grid-cols-2 lg:items-start">
-          <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#005a8d]">
-              {activeSeries.nombre}
-            </p>
-
-            <h2 className="mt-3 text-3xl font-extrabold leading-tight text-slate-900 sm:text-4xl">
-              {activeSeries.subtitulo}
-            </h2>
-
-            <p className="mt-5 text-slate-600 leading-relaxed">
-              {activeSeries.descripcion}
-            </p>
-
-            {activeSeries.descripcionExtra && (
-              <p className="mt-4 text-slate-600 leading-relaxed">
-                {activeSeries.descripcionExtra}
+          <div className="grid grid-cols-1 gap-10 lg:grid-cols-2 lg:items-start">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-red-700">
+                {activeSeries.nombre}
               </p>
-            )}
 
-            {activeSeries.highlights?.length > 0 && (
-              <div className="mt-6 flex flex-wrap gap-2">
-                {activeSeries.highlights.map((item) => (
-                  <span
-                    key={item}
-                    className="rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-700"
-                  >
-                    {item}
-                  </span>
-                ))}
-              </div>
-            )}
+              <h2 className="mt-3 text-3xl font-extrabold leading-tight text-slate-900 sm:text-4xl">
+                {activeSeries.subtitulo}
+              </h2>
+
+              <p className="mt-5 text-slate-600 leading-relaxed">
+                {activeSeries.descripcion}
+              </p>
+
+              {activeSeries.descripcionExtra && (
+                <p className="mt-4 text-slate-600 leading-relaxed">
+                  {activeSeries.descripcionExtra}
+                </p>
+              )}
+
+              {activeSeries.highlights?.length > 0 && (
+                <div className="mt-6 flex flex-wrap gap-2">
+                  {activeSeries.highlights.map((item) => (
+                    <span
+                      key={item}
+                      className="rounded-full border border-red-200 bg-red-50 px-3 py-1 text-xs font-semibold text-red-800"
+                    >
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            <AlbumViewer images={albumImages} altBase={activeSeries.nombre} />
           </div>
 
-          <AlbumViewer images={albumImages} altBase={activeSeries.nombre} />
+          <SpecTabs specs={activeSpecs} serieLabel={activeSeries.nombre} />
         </div>
-
-        <SpecTabs specs={activeSpecs} serieLabel={activeSeries.nombre} />
       </div>
     </section>
   )

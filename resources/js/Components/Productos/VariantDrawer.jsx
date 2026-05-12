@@ -22,12 +22,12 @@ export default function VariantDrawer({ item, onClose }) {
             animate={{ x: 0 }}
             exit={{ x: '100%' }}
             transition={{ type: 'tween', duration: 0.25 }}
-            className="absolute right-0 top-0 h-dvh w-full max-w-2xl overflow-y-auto bg-white shadow-2xl"
+            className="absolute right-0 top-0 h-dvh w-full max-w-2xl overflow-y-auto bg-gray-50 shadow-2xl"
           >
             <div className="p-5 sm:p-6">
               <div className="flex items-start justify-between gap-4">
                 <div>
-                  <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#005a8d]">
+                  <p className="text-sm font-semibold uppercase tracking-[0.18em] text-red-700">
                     {item.categoria}
                   </p>
                   <h3 className="mt-2 text-2xl sm:text-3xl font-extrabold text-slate-900">
@@ -59,7 +59,7 @@ export default function VariantDrawer({ item, onClose }) {
               </div>
 
               <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
-                <div className="rounded-2xl bg-slate-50 p-4">
+                <div className="rounded-3xl border border-slate-200 bg-white p-4 shadow-sm">
                   <h4 className="text-sm font-bold text-slate-900">Datos base</h4>
                   <ul className="mt-3 space-y-2 text-sm text-slate-700">
                     <li className="flex items-center gap-2">
@@ -77,7 +77,7 @@ export default function VariantDrawer({ item, onClose }) {
                   </ul>
                 </div>
 
-                <div className="rounded-2xl bg-slate-50 p-4">
+                <div className="rounded-3xl border border-slate-200 bg-white p-4 shadow-sm">
                   <h4 className="text-sm font-bold text-slate-900">Destacados</h4>
                   <ul className="mt-3 space-y-2 text-sm text-slate-700">
                     {item.destacados?.map((text) => (
@@ -89,7 +89,7 @@ export default function VariantDrawer({ item, onClose }) {
                   </ul>
                 </div>
 
-                <div className="rounded-2xl bg-slate-50 p-4 sm:col-span-2">
+                <div className="rounded-3xl border border-slate-200 bg-white p-4 shadow-sm sm:col-span-2">
                   <h4 className="text-sm font-bold text-slate-900">Especificaciones y enfoque</h4>
                   <ul className="mt-3 grid grid-cols-1 gap-2 sm:grid-cols-2 text-sm text-slate-700">
                     {item.especificaciones?.map((text) => (
@@ -102,7 +102,7 @@ export default function VariantDrawer({ item, onClose }) {
                 </div>
               </div>
 
-              <div className="mt-8 rounded-2xl border border-slate-200 bg-white p-4">
+              <div className="mt-8 rounded-3xl border border-slate-200 bg-white p-4 shadow-sm">
                 <p className="text-sm text-slate-600 leading-relaxed">
                   Para una propuesta técnica y comercial ajustada a la operación, configuración y condiciones
                   de servicio, contáctanos directamente y evaluamos la alternativa más adecuada para tu flota.
@@ -111,13 +111,13 @@ export default function VariantDrawer({ item, onClose }) {
                 <div className="mt-4 flex flex-wrap gap-3">
                   <button
                     type="button"
-                    className="rounded-xl bg-[#005a8d] px-4 py-2 text-sm font-semibold text-white hover:bg-[#00466e]"
+                    className="rounded-full bg-red-700 px-4 py-2 text-sm font-semibold text-white transition hover:bg-red-800"
                   >
                     Solicitar información
                   </button>
                   <button
                     type="button"
-                    className="rounded-xl border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-50"
+                    className="rounded-full border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-700 transition hover:border-red-200 hover:text-red-700"
                   >
                     Hablar con SGX
                   </button>

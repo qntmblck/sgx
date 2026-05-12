@@ -42,9 +42,9 @@ export default function ContactActions() {
     <div className="fixed bottom-24 right-2 flex flex-col items-center z-50 pointer-events-none">
       {/* Email dialog */}
       {showEmailForm && (
-        <div className="absolute bottom-20 right-20 w-56 bg-white rounded-lg shadow-lg p-4 text-sm text-gray-800 pointer-events-auto">
+          <div className="absolute bottom-20 right-20 w-56 rounded-3xl border border-slate-200 bg-white p-4 text-sm text-slate-800 shadow-lg pointer-events-auto">
           <div className="flex items-center justify-between mb-2">
-            <Mail className="w-5 h-5 text-blue-600" />
+            <Mail className="w-5 h-5 text-red-700" />
             <button onClick={() => setShowEmailForm(false)}>
               <XIcon className="w-5 h-5 text-gray-500" />
             </button>
@@ -58,7 +58,7 @@ export default function ContactActions() {
             />
             <button
               type="submit"
-              className="w-full bg-[#1a73e8] text-white py-1 rounded text-sm"
+              className="w-full rounded-full bg-red-700 py-2 text-sm font-semibold text-white transition hover:bg-red-800"
             >
               Enviar
             </button>
@@ -68,7 +68,7 @@ export default function ContactActions() {
 
       {/* WhatsApp dialog */}
       {showWhatsAppForm && (
-        <div className="absolute bottom-20 right-20 w-56 bg-white rounded-lg shadow-lg p-4 text-sm text-gray-800 pointer-events-auto">
+          <div className="absolute bottom-20 right-20 w-56 rounded-3xl border border-slate-200 bg-white p-4 text-sm text-slate-800 shadow-lg pointer-events-auto">
           <div className="flex items-center justify-between mb-2">
             {/* FontAwesome WhatsApp icon */}
             <i className="fa-brands fa-whatsapp w-5 h-5 text-green-500" />
@@ -105,7 +105,7 @@ export default function ContactActions() {
         {/* Call */}
         <a
           href="tel:+56962365714"
-          className="w-12 h-12 bg-[#005c47] text-white rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform"
+          className="w-12 h-12 bg-slate-900 text-white rounded-full flex items-center justify-center shadow-lg transition-transform hover:-translate-y-1"
           aria-label="Llamar"
         >
           <PhoneCall className="w-6 h-6" />
@@ -117,7 +117,7 @@ export default function ContactActions() {
             setShowEmailForm(o => !o)
             setShowWhatsAppForm(false)
           }}
-          className="w-12 h-12 bg-[#1a73e8] text-white rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform"
+          className="w-12 h-12 bg-red-700 text-white rounded-full flex items-center justify-center shadow-lg transition-transform hover:-translate-y-1"
           aria-label="Email"
         >
           <Mail className="w-6 h-6" />
@@ -141,13 +141,12 @@ export default function ContactActions() {
         onClick={toggleMenu}
         className="
           w-8 h-8
-          bg-white/40 backdrop-blur-md
-          hover:bg-white/70
-          text-[#111827]
+          border border-slate-200 bg-white/90 backdrop-blur-md
+          hover:bg-red-50
+          text-slate-900 hover:text-red-700
           rounded-full
           flex items-center justify-center
           shadow-2xl
-          border-2 border-white/50
           transition-all duration-200
           active:scale-95
           pointer-events-auto
