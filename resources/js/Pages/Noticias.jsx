@@ -31,13 +31,80 @@ export default function Noticias() {
       <main className="bg-gray-50">
         <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16">
 
-          {/* Nota principal */}
           <motion.article
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
             className="overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-sm"
+          >
+            <div className="space-y-6 p-6 lg:p-8">
+              <h2 className="text-2xl font-extrabold leading-snug text-slate-900 sm:text-3xl">
+                Viaje de Validación Técnica en Brasil junto a Operadores de Transporte de Pasajeros
+              </h2>
+
+              <div className="flex flex-wrap items-center gap-4 text-sm font-semibold text-red-800">
+                <span className="inline-flex items-center gap-2">
+                  <Calendar size={16} />
+                  Noviembre 2025
+                </span>
+                <span className="inline-flex items-center gap-2">
+                  <MapPin size={16} />
+                  São Paulo, Brasil
+                </span>
+              </div>
+
+              <div className="space-y-4 text-[17px] leading-8 text-slate-700">
+                <p>
+                  Posterior al seminario organizado entre SGX Chile y la Escuela de Ingeniería de la Pontificia Universidad Católica de Valparaíso (PUCV), nuestra empresa coordinó un viaje de validación técnica a São Paulo, Brasil, junto a operadores de transporte público urbano e interurbano de Chile, con el objetivo de evaluar en terreno las capacidades operacionales de las series ANKAI G9 y E9 en condiciones reales de operación.
+                </p>
+
+                <p>
+                  La visita estuvo enfocada especialmente en analizar el desempeño de los buses eléctricos en escenarios de alto tránsito, recorridos urbanos complejos y condiciones de pendiente, considerando que uno de los principales desafíos para la electromovilidad en regiones de Chile corresponde precisamente a la operación en zonas geográficamente exigentes.
+                </p>
+
+                <p>
+                  Esta instancia contó con el apoyo de Grupo SCH, representante de JAC Motors y ANKAI en Brasil, quienes facilitaron el acceso operativo y técnico a distintas unidades actualmente en funcionamiento en São Paulo.
+                </p>
+
+                <p>
+                  Durante la visita, los operadores tuvieron la oportunidad de inspeccionar directamente los buses en operación, revisar aspectos técnicos y constructivos, analizar componentes críticos y, especialmente, intercambiar experiencias con operadores brasileños que actualmente desarrollan operación eléctrica de pasajeros en distintos contextos urbanos.
+                </p>
+
+                <p>
+                  Uno de los aspectos más relevantes de la actividad fue la posibilidad de sostener conversaciones directas respecto a los desafíos reales de implementación de la electromovilidad, incluyendo operación diaria, mantenimiento, infraestructura de carga, comportamiento energético y adaptación operacional, así como también los beneficios económicos asociados a la transición tecnológica en transporte de pasajeros.
+                </p>
+
+                <p>
+                  Para SGX Chile, esta actividad representó un paso relevante en el fortalecimiento de una propuesta de valor basada no solamente en la provisión de buses, sino también en la validación operacional, el acompañamiento técnico y la generación de confianza para operadores que evalúan procesos de modernización y transición hacia tecnologías de cero emisiones.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 gap-4 pt-2 sm:grid-cols-2 lg:grid-cols-4">
+                <img src="/img/noticias/N2/N2_1.webp" alt="Viaje de validación técnica en São Paulo - imagen 1" loading="lazy" className="h-56 w-full rounded-3xl border border-slate-200 object-cover" />
+                <img src="/img/noticias/N2/N2_2.webp" alt="Viaje de validación técnica en São Paulo - imagen 2" loading="lazy" className="h-56 w-full rounded-3xl border border-slate-200 object-cover" />
+                <img src="/img/noticias/N2/N2_3.webp" alt="Viaje de validación técnica en São Paulo - imagen 3" loading="lazy" className="h-56 w-full rounded-3xl border border-slate-200 object-cover" />
+                <img src="/img/noticias/N2/N2_4.webp" alt="Viaje de validación técnica en São Paulo - imagen 4" loading="lazy" className="h-56 w-full rounded-3xl border border-slate-200 object-cover" />
+              </div>
+
+              <video
+                controls
+                preload="metadata"
+                poster="/img/noticias/N2/N2_1.webp"
+                className="aspect-video w-full rounded-3xl border border-slate-200 bg-slate-950 object-cover"
+              >
+                <source src="/img/noticias/N2/N2_br_optimized.mp4" type="video/mp4" />
+              </video>
+            </div>
+          </motion.article>
+
+          {/* Nota principal */}
+          <motion.article
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="mt-10 overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-sm"
           >
             <div className="p-6 lg:p-8 space-y-6">
 
