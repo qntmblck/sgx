@@ -97,10 +97,12 @@ export default function ContactActions() {
       <div
         className={`
           flex flex-col items-center space-y-3
-          transition-transform duration-300 ease-out
-          pointer-events-auto
-          ${menuOpen ? 'opacity-100 -translate-y-20' : 'opacity-0 translate-y-0'}
+          transition-all duration-300 ease-out
+          ${menuOpen
+            ? 'pointer-events-auto opacity-100 -translate-y-20'
+            : 'pointer-events-none invisible opacity-0 translate-y-0'}
         `}
+        aria-hidden={!menuOpen}
       >
         {/* Call */}
         <a
