@@ -1,14 +1,100 @@
-import { Head } from '@inertiajs/react'
+import SEO from '@/Components/SEO'
 import Header from '@/Components/Header'
 import Footer from '@/Components/Footer'
 import ContactActions from '@/Components/ContactActions'
 import { motion } from 'framer-motion'
 import { Calendar, MapPin } from 'lucide-react'
 
+const siteUrl = 'https://sgx.cl'
+const newsSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  '@id': `${siteUrl}/noticias#webpage`,
+  url: `${siteUrl}/noticias`,
+  name: 'Noticias de buses eléctricos y electromovilidad | SGX Chile',
+  description:
+    'Noticias, seminarios y actividades de SGX Chile junto a operadores de transporte, universidades y actores de electromovilidad.',
+  inLanguage: 'es-CL',
+  mainEntity: {
+    '@type': 'ItemList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        item: {
+          '@type': 'NewsArticle',
+          headline: 'Viaje de Validación Técnica en Brasil junto a Operadores de Transporte de Pasajeros',
+          image: `${siteUrl}/img/noticias/N2/N2_1.webp`,
+          datePublished: '2025-11-01',
+          author: {
+            '@type': 'Organization',
+            name: 'SGX Chile',
+          },
+          publisher: {
+            '@type': 'Organization',
+            name: 'SGX Chile',
+            logo: {
+              '@type': 'ImageObject',
+              url: `${siteUrl}/img/sgx.webp`,
+            },
+          },
+        },
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        item: {
+          '@type': 'NewsArticle',
+          headline: 'Valparaíso 2025-2035: Desafíos y Oportunidades para una Movilidad Sustentable',
+          image: `${siteUrl}/img/noticias/S1.webp`,
+          datePublished: '2025-09-24',
+          author: {
+            '@type': 'Organization',
+            name: 'SGX Chile',
+          },
+          publisher: {
+            '@type': 'Organization',
+            name: 'SGX Chile',
+            logo: {
+              '@type': 'ImageObject',
+              url: `${siteUrl}/img/sgx.webp`,
+            },
+          },
+        },
+      },
+    ],
+  },
+}
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: 'Inicio',
+      item: siteUrl,
+    },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      name: 'Noticias',
+      item: `${siteUrl}/noticias`,
+    },
+  ],
+}
+
 export default function Noticias() {
   return (
     <>
-      <Head title="SGX · Noticias" />
+      <SEO
+        title="Noticias de buses eléctricos y electromovilidad | SGX Chile"
+        description="Actividades, validaciones técnicas y seminarios de SGX Chile sobre buses eléctricos Ankai, transporte público y electromovilidad."
+        canonical="/noticias"
+        image="/img/noticias/N2/N2_1.webp"
+        jsonLd={[newsSchema, breadcrumbSchema]}
+      />
       <Header />
 
       {/* Hero */}

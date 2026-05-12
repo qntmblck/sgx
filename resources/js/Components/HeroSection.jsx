@@ -56,11 +56,10 @@ export default function HeroSection() {
             break-words
           "
         >
-          Representantes de{' '}
+          Elevando el estándar de la movilidad en Chile con{' '}
           <span className="text-red-400">
-            Anhui Ankai Automobile Co. Ltd.
-          </span>{' '}
-          en Chile
+            ANKAI
+          </span>
         </h1>
 
         <p
@@ -69,7 +68,7 @@ export default function HeroSection() {
             text-gray-100 bg-white/10 border border-white/15 px-4 py-2 rounded-full inline-block backdrop-blur-sm
           "
         >
-          Impulsando una movilidad sustentable y de alto estándar.
+          Buses eléctricos y soluciones de transporte para operadores, empresas e instituciones.
         </p>
 
         <div className="flex flex-nowrap justify-center space-x-4 mt-8 w-full">

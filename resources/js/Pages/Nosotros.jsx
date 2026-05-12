@@ -1,4 +1,4 @@
-import { Head } from '@inertiajs/react'
+import SEO from '@/Components/SEO'
 import Header from '@/Components/Header'
 import Footer from '@/Components/Footer'
 import ContactActions from '@/Components/ContactActions'
@@ -12,10 +12,50 @@ const WaveSeparator = () => (
   </div>
 )
 
+const siteUrl = 'https://sgx.cl'
+const aboutSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'AboutPage',
+  '@id': `${siteUrl}/nosotros#webpage`,
+  url: `${siteUrl}/nosotros`,
+  name: 'SGX Chile | Representante Ankai y asesoría en electromovilidad',
+  description:
+    'SGX Chile acompaña a operadores, empresas e instituciones en compra de buses, renovación de flota, electromovilidad y proyectos de transporte.',
+  inLanguage: 'es-CL',
+  about: {
+    '@id': `${siteUrl}/#organization`,
+  },
+}
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: 'Inicio',
+      item: siteUrl,
+    },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      name: 'Nosotros',
+      item: `${siteUrl}/nosotros`,
+    },
+  ],
+}
+
 export default function Nosotros() {
   return (
     <>
-      <Head title="SGX · Nosotros" />
+      <SEO
+        title="SGX Chile | Representante Ankai y buses eléctricos"
+        description="Conoce SGX Chile, representante de soluciones Ankai para buses eléctricos, transporte público, renovación de flota y proyectos de electromovilidad."
+        canonical="/nosotros"
+        image="/img/calle.webp"
+        jsonLd={[aboutSchema, breadcrumbSchema]}
+      />
       <Header />
 
       <section

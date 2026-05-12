@@ -1,4 +1,4 @@
-import { Head } from '@inertiajs/react'
+import SEO from '@/Components/SEO'
 import Header from '@/Components/Header'
 import Footer from '@/Components/Footer'
 import ContactActions from '@/Components/ContactActions'
@@ -477,6 +477,51 @@ const tabs = [
   },
 ]
 
+const siteUrl = 'https://sgx.cl'
+const technologySchema = {
+  '@context': 'https://schema.org',
+  '@type': 'TechArticle',
+  '@id': `${siteUrl}/tecnologia#webpage`,
+  url: `${siteUrl}/tecnologia`,
+  headline: 'Tecnología e ingeniería aplicada a buses eléctricos Ankai',
+  name: 'Tecnología de buses eléctricos Ankai | SGX Chile',
+  description:
+    'Base tecnológica, ingeniería, seguridad, telemetría y soporte operacional para buses eléctricos Ankai comercializados por SGX Chile.',
+  image: `${siteUrl}/img/productos.webp`,
+  author: {
+    '@type': 'Organization',
+    name: 'SGX Chile',
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'SGX Chile',
+    logo: {
+      '@type': 'ImageObject',
+      url: `${siteUrl}/img/sgx.webp`,
+    },
+  },
+  inLanguage: 'es-CL',
+}
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: 'Inicio',
+      item: siteUrl,
+    },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      name: 'Tecnología',
+      item: `${siteUrl}/tecnologia`,
+    },
+  ],
+}
+
 const Hero = () => (
   <section
     id="tecnologia-hero"
@@ -574,7 +619,13 @@ export default function Tecnologia() {
 
   return (
     <>
-      <Head title="Tecnología" />
+      <SEO
+        title="Tecnología de buses eléctricos Ankai | SGX Chile"
+        description="Conoce la ingeniería, seguridad, telemetría, control de flota y plataforma tecnológica detrás de los buses eléctricos Ankai disponibles en Chile."
+        canonical="/tecnologia"
+        image="/img/productos.webp"
+        jsonLd={[technologySchema, breadcrumbSchema]}
+      />
       <Header />
 
       <div style={{ fontFamily: "'Segoe UI', 'Helvetica Neue', Arial, sans-serif" }}>

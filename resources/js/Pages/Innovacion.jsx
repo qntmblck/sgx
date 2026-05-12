@@ -1,4 +1,4 @@
-import { Head } from '@inertiajs/react'
+import SEO from '@/Components/SEO'
 import Header from '@/Components/Header'
 import Footer from '@/Components/Footer'
 import ContactActions from '@/Components/ContactActions'
@@ -24,10 +24,50 @@ const WaveSeparator = () => (
   </div>
 )
 
+const siteUrl = 'https://sgx.cl'
+const innovationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  '@id': `${siteUrl}/innovacion#webpage`,
+  url: `${siteUrl}/innovacion`,
+  name: 'Innovación en buses eléctricos y gestión de flotas | SGX Chile',
+  description:
+    'Tecnología, telemetría, gestión inteligente de flotas, seguridad y soporte para proyectos de buses eléctricos Ankai en Chile.',
+  inLanguage: 'es-CL',
+  about: {
+    '@id': `${siteUrl}/#organization`,
+  },
+}
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: 'Inicio',
+      item: siteUrl,
+    },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      name: 'Innovación',
+      item: `${siteUrl}/innovacion`,
+    },
+  ],
+}
+
 export default function Innovacion() {
   return (
     <>
-      <Head title="SGX · Innovación" />
+      <SEO
+        title="Innovación para buses eléctricos y flotas | SGX Chile"
+        description="SGX Chile integra buses eléctricos Ankai con telemetría, mantenimiento predictivo, conectividad y soporte para operaciones de transporte modernas."
+        canonical="/innovacion"
+        image="/img/productos.webp"
+        jsonLd={[innovationSchema, breadcrumbSchema]}
+      />
       <Header />
 
       <section
