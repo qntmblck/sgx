@@ -3,7 +3,7 @@ import Header from '@/Components/Header'
 import Footer from '@/Components/Footer'
 import ContactActions from '@/Components/ContactActions'
 import { motion, AnimatePresence } from 'framer-motion'
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 
 const WaveSeparator = () => (
   <div className="-mt-1">
@@ -235,8 +235,11 @@ const tabs = [
       {
         type: 'paragraph',
         text: 'El controlador integrado 5 en 1 combina el controlador del motor de tracción, el controlador del motor de dirección asistida electrónica, el controlador del motor del compresor de aire, el controlador de motor DC/DC y la distribución de alta tensión. Este diseño permite alcanzar mayor eficiencia, ahorro energético y un nivel superior de seguridad y confiabilidad.',
+        image: {
+          src: '/img/tecnologia/tec_13.webp',
+          alt: 'Sistemas tecnológicos integrados - imagen 1',
+        },
       },
-      { type: 'image', src: '/img/tecnologia/tec_13.webp', alt: 'Sistemas tecnológicos integrados - imagen 1' },
       {
         type: 'feature',
         title: 'Seguridad de los Sistemas de Alto Voltaje y Sistema de Batería',
@@ -286,8 +289,11 @@ const tabs = [
         type: 'feature',
         title: 'Compatibilidad Electromagnética (EMC)',
         text: 'El diseño del vehículo considera criterios de compatibilidad electromagnética a nivel de sistema, asegurando funcionamiento estable de todos los componentes electrónicos.',
+        image: {
+          src: '/img/tecnologia/tec_16.webp',
+          alt: 'Sistemas tecnológicos integrados - imagen 4',
+        },
       },
-      { type: 'image', src: '/img/tecnologia/tec_16.webp', alt: 'Sistemas tecnológicos integrados - imagen 4' },
       {
         type: 'feature',
         title: 'Protección Ambiental y Operativa',
@@ -471,8 +477,11 @@ const tabs = [
       {
         type: 'closingQuestion',
         text: '¿Estás preparado para dar el siguiente paso y operar bajo los estándares de la electromovilidad con SGX Chile & Ankai Bus?',
+        image: {
+          src: '/img/tecnologia/tec_21.webp',
+          alt: 'Plataforma inteligente y telemetría - imagen 4',
+        },
       },
-      { type: 'image', src: '/img/tecnologia/tec_21.webp', alt: 'Plataforma inteligente y telemetría - imagen 4' },
     ],
   },
 ]
@@ -525,7 +534,7 @@ const breadcrumbSchema = {
 const Hero = () => (
   <section
     id="tecnologia-hero"
-    className="relative flex items-center justify-center overflow-hidden bg-cover bg-center py-24 sm:py-28"
+    className="relative flex items-center justify-center overflow-hidden bg-cover bg-center py-20 sm:py-24"
     style={{ backgroundImage: "url('/img/productos.webp')" }}
   >
     <div className="absolute inset-0 bg-slate-950/60" />
@@ -558,10 +567,81 @@ const TabButton = ({ label, active, onClick }) => (
   </button>
 )
 
+const TabsScroller = ({ children }) => {
+  const scrollRef = useRef(null)
+
+  const scroll = (direction) => {
+    const node = scrollRef.current
+    if (!node) return
+
+    node.scrollBy({
+      left: direction * Math.min(node.clientWidth * 0.85, 520),
+      behavior: 'smooth',
+    })
+  }
+
+  return (
+    <div className="relative mb-8">
+      <button
+        type="button"
+        onClick={() => scroll(-1)}
+        className="absolute left-0 top-1/2 z-20 hidden h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-slate-200 bg-white/95 text-2xl font-bold text-slate-700 shadow-lg transition hover:border-red-200 hover:text-red-700 sm:flex"
+        aria-label="Ver pestañas anteriores"
+      >
+        ‹
+      </button>
+
+      <div
+        ref={scrollRef}
+        className="overflow-x-auto px-1 pb-3 sm:px-12 [&::-webkit-scrollbar]:h-2 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-slate-300 [&::-webkit-scrollbar-track]:rounded-full [&::-webkit-scrollbar-track]:bg-slate-100"
+      >
+        <div className="flex min-w-max gap-3">{children}</div>
+      </div>
+
+      <button
+        type="button"
+        onClick={() => scroll(1)}
+        className="absolute right-0 top-1/2 z-20 hidden h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-slate-200 bg-white/95 text-2xl font-bold text-slate-700 shadow-lg transition hover:border-red-200 hover:text-red-700 sm:flex"
+        aria-label="Ver más pestañas"
+      >
+        ›
+      </button>
+
+      <div className="pointer-events-none absolute inset-y-0 left-0 hidden w-10 bg-gradient-to-r from-white to-transparent sm:block" />
+      <div className="pointer-events-none absolute inset-y-0 right-0 hidden w-10 bg-gradient-to-l from-white to-transparent sm:block" />
+    </div>
+  )
+}
+
 const ContentImage = ({ src, alt }) => (
   <figure className="mx-auto max-w-4xl overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm">
     <img src={src} alt={alt} className="h-auto w-full object-contain" loading="lazy" />
   </figure>
+)
+
+const InlineMedia = ({ image }) => (
+  <figure className="overflow-hidden rounded-3xl border border-slate-200 bg-slate-50 shadow-sm">
+    <img
+      src={image.src}
+      alt={image.alt}
+      className="h-full max-h-[22rem] w-full object-contain"
+      loading="lazy"
+    />
+  </figure>
+)
+
+const MediaShell = ({ children, image, tone = 'white' }) => (
+  <div
+    className={[
+      'grid gap-6 rounded-3xl border p-5 shadow-sm md:grid-cols-[minmax(0,1fr)_minmax(17rem,0.72fr)] md:items-center sm:p-6',
+      tone === 'red'
+        ? 'border-red-200 bg-red-50'
+        : 'border-slate-200 bg-white',
+    ].join(' ')}
+  >
+    <div className="min-w-0">{children}</div>
+    <InlineMedia image={image} />
+  </div>
 )
 
 const renderBlock = (block, index) => {
@@ -574,6 +654,15 @@ const renderBlock = (block, index) => {
       )
 
     case 'feature':
+      if (block.image) {
+        return (
+          <MediaShell key={index} image={block.image}>
+            <h4 className="text-lg font-bold text-slate-900 sm:text-xl">{block.title}</h4>
+            <p className="mt-3 text-[17px] leading-8 text-slate-700">{block.text}</p>
+          </MediaShell>
+        )
+      }
+
       return (
         <div key={index} className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
           <h4 className="text-lg font-bold text-slate-900 sm:text-xl">{block.title}</h4>
@@ -594,6 +683,14 @@ const renderBlock = (block, index) => {
       return <ContentImage key={index} src={block.src} alt={block.alt} />
 
     case 'closingQuestion':
+      if (block.image) {
+        return (
+          <MediaShell key={index} image={block.image} tone="red">
+            <p className="text-lg font-semibold leading-8 text-red-900">{block.text}</p>
+          </MediaShell>
+        )
+      }
+
       return (
         <div
           key={index}
@@ -605,6 +702,14 @@ const renderBlock = (block, index) => {
 
     case 'paragraph':
     default:
+      if (block.image) {
+        return (
+          <MediaShell key={index} image={block.image}>
+            <p className="text-[17px] leading-8 text-slate-700">{block.text}</p>
+          </MediaShell>
+        )
+      }
+
       return (
         <p key={index} className="text-[17px] leading-8 text-slate-700">
           {block.text}
@@ -633,7 +738,7 @@ export default function Tecnologia() {
         <WaveSeparator />
 
         <main className="bg-gray-50">
-          <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16">
+          <section className="mx-auto max-w-7xl px-4 pt-6 pb-12 sm:px-6 sm:pt-8 sm:pb-16">
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -641,18 +746,16 @@ export default function Tecnologia() {
               transition={{ duration: 0.45 }}
               className="rounded-[2rem] border border-slate-200 bg-white p-5 shadow-sm sm:p-8"
             >
-              <div className="mb-8 overflow-x-auto pb-2">
-                <div className="flex min-w-max gap-3">
-                  {tabs.map((tab) => (
-                    <TabButton
-                      key={tab.id}
-                      label={tab.label}
-                      active={tab.id === activeTab}
-                      onClick={() => setActiveTab(tab.id)}
-                    />
-                  ))}
-                </div>
-              </div>
+              <TabsScroller>
+                {tabs.map((tab) => (
+                  <TabButton
+                    key={tab.id}
+                    label={tab.label}
+                    active={tab.id === activeTab}
+                    onClick={() => setActiveTab(tab.id)}
+                  />
+                ))}
+              </TabsScroller>
 
               <AnimatePresence mode="wait">
                 <motion.div

@@ -468,13 +468,13 @@ function SpecTabs({ specs, serieLabel }) {
           {activeSpec.title}
         </h4>
 
-        <dl className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-2">
+        <dl className="mt-6 columns-1 gap-4 md:columns-2">
           {activeSpec.items.map(([label, value]) => (
-            <div key={label} className="rounded-3xl border border-slate-200 bg-slate-50 p-4">
+            <div key={label} className="mb-4 break-inside-avoid rounded-2xl border border-slate-200 bg-slate-50 p-4">
               <dt className="text-sm font-bold uppercase tracking-wide text-slate-900">
                 {label}
               </dt>
-              <dd className="mt-2 text-sm leading-7 text-slate-700">
+              <dd className="mt-2 text-sm leading-6 text-slate-700">
                 {value}
               </dd>
             </div>
