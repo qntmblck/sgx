@@ -99,7 +99,7 @@ export default function Noticias() {
 
       {/* Hero */}
       <section
-        className="relative flex items-center justify-center overflow-hidden bg-cover bg-center py-24 sm:py-28"
+        className="relative flex items-center justify-center overflow-hidden bg-cover bg-center pt-24 pb-6 sm:pt-28 sm:pb-8"
         style={{ backgroundImage: "url('/img/productos.webp')" }}
       >
         <div className="absolute inset-0 bg-slate-950/60" />
@@ -115,7 +115,7 @@ export default function Noticias() {
 
       {/* Contenido */}
       <main className="bg-gray-50">
-        <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16">
+        <section className="mx-auto max-w-7xl px-4 pt-2 pb-12 sm:px-6 sm:pt-3 sm:pb-16">
 
           <motion.article
             initial={{ opacity: 0, y: 24 }}

@@ -534,17 +534,19 @@ const breadcrumbSchema = {
 const Hero = () => (
   <section
     id="tecnologia-hero"
-    className="relative flex items-center justify-center overflow-hidden bg-cover bg-center py-12 sm:py-20"
+    className="relative flex min-h-[22rem] items-center justify-center overflow-hidden bg-cover bg-center pt-24 pb-6 sm:min-h-[26rem] sm:pt-28 sm:pb-8"
     style={{ backgroundImage: "url('/img/productos.webp')" }}
   >
     <div className="absolute inset-0 bg-slate-950/60" />
-    <div className="relative z-10 mx-auto flex max-w-5xl flex-col items-center px-6 text-center">
-      <span className="mb-3 inline-flex max-w-full rounded-full border border-white/20 bg-white/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-white/80 backdrop-blur-sm sm:mb-4 sm:px-4 sm:text-xs sm:tracking-[0.25em]">
+    <div className="relative z-10 mx-auto flex w-full max-w-5xl flex-col items-center px-4 text-center sm:px-6">
+      <span className="mb-4 inline-flex rounded-full border border-white/20 bg-white/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.25em] text-white/80 backdrop-blur-sm">
         SGX Chile · Tecnología
       </span>
-      <h1 className="max-w-4xl text-[2rem] font-extrabold leading-[1.12] tracking-tight text-white drop-shadow-lg sm:text-5xl sm:leading-tight">
+
+      <h1 className="max-w-4xl text-[1.9rem] font-extrabold leading-[1.12] tracking-tight text-white drop-shadow-lg sm:text-5xl sm:leading-tight">
         Tecnología e ingeniería aplicada al desarrollo de buses de alto estándar
       </h1>
+
       <p className="mt-4 max-w-3xl text-base leading-7 text-white/90 sm:mt-5 sm:text-lg">
         Conoce la base tecnológica, la ingeniería, la capacidad industrial, los sistemas integrados y la plataforma de telemetría que estructuran la propuesta tecnológica de Ankai.
       </p>
@@ -774,7 +776,7 @@ export default function Tecnologia() {
         <Hero />
 
         <main className="bg-gray-50">
-          <section className="mx-auto max-w-7xl px-4 pt-3 pb-12 sm:px-6 sm:pt-4 sm:pb-16">
+          <section className="mx-auto max-w-7xl px-4 pt-2 pb-12 sm:px-6 sm:pt-3 sm:pb-16">
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
