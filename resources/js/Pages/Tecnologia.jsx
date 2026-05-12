@@ -534,18 +534,18 @@ const breadcrumbSchema = {
 const Hero = () => (
   <section
     id="tecnologia-hero"
-    className="relative flex items-center justify-center overflow-hidden bg-cover bg-center py-16 sm:py-20"
+    className="relative flex items-center justify-center overflow-hidden bg-cover bg-center py-12 sm:py-20"
     style={{ backgroundImage: "url('/img/productos.webp')" }}
   >
     <div className="absolute inset-0 bg-slate-950/60" />
     <div className="relative z-10 mx-auto flex max-w-5xl flex-col items-center px-6 text-center">
-      <span className="mb-4 inline-flex rounded-full border border-white/20 bg-white/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.25em] text-white/80 backdrop-blur-sm">
+      <span className="mb-3 inline-flex max-w-full rounded-full border border-white/20 bg-white/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-white/80 backdrop-blur-sm sm:mb-4 sm:px-4 sm:text-xs sm:tracking-[0.25em]">
         SGX Chile · Tecnología
       </span>
-      <h1 className="max-w-4xl text-3xl font-extrabold tracking-tight text-white drop-shadow-lg sm:text-5xl">
+      <h1 className="max-w-4xl text-[2rem] font-extrabold leading-[1.12] tracking-tight text-white drop-shadow-lg sm:text-5xl sm:leading-tight">
         Tecnología e ingeniería aplicada al desarrollo de buses de alto estándar
       </h1>
-      <p className="mt-5 max-w-3xl text-base leading-7 text-white/90 sm:text-lg">
+      <p className="mt-4 max-w-3xl text-base leading-7 text-white/90 sm:mt-5 sm:text-lg">
         Conoce la base tecnológica, la ingeniería, la capacidad industrial, los sistemas integrados y la plataforma de telemetría que estructuran la propuesta tecnológica de Ankai.
       </p>
     </div>
@@ -557,7 +557,7 @@ const TabButton = ({ label, active, onClick }) => (
     type="button"
     onClick={onClick}
     className={[
-      'whitespace-nowrap rounded-full border px-4 py-2.5 text-sm font-semibold transition-all duration-200 sm:px-5',
+      'whitespace-nowrap rounded-full border px-4 py-2.5 text-sm font-semibold leading-tight transition-all duration-200 sm:px-5',
       active
         ? 'border-red-700 bg-red-700 text-white shadow-md shadow-red-700/20'
         : 'border-slate-200 bg-white text-slate-700 hover:border-red-200 hover:text-red-700',
@@ -611,14 +611,14 @@ const TabsScroller = ({ children }) => {
         onScroll={updateScrollState}
         className="tecnologia-tabs-scroll w-full overflow-x-auto overscroll-x-contain px-1 pb-3"
       >
-        <div className="flex min-w-max gap-3 pr-12">{children}</div>
+        <div className="flex min-w-max gap-3 pr-16">{children}</div>
       </div>
 
       {showRightArrow && (
         <button
           type="button"
           onClick={scrollRight}
-          className="absolute right-0 top-1/2 z-20 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full border border-slate-200 bg-white/95 text-2xl font-bold text-slate-700 shadow-lg transition hover:border-red-200 hover:text-red-700"
+          className="absolute right-1 top-1/2 z-20 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full border border-slate-200 bg-white/95 text-2xl font-bold text-slate-700 shadow-lg transition hover:border-red-200 hover:text-red-700"
           aria-label="Ver más pestañas"
         >
           ›
@@ -803,7 +803,7 @@ export default function Tecnologia() {
                   className="space-y-7"
                 >
                   <div className="border-b border-slate-200 pb-5">
-                    <h3 className="text-2xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
+                    <h3 className="text-[2rem] font-extrabold leading-tight tracking-tight text-slate-900 sm:text-4xl">
                       {currentTab.label}
                     </h3>
                   </div>
