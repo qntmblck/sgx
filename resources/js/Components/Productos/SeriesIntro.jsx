@@ -385,14 +385,26 @@ function AlbumViewer({ images, altBase }) {
 
 function SeriesTabs({ activeSeriesId, onChange }) {
   const tabs = [
-    { id: 'E9', label: 'Serie E9: Transporte Público Urbano' },
-    { id: 'A6', label: 'Serie A6: Transporte Interurbano y Minería' },
-    { id: 'K7', label: 'Serie K7: Van Eléctrica de Lujo' },
+    {
+      id: 'E9',
+      title: 'Serie E9',
+      subtitle: 'Transporte Público Urbano',
+    },
+    {
+      id: 'A6',
+      title: 'Serie A6',
+      subtitle: 'Interurbano y Minería',
+    },
+    {
+      id: 'K7',
+      title: 'Serie K7',
+      subtitle: 'Van Eléctrica de Lujo',
+    },
   ]
 
   return (
-    <div className="mb-8 overflow-x-auto pb-2">
-      <div className="flex min-w-max gap-3">
+    <div className="mb-6 w-full overflow-visible pb-0">
+      <div className="grid w-full grid-cols-3 gap-2 sm:gap-3">
         {tabs.map((tab) => {
           const active = tab.id === activeSeriesId
 
@@ -402,13 +414,19 @@ function SeriesTabs({ activeSeriesId, onChange }) {
               type="button"
               onClick={() => onChange(tab.id)}
               className={[
-                'whitespace-nowrap rounded-full px-5 py-2.5 text-sm font-semibold transition',
+                'min-w-0 rounded-2xl border px-1.5 py-2 text-center transition sm:rounded-full sm:px-5 sm:py-2.5',
                 active
-                  ? 'border border-red-700 bg-red-700 text-white shadow-md shadow-red-700/20'
-                  : 'border border-slate-200 bg-white text-slate-700 hover:border-red-200 hover:text-red-700',
+                  ? 'border-red-700 bg-red-700 text-white shadow-md shadow-red-700/20'
+                  : 'border-slate-200 bg-white text-slate-700 hover:border-red-200 hover:text-red-700',
               ].join(' ')}
             >
-              {tab.label}
+              <span className="block truncate text-[10px] font-extrabold leading-tight sm:inline sm:text-sm">
+                {tab.title}
+              </span>
+              <span className="mt-0.5 block text-[8px] font-semibold leading-tight sm:mt-0 sm:inline sm:text-sm">
+                <span className="hidden sm:inline">: </span>
+                {tab.subtitle}
+              </span>
             </button>
           )
         })}
@@ -439,8 +457,8 @@ function SpecTabs({ specs, serieLabel }) {
         </h3>
       </div>
 
-      <div className="mb-6 overflow-x-auto pb-2">
-        <div className="flex min-w-max gap-3">
+      <div className="mb-6 overflow-visible pb-0">
+        <div className="flex flex-wrap justify-center gap-3">
           {specs.map((item) => {
             const active = item.id === activeSpec.id
 
@@ -450,7 +468,7 @@ function SpecTabs({ specs, serieLabel }) {
                 type="button"
                 onClick={() => setActiveSpecId(item.id)}
                 className={[
-                  'whitespace-nowrap rounded-full px-4 py-2 text-sm font-semibold transition',
+                  'rounded-full px-4 py-2 text-center text-sm font-semibold transition',
                   active
                     ? 'border border-red-700 bg-red-700 text-white shadow-md shadow-red-700/20'
                     : 'border border-slate-200 bg-white text-slate-700 hover:border-red-200 hover:text-red-700',
@@ -520,7 +538,7 @@ export default function SeriesIntro({ serie }) {
 
   return (
     <section className="bg-gray-50">
-      <div className="mx-auto max-w-7xl px-4 pt-6 pb-12 sm:px-6 sm:pt-8 sm:pb-16">
+      <div className="mx-auto max-w-7xl px-4 pt-3 pb-12 sm:px-6 sm:pt-4 sm:pb-16">
         <div className="rounded-[2rem] border border-slate-200 bg-white p-5 shadow-sm sm:p-8">
           <SeriesTabs activeSeriesId={activeSeriesId} onChange={setActiveSeriesId} />
 

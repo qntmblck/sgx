@@ -100,11 +100,7 @@ export default function Productos() {
 
       <main className="overflow-x-hidden bg-white">
         <CatalogHero />
-
-
         <SeriesIntro serie={activeSeries} />
-
-
       </main>
 
       <VariantDrawer

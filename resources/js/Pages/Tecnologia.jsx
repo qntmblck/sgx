@@ -3,7 +3,7 @@ import Header from '@/Components/Header'
 import Footer from '@/Components/Footer'
 import ContactActions from '@/Components/ContactActions'
 import { motion, AnimatePresence } from 'framer-motion'
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 const WaveSeparator = () => (
   <div className="-mt-1">
@@ -569,49 +569,85 @@ const TabButton = ({ label, active, onClick }) => (
 
 const TabsScroller = ({ children }) => {
   const scrollRef = useRef(null)
+  const [showRightArrow, setShowRightArrow] = useState(false)
 
-  const scroll = (direction) => {
+  const updateScrollState = () => {
+    const node = scrollRef.current
+    if (!node) return
+
+    const { scrollLeft, scrollWidth, clientWidth } = node
+    const canScroll = scrollWidth > clientWidth + 1
+    const isAtEnd = scrollLeft + clientWidth >= scrollWidth - 2
+
+    setShowRightArrow(canScroll && !isAtEnd)
+  }
+
+  const scrollRight = () => {
     const node = scrollRef.current
     if (!node) return
 
     node.scrollBy({
-      left: direction * Math.min(node.clientWidth * 0.85, 520),
+      left: Math.min(node.clientWidth * 0.85, 520),
       behavior: 'smooth',
     })
   }
 
-  return (
-    <div className="relative mx-auto mb-7 max-w-3xl">
-      <button
-        type="button"
-        onClick={() => scroll(-1)}
-        className="absolute left-0 top-1/2 z-20 hidden h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-slate-200 bg-white/95 text-2xl font-bold text-slate-700 shadow-lg transition hover:border-red-200 hover:text-red-700 sm:flex"
-        aria-label="Ver pestañas anteriores"
-      >
-        ‹
-      </button>
+  useEffect(() => {
+    updateScrollState()
 
+    const node = scrollRef.current
+    if (!node) return undefined
+
+    const observer = new ResizeObserver(updateScrollState)
+    observer.observe(node)
+
+    return () => observer.disconnect()
+  }, [children])
+
+  return (
+    <div className="relative mb-7 w-full">
       <div
         ref={scrollRef}
-        className="overflow-x-auto px-1 pb-3 [scrollbar-color:#cbd5e1_#f1f5f9] [scrollbar-width:thin] sm:px-12 [&::-webkit-scrollbar]:h-2 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-slate-300 [&::-webkit-scrollbar-track]:rounded-full [&::-webkit-scrollbar-track]:bg-slate-100"
+        onScroll={updateScrollState}
+        className="tecnologia-tabs-scroll w-full overflow-x-auto overscroll-x-contain px-1 pb-3"
       >
-        <div className="flex min-w-max gap-3">{children}</div>
+        <div className="flex min-w-max gap-3 pr-12">{children}</div>
       </div>
 
-      <button
-        type="button"
-        onClick={() => scroll(1)}
-        className="absolute right-0 top-1/2 z-20 hidden h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-slate-200 bg-white/95 text-2xl font-bold text-slate-700 shadow-lg transition hover:border-red-200 hover:text-red-700 sm:flex"
-        aria-label="Ver más pestañas"
-      >
-        ›
-      </button>
-
-      <div className="pointer-events-none absolute inset-y-0 left-0 hidden w-10 bg-gradient-to-r from-white to-transparent sm:block" />
-      <div className="pointer-events-none absolute inset-y-0 right-0 hidden w-10 bg-gradient-to-l from-white to-transparent sm:block" />
+      {showRightArrow && (
+        <button
+          type="button"
+          onClick={scrollRight}
+          className="absolute right-0 top-1/2 z-20 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full border border-slate-200 bg-white/95 text-2xl font-bold text-slate-700 shadow-lg transition hover:border-red-200 hover:text-red-700"
+          aria-label="Ver más pestañas"
+        >
+          ›
+        </button>
+      )}
     </div>
   )
 }
+
+const tabsScrollbarStyles = `
+  .tecnologia-tabs-scroll {
+    scrollbar-color: #cbd5e1 #f1f5f9;
+    scrollbar-width: thin;
+  }
+
+  .tecnologia-tabs-scroll::-webkit-scrollbar {
+    height: 8px;
+  }
+
+  .tecnologia-tabs-scroll::-webkit-scrollbar-track {
+    border-radius: 9999px;
+    background: #f1f5f9;
+  }
+
+  .tecnologia-tabs-scroll::-webkit-scrollbar-thumb {
+    border-radius: 9999px;
+    background: #cbd5e1;
+  }
+`
 
 const ContentImage = ({ src, alt }) => (
   <figure className="mx-auto max-w-4xl overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm">
@@ -734,11 +770,11 @@ export default function Tecnologia() {
       <Header />
 
       <div style={{ fontFamily: "'Segoe UI', 'Helvetica Neue', Arial, sans-serif" }}>
+        <style>{tabsScrollbarStyles}</style>
         <Hero />
-        <WaveSeparator />
 
         <main className="bg-gray-50">
-          <section className="mx-auto max-w-7xl px-4 pt-4 pb-12 sm:px-6 sm:pt-5 sm:pb-16">
+          <section className="mx-auto max-w-7xl px-4 pt-3 pb-12 sm:px-6 sm:pt-4 sm:pb-16">
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
