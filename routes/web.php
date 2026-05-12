@@ -31,6 +31,10 @@ Route::get('/tecnologia', function () {
     return Inertia::render('Tecnologia');
 })->name('tecnologia');
 
+Route::get('/nosotros', function () {
+    return Inertia::render('Nosotros');
+})->name('nosotros');
+
 Route::get('/productos', function () {
     return Inertia::render('Productos');
 })->name('productos');

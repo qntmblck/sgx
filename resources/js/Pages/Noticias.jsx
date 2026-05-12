@@ -87,14 +87,16 @@ export default function Noticias() {
                 <img src="/img/noticias/N2/N2_4.webp" alt="Viaje de validación técnica en São Paulo - imagen 4" loading="lazy" className="h-56 w-full rounded-3xl border border-slate-200 object-cover" />
               </div>
 
-              <video
-                controls
-                preload="metadata"
-                poster="/img/noticias/N2/N2_1.webp"
-                className="aspect-video w-full rounded-3xl border border-slate-200 bg-slate-950 object-cover"
-              >
-                <source src="/img/noticias/N2/N2_br_optimized.mp4" type="video/mp4" />
-              </video>
+              <div className="mx-auto max-w-3xl pt-2">
+                <video
+                  controls
+                  preload="metadata"
+                  poster="/img/noticias/N2/N2_1.webp"
+                  className="aspect-video w-full rounded-3xl border border-slate-200 bg-slate-950 object-contain shadow-sm"
+                >
+                  <source src="/img/noticias/N2/N2_br_optimized.mp4" type="video/mp4" />
+                </video>
+              </div>
             </div>
           </motion.article>
 
