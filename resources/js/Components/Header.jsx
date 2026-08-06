@@ -37,14 +37,14 @@ export default function Header() {
   }
 
   const linkBaseClasses =
-    'inline-flex items-center rounded-full border px-4 py-2 text-sm font-semibold transition-all duration-200'
+    'relative inline-flex items-center px-3 py-2 text-sm font-semibold transition-colors duration-200 after:absolute after:bottom-1 after:left-3 after:right-3 after:h-0.5 after:origin-left after:scale-x-0 after:rounded-full after:bg-red-700 after:transition-transform after:duration-200'
 
   const renderNavItem = (item, isMobile = false) => {
     const isActive = isActivePath(item.href)
 
     const classes = isActive
-      ? `${linkBaseClasses} border-red-700 bg-red-700 text-white shadow-md shadow-red-700/20`
-      : `${linkBaseClasses} border-transparent text-slate-700 hover:border-red-200 hover:bg-white hover:text-red-700`
+      ? `${linkBaseClasses} text-red-700 after:scale-x-100`
+      : `${linkBaseClasses} text-slate-700 hover:text-red-700 hover:after:scale-x-100`
 
     return (
       <Link
